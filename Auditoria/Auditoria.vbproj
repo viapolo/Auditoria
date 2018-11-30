@@ -72,11 +72,35 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.vb">
+    <Compile Include="frmAuditoriaCondiciones.Designer.vb">
+      <DependentUpon>frmAuditoriaCondiciones.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAuditoriaCondiciones.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <Compile Include="frmAuditoriaMod.Designer.vb">
+      <DependentUpon>frmAuditoriaMod.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAuditoriaMod.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAuditorias.Designer.vb">
+      <DependentUpon>frmAuditorias.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAuditorias.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBuscaContratos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBuscaContratos.Designer.vb">
+      <DependentUpon>frmBuscaContratos.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MDIAuditoria.Designer.vb">
+      <DependentUpon>MDIAuditoria.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MDIAuditoria.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -94,8 +118,28 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="ProductionDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProductionDataSet.xsd</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmAuditoriaCondiciones.resx">
+      <DependentUpon>frmAuditoriaCondiciones.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAuditoriaMod.resx">
+      <DependentUpon>frmAuditoriaMod.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAuditorias.resx">
+      <DependentUpon>frmAuditorias.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBuscaContratos.resx">
+      <DependentUpon>frmBuscaContratos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MDIAuditoria.resx">
+      <DependentUpon>MDIAuditoria.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
@@ -114,6 +158,17 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+    <None Include="ProductionDataSet.xsc">
+      <DependentUpon>ProductionDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ProductionDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ProductionDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ProductionDataSet.xss">
+      <DependentUpon>ProductionDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
