@@ -115,7 +115,11 @@
         frmAuditoriaMod.var_consecAM = AUDIT_AuditoriasDataGridView.Item(0, e.RowIndex).Value
         frmAuditoriaMod.MdiParent = MDIAuditoria
         frmAuditoriaMod.Show()
-        frmAuditoriaMod.btnAgregar.Enabled = True
+        If AUDIT_AuditoriasDataGridView.Rows.Count > 1 Then
+            frmAuditoriaMod.btnAgregar.Enabled = False
+        ElseIf AUDIT_AuditoriasDataGridView.Rows.Count = 1 And cmbEstatus.Text <> "ABIERTO" Then
+            frmAuditoriaMod.btnAgregar.Enabled = True
+        End If
         Me.Enabled = False
     End Sub
 
