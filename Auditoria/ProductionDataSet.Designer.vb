@@ -41,6 +41,8 @@ Partial Public Class ProductionDataSet
     
     Private tableAUDIT_AuditoriasCondiciones As AUDIT_AuditoriasCondicionesDataTable
     
+    Private tableAUDIT_ParametrosD As AUDIT_ParametrosDDataTable
+    
     Private _schemaSerializationMode As Global.System.Data.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -93,6 +95,9 @@ Partial Public Class ProductionDataSet
             End If
             If (Not (ds.Tables("AUDIT_AuditoriasCondiciones")) Is Nothing) Then
                 MyBase.Tables.Add(New AUDIT_AuditoriasCondicionesDataTable(ds.Tables("AUDIT_AuditoriasCondiciones")))
+            End If
+            If (Not (ds.Tables("AUDIT_ParametrosD")) Is Nothing) Then
+                MyBase.Tables.Add(New AUDIT_ParametrosDDataTable(ds.Tables("AUDIT_ParametrosD")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -193,6 +198,16 @@ Partial Public Class ProductionDataSet
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+     Global.System.ComponentModel.Browsable(false),  _
+     Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
+    Public ReadOnly Property AUDIT_ParametrosD() As AUDIT_ParametrosDDataTable
+        Get
+            Return Me.tableAUDIT_ParametrosD
+        End Get
+    End Property
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
      Global.System.ComponentModel.BrowsableAttribute(true),  _
      Global.System.ComponentModel.DesignerSerializationVisibilityAttribute(Global.System.ComponentModel.DesignerSerializationVisibility.Visible)>  _
     Public Overrides Property SchemaSerializationMode() As Global.System.Data.SchemaSerializationMode
@@ -282,6 +297,9 @@ Partial Public Class ProductionDataSet
             If (Not (ds.Tables("AUDIT_AuditoriasCondiciones")) Is Nothing) Then
                 MyBase.Tables.Add(New AUDIT_AuditoriasCondicionesDataTable(ds.Tables("AUDIT_AuditoriasCondiciones")))
             End If
+            If (Not (ds.Tables("AUDIT_ParametrosD")) Is Nothing) Then
+                MyBase.Tables.Add(New AUDIT_ParametrosDDataTable(ds.Tables("AUDIT_ParametrosD")))
+            End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
             Me.Namespace = ds.Namespace
@@ -362,6 +380,12 @@ Partial Public Class ProductionDataSet
                 Me.tableAUDIT_AuditoriasCondiciones.InitVars
             End If
         End If
+        Me.tableAUDIT_ParametrosD = CType(MyBase.Tables("AUDIT_ParametrosD"),AUDIT_ParametrosDDataTable)
+        If (initTable = true) Then
+            If (Not (Me.tableAUDIT_ParametrosD) Is Nothing) Then
+                Me.tableAUDIT_ParametrosD.InitVars
+            End If
+        End If
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -388,6 +412,8 @@ Partial Public Class ProductionDataSet
         MyBase.Tables.Add(Me.tableAUDIT_ParametrosV)
         Me.tableAUDIT_AuditoriasCondiciones = New AUDIT_AuditoriasCondicionesDataTable()
         MyBase.Tables.Add(Me.tableAUDIT_AuditoriasCondiciones)
+        Me.tableAUDIT_ParametrosD = New AUDIT_ParametrosDDataTable()
+        MyBase.Tables.Add(Me.tableAUDIT_ParametrosD)
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -435,6 +461,12 @@ Partial Public Class ProductionDataSet
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
     Private Function ShouldSerializeAUDIT_AuditoriasCondiciones() As Boolean
+        Return false
+    End Function
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+    Private Function ShouldSerializeAUDIT_ParametrosD() As Boolean
         Return false
     End Function
     
@@ -519,6 +551,9 @@ Partial Public Class ProductionDataSet
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
     Public Delegate Sub AUDIT_AuditoriasCondicionesRowChangeEventHandler(ByVal sender As Object, ByVal e As AUDIT_AuditoriasCondicionesRowChangeEvent)
+    
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+    Public Delegate Sub AUDIT_ParametrosDRowChangeEventHandler(ByVal sender As Object, ByVal e As AUDIT_ParametrosDRowChangeEvent)
     
     '''<summary>
     '''Represents the strongly named DataTable class.
@@ -3272,6 +3307,16 @@ Partial Public Class ProductionDataSet
         
         Private columnConsecutivo As Global.System.Data.DataColumn
         
+        Private columnfolAuditoria As Global.System.Data.DataColumn
+        
+        Private columnnRevInfFinanciera As Global.System.Data.DataColumn
+        
+        Private columnnRevRepSup As Global.System.Data.DataColumn
+        
+        Private columnnRevPagare As Global.System.Data.DataColumn
+        
+        Private columnncedVerific As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Sub New()
@@ -3388,6 +3433,46 @@ Partial Public Class ProductionDataSet
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property folAuditoriaColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnfolAuditoria
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property nRevInfFinancieraColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnnRevInfFinanciera
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property nRevRepSupColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnnRevRepSup
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property nRevPagareColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnnRevPagare
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property ncedVerificColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnncedVerific
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -3424,9 +3509,9 @@ Partial Public Class ProductionDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overloads Function AddAUDIT_AuditoriasRow(ByVal Anexo As String, ByVal Ciclo As String, ByVal FechaCreacion As Date, ByVal UltimaActualizacion As Date, ByVal FechaRelizacion As Date, ByVal Obervaciones As String, ByVal Estatus As String, ByVal Usuario As String, ByVal Consecutivo As Integer) As AUDIT_AuditoriasRow
+        Public Overloads Function AddAUDIT_AuditoriasRow(ByVal Anexo As String, ByVal Ciclo As String, ByVal FechaCreacion As Date, ByVal UltimaActualizacion As Date, ByVal FechaRelizacion As Date, ByVal Obervaciones As String, ByVal Estatus As String, ByVal Usuario As String, ByVal Consecutivo As Integer, ByVal folAuditoria As String, ByVal nRevInfFinanciera As Decimal, ByVal nRevRepSup As Decimal, ByVal nRevPagare As Decimal, ByVal ncedVerific As Decimal) As AUDIT_AuditoriasRow
             Dim rowAUDIT_AuditoriasRow As AUDIT_AuditoriasRow = CType(Me.NewRow,AUDIT_AuditoriasRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, Anexo, Ciclo, FechaCreacion, UltimaActualizacion, FechaRelizacion, Obervaciones, Estatus, Usuario, Consecutivo}
+            Dim columnValuesArray() As Object = New Object() {Nothing, Anexo, Ciclo, FechaCreacion, UltimaActualizacion, FechaRelizacion, Obervaciones, Estatus, Usuario, Consecutivo, folAuditoria, nRevInfFinanciera, nRevRepSup, nRevPagare, ncedVerific}
             rowAUDIT_AuditoriasRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowAUDIT_AuditoriasRow)
             Return rowAUDIT_AuditoriasRow
@@ -3465,6 +3550,11 @@ Partial Public Class ProductionDataSet
             Me.columnEstatus = MyBase.Columns("Estatus")
             Me.columnUsuario = MyBase.Columns("Usuario")
             Me.columnConsecutivo = MyBase.Columns("Consecutivo")
+            Me.columnfolAuditoria = MyBase.Columns("folAuditoria")
+            Me.columnnRevInfFinanciera = MyBase.Columns("nRevInfFinanciera")
+            Me.columnnRevRepSup = MyBase.Columns("nRevRepSup")
+            Me.columnnRevPagare = MyBase.Columns("nRevPagare")
+            Me.columnncedVerific = MyBase.Columns("ncedVerific")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -3490,6 +3580,16 @@ Partial Public Class ProductionDataSet
             MyBase.Columns.Add(Me.columnUsuario)
             Me.columnConsecutivo = New Global.System.Data.DataColumn("Consecutivo", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnConsecutivo)
+            Me.columnfolAuditoria = New Global.System.Data.DataColumn("folAuditoria", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnfolAuditoria)
+            Me.columnnRevInfFinanciera = New Global.System.Data.DataColumn("nRevInfFinanciera", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnnRevInfFinanciera)
+            Me.columnnRevRepSup = New Global.System.Data.DataColumn("nRevRepSup", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnnRevRepSup)
+            Me.columnnRevPagare = New Global.System.Data.DataColumn("nRevPagare", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnnRevPagare)
+            Me.columnncedVerific = New Global.System.Data.DataColumn("ncedVerific", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnncedVerific)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnid_Auditoria}, true))
             Me.columnid_Auditoria.AutoIncrement = true
             Me.columnid_Auditoria.AutoIncrementSeed = -1
@@ -3502,6 +3602,7 @@ Partial Public Class ProductionDataSet
             Me.columnObervaciones.MaxLength = 2147483647
             Me.columnEstatus.MaxLength = 20
             Me.columnUsuario.MaxLength = 20
+            Me.columnfolAuditoria.MaxLength = 50
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -4879,6 +4980,14 @@ Partial Public Class ProductionDataSet
         
         Private columnComentarios As Global.System.Data.DataColumn
         
+        Private columnConsecRevisiones As Global.System.Data.DataColumn
+        
+        Private columnfechaVigencia As Global.System.Data.DataColumn
+        
+        Private columndeptoResponsable As Global.System.Data.DataColumn
+        
+        Private columnestatus As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Sub New()
@@ -4979,6 +5088,38 @@ Partial Public Class ProductionDataSet
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property ConsecRevisionesColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnConsecRevisiones
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property fechaVigenciaColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnfechaVigencia
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property deptoResponsableColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columndeptoResponsable
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property estatusColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnestatus
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -5015,9 +5156,9 @@ Partial Public Class ProductionDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overloads Function AddAUDIT_AuditoriasCondicionesRow(ByVal Id_auditoria As Decimal, ByVal Id_Condicion As Decimal, ByVal Validacion As String, ByVal Observaciones As String, ByVal CategoriaHallazgo As String, ByVal FechaSolventacion As Date, ByVal Comentarios As String) As AUDIT_AuditoriasCondicionesRow
+        Public Overloads Function AddAUDIT_AuditoriasCondicionesRow(ByVal Id_auditoria As Decimal, ByVal Id_Condicion As Decimal, ByVal Validacion As String, ByVal Observaciones As String, ByVal CategoriaHallazgo As String, ByVal FechaSolventacion As Date, ByVal Comentarios As String, ByVal ConsecRevisiones As Decimal, ByVal fechaVigencia As Date, ByVal deptoResponsable As Decimal, ByVal estatus As Boolean) As AUDIT_AuditoriasCondicionesRow
             Dim rowAUDIT_AuditoriasCondicionesRow As AUDIT_AuditoriasCondicionesRow = CType(Me.NewRow,AUDIT_AuditoriasCondicionesRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, Id_auditoria, Id_Condicion, Validacion, Observaciones, CategoriaHallazgo, FechaSolventacion, Comentarios}
+            Dim columnValuesArray() As Object = New Object() {Nothing, Id_auditoria, Id_Condicion, Validacion, Observaciones, CategoriaHallazgo, FechaSolventacion, Comentarios, ConsecRevisiones, fechaVigencia, deptoResponsable, estatus}
             rowAUDIT_AuditoriasCondicionesRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowAUDIT_AuditoriasCondicionesRow)
             Return rowAUDIT_AuditoriasCondicionesRow
@@ -5054,6 +5195,10 @@ Partial Public Class ProductionDataSet
             Me.columnCategoriaHallazgo = MyBase.Columns("CategoriaHallazgo")
             Me.columnFechaSolventacion = MyBase.Columns("FechaSolventacion")
             Me.columnComentarios = MyBase.Columns("Comentarios")
+            Me.columnConsecRevisiones = MyBase.Columns("ConsecRevisiones")
+            Me.columnfechaVigencia = MyBase.Columns("fechaVigencia")
+            Me.columndeptoResponsable = MyBase.Columns("deptoResponsable")
+            Me.columnestatus = MyBase.Columns("estatus")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -5075,6 +5220,14 @@ Partial Public Class ProductionDataSet
             MyBase.Columns.Add(Me.columnFechaSolventacion)
             Me.columnComentarios = New Global.System.Data.DataColumn("Comentarios", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnComentarios)
+            Me.columnConsecRevisiones = New Global.System.Data.DataColumn("ConsecRevisiones", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnConsecRevisiones)
+            Me.columnfechaVigencia = New Global.System.Data.DataColumn("fechaVigencia", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnfechaVigencia)
+            Me.columndeptoResponsable = New Global.System.Data.DataColumn("deptoResponsable", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columndeptoResponsable)
+            Me.columnestatus = New Global.System.Data.DataColumn("estatus", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnestatus)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnId_auditoriaCondicion}, true))
             Me.columnId_auditoriaCondicion.AutoIncrement = true
             Me.columnId_auditoriaCondicion.AutoIncrementSeed = -1
@@ -5172,6 +5325,326 @@ Partial Public Class ProductionDataSet
             Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
             attribute2.Name = "tableTypeName"
             attribute2.FixedValue = "AUDIT_AuditoriasCondicionesDataTable"
+            type.Attributes.Add(attribute2)
+            type.Particle = sequence
+            Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
+            If xs.Contains(dsSchema.TargetNamespace) Then
+                Dim s1 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Dim s2 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Try 
+                    Dim schema As Global.System.Xml.Schema.XmlSchema = Nothing
+                    dsSchema.Write(s1)
+                    Dim schemas As Global.System.Collections.IEnumerator = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator
+                    Do While schemas.MoveNext
+                        schema = CType(schemas.Current,Global.System.Xml.Schema.XmlSchema)
+                        s2.SetLength(0)
+                        schema.Write(s2)
+                        If (s1.Length = s2.Length) Then
+                            s1.Position = 0
+                            s2.Position = 0
+                            
+                            Do While ((s1.Position <> s1.Length)  _
+                                        AndAlso (s1.ReadByte = s2.ReadByte))
+                                
+                                
+                            Loop
+                            If (s1.Position = s1.Length) Then
+                                Return type
+                            End If
+                        End If
+                        
+                    Loop
+                Finally
+                    If (Not (s1) Is Nothing) Then
+                        s1.Close
+                    End If
+                    If (Not (s2) Is Nothing) Then
+                        s2.Close
+                    End If
+                End Try
+            End If
+            xs.Add(dsSchema)
+            Return type
+        End Function
+    End Class
+    
+    '''<summary>
+    '''Represents the strongly named DataTable class.
+    '''</summary>
+    <Global.System.Serializable(),  _
+     Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
+    Partial Public Class AUDIT_ParametrosDDataTable
+        Inherits Global.System.Data.TypedTableBase(Of AUDIT_ParametrosDRow)
+        
+        Private columnid_Parametro As Global.System.Data.DataColumn
+        
+        Private columnDescripcion As Global.System.Data.DataColumn
+        
+        Private columnTipo As Global.System.Data.DataColumn
+        
+        Private columnActivo As Global.System.Data.DataColumn
+        
+        Private columndescripcionCompleta As Global.System.Data.DataColumn
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub New()
+            MyBase.New
+            Me.TableName = "AUDIT_ParametrosD"
+            Me.BeginInit
+            Me.InitClass
+            Me.EndInit
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Sub New(ByVal table As Global.System.Data.DataTable)
+            MyBase.New
+            Me.TableName = table.TableName
+            If (table.CaseSensitive <> table.DataSet.CaseSensitive) Then
+                Me.CaseSensitive = table.CaseSensitive
+            End If
+            If (table.Locale.ToString <> table.DataSet.Locale.ToString) Then
+                Me.Locale = table.Locale
+            End If
+            If (table.Namespace <> table.DataSet.Namespace) Then
+                Me.Namespace = table.Namespace
+            End If
+            Me.Prefix = table.Prefix
+            Me.MinimumCapacity = table.MinimumCapacity
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Sub New(ByVal info As Global.System.Runtime.Serialization.SerializationInfo, ByVal context As Global.System.Runtime.Serialization.StreamingContext)
+            MyBase.New(info, context)
+            Me.InitVars
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property id_ParametroColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnid_Parametro
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property DescripcionColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnDescripcion
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property TipoColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnTipo
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property ActivoColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnActivo
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property descripcionCompletaColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columndescripcionCompleta
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Browsable(false)>  _
+        Public ReadOnly Property Count() As Integer
+            Get
+                Return Me.Rows.Count
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Default ReadOnly Property Item(ByVal index As Integer) As AUDIT_ParametrosDRow
+            Get
+                Return CType(Me.Rows(index),AUDIT_ParametrosDRow)
+            End Get
+        End Property
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Event AUDIT_ParametrosDRowChanging As AUDIT_ParametrosDRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Event AUDIT_ParametrosDRowChanged As AUDIT_ParametrosDRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Event AUDIT_ParametrosDRowDeleting As AUDIT_ParametrosDRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Event AUDIT_ParametrosDRowDeleted As AUDIT_ParametrosDRowChangeEventHandler
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Overloads Sub AddAUDIT_ParametrosDRow(ByVal row As AUDIT_ParametrosDRow)
+            Me.Rows.Add(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Overloads Function AddAUDIT_ParametrosDRow(ByVal Descripcion As String, ByVal Tipo As String, ByVal Activo As Boolean, ByVal descripcionCompleta As String) As AUDIT_ParametrosDRow
+            Dim rowAUDIT_ParametrosDRow As AUDIT_ParametrosDRow = CType(Me.NewRow,AUDIT_ParametrosDRow)
+            Dim columnValuesArray() As Object = New Object() {Nothing, Descripcion, Tipo, Activo, descripcionCompleta}
+            rowAUDIT_ParametrosDRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowAUDIT_ParametrosDRow)
+            Return rowAUDIT_ParametrosDRow
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function FindByid_Parametro(ByVal id_Parametro As Decimal) As AUDIT_ParametrosDRow
+            Return CType(Me.Rows.Find(New Object() {id_Parametro}),AUDIT_ParametrosDRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Overrides Function Clone() As Global.System.Data.DataTable
+            Dim cln As AUDIT_ParametrosDDataTable = CType(MyBase.Clone,AUDIT_ParametrosDDataTable)
+            cln.InitVars
+            Return cln
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
+            Return New AUDIT_ParametrosDDataTable()
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Sub InitVars()
+            Me.columnid_Parametro = MyBase.Columns("id_Parametro")
+            Me.columnDescripcion = MyBase.Columns("Descripcion")
+            Me.columnTipo = MyBase.Columns("Tipo")
+            Me.columnActivo = MyBase.Columns("Activo")
+            Me.columndescripcionCompleta = MyBase.Columns("descripcionCompleta")
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Private Sub InitClass()
+            Me.columnid_Parametro = New Global.System.Data.DataColumn("id_Parametro", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnid_Parametro)
+            Me.columnDescripcion = New Global.System.Data.DataColumn("Descripcion", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnDescripcion)
+            Me.columnTipo = New Global.System.Data.DataColumn("Tipo", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnTipo)
+            Me.columnActivo = New Global.System.Data.DataColumn("Activo", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnActivo)
+            Me.columndescripcionCompleta = New Global.System.Data.DataColumn("descripcionCompleta", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columndescripcionCompleta)
+            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnid_Parametro}, true))
+            Me.columnid_Parametro.AutoIncrement = true
+            Me.columnid_Parametro.AutoIncrementSeed = -1
+            Me.columnid_Parametro.AutoIncrementStep = -1
+            Me.columnid_Parametro.AllowDBNull = false
+            Me.columnid_Parametro.ReadOnly = true
+            Me.columnid_Parametro.Unique = true
+            Me.columnDescripcion.MaxLength = 50
+            Me.columnTipo.MaxLength = 20
+            Me.columndescripcionCompleta.MaxLength = 100
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function NewAUDIT_ParametrosDRow() As AUDIT_ParametrosDRow
+            Return CType(Me.NewRow,AUDIT_ParametrosDRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
+            Return New AUDIT_ParametrosDRow(builder)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Function GetRowType() As Global.System.Type
+            Return GetType(AUDIT_ParametrosDRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanged(e)
+            If (Not (Me.AUDIT_ParametrosDRowChangedEvent) Is Nothing) Then
+                RaiseEvent AUDIT_ParametrosDRowChanged(Me, New AUDIT_ParametrosDRowChangeEvent(CType(e.Row,AUDIT_ParametrosDRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanging(e)
+            If (Not (Me.AUDIT_ParametrosDRowChangingEvent) Is Nothing) Then
+                RaiseEvent AUDIT_ParametrosDRowChanging(Me, New AUDIT_ParametrosDRowChangeEvent(CType(e.Row,AUDIT_ParametrosDRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleted(e)
+            If (Not (Me.AUDIT_ParametrosDRowDeletedEvent) Is Nothing) Then
+                RaiseEvent AUDIT_ParametrosDRowDeleted(Me, New AUDIT_ParametrosDRowChangeEvent(CType(e.Row,AUDIT_ParametrosDRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleting(e)
+            If (Not (Me.AUDIT_ParametrosDRowDeletingEvent) Is Nothing) Then
+                RaiseEvent AUDIT_ParametrosDRowDeleting(Me, New AUDIT_ParametrosDRowChangeEvent(CType(e.Row,AUDIT_ParametrosDRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub RemoveAUDIT_ParametrosDRow(ByVal row As AUDIT_ParametrosDRow)
+            Me.Rows.Remove(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
+            Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
+            Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
+            Dim ds As ProductionDataSet = New ProductionDataSet()
+            Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any1.Namespace = "http://www.w3.org/2001/XMLSchema"
+            any1.MinOccurs = New Decimal(0)
+            any1.MaxOccurs = Decimal.MaxValue
+            any1.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any1)
+            Dim any2 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1"
+            any2.MinOccurs = New Decimal(1)
+            any2.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any2)
+            Dim attribute1 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute1.Name = "namespace"
+            attribute1.FixedValue = ds.Namespace
+            type.Attributes.Add(attribute1)
+            Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute2.Name = "tableTypeName"
+            attribute2.FixedValue = "AUDIT_ParametrosDDataTable"
             type.Attributes.Add(attribute2)
             type.Particle = sequence
             Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
@@ -7748,6 +8221,82 @@ Partial Public Class ProductionDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property folAuditoria() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableAUDIT_Auditorias.folAuditoriaColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'folAuditoria' de la tabla 'AUDIT_Auditorias' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableAUDIT_Auditorias.folAuditoriaColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property nRevInfFinanciera() As Decimal
+            Get
+                Try 
+                    Return CType(Me(Me.tableAUDIT_Auditorias.nRevInfFinancieraColumn),Decimal)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'nRevInfFinanciera' de la tabla 'AUDIT_Auditorias' es DBNu"& _ 
+                            "ll.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableAUDIT_Auditorias.nRevInfFinancieraColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property nRevRepSup() As Decimal
+            Get
+                Try 
+                    Return CType(Me(Me.tableAUDIT_Auditorias.nRevRepSupColumn),Decimal)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'nRevRepSup' de la tabla 'AUDIT_Auditorias' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableAUDIT_Auditorias.nRevRepSupColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property nRevPagare() As Decimal
+            Get
+                Try 
+                    Return CType(Me(Me.tableAUDIT_Auditorias.nRevPagareColumn),Decimal)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'nRevPagare' de la tabla 'AUDIT_Auditorias' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableAUDIT_Auditorias.nRevPagareColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property ncedVerific() As Decimal
+            Get
+                Try 
+                    Return CType(Me(Me.tableAUDIT_Auditorias.ncedVerificColumn),Decimal)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'ncedVerific' de la tabla 'AUDIT_Auditorias' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableAUDIT_Auditorias.ncedVerificColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Function IsAnexoNull() As Boolean
             Return Me.IsNull(Me.tableAUDIT_Auditorias.AnexoColumn)
         End Function
@@ -7852,6 +8401,66 @@ Partial Public Class ProductionDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Sub SetConsecutivoNull()
             Me(Me.tableAUDIT_Auditorias.ConsecutivoColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsfolAuditoriaNull() As Boolean
+            Return Me.IsNull(Me.tableAUDIT_Auditorias.folAuditoriaColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetfolAuditoriaNull()
+            Me(Me.tableAUDIT_Auditorias.folAuditoriaColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsnRevInfFinancieraNull() As Boolean
+            Return Me.IsNull(Me.tableAUDIT_Auditorias.nRevInfFinancieraColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetnRevInfFinancieraNull()
+            Me(Me.tableAUDIT_Auditorias.nRevInfFinancieraColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsnRevRepSupNull() As Boolean
+            Return Me.IsNull(Me.tableAUDIT_Auditorias.nRevRepSupColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetnRevRepSupNull()
+            Me(Me.tableAUDIT_Auditorias.nRevRepSupColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsnRevPagareNull() As Boolean
+            Return Me.IsNull(Me.tableAUDIT_Auditorias.nRevPagareColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetnRevPagareNull()
+            Me(Me.tableAUDIT_Auditorias.nRevPagareColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsncedVerificNull() As Boolean
+            Return Me.IsNull(Me.tableAUDIT_Auditorias.ncedVerificColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetncedVerificNull()
+            Me(Me.tableAUDIT_Auditorias.ncedVerificColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -8427,6 +9036,70 @@ Partial Public Class ProductionDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property ConsecRevisiones() As Decimal
+            Get
+                Try 
+                    Return CType(Me(Me.tableAUDIT_AuditoriasCondiciones.ConsecRevisionesColumn),Decimal)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'ConsecRevisiones' de la tabla 'AUDIT_AuditoriasCondicione"& _ 
+                            "s' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableAUDIT_AuditoriasCondiciones.ConsecRevisionesColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property fechaVigencia() As Date
+            Get
+                Try 
+                    Return CType(Me(Me.tableAUDIT_AuditoriasCondiciones.fechaVigenciaColumn),Date)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'fechaVigencia' de la tabla 'AUDIT_AuditoriasCondiciones' "& _ 
+                            "es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableAUDIT_AuditoriasCondiciones.fechaVigenciaColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property deptoResponsable() As Decimal
+            Get
+                Try 
+                    Return CType(Me(Me.tableAUDIT_AuditoriasCondiciones.deptoResponsableColumn),Decimal)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'deptoResponsable' de la tabla 'AUDIT_AuditoriasCondicione"& _ 
+                            "s' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableAUDIT_AuditoriasCondiciones.deptoResponsableColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property estatus() As Boolean
+            Get
+                Try 
+                    Return CType(Me(Me.tableAUDIT_AuditoriasCondiciones.estatusColumn),Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'estatus' de la tabla 'AUDIT_AuditoriasCondiciones' es DBN"& _ 
+                            "ull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableAUDIT_AuditoriasCondiciones.estatusColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Function IsId_auditoriaNull() As Boolean
             Return Me.IsNull(Me.tableAUDIT_AuditoriasCondiciones.Id_auditoriaColumn)
         End Function
@@ -8507,6 +9180,190 @@ Partial Public Class ProductionDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Sub SetComentariosNull()
             Me(Me.tableAUDIT_AuditoriasCondiciones.ComentariosColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsConsecRevisionesNull() As Boolean
+            Return Me.IsNull(Me.tableAUDIT_AuditoriasCondiciones.ConsecRevisionesColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetConsecRevisionesNull()
+            Me(Me.tableAUDIT_AuditoriasCondiciones.ConsecRevisionesColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsfechaVigenciaNull() As Boolean
+            Return Me.IsNull(Me.tableAUDIT_AuditoriasCondiciones.fechaVigenciaColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetfechaVigenciaNull()
+            Me(Me.tableAUDIT_AuditoriasCondiciones.fechaVigenciaColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsdeptoResponsableNull() As Boolean
+            Return Me.IsNull(Me.tableAUDIT_AuditoriasCondiciones.deptoResponsableColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetdeptoResponsableNull()
+            Me(Me.tableAUDIT_AuditoriasCondiciones.deptoResponsableColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsestatusNull() As Boolean
+            Return Me.IsNull(Me.tableAUDIT_AuditoriasCondiciones.estatusColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetestatusNull()
+            Me(Me.tableAUDIT_AuditoriasCondiciones.estatusColumn) = Global.System.Convert.DBNull
+        End Sub
+    End Class
+    
+    '''<summary>
+    '''Represents strongly named DataRow class.
+    '''</summary>
+    Partial Public Class AUDIT_ParametrosDRow
+        Inherits Global.System.Data.DataRow
+        
+        Private tableAUDIT_ParametrosD As AUDIT_ParametrosDDataTable
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
+            MyBase.New(rb)
+            Me.tableAUDIT_ParametrosD = CType(Me.Table,AUDIT_ParametrosDDataTable)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property id_Parametro() As Decimal
+            Get
+                Return CType(Me(Me.tableAUDIT_ParametrosD.id_ParametroColumn),Decimal)
+            End Get
+            Set
+                Me(Me.tableAUDIT_ParametrosD.id_ParametroColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property Descripcion() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableAUDIT_ParametrosD.DescripcionColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Descripcion' de la tabla 'AUDIT_ParametrosD' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableAUDIT_ParametrosD.DescripcionColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property Tipo() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableAUDIT_ParametrosD.TipoColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Tipo' de la tabla 'AUDIT_ParametrosD' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableAUDIT_ParametrosD.TipoColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property Activo() As Boolean
+            Get
+                Try 
+                    Return CType(Me(Me.tableAUDIT_ParametrosD.ActivoColumn),Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Activo' de la tabla 'AUDIT_ParametrosD' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableAUDIT_ParametrosD.ActivoColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property descripcionCompleta() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableAUDIT_ParametrosD.descripcionCompletaColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'descripcionCompleta' de la tabla 'AUDIT_ParametrosD' es D"& _ 
+                            "BNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableAUDIT_ParametrosD.descripcionCompletaColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsDescripcionNull() As Boolean
+            Return Me.IsNull(Me.tableAUDIT_ParametrosD.DescripcionColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetDescripcionNull()
+            Me(Me.tableAUDIT_ParametrosD.DescripcionColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsTipoNull() As Boolean
+            Return Me.IsNull(Me.tableAUDIT_ParametrosD.TipoColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetTipoNull()
+            Me(Me.tableAUDIT_ParametrosD.TipoColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsActivoNull() As Boolean
+            Return Me.IsNull(Me.tableAUDIT_ParametrosD.ActivoColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetActivoNull()
+            Me(Me.tableAUDIT_ParametrosD.ActivoColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsdescripcionCompletaNull() As Boolean
+            Return Me.IsNull(Me.tableAUDIT_ParametrosD.descripcionCompletaColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetdescripcionCompletaNull()
+            Me(Me.tableAUDIT_ParametrosD.descripcionCompletaColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -8784,6 +9641,42 @@ Partial Public Class ProductionDataSet
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public ReadOnly Property Row() As AUDIT_AuditoriasCondicionesRow
+            Get
+                Return Me.eventRow
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property Action() As Global.System.Data.DataRowAction
+            Get
+                Return Me.eventAction
+            End Get
+        End Property
+    End Class
+    
+    '''<summary>
+    '''Row event argument class
+    '''</summary>
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+    Public Class AUDIT_ParametrosDRowChangeEvent
+        Inherits Global.System.EventArgs
+        
+        Private eventRow As AUDIT_ParametrosDRow
+        
+        Private eventAction As Global.System.Data.DataRowAction
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub New(ByVal row As AUDIT_ParametrosDRow, ByVal action As Global.System.Data.DataRowAction)
+            MyBase.New
+            Me.eventRow = row
+            Me.eventAction = action
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property Row() As AUDIT_ParametrosDRow
             Get
                 Return Me.eventRow
             End Get
@@ -9528,6 +10421,11 @@ Namespace ProductionDataSetTableAdapters
             tableMapping.ColumnMappings.Add("Estatus", "Estatus")
             tableMapping.ColumnMappings.Add("Usuario", "Usuario")
             tableMapping.ColumnMappings.Add("Consecutivo", "Consecutivo")
+            tableMapping.ColumnMappings.Add("folAuditoria", "folAuditoria")
+            tableMapping.ColumnMappings.Add("nRevInfFinanciera", "nRevInfFinanciera")
+            tableMapping.ColumnMappings.Add("nRevRepSup", "nRevRepSup")
+            tableMapping.ColumnMappings.Add("nRevPagare", "nRevPagare")
+            tableMapping.ColumnMappings.Add("ncedVerific", "ncedVerific")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
@@ -9541,7 +10439,14 @@ Namespace ProductionDataSetTableAdapters
                 "] = @Original_FechaRelizacion)) AND ((@IsNull_Estatus = 1 AND [Estatus] IS NULL)"& _ 
                 " OR ([Estatus] = @Original_Estatus)) AND ((@IsNull_Usuario = 1 AND [Usuario] IS "& _ 
                 "NULL) OR ([Usuario] = @Original_Usuario)) AND ((@IsNull_Consecutivo = 1 AND [Con"& _ 
-                "secutivo] IS NULL) OR ([Consecutivo] = @Original_Consecutivo)))"
+                "secutivo] IS NULL) OR ([Consecutivo] = @Original_Consecutivo)) AND ((@IsNull_fol"& _ 
+                "Auditoria = 1 AND [folAuditoria] IS NULL) OR ([folAuditoria] = @Original_folAudi"& _ 
+                "toria)) AND ((@IsNull_nRevInfFinanciera = 1 AND [nRevInfFinanciera] IS NULL) OR "& _ 
+                "([nRevInfFinanciera] = @Original_nRevInfFinanciera)) AND ((@IsNull_nRevRepSup = "& _ 
+                "1 AND [nRevRepSup] IS NULL) OR ([nRevRepSup] = @Original_nRevRepSup)) AND ((@IsN"& _ 
+                "ull_nRevPagare = 1 AND [nRevPagare] IS NULL) OR ([nRevPagare] = @Original_nRevPa"& _ 
+                "gare)) AND ((@IsNull_ncedVerific = 1 AND [ncedVerific] IS NULL) OR ([ncedVerific"& _ 
+                "] = @Original_ncedVerific)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_id_Auditoria", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 0, "id_Auditoria", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Anexo", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Anexo", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
@@ -9560,15 +10465,27 @@ Namespace ProductionDataSetTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Usuario", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Usuario", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Consecutivo", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Consecutivo", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Consecutivo", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Consecutivo", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_folAuditoria", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "folAuditoria", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_folAuditoria", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "folAuditoria", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_nRevInfFinanciera", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "nRevInfFinanciera", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_nRevInfFinanciera", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 0, "nRevInfFinanciera", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_nRevRepSup", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "nRevRepSup", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_nRevRepSup", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 0, "nRevRepSup", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_nRevPagare", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "nRevPagare", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_nRevPagare", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 0, "nRevPagare", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ncedVerific", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ncedVerific", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ncedVerific", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 0, "ncedVerific", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
             Me._adapter.InsertCommand.CommandText = "INSERT INTO [AUDIT_Auditorias] ([Anexo], [Ciclo], [FechaCreacion], [UltimaActuali"& _ 
-                "zacion], [FechaRelizacion], [Obervaciones], [Estatus], [Usuario], [Consecutivo])"& _ 
+                "zacion], [FechaRelizacion], [Obervaciones], [Estatus], [Usuario], [Consecutivo],"& _ 
+                " [folAuditoria], [nRevInfFinanciera], [nRevRepSup], [nRevPagare], [ncedVerific])"& _ 
                 " VALUES (@Anexo, @Ciclo, @FechaCreacion, @UltimaActualizacion, @FechaRelizacion,"& _ 
-                " @Obervaciones, @Estatus, @Usuario, @Consecutivo);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT id_Auditoria, Anexo, "& _ 
-                "Ciclo, FechaCreacion, UltimaActualizacion, FechaRelizacion, Obervaciones, Estatu"& _ 
-                "s, Usuario, Consecutivo FROM AUDIT_Auditorias WHERE (id_Auditoria = SCOPE_IDENTI"& _ 
-                "TY())"
+                " @Obervaciones, @Estatus, @Usuario, @Consecutivo, @folAuditoria, @nRevInfFinanci"& _ 
+                "era, @nRevRepSup, @nRevPagare, @ncedVerific);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT id_Auditoria, Anexo, Ciclo"& _ 
+                ", FechaCreacion, UltimaActualizacion, FechaRelizacion, Obervaciones, Estatus, Us"& _ 
+                "uario, Consecutivo, folAuditoria, nRevInfFinanciera, nRevRepSup, nRevPagare, nce"& _ 
+                "dVerific FROM AUDIT_Auditorias WHERE (id_Auditoria = SCOPE_IDENTITY())"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Anexo", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Anexo", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Ciclo", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Ciclo", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -9579,12 +10496,19 @@ Namespace ProductionDataSetTableAdapters
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Estatus", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Estatus", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Usuario", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Usuario", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Consecutivo", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Consecutivo", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@folAuditoria", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "folAuditoria", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@nRevInfFinanciera", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 0, "nRevInfFinanciera", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@nRevRepSup", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 0, "nRevRepSup", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@nRevPagare", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 0, "nRevPagare", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ncedVerific", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 0, "ncedVerific", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
             Me._adapter.UpdateCommand.CommandText = "UPDATE [AUDIT_Auditorias] SET [Anexo] = @Anexo, [Ciclo] = @Ciclo, [FechaCreacion]"& _ 
                 " = @FechaCreacion, [UltimaActualizacion] = @UltimaActualizacion, [FechaRelizacio"& _ 
                 "n] = @FechaRelizacion, [Obervaciones] = @Obervaciones, [Estatus] = @Estatus, [Us"& _ 
-                "uario] = @Usuario, [Consecutivo] = @Consecutivo WHERE (([id_Auditoria] = @Origin"& _ 
+                "uario] = @Usuario, [Consecutivo] = @Consecutivo, [folAuditoria] = @folAuditoria,"& _ 
+                " [nRevInfFinanciera] = @nRevInfFinanciera, [nRevRepSup] = @nRevRepSup, [nRevPaga"& _ 
+                "re] = @nRevPagare, [ncedVerific] = @ncedVerific WHERE (([id_Auditoria] = @Origin"& _ 
                 "al_id_Auditoria) AND ((@IsNull_Anexo = 1 AND [Anexo] IS NULL) OR ([Anexo] = @Ori"& _ 
                 "ginal_Anexo)) AND ((@IsNull_Ciclo = 1 AND [Ciclo] IS NULL) OR ([Ciclo] = @Origin"& _ 
                 "al_Ciclo)) AND ((@IsNull_FechaCreacion = 1 AND [FechaCreacion] IS NULL) OR ([Fec"& _ 
@@ -9595,9 +10519,16 @@ Namespace ProductionDataSetTableAdapters
                 "[Estatus] IS NULL) OR ([Estatus] = @Original_Estatus)) AND ((@IsNull_Usuario = 1"& _ 
                 " AND [Usuario] IS NULL) OR ([Usuario] = @Original_Usuario)) AND ((@IsNull_Consec"& _ 
                 "utivo = 1 AND [Consecutivo] IS NULL) OR ([Consecutivo] = @Original_Consecutivo))"& _ 
-                ");"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT id_Auditoria, Anexo, Ciclo, FechaCreacion, UltimaActualizacion, Fecha"& _ 
-                "Relizacion, Obervaciones, Estatus, Usuario, Consecutivo FROM AUDIT_Auditorias WH"& _ 
-                "ERE (id_Auditoria = @id_Auditoria)"
+                " AND ((@IsNull_folAuditoria = 1 AND [folAuditoria] IS NULL) OR ([folAuditoria] ="& _ 
+                " @Original_folAuditoria)) AND ((@IsNull_nRevInfFinanciera = 1 AND [nRevInfFinanc"& _ 
+                "iera] IS NULL) OR ([nRevInfFinanciera] = @Original_nRevInfFinanciera)) AND ((@Is"& _ 
+                "Null_nRevRepSup = 1 AND [nRevRepSup] IS NULL) OR ([nRevRepSup] = @Original_nRevR"& _ 
+                "epSup)) AND ((@IsNull_nRevPagare = 1 AND [nRevPagare] IS NULL) OR ([nRevPagare] "& _ 
+                "= @Original_nRevPagare)) AND ((@IsNull_ncedVerific = 1 AND [ncedVerific] IS NULL"& _ 
+                ") OR ([ncedVerific] = @Original_ncedVerific)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT id_Auditoria, Anexo, Cic"& _ 
+                "lo, FechaCreacion, UltimaActualizacion, FechaRelizacion, Obervaciones, Estatus, "& _ 
+                "Usuario, Consecutivo, folAuditoria, nRevInfFinanciera, nRevRepSup, nRevPagare, n"& _ 
+                "cedVerific FROM AUDIT_Auditorias WHERE (id_Auditoria = @id_Auditoria)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Anexo", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Anexo", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Ciclo", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Ciclo", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -9608,6 +10539,11 @@ Namespace ProductionDataSetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Estatus", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Estatus", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Usuario", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Usuario", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Consecutivo", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Consecutivo", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@folAuditoria", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "folAuditoria", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@nRevInfFinanciera", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 0, "nRevInfFinanciera", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@nRevRepSup", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 0, "nRevRepSup", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@nRevPagare", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 0, "nRevPagare", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ncedVerific", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 0, "ncedVerific", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_id_Auditoria", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 0, "id_Auditoria", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Anexo", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Anexo", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Anexo", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Anexo", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
@@ -9625,6 +10561,16 @@ Namespace ProductionDataSetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Usuario", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Usuario", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Consecutivo", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Consecutivo", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Consecutivo", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Consecutivo", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_folAuditoria", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "folAuditoria", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_folAuditoria", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "folAuditoria", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_nRevInfFinanciera", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "nRevInfFinanciera", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_nRevInfFinanciera", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 0, "nRevInfFinanciera", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_nRevRepSup", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "nRevRepSup", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_nRevRepSup", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 0, "nRevRepSup", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_nRevPagare", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "nRevPagare", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_nRevPagare", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 0, "nRevPagare", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ncedVerific", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ncedVerific", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ncedVerific", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 0, "ncedVerific", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@id_Auditoria", Global.System.Data.SqlDbType.[Decimal], 9, Global.System.Data.ParameterDirection.Input, 18, 0, "id_Auditoria", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
@@ -9642,8 +10588,9 @@ Namespace ProductionDataSetTableAdapters
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT        id_Auditoria, Anexo, Ciclo, FechaCreacion, UltimaActualizacion, Fec"& _ 
-                "haRelizacion, Obervaciones, Estatus, Usuario, Consecutivo"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            AUDIT"& _ 
-                "_Auditorias"
+                "haRelizacion, Obervaciones, Estatus, Usuario, Consecutivo, folAuditoria, nRevInf"& _ 
+                "Financiera, nRevRepSup, nRevPagare, ncedVerific"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            AUDIT_Auditoria"& _ 
+                "s"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(1).Connection = Me.Connection
@@ -9654,15 +10601,17 @@ Namespace ProductionDataSetTableAdapters
             Me._commandCollection(2) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(2).Connection = Me.Connection
             Me._commandCollection(2).CommandText = "SELECT Anexo, Ciclo, Consecutivo, Estatus, FechaCreacion, FechaRelizacion, Oberva"& _ 
-                "ciones, UltimaActualizacion, Usuario, id_Auditoria FROM AUDIT_Auditorias WHERE ("& _ 
-                "Anexo = @Anexo) ORDER BY id_Auditoria, Consecutivo"
+                "ciones, UltimaActualizacion, Usuario, folAuditoria, id_Auditoria, nRevInfFinanci"& _ 
+                "era, nRevPagare, nRevRepSup, ncedVerific FROM AUDIT_Auditorias WHERE (Anexo = @A"& _ 
+                "nexo) ORDER BY id_Auditoria, Consecutivo"
             Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Anexo", Global.System.Data.SqlDbType.NVarChar, 9, Global.System.Data.ParameterDirection.Input, 0, 0, "Anexo", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(3) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(3).Connection = Me.Connection
-            Me._commandCollection(3).CommandText = "SELECT        id_Auditoria, Anexo, Ciclo, FechaCreacion, UltimaActualizacion, Fec"& _ 
-                "haRelizacion, Obervaciones, Estatus, Usuario, Consecutivo"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            AUDIT"& _ 
-                "_Auditorias"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (Anexo = @Anexo) AND (Consecutivo = @Consecutivo)"
+            Me._commandCollection(3).CommandText = "SELECT Anexo, Ciclo, Consecutivo, Estatus, FechaCreacion, FechaRelizacion, Oberva"& _ 
+                "ciones, UltimaActualizacion, Usuario, folAuditoria, id_Auditoria, nRevInfFinanci"& _ 
+                "era, nRevPagare, nRevRepSup, ncedVerific FROM AUDIT_Auditorias WHERE (Anexo = @A"& _ 
+                "nexo) AND (Consecutivo = @Consecutivo)"
             Me._commandCollection(3).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Anexo", Global.System.Data.SqlDbType.NVarChar, 9, Global.System.Data.ParameterDirection.Input, 0, 0, "Anexo", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Consecutivo", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "Consecutivo", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -9822,7 +10771,7 @@ Namespace ProductionDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_id_Auditoria As Decimal, ByVal Original_Anexo As String, ByVal Original_Ciclo As String, ByVal Original_FechaCreacion As Global.System.Nullable(Of Date), ByVal Original_UltimaActualizacion As Global.System.Nullable(Of Date), ByVal Original_FechaRelizacion As Global.System.Nullable(Of Date), ByVal Original_Estatus As String, ByVal Original_Usuario As String, ByVal Original_Consecutivo As Global.System.Nullable(Of Integer)) As Integer
+        Public Overloads Overridable Function Delete(ByVal Original_id_Auditoria As Decimal, ByVal Original_Anexo As String, ByVal Original_Ciclo As String, ByVal Original_FechaCreacion As Global.System.Nullable(Of Date), ByVal Original_UltimaActualizacion As Global.System.Nullable(Of Date), ByVal Original_FechaRelizacion As Global.System.Nullable(Of Date), ByVal Original_Estatus As String, ByVal Original_Usuario As String, ByVal Original_Consecutivo As Global.System.Nullable(Of Integer), ByVal Original_folAuditoria As String, ByVal Original_nRevInfFinanciera As Global.System.Nullable(Of Decimal), ByVal Original_nRevRepSup As Global.System.Nullable(Of Decimal), ByVal Original_nRevPagare As Global.System.Nullable(Of Decimal), ByVal Original_ncedVerific As Global.System.Nullable(Of Decimal)) As Integer
             Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_id_Auditoria,Decimal)
             If (Original_Anexo Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(1).Value = CType(1,Object)
@@ -9880,6 +10829,41 @@ Namespace ProductionDataSetTableAdapters
                 Me.Adapter.DeleteCommand.Parameters(15).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(16).Value = Global.System.DBNull.Value
             End If
+            If (Original_folAuditoria Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(17).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(18).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(17).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(18).Value = CType(Original_folAuditoria,String)
+            End If
+            If (Original_nRevInfFinanciera.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(19).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(20).Value = CType(Original_nRevInfFinanciera.Value,Decimal)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(19).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(20).Value = Global.System.DBNull.Value
+            End If
+            If (Original_nRevRepSup.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(21).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(22).Value = CType(Original_nRevRepSup.Value,Decimal)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(21).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(22).Value = Global.System.DBNull.Value
+            End If
+            If (Original_nRevPagare.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(23).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(24).Value = CType(Original_nRevPagare.Value,Decimal)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(23).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(24).Value = Global.System.DBNull.Value
+            End If
+            If (Original_ncedVerific.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(25).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(26).Value = CType(Original_ncedVerific.Value,Decimal)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(25).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(26).Value = Global.System.DBNull.Value
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -9899,7 +10883,7 @@ Namespace ProductionDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal Anexo As String, ByVal Ciclo As String, ByVal FechaCreacion As Global.System.Nullable(Of Date), ByVal UltimaActualizacion As Global.System.Nullable(Of Date), ByVal FechaRelizacion As Global.System.Nullable(Of Date), ByVal Obervaciones As String, ByVal Estatus As String, ByVal Usuario As String, ByVal Consecutivo As Global.System.Nullable(Of Integer)) As Integer
+        Public Overloads Overridable Function Insert(ByVal Anexo As String, ByVal Ciclo As String, ByVal FechaCreacion As Global.System.Nullable(Of Date), ByVal UltimaActualizacion As Global.System.Nullable(Of Date), ByVal FechaRelizacion As Global.System.Nullable(Of Date), ByVal Obervaciones As String, ByVal Estatus As String, ByVal Usuario As String, ByVal Consecutivo As Global.System.Nullable(Of Integer), ByVal folAuditoria As String, ByVal nRevInfFinanciera As Global.System.Nullable(Of Decimal), ByVal nRevRepSup As Global.System.Nullable(Of Decimal), ByVal nRevPagare As Global.System.Nullable(Of Decimal), ByVal ncedVerific As Global.System.Nullable(Of Decimal)) As Integer
             If (Anexo Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(0).Value = Global.System.DBNull.Value
             Else
@@ -9945,6 +10929,31 @@ Namespace ProductionDataSetTableAdapters
             Else
                 Me.Adapter.InsertCommand.Parameters(8).Value = Global.System.DBNull.Value
             End If
+            If (folAuditoria Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(9).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(9).Value = CType(folAuditoria,String)
+            End If
+            If (nRevInfFinanciera.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(10).Value = CType(nRevInfFinanciera.Value,Decimal)
+            Else
+                Me.Adapter.InsertCommand.Parameters(10).Value = Global.System.DBNull.Value
+            End If
+            If (nRevRepSup.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(11).Value = CType(nRevRepSup.Value,Decimal)
+            Else
+                Me.Adapter.InsertCommand.Parameters(11).Value = Global.System.DBNull.Value
+            End If
+            If (nRevPagare.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(12).Value = CType(nRevPagare.Value,Decimal)
+            Else
+                Me.Adapter.InsertCommand.Parameters(12).Value = Global.System.DBNull.Value
+            End If
+            If (ncedVerific.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(13).Value = CType(ncedVerific.Value,Decimal)
+            Else
+                Me.Adapter.InsertCommand.Parameters(13).Value = Global.System.DBNull.Value
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -9974,6 +10983,11 @@ Namespace ProductionDataSetTableAdapters
                     ByVal Estatus As String,  _
                     ByVal Usuario As String,  _
                     ByVal Consecutivo As Global.System.Nullable(Of Integer),  _
+                    ByVal folAuditoria As String,  _
+                    ByVal nRevInfFinanciera As Global.System.Nullable(Of Decimal),  _
+                    ByVal nRevRepSup As Global.System.Nullable(Of Decimal),  _
+                    ByVal nRevPagare As Global.System.Nullable(Of Decimal),  _
+                    ByVal ncedVerific As Global.System.Nullable(Of Decimal),  _
                     ByVal Original_id_Auditoria As Decimal,  _
                     ByVal Original_Anexo As String,  _
                     ByVal Original_Ciclo As String,  _
@@ -9983,6 +10997,11 @@ Namespace ProductionDataSetTableAdapters
                     ByVal Original_Estatus As String,  _
                     ByVal Original_Usuario As String,  _
                     ByVal Original_Consecutivo As Global.System.Nullable(Of Integer),  _
+                    ByVal Original_folAuditoria As String,  _
+                    ByVal Original_nRevInfFinanciera As Global.System.Nullable(Of Decimal),  _
+                    ByVal Original_nRevRepSup As Global.System.Nullable(Of Decimal),  _
+                    ByVal Original_nRevPagare As Global.System.Nullable(Of Decimal),  _
+                    ByVal Original_ncedVerific As Global.System.Nullable(Of Decimal),  _
                     ByVal id_Auditoria As Decimal) As Integer
             If (Anexo Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(0).Value = Global.System.DBNull.Value
@@ -10029,64 +11048,124 @@ Namespace ProductionDataSetTableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(8).Value = Global.System.DBNull.Value
             End If
-            Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Original_id_Auditoria,Decimal)
-            If (Original_Anexo Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(11).Value = Global.System.DBNull.Value
+            If (folAuditoria Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(9).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(Original_Anexo,String)
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(folAuditoria,String)
+            End If
+            If (nRevInfFinanciera.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(nRevInfFinanciera.Value,Decimal)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(10).Value = Global.System.DBNull.Value
+            End If
+            If (nRevRepSup.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(nRevRepSup.Value,Decimal)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(11).Value = Global.System.DBNull.Value
+            End If
+            If (nRevPagare.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(nRevPagare.Value,Decimal)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(12).Value = Global.System.DBNull.Value
+            End If
+            If (ncedVerific.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(ncedVerific.Value,Decimal)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(13).Value = Global.System.DBNull.Value
+            End If
+            Me.Adapter.UpdateCommand.Parameters(14).Value = CType(Original_id_Auditoria,Decimal)
+            If (Original_Anexo Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(16).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(Original_Anexo,String)
             End If
             If (Original_Ciclo Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(13).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(18).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(Original_Ciclo,String)
+                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(Original_Ciclo,String)
             End If
             If (Original_FechaCreacion.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(Original_FechaCreacion.Value,Date)
+                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(Original_FechaCreacion.Value,Date)
             Else
-                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(15).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(20).Value = Global.System.DBNull.Value
             End If
             If (Original_UltimaActualizacion.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(Original_UltimaActualizacion.Value,Date)
+                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(22).Value = CType(Original_UltimaActualizacion.Value,Date)
             Else
-                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(17).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(22).Value = Global.System.DBNull.Value
             End If
             If (Original_FechaRelizacion.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(Original_FechaRelizacion.Value,Date)
+                Me.Adapter.UpdateCommand.Parameters(23).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(24).Value = CType(Original_FechaRelizacion.Value,Date)
             Else
-                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(19).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(23).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(24).Value = Global.System.DBNull.Value
             End If
             If (Original_Estatus Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(21).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(25).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(26).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(Original_Estatus,String)
+                Me.Adapter.UpdateCommand.Parameters(25).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(26).Value = CType(Original_Estatus,String)
             End If
             If (Original_Usuario Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(22).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(23).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(27).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(28).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(22).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(23).Value = CType(Original_Usuario,String)
+                Me.Adapter.UpdateCommand.Parameters(27).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(28).Value = CType(Original_Usuario,String)
             End If
             If (Original_Consecutivo.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(24).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(25).Value = CType(Original_Consecutivo.Value,Integer)
+                Me.Adapter.UpdateCommand.Parameters(29).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(30).Value = CType(Original_Consecutivo.Value,Integer)
             Else
-                Me.Adapter.UpdateCommand.Parameters(24).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(25).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(29).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(30).Value = Global.System.DBNull.Value
             End If
-            Me.Adapter.UpdateCommand.Parameters(26).Value = CType(id_Auditoria,Decimal)
+            If (Original_folAuditoria Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(31).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(32).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(31).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(32).Value = CType(Original_folAuditoria,String)
+            End If
+            If (Original_nRevInfFinanciera.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(33).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(34).Value = CType(Original_nRevInfFinanciera.Value,Decimal)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(33).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(34).Value = Global.System.DBNull.Value
+            End If
+            If (Original_nRevRepSup.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(35).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(36).Value = CType(Original_nRevRepSup.Value,Decimal)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(35).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(36).Value = Global.System.DBNull.Value
+            End If
+            If (Original_nRevPagare.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(37).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(38).Value = CType(Original_nRevPagare.Value,Decimal)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(37).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(38).Value = Global.System.DBNull.Value
+            End If
+            If (Original_ncedVerific.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(39).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(40).Value = CType(Original_ncedVerific.Value,Decimal)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(39).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(40).Value = Global.System.DBNull.Value
+            End If
+            Me.Adapter.UpdateCommand.Parameters(41).Value = CType(id_Auditoria,Decimal)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -10116,6 +11195,11 @@ Namespace ProductionDataSetTableAdapters
                     ByVal Estatus As String,  _
                     ByVal Usuario As String,  _
                     ByVal Consecutivo As Global.System.Nullable(Of Integer),  _
+                    ByVal folAuditoria As String,  _
+                    ByVal nRevInfFinanciera As Global.System.Nullable(Of Decimal),  _
+                    ByVal nRevRepSup As Global.System.Nullable(Of Decimal),  _
+                    ByVal nRevPagare As Global.System.Nullable(Of Decimal),  _
+                    ByVal ncedVerific As Global.System.Nullable(Of Decimal),  _
                     ByVal Original_id_Auditoria As Decimal,  _
                     ByVal Original_Anexo As String,  _
                     ByVal Original_Ciclo As String,  _
@@ -10124,8 +11208,13 @@ Namespace ProductionDataSetTableAdapters
                     ByVal Original_FechaRelizacion As Global.System.Nullable(Of Date),  _
                     ByVal Original_Estatus As String,  _
                     ByVal Original_Usuario As String,  _
-                    ByVal Original_Consecutivo As Global.System.Nullable(Of Integer)) As Integer
-            Return Me.Update(Anexo, Ciclo, FechaCreacion, UltimaActualizacion, FechaRelizacion, Obervaciones, Estatus, Usuario, Consecutivo, Original_id_Auditoria, Original_Anexo, Original_Ciclo, Original_FechaCreacion, Original_UltimaActualizacion, Original_FechaRelizacion, Original_Estatus, Original_Usuario, Original_Consecutivo, Original_id_Auditoria)
+                    ByVal Original_Consecutivo As Global.System.Nullable(Of Integer),  _
+                    ByVal Original_folAuditoria As String,  _
+                    ByVal Original_nRevInfFinanciera As Global.System.Nullable(Of Decimal),  _
+                    ByVal Original_nRevRepSup As Global.System.Nullable(Of Decimal),  _
+                    ByVal Original_nRevPagare As Global.System.Nullable(Of Decimal),  _
+                    ByVal Original_ncedVerific As Global.System.Nullable(Of Decimal)) As Integer
+            Return Me.Update(Anexo, Ciclo, FechaCreacion, UltimaActualizacion, FechaRelizacion, Obervaciones, Estatus, Usuario, Consecutivo, folAuditoria, nRevInfFinanciera, nRevRepSup, nRevPagare, ncedVerific, Original_id_Auditoria, Original_Anexo, Original_Ciclo, Original_FechaCreacion, Original_UltimaActualizacion, Original_FechaRelizacion, Original_Estatus, Original_Usuario, Original_Consecutivo, Original_folAuditoria, Original_nRevInfFinanciera, Original_nRevRepSup, Original_nRevPagare, Original_ncedVerific, Original_id_Auditoria)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -10869,12 +11958,18 @@ Namespace ProductionDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(1) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT        id_Condicion, Condicion, Tipo, Activo"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            AUDIT_Condic"& _ 
-                "iones"
+                "iones"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (Activo = 1)"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(1).Connection = Me.Connection
+            Me._commandCollection(1).CommandText = "SELECT        ISNULL(MAX(Condicion), 0) AS Condicion"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            AUDIT_Condi"& _ 
+                "ciones"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (id_Condicion = @id_Condicion)"
+            Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@id_Condicion", Global.System.Data.SqlDbType.[Decimal], 9, Global.System.Data.ParameterDirection.Input, 18, 0, "id_Condicion", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -11071,6 +12166,33 @@ Namespace ProductionDataSetTableAdapters
         Public Overloads Overridable Function Update(ByVal Condicion As String, ByVal Tipo As String, ByVal Activo As Global.System.Nullable(Of Boolean), ByVal Original_id_Condicion As Decimal, ByVal Original_Condicion As String, ByVal Original_Tipo As String, ByVal Original_Activo As Global.System.Nullable(Of Boolean)) As Integer
             Return Me.Update(Condicion, Tipo, Activo, Original_id_Condicion, Original_Condicion, Original_Tipo, Original_Activo, Original_id_Condicion)
         End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function ObtCond_ScalarQuery(ByVal id_Condicion As Decimal) As String
+            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(1)
+            command.Parameters(0).Value = CType(id_Condicion,Decimal)
+            Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                command.Connection.Open
+            End If
+            Dim returnValue As Object
+            Try 
+                returnValue = command.ExecuteScalar
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    command.Connection.Close
+                End If
+            End Try
+            If ((returnValue Is Nothing)  _
+                        OrElse (returnValue.GetType Is GetType(Global.System.DBNull))) Then
+                Return Nothing
+            Else
+                Return CType(returnValue,String)
+            End If
+        End Function
     End Class
     
     '''<summary>
@@ -11261,12 +12383,18 @@ Namespace ProductionDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(1) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT        id_Parametro, Descripcion, Tipo, Activo"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            AUDIT_Para"& _ 
                 "metros"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (Tipo = 'HALLAZGO')"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(1).Connection = Me.Connection
+            Me._commandCollection(1).CommandText = "SELECT        ISNULL(MAX(Descripcion), 0) AS Descripcion"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            AUDIT_P"& _ 
+                "arametros"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (id_Parametro = @Parametro)"
+            Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Parametro", Global.System.Data.SqlDbType.[Decimal], 9, Global.System.Data.ParameterDirection.Input, 18, 0, "id_Parametro", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -11463,6 +12591,33 @@ Namespace ProductionDataSetTableAdapters
         Public Overloads Overridable Function Update(ByVal Descripcion As String, ByVal Tipo As String, ByVal Activo As Global.System.Nullable(Of Boolean), ByVal Original_id_Parametro As Decimal, ByVal Original_Descripcion As String, ByVal Original_Tipo As String, ByVal Original_Activo As Global.System.Nullable(Of Boolean)) As Integer
             Return Me.Update(Descripcion, Tipo, Activo, Original_id_Parametro, Original_Descripcion, Original_Tipo, Original_Activo, Original_id_Parametro)
         End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function ObtDesc_ScalarQuery(ByVal Parametro As Decimal) As Object
+            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(1)
+            command.Parameters(0).Value = CType(Parametro,Decimal)
+            Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                command.Connection.Open
+            End If
+            Dim returnValue As Object
+            Try 
+                returnValue = command.ExecuteScalar
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    command.Connection.Close
+                End If
+            End Try
+            If ((returnValue Is Nothing)  _
+                        OrElse (returnValue.GetType Is GetType(Global.System.DBNull))) Then
+                Return Nothing
+            Else
+                Return CType(returnValue,Object)
+            End If
+        End Function
     End Class
     
     '''<summary>
@@ -11653,12 +12808,18 @@ Namespace ProductionDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(1) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT        id_Parametro, Descripcion, Tipo, Activo"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            AUDIT_Para"& _ 
                 "metros"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (Tipo = 'VALIDACION')"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(1).Connection = Me.Connection
+            Me._commandCollection(1).CommandText = "SELECT        ISNULL(MAX(Descripcion), 0) AS Descripcion"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            AUDIT_P"& _ 
+                "arametros"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (id_Parametro = @Parametro)"
+            Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Parametro", Global.System.Data.SqlDbType.[Decimal], 9, Global.System.Data.ParameterDirection.Input, 18, 0, "id_Parametro", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -11855,6 +13016,33 @@ Namespace ProductionDataSetTableAdapters
         Public Overloads Overridable Function Update(ByVal Descripcion As String, ByVal Tipo As String, ByVal Activo As Global.System.Nullable(Of Boolean), ByVal Original_id_Parametro As Decimal, ByVal Original_Descripcion As String, ByVal Original_Tipo As String, ByVal Original_Activo As Global.System.Nullable(Of Boolean)) As Integer
             Return Me.Update(Descripcion, Tipo, Activo, Original_id_Parametro, Original_Descripcion, Original_Tipo, Original_Activo, Original_id_Parametro)
         End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function ObtDesc_ScalarQuery(ByVal Parametro As Decimal) As Object
+            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(1)
+            command.Parameters(0).Value = CType(Parametro,Decimal)
+            Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                command.Connection.Open
+            End If
+            Dim returnValue As Object
+            Try 
+                returnValue = command.ExecuteScalar
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    command.Connection.Close
+                End If
+            End Try
+            If ((returnValue Is Nothing)  _
+                        OrElse (returnValue.GetType Is GetType(Global.System.DBNull))) Then
+                Return Nothing
+            Else
+                Return CType(returnValue,Object)
+            End If
+        End Function
     End Class
     
     '''<summary>
@@ -11992,6 +13180,10 @@ Namespace ProductionDataSetTableAdapters
             tableMapping.ColumnMappings.Add("CategoriaHallazgo", "CategoriaHallazgo")
             tableMapping.ColumnMappings.Add("FechaSolventacion", "FechaSolventacion")
             tableMapping.ColumnMappings.Add("Comentarios", "Comentarios")
+            tableMapping.ColumnMappings.Add("ConsecRevisiones", "ConsecRevisiones")
+            tableMapping.ColumnMappings.Add("fechaVigencia", "fechaVigencia")
+            tableMapping.ColumnMappings.Add("deptoResponsable", "deptoResponsable")
+            tableMapping.ColumnMappings.Add("estatus", "estatus")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
@@ -12003,7 +13195,12 @@ Namespace ProductionDataSetTableAdapters
                 "l_Validacion)) AND ((@IsNull_CategoriaHallazgo = 1 AND [CategoriaHallazgo] IS NU"& _ 
                 "LL) OR ([CategoriaHallazgo] = @Original_CategoriaHallazgo)) AND ((@IsNull_FechaS"& _ 
                 "olventacion = 1 AND [FechaSolventacion] IS NULL) OR ([FechaSolventacion] = @Orig"& _ 
-                "inal_FechaSolventacion)))"
+                "inal_FechaSolventacion)) AND ((@IsNull_ConsecRevisiones = 1 AND [ConsecRevisione"& _ 
+                "s] IS NULL) OR ([ConsecRevisiones] = @Original_ConsecRevisiones)) AND ((@IsNull_"& _ 
+                "fechaVigencia = 1 AND [fechaVigencia] IS NULL) OR ([fechaVigencia] = @Original_f"& _ 
+                "echaVigencia)) AND ((@IsNull_deptoResponsable = 1 AND [deptoResponsable] IS NULL"& _ 
+                ") OR ([deptoResponsable] = @Original_deptoResponsable)) AND ((@IsNull_estatus = "& _ 
+                "1 AND [estatus] IS NULL) OR ([estatus] = @Original_estatus)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Id_auditoriaCondicion", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 0, "Id_auditoriaCondicion", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Id_auditoria", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Id_auditoria", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
@@ -12016,15 +13213,25 @@ Namespace ProductionDataSetTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_CategoriaHallazgo", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CategoriaHallazgo", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_FechaSolventacion", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "FechaSolventacion", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_FechaSolventacion", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "FechaSolventacion", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ConsecRevisiones", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ConsecRevisiones", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ConsecRevisiones", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 0, "ConsecRevisiones", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_fechaVigencia", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "fechaVigencia", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_fechaVigencia", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "fechaVigencia", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_deptoResponsable", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "deptoResponsable", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_deptoResponsable", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 0, "deptoResponsable", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_estatus", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "estatus", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_estatus", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "estatus", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
             Me._adapter.InsertCommand.CommandText = "INSERT INTO [AUDIT_AuditoriasCondiciones] ([Id_auditoria], [Id_Condicion], [Valid"& _ 
                 "acion], [Observaciones], [CategoriaHallazgo], [FechaSolventacion], [Comentarios]"& _ 
-                ") VALUES (@Id_auditoria, @Id_Condicion, @Validacion, @Observaciones, @CategoriaH"& _ 
-                "allazgo, @FechaSolventacion, @Comentarios);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT Id_auditoriaCondicion, Id_au"& _ 
-                "ditoria, Id_Condicion, Validacion, Observaciones, CategoriaHallazgo, FechaSolven"& _ 
-                "tacion, Comentarios FROM AUDIT_AuditoriasCondiciones WHERE (Id_auditoriaCondicio"& _ 
-                "n = SCOPE_IDENTITY())"
+                ", [ConsecRevisiones], [fechaVigencia], [deptoResponsable], [estatus]) VALUES (@I"& _ 
+                "d_auditoria, @Id_Condicion, @Validacion, @Observaciones, @CategoriaHallazgo, @Fe"& _ 
+                "chaSolventacion, @Comentarios, @ConsecRevisiones, @fechaVigencia, @deptoResponsa"& _ 
+                "ble, @estatus);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT Id_auditoriaCondicion, Id_auditoria, Id_Condicion, Valid"& _ 
+                "acion, Observaciones, CategoriaHallazgo, FechaSolventacion, Comentarios, ConsecR"& _ 
+                "evisiones, fechaVigencia, deptoResponsable, estatus FROM AUDIT_AuditoriasCondici"& _ 
+                "ones WHERE (Id_auditoriaCondicion = SCOPE_IDENTITY())"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Id_auditoria", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 0, "Id_auditoria", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Id_Condicion", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 0, "Id_Condicion", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -12033,23 +13240,35 @@ Namespace ProductionDataSetTableAdapters
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CategoriaHallazgo", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CategoriaHallazgo", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@FechaSolventacion", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "FechaSolventacion", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Comentarios", Global.System.Data.SqlDbType.Text, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Comentarios", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ConsecRevisiones", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 0, "ConsecRevisiones", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@fechaVigencia", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "fechaVigencia", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@deptoResponsable", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 0, "deptoResponsable", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@estatus", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "estatus", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
             Me._adapter.UpdateCommand.CommandText = "UPDATE [AUDIT_AuditoriasCondiciones] SET [Id_auditoria] = @Id_auditoria, [Id_Cond"& _ 
                 "icion] = @Id_Condicion, [Validacion] = @Validacion, [Observaciones] = @Observaci"& _ 
                 "ones, [CategoriaHallazgo] = @CategoriaHallazgo, [FechaSolventacion] = @FechaSolv"& _ 
-                "entacion, [Comentarios] = @Comentarios WHERE (([Id_auditoriaCondicion] = @Origin"& _ 
-                "al_Id_auditoriaCondicion) AND ((@IsNull_Id_auditoria = 1 AND [Id_auditoria] IS N"& _ 
-                "ULL) OR ([Id_auditoria] = @Original_Id_auditoria)) AND ((@IsNull_Id_Condicion = "& _ 
-                "1 AND [Id_Condicion] IS NULL) OR ([Id_Condicion] = @Original_Id_Condicion)) AND "& _ 
-                "((@IsNull_Validacion = 1 AND [Validacion] IS NULL) OR ([Validacion] = @Original_"& _ 
-                "Validacion)) AND ((@IsNull_CategoriaHallazgo = 1 AND [CategoriaHallazgo] IS NULL"& _ 
-                ") OR ([CategoriaHallazgo] = @Original_CategoriaHallazgo)) AND ((@IsNull_FechaSol"& _ 
-                "ventacion = 1 AND [FechaSolventacion] IS NULL) OR ([FechaSolventacion] = @Origin"& _ 
-                "al_FechaSolventacion)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT Id_auditoriaCondicion, Id_auditoria, Id_Condici"& _ 
-                "on, Validacion, Observaciones, CategoriaHallazgo, FechaSolventacion, Comentarios"& _ 
-                " FROM AUDIT_AuditoriasCondiciones WHERE (Id_auditoriaCondicion = @Id_auditoriaCo"& _ 
-                "ndicion)"
+                "entacion, [Comentarios] = @Comentarios, [ConsecRevisiones] = @ConsecRevisiones, "& _ 
+                "[fechaVigencia] = @fechaVigencia, [deptoResponsable] = @deptoResponsable, [estat"& _ 
+                "us] = @estatus WHERE (([Id_auditoriaCondicion] = @Original_Id_auditoriaCondicion"& _ 
+                ") AND ((@IsNull_Id_auditoria = 1 AND [Id_auditoria] IS NULL) OR ([Id_auditoria] "& _ 
+                "= @Original_Id_auditoria)) AND ((@IsNull_Id_Condicion = 1 AND [Id_Condicion] IS "& _ 
+                "NULL) OR ([Id_Condicion] = @Original_Id_Condicion)) AND ((@IsNull_Validacion = 1"& _ 
+                " AND [Validacion] IS NULL) OR ([Validacion] = @Original_Validacion)) AND ((@IsNu"& _ 
+                "ll_CategoriaHallazgo = 1 AND [CategoriaHallazgo] IS NULL) OR ([CategoriaHallazgo"& _ 
+                "] = @Original_CategoriaHallazgo)) AND ((@IsNull_FechaSolventacion = 1 AND [Fecha"& _ 
+                "Solventacion] IS NULL) OR ([FechaSolventacion] = @Original_FechaSolventacion)) A"& _ 
+                "ND ((@IsNull_ConsecRevisiones = 1 AND [ConsecRevisiones] IS NULL) OR ([ConsecRev"& _ 
+                "isiones] = @Original_ConsecRevisiones)) AND ((@IsNull_fechaVigencia = 1 AND [fec"& _ 
+                "haVigencia] IS NULL) OR ([fechaVigencia] = @Original_fechaVigencia)) AND ((@IsNu"& _ 
+                "ll_deptoResponsable = 1 AND [deptoResponsable] IS NULL) OR ([deptoResponsable] ="& _ 
+                " @Original_deptoResponsable)) AND ((@IsNull_estatus = 1 AND [estatus] IS NULL) O"& _ 
+                "R ([estatus] = @Original_estatus)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT Id_auditoriaCondicion, Id_auditoria"& _ 
+                ", Id_Condicion, Validacion, Observaciones, CategoriaHallazgo, FechaSolventacion,"& _ 
+                " Comentarios, ConsecRevisiones, fechaVigencia, deptoResponsable, estatus FROM AU"& _ 
+                "DIT_AuditoriasCondiciones WHERE (Id_auditoriaCondicion = @Id_auditoriaCondicion)"& _ 
+                ""
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Id_auditoria", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 0, "Id_auditoria", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Id_Condicion", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 0, "Id_Condicion", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -12058,6 +13277,10 @@ Namespace ProductionDataSetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CategoriaHallazgo", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CategoriaHallazgo", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@FechaSolventacion", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "FechaSolventacion", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Comentarios", Global.System.Data.SqlDbType.Text, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Comentarios", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ConsecRevisiones", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 0, "ConsecRevisiones", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@fechaVigencia", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "fechaVigencia", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@deptoResponsable", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 0, "deptoResponsable", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@estatus", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "estatus", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Id_auditoriaCondicion", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 0, "Id_auditoriaCondicion", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Id_auditoria", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Id_auditoria", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Id_auditoria", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 0, "Id_auditoria", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
@@ -12069,6 +13292,14 @@ Namespace ProductionDataSetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_CategoriaHallazgo", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CategoriaHallazgo", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_FechaSolventacion", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "FechaSolventacion", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_FechaSolventacion", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "FechaSolventacion", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ConsecRevisiones", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ConsecRevisiones", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ConsecRevisiones", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 0, "ConsecRevisiones", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_fechaVigencia", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "fechaVigencia", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_fechaVigencia", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "fechaVigencia", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_deptoResponsable", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "deptoResponsable", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_deptoResponsable", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 0, "deptoResponsable", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_estatus", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "estatus", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_estatus", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "estatus", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Id_auditoriaCondicion", Global.System.Data.SqlDbType.[Decimal], 9, Global.System.Data.ParameterDirection.Input, 18, 0, "Id_auditoriaCondicion", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
@@ -12082,35 +13313,51 @@ Namespace ProductionDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(3) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(5) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT        Id_auditoriaCondicion, Id_auditoria, Id_Condicion, Validacion, Obse"& _ 
-                "rvaciones, CategoriaHallazgo, FechaSolventacion, Comentarios"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            AU"& _ 
-                "DIT_AuditoriasCondiciones"
+                "rvaciones, CategoriaHallazgo, FechaSolventacion, Comentarios, ConsecRevisiones, "& _ 
+                "fechaVigencia, deptoResponsable, estatus"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            AUDIT_AuditoriasCondic"& _ 
+                "iones"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(1).Connection = Me.Connection
-            Me._commandCollection(1).CommandText = "SELECT        ISNULL(MAX(Id_Condicion), 0) AS Id_Condicion"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            AUDIT"& _ 
-                "_AuditoriasCondiciones"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (Id_auditoria = @Id_auditoria) AND (Id_Cond"& _ 
-                "icion = @Id_Condicion)"
+            Me._commandCollection(1).CommandText = "UPDATE       AUDIT_AuditoriasCondiciones"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SET                estatus = 1"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE  "& _ 
+                "      (Id_auditoriaCondicion = @Id_auditoriaCondicion)"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Id_auditoria", Global.System.Data.SqlDbType.[Decimal], 9, Global.System.Data.ParameterDirection.Input, 18, 0, "Id_auditoria", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Id_Condicion", Global.System.Data.SqlDbType.[Decimal], 9, Global.System.Data.ParameterDirection.Input, 18, 0, "Id_Condicion", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Id_auditoriaCondicion", Global.System.Data.SqlDbType.[Decimal], 9, Global.System.Data.ParameterDirection.Input, 18, 0, "Id_auditoriaCondicion", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._commandCollection(2) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(2).Connection = Me.Connection
-            Me._commandCollection(2).CommandText = "SELECT CategoriaHallazgo, Comentarios, FechaSolventacion, Id_Condicion, Id_audito"& _ 
-                "ria, Id_auditoriaCondicion, Observaciones, Validacion FROM AUDIT_AuditoriasCondi"& _ 
-                "ciones WHERE (Id_auditoria = @Id_auditoria)"
+            Me._commandCollection(2).CommandText = "SELECT        ISNULL(MAX(Id_Condicion), 0) AS Id_Condicion"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            AUDIT"& _ 
+                "_AuditoriasCondiciones"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (Id_auditoria = @Id_auditoria) AND (Id_Cond"& _ 
+                "icion = @Id_Condicion)"
             Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Id_auditoria", Global.System.Data.SqlDbType.[Decimal], 9, Global.System.Data.ParameterDirection.Input, 18, 0, "Id_auditoria", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Id_Condicion", Global.System.Data.SqlDbType.[Decimal], 9, Global.System.Data.ParameterDirection.Input, 18, 0, "Id_Condicion", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(3) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(3).Connection = Me.Connection
-            Me._commandCollection(3).CommandText = "SELECT CategoriaHallazgo, Comentarios, FechaSolventacion, Id_Condicion, Id_audito"& _ 
-                "ria, Id_auditoriaCondicion, Observaciones, Validacion FROM AUDIT_AuditoriasCondi"& _ 
-                "ciones WHERE (Id_auditoriaCondicion = @Id_auditoriaCondicion)"
+            Me._commandCollection(3).CommandText = "SELECT CategoriaHallazgo, Comentarios, ConsecRevisiones, FechaSolventacion, Id_Co"& _ 
+                "ndicion, Id_auditoria, Id_auditoriaCondicion, Observaciones, Validacion, deptoRe"& _ 
+                "sponsable, estatus, fechaVigencia FROM AUDIT_AuditoriasCondiciones WHERE (Id_aud"& _ 
+                "itoria = @Id_auditoria) AND (ConsecRevisiones = 1)"
             Me._commandCollection(3).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Id_auditoriaCondicion", Global.System.Data.SqlDbType.[Decimal], 9, Global.System.Data.ParameterDirection.Input, 18, 0, "Id_auditoriaCondicion", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Id_auditoria", Global.System.Data.SqlDbType.[Decimal], 9, Global.System.Data.ParameterDirection.Input, 18, 0, "Id_auditoria", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(4) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(4).Connection = Me.Connection
+            Me._commandCollection(4).CommandText = "SELECT CategoriaHallazgo, Comentarios, ConsecRevisiones, FechaSolventacion, Id_Co"& _ 
+                "ndicion, Id_auditoria, Id_auditoriaCondicion, Observaciones, Validacion, deptoRe"& _ 
+                "sponsable, estatus, fechaVigencia FROM AUDIT_AuditoriasCondiciones WHERE (Id_Con"& _ 
+                "dicion = @Id_Condicion) AND (Id_auditoria = @Id_auditoria)"
+            Me._commandCollection(4).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Id_Condicion", Global.System.Data.SqlDbType.[Decimal], 9, Global.System.Data.ParameterDirection.Input, 18, 0, "Id_Condicion", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Id_auditoria", Global.System.Data.SqlDbType.[Decimal], 9, Global.System.Data.ParameterDirection.Input, 18, 0, "Id_auditoria", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(5) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(5).Connection = Me.Connection
+            Me._commandCollection(5).CommandText = "SELECT        ISNULL(estatus, 'False') AS estatus"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            AUDIT_Auditori"& _ 
+                "asCondiciones"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (Id_auditoriaCondicion = @Id_auditoriaCondicion)"
+            Me._commandCollection(5).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(5).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Id_auditoriaCondicion", Global.System.Data.SqlDbType.[Decimal], 9, Global.System.Data.ParameterDirection.Input, 18, 0, "Id_auditoriaCondicion", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -12142,7 +13389,7 @@ Namespace ProductionDataSetTableAdapters
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
         Public Overloads Overridable Function Obt_AllDetalleAuditCond_FillBy(ByVal dataTable As ProductionDataSet.AUDIT_AuditoriasCondicionesDataTable, ByVal Id_auditoria As Global.System.Nullable(Of Decimal)) As Integer
-            Me.Adapter.SelectCommand = Me.CommandCollection(2)
+            Me.Adapter.SelectCommand = Me.CommandCollection(3)
             If (Id_auditoria.HasValue = true) Then
                 Me.Adapter.SelectCommand.Parameters(0).Value = CType(Id_auditoria.Value,Decimal)
             Else
@@ -12160,7 +13407,7 @@ Namespace ProductionDataSetTableAdapters
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
         Public Overloads Overridable Function Obt_AllDetalleAuditCond_GetDataBy(ByVal Id_auditoria As Global.System.Nullable(Of Decimal)) As ProductionDataSet.AUDIT_AuditoriasCondicionesDataTable
-            Me.Adapter.SelectCommand = Me.CommandCollection(2)
+            Me.Adapter.SelectCommand = Me.CommandCollection(3)
             If (Id_auditoria.HasValue = true) Then
                 Me.Adapter.SelectCommand.Parameters(0).Value = CType(Id_auditoria.Value,Decimal)
             Else
@@ -12175,9 +13422,18 @@ Namespace ProductionDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
-        Public Overloads Overridable Function ObtDetalleAuditCond_FillBy(ByVal dataTable As ProductionDataSet.AUDIT_AuditoriasCondicionesDataTable, ByVal Id_auditoriaCondicion As Decimal) As Integer
-            Me.Adapter.SelectCommand = Me.CommandCollection(3)
-            Me.Adapter.SelectCommand.Parameters(0).Value = CType(Id_auditoriaCondicion,Decimal)
+        Public Overloads Overridable Function ObtDetalleAuditCond_FillBy(ByVal dataTable As ProductionDataSet.AUDIT_AuditoriasCondicionesDataTable, ByVal Id_Condicion As Global.System.Nullable(Of Decimal), ByVal Id_auditoria As Global.System.Nullable(Of Decimal)) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(4)
+            If (Id_Condicion.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(Id_Condicion.Value,Decimal)
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
+            End If
+            If (Id_auditoria.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(Id_auditoria.Value,Decimal)
+            Else
+                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
+            End If
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
             End If
@@ -12189,9 +13445,18 @@ Namespace ProductionDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
-        Public Overloads Overridable Function ObtDetalleAuditCond_GetDataBy(ByVal Id_auditoriaCondicion As Decimal) As ProductionDataSet.AUDIT_AuditoriasCondicionesDataTable
-            Me.Adapter.SelectCommand = Me.CommandCollection(3)
-            Me.Adapter.SelectCommand.Parameters(0).Value = CType(Id_auditoriaCondicion,Decimal)
+        Public Overloads Overridable Function ObtDetalleAuditCond_GetDataBy(ByVal Id_Condicion As Global.System.Nullable(Of Decimal), ByVal Id_auditoria As Global.System.Nullable(Of Decimal)) As ProductionDataSet.AUDIT_AuditoriasCondicionesDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(4)
+            If (Id_Condicion.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(Id_Condicion.Value,Decimal)
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
+            End If
+            If (Id_auditoria.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(Id_auditoria.Value,Decimal)
+            Else
+                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
+            End If
             Dim dataTable As ProductionDataSet.AUDIT_AuditoriasCondicionesDataTable = New ProductionDataSet.AUDIT_AuditoriasCondicionesDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
@@ -12229,7 +13494,7 @@ Namespace ProductionDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_Id_auditoriaCondicion As Decimal, ByVal Original_Id_auditoria As Global.System.Nullable(Of Decimal), ByVal Original_Id_Condicion As Global.System.Nullable(Of Decimal), ByVal Original_Validacion As String, ByVal Original_CategoriaHallazgo As String, ByVal Original_FechaSolventacion As Global.System.Nullable(Of Date)) As Integer
+        Public Overloads Overridable Function Delete(ByVal Original_Id_auditoriaCondicion As Decimal, ByVal Original_Id_auditoria As Global.System.Nullable(Of Decimal), ByVal Original_Id_Condicion As Global.System.Nullable(Of Decimal), ByVal Original_Validacion As String, ByVal Original_CategoriaHallazgo As String, ByVal Original_FechaSolventacion As Global.System.Nullable(Of Date), ByVal Original_ConsecRevisiones As Global.System.Nullable(Of Decimal), ByVal Original_fechaVigencia As Global.System.Nullable(Of Date), ByVal Original_deptoResponsable As Global.System.Nullable(Of Decimal), ByVal Original_estatus As Global.System.Nullable(Of Boolean)) As Integer
             Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_Id_auditoriaCondicion,Decimal)
             If (Original_Id_auditoria.HasValue = true) Then
                 Me.Adapter.DeleteCommand.Parameters(1).Value = CType(0,Object)
@@ -12266,6 +13531,34 @@ Namespace ProductionDataSetTableAdapters
                 Me.Adapter.DeleteCommand.Parameters(9).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(10).Value = Global.System.DBNull.Value
             End If
+            If (Original_ConsecRevisiones.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(11).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(12).Value = CType(Original_ConsecRevisiones.Value,Decimal)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(11).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(12).Value = Global.System.DBNull.Value
+            End If
+            If (Original_fechaVigencia.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(13).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(14).Value = CType(Original_fechaVigencia.Value,Date)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(13).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(14).Value = Global.System.DBNull.Value
+            End If
+            If (Original_deptoResponsable.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(15).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(16).Value = CType(Original_deptoResponsable.Value,Decimal)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(15).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(16).Value = Global.System.DBNull.Value
+            End If
+            If (Original_estatus.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(17).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(18).Value = CType(Original_estatus.Value,Boolean)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(17).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(18).Value = Global.System.DBNull.Value
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -12285,7 +13578,7 @@ Namespace ProductionDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal Id_auditoria As Global.System.Nullable(Of Decimal), ByVal Id_Condicion As Global.System.Nullable(Of Decimal), ByVal Validacion As String, ByVal Observaciones As String, ByVal CategoriaHallazgo As String, ByVal FechaSolventacion As Global.System.Nullable(Of Date), ByVal Comentarios As String) As Integer
+        Public Overloads Overridable Function Insert(ByVal Id_auditoria As Global.System.Nullable(Of Decimal), ByVal Id_Condicion As Global.System.Nullable(Of Decimal), ByVal Validacion As String, ByVal Observaciones As String, ByVal CategoriaHallazgo As String, ByVal FechaSolventacion As Global.System.Nullable(Of Date), ByVal Comentarios As String, ByVal ConsecRevisiones As Global.System.Nullable(Of Decimal), ByVal fechaVigencia As Global.System.Nullable(Of Date), ByVal deptoResponsable As Global.System.Nullable(Of Decimal), ByVal estatus As Global.System.Nullable(Of Boolean)) As Integer
             If (Id_auditoria.HasValue = true) Then
                 Me.Adapter.InsertCommand.Parameters(0).Value = CType(Id_auditoria.Value,Decimal)
             Else
@@ -12321,6 +13614,26 @@ Namespace ProductionDataSetTableAdapters
             Else
                 Me.Adapter.InsertCommand.Parameters(6).Value = CType(Comentarios,String)
             End If
+            If (ConsecRevisiones.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(7).Value = CType(ConsecRevisiones.Value,Decimal)
+            Else
+                Me.Adapter.InsertCommand.Parameters(7).Value = Global.System.DBNull.Value
+            End If
+            If (fechaVigencia.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(8).Value = CType(fechaVigencia.Value,Date)
+            Else
+                Me.Adapter.InsertCommand.Parameters(8).Value = Global.System.DBNull.Value
+            End If
+            If (deptoResponsable.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(9).Value = CType(deptoResponsable.Value,Decimal)
+            Else
+                Me.Adapter.InsertCommand.Parameters(9).Value = Global.System.DBNull.Value
+            End If
+            If (estatus.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(10).Value = CType(estatus.Value,Boolean)
+            Else
+                Me.Adapter.InsertCommand.Parameters(10).Value = Global.System.DBNull.Value
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -12340,7 +13653,29 @@ Namespace ProductionDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal Id_auditoria As Global.System.Nullable(Of Decimal), ByVal Id_Condicion As Global.System.Nullable(Of Decimal), ByVal Validacion As String, ByVal Observaciones As String, ByVal CategoriaHallazgo As String, ByVal FechaSolventacion As Global.System.Nullable(Of Date), ByVal Comentarios As String, ByVal Original_Id_auditoriaCondicion As Decimal, ByVal Original_Id_auditoria As Global.System.Nullable(Of Decimal), ByVal Original_Id_Condicion As Global.System.Nullable(Of Decimal), ByVal Original_Validacion As String, ByVal Original_CategoriaHallazgo As String, ByVal Original_FechaSolventacion As Global.System.Nullable(Of Date), ByVal Id_auditoriaCondicion As Decimal) As Integer
+        Public Overloads Overridable Function Update( _
+                    ByVal Id_auditoria As Global.System.Nullable(Of Decimal),  _
+                    ByVal Id_Condicion As Global.System.Nullable(Of Decimal),  _
+                    ByVal Validacion As String,  _
+                    ByVal Observaciones As String,  _
+                    ByVal CategoriaHallazgo As String,  _
+                    ByVal FechaSolventacion As Global.System.Nullable(Of Date),  _
+                    ByVal Comentarios As String,  _
+                    ByVal ConsecRevisiones As Global.System.Nullable(Of Decimal),  _
+                    ByVal fechaVigencia As Global.System.Nullable(Of Date),  _
+                    ByVal deptoResponsable As Global.System.Nullable(Of Decimal),  _
+                    ByVal estatus As Global.System.Nullable(Of Boolean),  _
+                    ByVal Original_Id_auditoriaCondicion As Decimal,  _
+                    ByVal Original_Id_auditoria As Global.System.Nullable(Of Decimal),  _
+                    ByVal Original_Id_Condicion As Global.System.Nullable(Of Decimal),  _
+                    ByVal Original_Validacion As String,  _
+                    ByVal Original_CategoriaHallazgo As String,  _
+                    ByVal Original_FechaSolventacion As Global.System.Nullable(Of Date),  _
+                    ByVal Original_ConsecRevisiones As Global.System.Nullable(Of Decimal),  _
+                    ByVal Original_fechaVigencia As Global.System.Nullable(Of Date),  _
+                    ByVal Original_deptoResponsable As Global.System.Nullable(Of Decimal),  _
+                    ByVal Original_estatus As Global.System.Nullable(Of Boolean),  _
+                    ByVal Id_auditoriaCondicion As Decimal) As Integer
             If (Id_auditoria.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(0).Value = CType(Id_auditoria.Value,Decimal)
             Else
@@ -12376,43 +13711,91 @@ Namespace ProductionDataSetTableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Comentarios,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(7).Value = CType(Original_Id_auditoriaCondicion,Decimal)
-            If (Original_Id_auditoria.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Original_Id_auditoria.Value,Decimal)
+            If (ConsecRevisiones.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(ConsecRevisiones.Value,Decimal)
             Else
-                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(7).Value = Global.System.DBNull.Value
+            End If
+            If (fechaVigencia.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(fechaVigencia.Value,Date)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(8).Value = Global.System.DBNull.Value
+            End If
+            If (deptoResponsable.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(deptoResponsable.Value,Decimal)
+            Else
                 Me.Adapter.UpdateCommand.Parameters(9).Value = Global.System.DBNull.Value
             End If
-            If (Original_Id_Condicion.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(Original_Id_Condicion.Value,Decimal)
+            If (estatus.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(estatus.Value,Boolean)
             Else
-                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(11).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(10).Value = Global.System.DBNull.Value
             End If
-            If (Original_Validacion Is Nothing) Then
+            Me.Adapter.UpdateCommand.Parameters(11).Value = CType(Original_Id_auditoriaCondicion,Decimal)
+            If (Original_Id_auditoria.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(Original_Id_auditoria.Value,Decimal)
+            Else
                 Me.Adapter.UpdateCommand.Parameters(12).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(13).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(Original_Validacion,String)
             End If
-            If (Original_CategoriaHallazgo Is Nothing) Then
+            If (Original_Id_Condicion.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(Original_Id_Condicion.Value,Decimal)
+            Else
                 Me.Adapter.UpdateCommand.Parameters(14).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(15).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(Original_CategoriaHallazgo,String)
             End If
-            If (Original_FechaSolventacion.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(Original_FechaSolventacion.Value,Date)
-            Else
+            If (Original_Validacion Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(16).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(17).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(Original_Validacion,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(18).Value = CType(Id_auditoriaCondicion,Decimal)
+            If (Original_CategoriaHallazgo Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(19).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(Original_CategoriaHallazgo,String)
+            End If
+            If (Original_FechaSolventacion.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(Original_FechaSolventacion.Value,Date)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(21).Value = Global.System.DBNull.Value
+            End If
+            If (Original_ConsecRevisiones.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(22).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(23).Value = CType(Original_ConsecRevisiones.Value,Decimal)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(22).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(23).Value = Global.System.DBNull.Value
+            End If
+            If (Original_fechaVigencia.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(24).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(25).Value = CType(Original_fechaVigencia.Value,Date)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(24).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(25).Value = Global.System.DBNull.Value
+            End If
+            If (Original_deptoResponsable.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(26).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(27).Value = CType(Original_deptoResponsable.Value,Decimal)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(26).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(27).Value = Global.System.DBNull.Value
+            End If
+            If (Original_estatus.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(28).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(29).Value = CType(Original_estatus.Value,Boolean)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(28).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(29).Value = Global.System.DBNull.Value
+            End If
+            Me.Adapter.UpdateCommand.Parameters(30).Value = CType(Id_auditoriaCondicion,Decimal)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -12432,15 +13815,59 @@ Namespace ProductionDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal Id_auditoria As Global.System.Nullable(Of Decimal), ByVal Id_Condicion As Global.System.Nullable(Of Decimal), ByVal Validacion As String, ByVal Observaciones As String, ByVal CategoriaHallazgo As String, ByVal FechaSolventacion As Global.System.Nullable(Of Date), ByVal Comentarios As String, ByVal Original_Id_auditoriaCondicion As Decimal, ByVal Original_Id_auditoria As Global.System.Nullable(Of Decimal), ByVal Original_Id_Condicion As Global.System.Nullable(Of Decimal), ByVal Original_Validacion As String, ByVal Original_CategoriaHallazgo As String, ByVal Original_FechaSolventacion As Global.System.Nullable(Of Date)) As Integer
-            Return Me.Update(Id_auditoria, Id_Condicion, Validacion, Observaciones, CategoriaHallazgo, FechaSolventacion, Comentarios, Original_Id_auditoriaCondicion, Original_Id_auditoria, Original_Id_Condicion, Original_Validacion, Original_CategoriaHallazgo, Original_FechaSolventacion, Original_Id_auditoriaCondicion)
+        Public Overloads Overridable Function Update( _
+                    ByVal Id_auditoria As Global.System.Nullable(Of Decimal),  _
+                    ByVal Id_Condicion As Global.System.Nullable(Of Decimal),  _
+                    ByVal Validacion As String,  _
+                    ByVal Observaciones As String,  _
+                    ByVal CategoriaHallazgo As String,  _
+                    ByVal FechaSolventacion As Global.System.Nullable(Of Date),  _
+                    ByVal Comentarios As String,  _
+                    ByVal ConsecRevisiones As Global.System.Nullable(Of Decimal),  _
+                    ByVal fechaVigencia As Global.System.Nullable(Of Date),  _
+                    ByVal deptoResponsable As Global.System.Nullable(Of Decimal),  _
+                    ByVal estatus As Global.System.Nullable(Of Boolean),  _
+                    ByVal Original_Id_auditoriaCondicion As Decimal,  _
+                    ByVal Original_Id_auditoria As Global.System.Nullable(Of Decimal),  _
+                    ByVal Original_Id_Condicion As Global.System.Nullable(Of Decimal),  _
+                    ByVal Original_Validacion As String,  _
+                    ByVal Original_CategoriaHallazgo As String,  _
+                    ByVal Original_FechaSolventacion As Global.System.Nullable(Of Date),  _
+                    ByVal Original_ConsecRevisiones As Global.System.Nullable(Of Decimal),  _
+                    ByVal Original_fechaVigencia As Global.System.Nullable(Of Date),  _
+                    ByVal Original_deptoResponsable As Global.System.Nullable(Of Decimal),  _
+                    ByVal Original_estatus As Global.System.Nullable(Of Boolean)) As Integer
+            Return Me.Update(Id_auditoria, Id_Condicion, Validacion, Observaciones, CategoriaHallazgo, FechaSolventacion, Comentarios, ConsecRevisiones, fechaVigencia, deptoResponsable, estatus, Original_Id_auditoriaCondicion, Original_Id_auditoria, Original_Id_Condicion, Original_Validacion, Original_CategoriaHallazgo, Original_FechaSolventacion, Original_ConsecRevisiones, Original_fechaVigencia, Original_deptoResponsable, Original_estatus, Original_Id_auditoriaCondicion)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, false)>  _
+        Public Overloads Overridable Function ActualizaEstatus_UpdateQuery(ByVal Id_auditoriaCondicion As Decimal) As Integer
+            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(1)
+            command.Parameters(0).Value = CType(Id_auditoriaCondicion,Decimal)
+            Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                command.Connection.Open
+            End If
+            Dim returnValue As Integer
+            Try 
+                returnValue = command.ExecuteNonQuery
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    command.Connection.Close
+                End If
+            End Try
+            Return returnValue
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
         Public Overloads Overridable Function ExisteCondicion_ScalarQuery(ByVal Id_auditoria As Global.System.Nullable(Of Decimal), ByVal Id_Condicion As Global.System.Nullable(Of Decimal)) As Object
-            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(1)
+            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(2)
             If (Id_auditoria.HasValue = true) Then
                 command.Parameters(0).Value = CType(Id_auditoria.Value,Decimal)
             Else
@@ -12471,6 +13898,461 @@ Namespace ProductionDataSetTableAdapters
                 Return CType(returnValue,Object)
             End If
         End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function ObtEstatus_ScalarQuery(ByVal Id_auditoriaCondicion As Decimal) As Global.System.Nullable(Of Boolean)
+            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(5)
+            command.Parameters(0).Value = CType(Id_auditoriaCondicion,Decimal)
+            Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                command.Connection.Open
+            End If
+            Dim returnValue As Object
+            Try 
+                returnValue = command.ExecuteScalar
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    command.Connection.Close
+                End If
+            End Try
+            If ((returnValue Is Nothing)  _
+                        OrElse (returnValue.GetType Is GetType(Global.System.DBNull))) Then
+                Return New Global.System.Nullable(Of Boolean)()
+            Else
+                Return New Global.System.Nullable(Of Boolean)(CType(returnValue,Boolean))
+            End If
+        End Function
+    End Class
+    
+    '''<summary>
+    '''Represents the connection and commands used to retrieve and save data.
+    '''</summary>
+    <Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
+     Global.System.ComponentModel.ToolboxItem(true),  _
+     Global.System.ComponentModel.DataObjectAttribute(true),  _
+     Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
+     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+    Partial Public Class AUDIT_ParametrosDTableAdapter
+        Inherits Global.System.ComponentModel.Component
+        
+        Private WithEvents _adapter As Global.System.Data.SqlClient.SqlDataAdapter
+        
+        Private _connection As Global.System.Data.SqlClient.SqlConnection
+        
+        Private _transaction As Global.System.Data.SqlClient.SqlTransaction
+        
+        Private _commandCollection() As Global.System.Data.SqlClient.SqlCommand
+        
+        Private _clearBeforeFill As Boolean
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub New()
+            MyBase.New
+            Me.ClearBeforeFill = true
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Friend ReadOnly Property Adapter() As Global.System.Data.SqlClient.SqlDataAdapter
+            Get
+                If (Me._adapter Is Nothing) Then
+                    Me.InitAdapter
+                End If
+                Return Me._adapter
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Property Connection() As Global.System.Data.SqlClient.SqlConnection
+            Get
+                If (Me._connection Is Nothing) Then
+                    Me.InitConnection
+                End If
+                Return Me._connection
+            End Get
+            Set
+                Me._connection = value
+                If (Not (Me.Adapter.InsertCommand) Is Nothing) Then
+                    Me.Adapter.InsertCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.DeleteCommand) Is Nothing) Then
+                    Me.Adapter.DeleteCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.UpdateCommand) Is Nothing) Then
+                    Me.Adapter.UpdateCommand.Connection = value
+                End If
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    If (Not (Me.CommandCollection(i)) Is Nothing) Then
+                        CType(Me.CommandCollection(i),Global.System.Data.SqlClient.SqlCommand).Connection = value
+                    End If
+                    i = (i + 1)
+                Loop
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Property Transaction() As Global.System.Data.SqlClient.SqlTransaction
+            Get
+                Return Me._transaction
+            End Get
+            Set
+                Me._transaction = value
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    Me.CommandCollection(i).Transaction = Me._transaction
+                    i = (i + 1)
+                Loop
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.DeleteCommand) Is Nothing)) Then
+                    Me.Adapter.DeleteCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.InsertCommand) Is Nothing)) Then
+                    Me.Adapter.InsertCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.UpdateCommand) Is Nothing)) Then
+                    Me.Adapter.UpdateCommand.Transaction = Me._transaction
+                End If
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected ReadOnly Property CommandCollection() As Global.System.Data.SqlClient.SqlCommand()
+            Get
+                If (Me._commandCollection Is Nothing) Then
+                    Me.InitCommandCollection
+                End If
+                Return Me._commandCollection
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property ClearBeforeFill() As Boolean
+            Get
+                Return Me._clearBeforeFill
+            End Get
+            Set
+                Me._clearBeforeFill = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Private Sub InitAdapter()
+            Me._adapter = New Global.System.Data.SqlClient.SqlDataAdapter()
+            Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
+            tableMapping.SourceTable = "Table"
+            tableMapping.DataSetTable = "AUDIT_ParametrosD"
+            tableMapping.ColumnMappings.Add("id_Parametro", "id_Parametro")
+            tableMapping.ColumnMappings.Add("Descripcion", "Descripcion")
+            tableMapping.ColumnMappings.Add("Tipo", "Tipo")
+            tableMapping.ColumnMappings.Add("Activo", "Activo")
+            tableMapping.ColumnMappings.Add("descripcionCompleta", "descripcionCompleta")
+            Me._adapter.TableMappings.Add(tableMapping)
+            Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
+            Me._adapter.DeleteCommand.Connection = Me.Connection
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [AUDIT_Parametros] WHERE (([id_Parametro] = @Original_id_Parametro) A"& _ 
+                "ND ((@IsNull_Descripcion = 1 AND [Descripcion] IS NULL) OR ([Descripcion] = @Ori"& _ 
+                "ginal_Descripcion)) AND ((@IsNull_Tipo = 1 AND [Tipo] IS NULL) OR ([Tipo] = @Ori"& _ 
+                "ginal_Tipo)) AND ((@IsNull_Activo = 1 AND [Activo] IS NULL) OR ([Activo] = @Orig"& _ 
+                "inal_Activo)) AND ((@IsNull_descripcionCompleta = 1 AND [descripcionCompleta] IS"& _ 
+                " NULL) OR ([descripcionCompleta] = @Original_descripcionCompleta)))"
+            Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_id_Parametro", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 0, "id_Parametro", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Descripcion", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Descripcion", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Descripcion", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Descripcion", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Tipo", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Tipo", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Tipo", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Tipo", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Activo", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Activo", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Activo", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Activo", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_descripcionCompleta", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "descripcionCompleta", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_descripcionCompleta", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "descripcionCompleta", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
+            Me._adapter.InsertCommand.Connection = Me.Connection
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO [AUDIT_Parametros] ([Descripcion], [Tipo], [Activo], [descripcionComp"& _ 
+                "leta]) VALUES (@Descripcion, @Tipo, @Activo, @descripcionCompleta);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT id_P"& _ 
+                "arametro, Descripcion, Tipo, Activo, descripcionCompleta FROM AUDIT_Parametros W"& _ 
+                "HERE (id_Parametro = SCOPE_IDENTITY())"
+            Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Descripcion", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Descripcion", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Tipo", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Tipo", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Activo", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Activo", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@descripcionCompleta", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "descripcionCompleta", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
+            Me._adapter.UpdateCommand.Connection = Me.Connection
+            Me._adapter.UpdateCommand.CommandText = "UPDATE [AUDIT_Parametros] SET [Descripcion] = @Descripcion, [Tipo] = @Tipo, [Acti"& _ 
+                "vo] = @Activo, [descripcionCompleta] = @descripcionCompleta WHERE (([id_Parametr"& _ 
+                "o] = @Original_id_Parametro) AND ((@IsNull_Descripcion = 1 AND [Descripcion] IS "& _ 
+                "NULL) OR ([Descripcion] = @Original_Descripcion)) AND ((@IsNull_Tipo = 1 AND [Ti"& _ 
+                "po] IS NULL) OR ([Tipo] = @Original_Tipo)) AND ((@IsNull_Activo = 1 AND [Activo]"& _ 
+                " IS NULL) OR ([Activo] = @Original_Activo)) AND ((@IsNull_descripcionCompleta = "& _ 
+                "1 AND [descripcionCompleta] IS NULL) OR ([descripcionCompleta] = @Original_descr"& _ 
+                "ipcionCompleta)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT id_Parametro, Descripcion, Tipo, Activo, descripcionC"& _ 
+                "ompleta FROM AUDIT_Parametros WHERE (id_Parametro = @id_Parametro)"
+            Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Descripcion", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Descripcion", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Tipo", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Tipo", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Activo", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Activo", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@descripcionCompleta", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "descripcionCompleta", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_id_Parametro", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 0, "id_Parametro", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Descripcion", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Descripcion", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Descripcion", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Descripcion", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Tipo", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Tipo", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Tipo", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Tipo", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Activo", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Activo", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Activo", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Activo", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_descripcionCompleta", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "descripcionCompleta", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_descripcionCompleta", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "descripcionCompleta", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@id_Parametro", Global.System.Data.SqlDbType.[Decimal], 9, Global.System.Data.ParameterDirection.Input, 18, 0, "id_Parametro", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Private Sub InitConnection()
+            Me._connection = New Global.System.Data.SqlClient.SqlConnection()
+            Me._connection.ConnectionString = Global.Auditoria.My.MySettings.Default.ProductionConnectionString
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Private Sub InitCommandCollection()
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
+            Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(0).Connection = Me.Connection
+            Me._commandCollection(0).CommandText = "SELECT        id_Parametro, Descripcion, Tipo, Activo, descripcionCompleta"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM "& _ 
+                "           AUDIT_Parametros"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (Tipo = 'DEPTOS')"
+            Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
+        Public Overloads Overridable Function Fill(ByVal dataTable As ProductionDataSet.AUDIT_ParametrosDDataTable) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
+        Public Overloads Overridable Function GetData() As ProductionDataSet.AUDIT_ParametrosDDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            Dim dataTable As ProductionDataSet.AUDIT_ParametrosDDataTable = New ProductionDataSet.AUDIT_ParametrosDDataTable()
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataTable As ProductionDataSet.AUDIT_ParametrosDDataTable) As Integer
+            Return Me.Adapter.Update(dataTable)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataSet As ProductionDataSet) As Integer
+            Return Me.Adapter.Update(dataSet, "AUDIT_ParametrosD")
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataRow As Global.System.Data.DataRow) As Integer
+            Return Me.Adapter.Update(New Global.System.Data.DataRow() {dataRow})
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataRows() As Global.System.Data.DataRow) As Integer
+            Return Me.Adapter.Update(dataRows)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
+        Public Overloads Overridable Function Delete(ByVal Original_id_Parametro As Decimal, ByVal Original_Descripcion As String, ByVal Original_Tipo As String, ByVal Original_Activo As Global.System.Nullable(Of Boolean), ByVal Original_descripcionCompleta As String) As Integer
+            Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_id_Parametro,Decimal)
+            If (Original_Descripcion Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(2).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_Descripcion,String)
+            End If
+            If (Original_Tipo Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(4).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(Original_Tipo,String)
+            End If
+            If (Original_Activo.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_Activo.Value,Boolean)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(6).Value = Global.System.DBNull.Value
+            End If
+            If (Original_descripcionCompleta Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(8).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(Original_descripcionCompleta,String)
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
+            If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                Me.Adapter.DeleteCommand.Connection.Open
+            End If
+            Try 
+                Dim returnValue As Integer = Me.Adapter.DeleteCommand.ExecuteNonQuery
+                Return returnValue
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    Me.Adapter.DeleteCommand.Connection.Close
+                End If
+            End Try
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
+        Public Overloads Overridable Function Insert(ByVal Descripcion As String, ByVal Tipo As String, ByVal Activo As Global.System.Nullable(Of Boolean), ByVal descripcionCompleta As String) As Integer
+            If (Descripcion Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(0).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(0).Value = CType(Descripcion,String)
+            End If
+            If (Tipo Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(1).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(1).Value = CType(Tipo,String)
+            End If
+            If (Activo.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(2).Value = CType(Activo.Value,Boolean)
+            Else
+                Me.Adapter.InsertCommand.Parameters(2).Value = Global.System.DBNull.Value
+            End If
+            If (descripcionCompleta Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(3).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(3).Value = CType(descripcionCompleta,String)
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
+            If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                Me.Adapter.InsertCommand.Connection.Open
+            End If
+            Try 
+                Dim returnValue As Integer = Me.Adapter.InsertCommand.ExecuteNonQuery
+                Return returnValue
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    Me.Adapter.InsertCommand.Connection.Close
+                End If
+            End Try
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
+        Public Overloads Overridable Function Update(ByVal Descripcion As String, ByVal Tipo As String, ByVal Activo As Global.System.Nullable(Of Boolean), ByVal descripcionCompleta As String, ByVal Original_id_Parametro As Decimal, ByVal Original_Descripcion As String, ByVal Original_Tipo As String, ByVal Original_Activo As Global.System.Nullable(Of Boolean), ByVal Original_descripcionCompleta As String, ByVal id_Parametro As Decimal) As Integer
+            If (Descripcion Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(0).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(0).Value = CType(Descripcion,String)
+            End If
+            If (Tipo Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(1).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(Tipo,String)
+            End If
+            If (Activo.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(Activo.Value,Boolean)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(2).Value = Global.System.DBNull.Value
+            End If
+            If (descripcionCompleta Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(3).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(descripcionCompleta,String)
+            End If
+            Me.Adapter.UpdateCommand.Parameters(4).Value = CType(Original_id_Parametro,Decimal)
+            If (Original_Descripcion Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(6).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Original_Descripcion,String)
+            End If
+            If (Original_Tipo Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(8).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(Original_Tipo,String)
+            End If
+            If (Original_Activo.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(Original_Activo.Value,Boolean)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(10).Value = Global.System.DBNull.Value
+            End If
+            If (Original_descripcionCompleta Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(12).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(Original_descripcionCompleta,String)
+            End If
+            Me.Adapter.UpdateCommand.Parameters(13).Value = CType(id_Parametro,Decimal)
+            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
+            If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                Me.Adapter.UpdateCommand.Connection.Open
+            End If
+            Try 
+                Dim returnValue As Integer = Me.Adapter.UpdateCommand.ExecuteNonQuery
+                Return returnValue
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    Me.Adapter.UpdateCommand.Connection.Close
+                End If
+            End Try
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
+        Public Overloads Overridable Function Update(ByVal Descripcion As String, ByVal Tipo As String, ByVal Activo As Global.System.Nullable(Of Boolean), ByVal descripcionCompleta As String, ByVal Original_id_Parametro As Decimal, ByVal Original_Descripcion As String, ByVal Original_Tipo As String, ByVal Original_Activo As Global.System.Nullable(Of Boolean), ByVal Original_descripcionCompleta As String) As Integer
+            Return Me.Update(Descripcion, Tipo, Activo, descripcionCompleta, Original_id_Parametro, Original_Descripcion, Original_Tipo, Original_Activo, Original_descripcionCompleta, Original_id_Parametro)
+        End Function
     End Class
     
     '''<summary>
@@ -12497,6 +14379,8 @@ Namespace ProductionDataSetTableAdapters
         Private _aUDIT_ParametrosVTableAdapter As AUDIT_ParametrosVTableAdapter
         
         Private _aUDIT_AuditoriasCondicionesTableAdapter As AUDIT_AuditoriasCondicionesTableAdapter
+        
+        Private _aUDIT_ParametrosDTableAdapter As AUDIT_ParametrosDTableAdapter
         
         Private _backupDataSetBeforeUpdate As Boolean
         
@@ -12598,6 +14482,20 @@ Namespace ProductionDataSetTableAdapters
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso"& _ 
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3"& _ 
+            "a", "System.Drawing.Design.UITypeEditor")>  _
+        Public Property AUDIT_ParametrosDTableAdapter() As AUDIT_ParametrosDTableAdapter
+            Get
+                Return Me._aUDIT_ParametrosDTableAdapter
+            End Get
+            Set
+                Me._aUDIT_ParametrosDTableAdapter = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Property BackupDataSetBeforeUpdate() As Boolean
             Get
@@ -12640,6 +14538,10 @@ Namespace ProductionDataSetTableAdapters
                             AndAlso (Not (Me._aUDIT_AuditoriasCondicionesTableAdapter.Connection) Is Nothing)) Then
                     Return Me._aUDIT_AuditoriasCondicionesTableAdapter.Connection
                 End If
+                If ((Not (Me._aUDIT_ParametrosDTableAdapter) Is Nothing)  _
+                            AndAlso (Not (Me._aUDIT_ParametrosDTableAdapter.Connection) Is Nothing)) Then
+                    Return Me._aUDIT_ParametrosDTableAdapter.Connection
+                End If
                 Return Nothing
             End Get
             Set
@@ -12669,6 +14571,9 @@ Namespace ProductionDataSetTableAdapters
                     count = (count + 1)
                 End If
                 If (Not (Me._aUDIT_AuditoriasCondicionesTableAdapter) Is Nothing) Then
+                    count = (count + 1)
+                End If
+                If (Not (Me._aUDIT_ParametrosDTableAdapter) Is Nothing) Then
                     count = (count + 1)
                 End If
                 Return count
@@ -12736,6 +14641,15 @@ Namespace ProductionDataSetTableAdapters
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
+            If (Not (Me._aUDIT_ParametrosDTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.AUDIT_ParametrosD.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._aUDIT_ParametrosDTableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
             Return result
         End Function
         
@@ -12794,6 +14708,14 @@ Namespace ProductionDataSetTableAdapters
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
+            If (Not (Me._aUDIT_ParametrosDTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.AUDIT_ParametrosD.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._aUDIT_ParametrosDTableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
             Return result
         End Function
         
@@ -12804,6 +14726,14 @@ Namespace ProductionDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Function UpdateDeletedRows(ByVal dataSet As ProductionDataSet, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
+            If (Not (Me._aUDIT_ParametrosDTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.AUDIT_ParametrosD.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._aUDIT_ParametrosDTableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
             If (Not (Me._aUDIT_AuditoriasCondicionesTableAdapter) Is Nothing) Then
                 Dim deletedRows() As Global.System.Data.DataRow = dataSet.AUDIT_AuditoriasCondiciones.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
@@ -12923,6 +14853,11 @@ Namespace ProductionDataSetTableAdapters
                 Throw New Global.System.ArgumentException("Todos los TableAdapters administrados por un TableAdapterManager deben usar la mi"& _ 
                         "sma cadena de conexión.")
             End If
+            If ((Not (Me._aUDIT_ParametrosDTableAdapter) Is Nothing)  _
+                        AndAlso (Me.MatchTableAdapterConnection(Me._aUDIT_ParametrosDTableAdapter.Connection) = false)) Then
+                Throw New Global.System.ArgumentException("Todos los TableAdapters administrados por un TableAdapterManager deben usar la mi"& _ 
+                        "sma cadena de conexión.")
+            End If
             Dim workConnection As Global.System.Data.IDbConnection = Me.Connection
             If (workConnection Is Nothing) Then
                 Throw New Global.System.ApplicationException("TableAdapterManager no contiene información de conexión. Establezca cada propieda"& _ 
@@ -13009,6 +14944,15 @@ Namespace ProductionDataSetTableAdapters
                         adaptersWithAcceptChangesDuringUpdate.Add(Me._aUDIT_AuditoriasCondicionesTableAdapter.Adapter)
                     End If
                 End If
+                If (Not (Me._aUDIT_ParametrosDTableAdapter) Is Nothing) Then
+                    revertConnections.Add(Me._aUDIT_ParametrosDTableAdapter, Me._aUDIT_ParametrosDTableAdapter.Connection)
+                    Me._aUDIT_ParametrosDTableAdapter.Connection = CType(workConnection,Global.System.Data.SqlClient.SqlConnection)
+                    Me._aUDIT_ParametrosDTableAdapter.Transaction = CType(workTransaction,Global.System.Data.SqlClient.SqlTransaction)
+                    If Me._aUDIT_ParametrosDTableAdapter.Adapter.AcceptChangesDuringUpdate Then
+                        Me._aUDIT_ParametrosDTableAdapter.Adapter.AcceptChangesDuringUpdate = false
+                        adaptersWithAcceptChangesDuringUpdate.Add(Me._aUDIT_ParametrosDTableAdapter.Adapter)
+                    End If
+                End If
                 '
                 '---- Perform updates -----------
                 '
@@ -13092,6 +15036,10 @@ Namespace ProductionDataSetTableAdapters
                 If (Not (Me._aUDIT_AuditoriasCondicionesTableAdapter) Is Nothing) Then
                     Me._aUDIT_AuditoriasCondicionesTableAdapter.Connection = CType(revertConnections(Me._aUDIT_AuditoriasCondicionesTableAdapter),Global.System.Data.SqlClient.SqlConnection)
                     Me._aUDIT_AuditoriasCondicionesTableAdapter.Transaction = Nothing
+                End If
+                If (Not (Me._aUDIT_ParametrosDTableAdapter) Is Nothing) Then
+                    Me._aUDIT_ParametrosDTableAdapter.Connection = CType(revertConnections(Me._aUDIT_ParametrosDTableAdapter),Global.System.Data.SqlClient.SqlConnection)
+                    Me._aUDIT_ParametrosDTableAdapter.Transaction = Nothing
                 End If
                 If (0 < adaptersWithAcceptChangesDuringUpdate.Count) Then
                     Dim adapters((adaptersWithAcceptChangesDuringUpdate.Count) - 1) As Global.System.Data.Common.DataAdapter

@@ -62,6 +62,17 @@ Partial Class frmAuditorias
         Me.AUDITParametrosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.AUDIT_ParametrosTableAdapter = New Auditoria.ProductionDataSetTableAdapters.AUDIT_ParametrosTableAdapter()
         Me.btnSalir = New System.Windows.Forms.Button()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.txtRev4 = New System.Windows.Forms.TextBox()
+        Me.txtRev3 = New System.Windows.Forms.TextBox()
+        Me.txtRev2 = New System.Windows.Forms.TextBox()
+        Me.txtRev1 = New System.Windows.Forms.TextBox()
+        Me.txtAuditoria = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
         AnexoLabel = New System.Windows.Forms.Label()
         CicloLabel = New System.Windows.Forms.Label()
         FechaCreacionLabel = New System.Windows.Forms.Label()
@@ -76,6 +87,7 @@ Partial Class frmAuditorias
         CType(Me.ProductionDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.AUDITParametrosBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.AUDITParametrosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'AnexoLabel
@@ -99,7 +111,7 @@ Partial Class frmAuditorias
         'FechaCreacionLabel
         '
         FechaCreacionLabel.AutoSize = True
-        FechaCreacionLabel.Location = New System.Drawing.Point(14, 51)
+        FechaCreacionLabel.Location = New System.Drawing.Point(11, 490)
         FechaCreacionLabel.Name = "FechaCreacionLabel"
         FechaCreacionLabel.Size = New System.Drawing.Size(85, 13)
         FechaCreacionLabel.TabIndex = 6
@@ -108,7 +120,7 @@ Partial Class frmAuditorias
         'UltimaActualizacionLabel
         '
         UltimaActualizacionLabel.AutoSize = True
-        UltimaActualizacionLabel.Location = New System.Drawing.Point(317, 49)
+        UltimaActualizacionLabel.Location = New System.Drawing.Point(312, 490)
         UltimaActualizacionLabel.Name = "UltimaActualizacionLabel"
         UltimaActualizacionLabel.Size = New System.Drawing.Size(105, 13)
         UltimaActualizacionLabel.TabIndex = 8
@@ -117,7 +129,7 @@ Partial Class frmAuditorias
         'FechaRelizacionLabel
         '
         FechaRelizacionLabel.AutoSize = True
-        FechaRelizacionLabel.Location = New System.Drawing.Point(7, 90)
+        FechaRelizacionLabel.Location = New System.Drawing.Point(28, 69)
         FechaRelizacionLabel.Name = "FechaRelizacionLabel"
         FechaRelizacionLabel.Size = New System.Drawing.Size(92, 13)
         FechaRelizacionLabel.TabIndex = 10
@@ -126,7 +138,7 @@ Partial Class frmAuditorias
         'ObervacionesLabel
         '
         ObervacionesLabel.AutoSize = True
-        ObervacionesLabel.Location = New System.Drawing.Point(648, 48)
+        ObervacionesLabel.Location = New System.Drawing.Point(44, 128)
         ObervacionesLabel.Name = "ObervacionesLabel"
         ObervacionesLabel.Size = New System.Drawing.Size(76, 13)
         ObervacionesLabel.TabIndex = 12
@@ -135,7 +147,7 @@ Partial Class frmAuditorias
         'EstatusLabel
         '
         EstatusLabel.AutoSize = True
-        EstatusLabel.Location = New System.Drawing.Point(456, 89)
+        EstatusLabel.Location = New System.Drawing.Point(629, 488)
         EstatusLabel.Name = "EstatusLabel"
         EstatusLabel.Size = New System.Drawing.Size(45, 13)
         EstatusLabel.TabIndex = 14
@@ -161,10 +173,10 @@ Partial Class frmAuditorias
         '
         'btnAgregar
         '
-        Me.btnAgregar.Location = New System.Drawing.Point(807, 444)
+        Me.btnAgregar.Location = New System.Drawing.Point(807, 483)
         Me.btnAgregar.Name = "btnAgregar"
         Me.btnAgregar.Size = New System.Drawing.Size(75, 23)
-        Me.btnAgregar.TabIndex = 11
+        Me.btnAgregar.TabIndex = 8
         Me.btnAgregar.Text = "Agregar"
         Me.btnAgregar.UseVisualStyleBackColor = True
         '
@@ -176,11 +188,11 @@ Partial Class frmAuditorias
         Me.AUDIT_AuditoriasDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.AUDIT_AuditoriasDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn10, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8, Me.DataGridViewTextBoxColumn9})
         Me.AUDIT_AuditoriasDataGridView.DataSource = Me.AUDIT_AuditoriasBindingSource
-        Me.AUDIT_AuditoriasDataGridView.Location = New System.Drawing.Point(12, 142)
+        Me.AUDIT_AuditoriasDataGridView.Location = New System.Drawing.Point(12, 201)
         Me.AUDIT_AuditoriasDataGridView.Name = "AUDIT_AuditoriasDataGridView"
         Me.AUDIT_AuditoriasDataGridView.ReadOnly = True
-        Me.AUDIT_AuditoriasDataGridView.Size = New System.Drawing.Size(1081, 296)
-        Me.AUDIT_AuditoriasDataGridView.TabIndex = 10
+        Me.AUDIT_AuditoriasDataGridView.Size = New System.Drawing.Size(1081, 272)
+        Me.AUDIT_AuditoriasDataGridView.TabIndex = 7
         '
         'DataGridViewTextBoxColumn10
         '
@@ -267,6 +279,7 @@ Partial Class frmAuditorias
         '
         Me.AnexoTextBox.BackColor = System.Drawing.SystemColors.MenuBar
         Me.AnexoTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.AnexoTextBox.Enabled = False
         Me.AnexoTextBox.Location = New System.Drawing.Point(61, 15)
         Me.AnexoTextBox.Name = "AnexoTextBox"
         Me.AnexoTextBox.Size = New System.Drawing.Size(100, 13)
@@ -276,6 +289,7 @@ Partial Class frmAuditorias
         '
         Me.CicloTextBox.BackColor = System.Drawing.SystemColors.Control
         Me.CicloTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.CicloTextBox.Enabled = False
         Me.CicloTextBox.Location = New System.Drawing.Point(215, 15)
         Me.CicloTextBox.Name = "CicloTextBox"
         Me.CicloTextBox.Size = New System.Drawing.Size(100, 13)
@@ -284,7 +298,7 @@ Partial Class frmAuditorias
         'FechaCreacionDateTimePicker
         '
         Me.FechaCreacionDateTimePicker.Enabled = False
-        Me.FechaCreacionDateTimePicker.Location = New System.Drawing.Point(105, 47)
+        Me.FechaCreacionDateTimePicker.Location = New System.Drawing.Point(102, 486)
         Me.FechaCreacionDateTimePicker.Name = "FechaCreacionDateTimePicker"
         Me.FechaCreacionDateTimePicker.Size = New System.Drawing.Size(200, 20)
         Me.FechaCreacionDateTimePicker.TabIndex = 5
@@ -292,7 +306,7 @@ Partial Class frmAuditorias
         'UltimaActualizacionDateTimePicker
         '
         Me.UltimaActualizacionDateTimePicker.Enabled = False
-        Me.UltimaActualizacionDateTimePicker.Location = New System.Drawing.Point(428, 45)
+        Me.UltimaActualizacionDateTimePicker.Location = New System.Drawing.Point(423, 486)
         Me.UltimaActualizacionDateTimePicker.Name = "UltimaActualizacionDateTimePicker"
         Me.UltimaActualizacionDateTimePicker.Size = New System.Drawing.Size(200, 20)
         Me.UltimaActualizacionDateTimePicker.TabIndex = 6
@@ -300,25 +314,26 @@ Partial Class frmAuditorias
         'FechaRelizacionDateTimePicker
         '
         Me.FechaRelizacionDateTimePicker.Enabled = False
-        Me.FechaRelizacionDateTimePicker.Location = New System.Drawing.Point(105, 86)
+        Me.FechaRelizacionDateTimePicker.Location = New System.Drawing.Point(126, 65)
         Me.FechaRelizacionDateTimePicker.Name = "FechaRelizacionDateTimePicker"
         Me.FechaRelizacionDateTimePicker.Size = New System.Drawing.Size(200, 20)
-        Me.FechaRelizacionDateTimePicker.TabIndex = 7
+        Me.FechaRelizacionDateTimePicker.TabIndex = 0
         '
         'ObervacionesTextBox
         '
         Me.ObervacionesTextBox.Enabled = False
-        Me.ObervacionesTextBox.Location = New System.Drawing.Point(730, 45)
+        Me.ObervacionesTextBox.Location = New System.Drawing.Point(126, 125)
         Me.ObervacionesTextBox.Multiline = True
         Me.ObervacionesTextBox.Name = "ObervacionesTextBox"
         Me.ObervacionesTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both
-        Me.ObervacionesTextBox.Size = New System.Drawing.Size(363, 62)
-        Me.ObervacionesTextBox.TabIndex = 9
+        Me.ObervacionesTextBox.Size = New System.Drawing.Size(789, 65)
+        Me.ObervacionesTextBox.TabIndex = 2
         '
         'UsuarioTextBox
         '
         Me.UsuarioTextBox.BackColor = System.Drawing.SystemColors.Control
         Me.UsuarioTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.UsuarioTextBox.Enabled = False
         Me.UsuarioTextBox.Location = New System.Drawing.Point(563, 15)
         Me.UsuarioTextBox.Name = "UsuarioTextBox"
         Me.UsuarioTextBox.Size = New System.Drawing.Size(100, 13)
@@ -327,10 +342,10 @@ Partial Class frmAuditorias
         'btnGuardar
         '
         Me.btnGuardar.Enabled = False
-        Me.btnGuardar.Location = New System.Drawing.Point(888, 444)
+        Me.btnGuardar.Location = New System.Drawing.Point(888, 483)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(125, 23)
-        Me.btnGuardar.TabIndex = 12
+        Me.btnGuardar.TabIndex = 9
         Me.btnGuardar.Text = "Guardar"
         Me.btnGuardar.UseVisualStyleBackColor = True
         '
@@ -343,6 +358,7 @@ Partial Class frmAuditorias
         Me.TableAdapterManager.AUDIT_AuditoriasCondicionesTableAdapter = Nothing
         Me.TableAdapterManager.AUDIT_AuditoriasTableAdapter = Me.AUDIT_AuditoriasTableAdapter
         Me.TableAdapterManager.AUDIT_CondicionesTableAdapter = Nothing
+        Me.TableAdapterManager.AUDIT_ParametrosDTableAdapter = Nothing
         Me.TableAdapterManager.AUDIT_ParametrosHTableAdapter = Nothing
         Me.TableAdapterManager.AUDIT_ParametrosTableAdapter = Nothing
         Me.TableAdapterManager.AUDIT_ParametrosVTableAdapter = Nothing
@@ -353,6 +369,7 @@ Partial Class frmAuditorias
         '
         Me.ConsecutivoTextBox.BackColor = System.Drawing.SystemColors.Control
         Me.ConsecutivoTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.ConsecutivoTextBox.Enabled = False
         Me.ConsecutivoTextBox.Location = New System.Drawing.Point(405, 15)
         Me.ConsecutivoTextBox.Name = "ConsecutivoTextBox"
         Me.ConsecutivoTextBox.Size = New System.Drawing.Size(100, 13)
@@ -364,7 +381,7 @@ Partial Class frmAuditorias
         Me.cmbEstatus.DisplayMember = "Descripcion"
         Me.cmbEstatus.Enabled = False
         Me.cmbEstatus.FormattingEnabled = True
-        Me.cmbEstatus.Location = New System.Drawing.Point(507, 86)
+        Me.cmbEstatus.Location = New System.Drawing.Point(680, 485)
         Me.cmbEstatus.Name = "cmbEstatus"
         Me.cmbEstatus.Size = New System.Drawing.Size(121, 21)
         Me.cmbEstatus.TabIndex = 8
@@ -381,18 +398,122 @@ Partial Class frmAuditorias
         '
         'btnSalir
         '
-        Me.btnSalir.Location = New System.Drawing.Point(1019, 444)
+        Me.btnSalir.Location = New System.Drawing.Point(1019, 483)
         Me.btnSalir.Name = "btnSalir"
         Me.btnSalir.Size = New System.Drawing.Size(75, 23)
-        Me.btnSalir.TabIndex = 13
+        Me.btnSalir.TabIndex = 10
         Me.btnSalir.Text = "Salir"
         Me.btnSalir.UseVisualStyleBackColor = True
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.Label4)
+        Me.GroupBox1.Controls.Add(Me.Label3)
+        Me.GroupBox1.Controls.Add(Me.Label2)
+        Me.GroupBox1.Controls.Add(Me.Label1)
+        Me.GroupBox1.Controls.Add(Me.txtRev4)
+        Me.GroupBox1.Controls.Add(Me.txtRev3)
+        Me.GroupBox1.Controls.Add(Me.txtRev2)
+        Me.GroupBox1.Controls.Add(Me.txtRev1)
+        Me.GroupBox1.Location = New System.Drawing.Point(372, 43)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(721, 72)
+        Me.GroupBox1.TabIndex = 3
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Revisiones:"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(330, 48)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(158, 13)
+        Me.Label4.TabIndex = 7
+        Me.Label4.Text = "Cédula de Verificación Técnica:"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(330, 22)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(44, 13)
+        Me.Label3.TabIndex = 6
+        Me.Label3.Text = "Pagaré:"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(6, 48)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(119, 13)
+        Me.Label2.TabIndex = 5
+        Me.Label2.Text = "Reporte de supervisión:"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(6, 22)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(114, 13)
+        Me.Label1.TabIndex = 4
+        Me.Label1.Text = "Información financiera:"
+        '
+        'txtRev4
+        '
+        Me.txtRev4.Location = New System.Drawing.Point(589, 45)
+        Me.txtRev4.Name = "txtRev4"
+        Me.txtRev4.Size = New System.Drawing.Size(30, 20)
+        Me.txtRev4.TabIndex = 6
+        Me.txtRev4.Text = "1"
+        '
+        'txtRev3
+        '
+        Me.txtRev3.Location = New System.Drawing.Point(589, 19)
+        Me.txtRev3.Name = "txtRev3"
+        Me.txtRev3.Size = New System.Drawing.Size(30, 20)
+        Me.txtRev3.TabIndex = 5
+        Me.txtRev3.Text = "1"
+        '
+        'txtRev2
+        '
+        Me.txtRev2.Location = New System.Drawing.Point(261, 45)
+        Me.txtRev2.Name = "txtRev2"
+        Me.txtRev2.Size = New System.Drawing.Size(30, 20)
+        Me.txtRev2.TabIndex = 4
+        Me.txtRev2.Text = "1"
+        '
+        'txtRev1
+        '
+        Me.txtRev1.Location = New System.Drawing.Point(261, 19)
+        Me.txtRev1.Name = "txtRev1"
+        Me.txtRev1.Size = New System.Drawing.Size(30, 20)
+        Me.txtRev1.TabIndex = 3
+        Me.txtRev1.Text = "1"
+        '
+        'txtAuditoria
+        '
+        Me.txtAuditoria.Location = New System.Drawing.Point(126, 91)
+        Me.txtAuditoria.Name = "txtAuditoria"
+        Me.txtAuditoria.Size = New System.Drawing.Size(150, 20)
+        Me.txtAuditoria.TabIndex = 1
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(28, 94)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(93, 13)
+        Me.Label5.TabIndex = 22
+        Me.Label5.Text = "Folio de Auditoría:"
         '
         'frmAuditorias
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1105, 479)
+        Me.ClientSize = New System.Drawing.Size(1105, 527)
+        Me.Controls.Add(Me.Label5)
+        Me.Controls.Add(Me.txtAuditoria)
+        Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.btnSalir)
         Me.Controls.Add(Me.cmbEstatus)
         Me.Controls.Add(ConsecutivoLabel)
@@ -422,6 +543,8 @@ Partial Class frmAuditorias
         CType(Me.ProductionDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.AUDITParametrosBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.AUDITParametrosBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -454,4 +577,15 @@ Partial Class frmAuditorias
     Friend WithEvents DataGridViewTextBoxColumn8 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn9 As DataGridViewTextBoxColumn
     Friend WithEvents btnSalir As Button
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents txtRev1 As TextBox
+    Friend WithEvents txtRev4 As TextBox
+    Friend WithEvents txtRev3 As TextBox
+    Friend WithEvents txtRev2 As TextBox
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label1 As Label
+    Friend WithEvents txtAuditoria As TextBox
+    Friend WithEvents Label5 As Label
 End Class

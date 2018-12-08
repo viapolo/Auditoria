@@ -47,14 +47,15 @@
 
         For Each Detalle In ProductionDataSet.AUDIT_AuditoriasCondiciones.Rows
             DataGridView1.Rows.Add()
-            DataGridView1.Item(0, cont).Value = Detalle.Id_Condicion
-            DataGridView1.Item(1, cont).Value = CInt(Detalle.Validacion)
-            DataGridView1.Item(2, cont).Value = CInt(Detalle.CategoriaHallazgo)
+            DataGridView1.Item(0, cont).Value = AUDIT_CondicionesTableAdapter.ObtCond_ScalarQuery(Detalle.Id_Condicion) 'Detalle.Id_Condicion
+            DataGridView1.Item(1, cont).Value = AUDIT_ParametrosVTableAdapter.ObtDesc_ScalarQuery(Detalle.Validacion)  'CInt(Detalle.Validacion)
+            DataGridView1.Item(2, cont).Value = AUDIT_ParametrosHTableAdapter.ObtDesc_ScalarQuery(Detalle.CategoriaHallazgo) 'CInt(Detalle.CategoriaHallazgo)
             DataGridView1.Item(3, cont).Value = Detalle.Id_auditoria
             DataGridView1.Item(4, cont).Value = Detalle.Observaciones
             DataGridView1.Item(5, cont).Value = Detalle.FechaSolventacion
             DataGridView1.Item(6, cont).Value = Detalle.Comentarios
             DataGridView1.Item(7, cont).Value = Detalle.Id_auditoriaCondicion
+            DataGridView1.Item(8, cont).Value = Detalle.Id_Condicion
             cont += 1
         Next
         If cont > 0 And cmbEstatus.Text <> "ABIERTO" = True Then
@@ -70,6 +71,8 @@
             ObervacionesTextBox.Enabled = True
             cmbEstatus.Enabled = True
             'DataGridView1.Enabled = True
+            FechaRelizacionDateTimePicker.Enabled = True
+            FolAuditoriaTextBox.Enabled = True
             If bandera <> False Then
                 btnAgregar.Enabled = True
             End If
@@ -82,6 +85,8 @@
             'DataGridView1.Enabled = False
             btnAgregar.Enabled = False
             btnActualizar.Enabled = False
+            FechaRelizacionDateTimePicker.Enabled = False
+            FolAuditoriaTextBox.Enabled = False
         End If
     End Sub
 
@@ -159,19 +164,26 @@
         frmAuditoriaCondiciones.var_estatusBtnActualizar = True
         If DataGridView1.Item(7, e.RowIndex).Value = Nothing Then
             frmAuditoriaCondiciones.var_idAuditoria = AUDIT_AuditoriasBindingSource.Current("id_Auditoria")
+            frmAuditoriaCondiciones.var_idCondicion = DataGridView1.Item(8, e.RowIndex).Value
             frmAuditoriaCondiciones.MdiParent = MDIAuditoria
             frmAuditoriaCondiciones.Show()
         Else
             frmAuditoriaCondiciones.var_idAuditoria = AUDIT_AuditoriasBindingSource.Current("id_Auditoria")
             frmAuditoriaCondiciones.var_idAuditoriaCondiciones = DataGridView1.Item(7, e.RowIndex).Value
+            frmAuditoriaCondiciones.var_idCondicion = DataGridView1.Item(8, e.RowIndex).Value
             frmAuditoriaCondiciones.MdiParent = MDIAuditoria
             frmAuditoriaCondiciones.Show()
         End If
         Me.Enabled = False
+        'If DataGridView1.Item(8, e.RowIndex).Value = 33 Or DataGridView1.Item(8, e.RowIndex).Value = 37 Or DataGridView1.Item(8, e.RowIndex).Value = 35 Or DataGridView1.Item(8, e.RowIndex).Value = 36 Then
+        '    frmAuditoriaCondiciones.RevisionesTextBox.Enabled = True
+        'End If
         frmAuditoriaCondiciones.var_anexoAMC = var_anexoAM
         frmAuditoriaCondiciones.var_consecAMC = var_consecAM
         frmAuditoriaCondiciones.var_num_celdas = DataGridView1.Rows.Count
         frmAuditoriaCondiciones.cmbCondicion.Enabled = False
+        'frmAuditoriaCondiciones.var_idCondicion = DataGrid
+
     End Sub
 
 

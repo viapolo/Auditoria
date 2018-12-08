@@ -27,6 +27,8 @@ Partial Class frmAuditoriaMod
         Dim CicloLabel As System.Windows.Forms.Label
         Dim ObervacionesLabel As System.Windows.Forms.Label
         Dim EstatusLabel As System.Windows.Forms.Label
+        Dim FechaRelizacionLabel As System.Windows.Forms.Label
+        Dim FolAuditoriaLabel As System.Windows.Forms.Label
         Me.ProductionDataSet = New Auditoria.ProductionDataSet()
         Me.AUDIT_AuditoriasBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.AUDIT_AuditoriasTableAdapter = New Auditoria.ProductionDataSetTableAdapters.AUDIT_AuditoriasTableAdapter()
@@ -43,8 +45,7 @@ Partial Class frmAuditoriaMod
         Me.AUDIT_AuditoriasCondicionesTableAdapter = New Auditoria.ProductionDataSetTableAdapters.AUDIT_AuditoriasCondicionesTableAdapter()
         Me.AUDIT_AuditoriasCondicionesBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.Id_Condicion = New System.Windows.Forms.DataGridViewComboBoxColumn()
-        Me.AUDITCondicionesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Id_Condicion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Validacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CategoriaHallazgo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.id_auditoria = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -52,6 +53,8 @@ Partial Class frmAuditoriaMod
         Me.FechaSolventacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Comentarios = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Id_auditoriaCondicion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.id_Cond = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.AUDITCondicionesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.AUDITParametrosVBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.btnAgregar = New System.Windows.Forms.Button()
         Me.AUDIT_CondicionesTableAdapter = New Auditoria.ProductionDataSetTableAdapters.AUDIT_CondicionesTableAdapter()
@@ -59,10 +62,14 @@ Partial Class frmAuditoriaMod
         Me.AUDITParametrosHBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.AUDIT_ParametrosHTableAdapter = New Auditoria.ProductionDataSetTableAdapters.AUDIT_ParametrosHTableAdapter()
         Me.btnSalir = New System.Windows.Forms.Button()
+        Me.FechaRelizacionDateTimePicker = New System.Windows.Forms.DateTimePicker()
+        Me.FolAuditoriaTextBox = New System.Windows.Forms.TextBox()
         AnexoLabel = New System.Windows.Forms.Label()
         CicloLabel = New System.Windows.Forms.Label()
         ObervacionesLabel = New System.Windows.Forms.Label()
         EstatusLabel = New System.Windows.Forms.Label()
+        FechaRelizacionLabel = New System.Windows.Forms.Label()
+        FolAuditoriaLabel = New System.Windows.Forms.Label()
         CType(Me.ProductionDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.AUDIT_AuditoriasBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.AUDITParametrosBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -110,6 +117,24 @@ Partial Class frmAuditoriaMod
         EstatusLabel.Size = New System.Drawing.Size(45, 13)
         EstatusLabel.TabIndex = 6
         EstatusLabel.Text = "Estatus:"
+        '
+        'FechaRelizacionLabel
+        '
+        FechaRelizacionLabel.AutoSize = True
+        FechaRelizacionLabel.Location = New System.Drawing.Point(773, 42)
+        FechaRelizacionLabel.Name = "FechaRelizacionLabel"
+        FechaRelizacionLabel.Size = New System.Drawing.Size(92, 13)
+        FechaRelizacionLabel.TabIndex = 12
+        FechaRelizacionLabel.Text = "Fecha Relizacion:"
+        '
+        'FolAuditoriaLabel
+        '
+        FolAuditoriaLabel.AutoSize = True
+        FolAuditoriaLabel.Location = New System.Drawing.Point(797, 67)
+        FolAuditoriaLabel.Name = "FolAuditoriaLabel"
+        FolAuditoriaLabel.Size = New System.Drawing.Size(68, 13)
+        FolAuditoriaLabel.TabIndex = 14
+        FolAuditoriaLabel.Text = "No Auditoria:"
         '
         'ProductionDataSet
         '
@@ -174,7 +199,7 @@ Partial Class frmAuditoriaMod
         Me.cmbEstatus.Location = New System.Drawing.Point(95, 106)
         Me.cmbEstatus.Name = "cmbEstatus"
         Me.cmbEstatus.Size = New System.Drawing.Size(121, 21)
-        Me.cmbEstatus.TabIndex = 8
+        Me.cmbEstatus.TabIndex = 6
         Me.cmbEstatus.ValueMember = "Descripcion"
         '
         'AUDITParametrosBindingSource1
@@ -196,7 +221,7 @@ Partial Class frmAuditoriaMod
         Me.btnActualizar.Location = New System.Drawing.Point(1038, 505)
         Me.btnActualizar.Name = "btnActualizar"
         Me.btnActualizar.Size = New System.Drawing.Size(75, 23)
-        Me.btnActualizar.TabIndex = 9
+        Me.btnActualizar.TabIndex = 11
         Me.btnActualizar.Text = "Actualizar"
         Me.btnActualizar.UseVisualStyleBackColor = True
         '
@@ -219,30 +244,21 @@ Partial Class frmAuditoriaMod
         Me.DataGridView1.AllowUserToAddRows = False
         Me.DataGridView1.AllowUserToDeleteRows = False
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Id_Condicion, Me.Validacion, Me.CategoriaHallazgo, Me.id_auditoria, Me.Observaciones, Me.FechaSolventacion, Me.Comentarios, Me.Id_auditoriaCondicion})
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Id_Condicion, Me.Validacion, Me.CategoriaHallazgo, Me.id_auditoria, Me.Observaciones, Me.FechaSolventacion, Me.Comentarios, Me.Id_auditoriaCondicion, Me.id_Cond})
         Me.DataGridView1.Location = New System.Drawing.Point(16, 133)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.Size = New System.Drawing.Size(1178, 366)
-        Me.DataGridView1.TabIndex = 10
+        Me.DataGridView1.TabIndex = 9
         '
         'Id_Condicion
         '
         Me.Id_Condicion.DataPropertyName = "Id_Condicion"
-        Me.Id_Condicion.DataSource = Me.AUDITCondicionesBindingSource
-        Me.Id_Condicion.DisplayMember = "Condicion"
         Me.Id_Condicion.HeaderText = "Condicion"
         Me.Id_Condicion.Name = "Id_Condicion"
         Me.Id_Condicion.ReadOnly = True
         Me.Id_Condicion.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Id_Condicion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        Me.Id_Condicion.ValueMember = "id_Condicion"
-        Me.Id_Condicion.Width = 200
-        '
-        'AUDITCondicionesBindingSource
-        '
-        Me.AUDITCondicionesBindingSource.DataMember = "AUDIT_Condiciones"
-        Me.AUDITCondicionesBindingSource.DataSource = Me.ProductionDataSet
+        Me.Id_Condicion.Width = 300
         '
         'Validacion
         '
@@ -251,7 +267,6 @@ Partial Class frmAuditoriaMod
         Me.Validacion.Name = "Validacion"
         Me.Validacion.ReadOnly = True
         Me.Validacion.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Validacion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
         Me.Validacion.Width = 150
         '
         'CategoriaHallazgo
@@ -299,6 +314,18 @@ Partial Class frmAuditoriaMod
         Me.Id_auditoriaCondicion.ReadOnly = True
         Me.Id_auditoriaCondicion.Visible = False
         '
+        'id_Cond
+        '
+        Me.id_Cond.DataPropertyName = "Id_Condicion"
+        Me.id_Cond.HeaderText = "id_Cond"
+        Me.id_Cond.Name = "id_Cond"
+        Me.id_Cond.ReadOnly = True
+        '
+        'AUDITCondicionesBindingSource
+        '
+        Me.AUDITCondicionesBindingSource.DataMember = "AUDIT_Condiciones"
+        Me.AUDITCondicionesBindingSource.DataSource = Me.ProductionDataSet
+        '
         'AUDITParametrosVBindingSource
         '
         Me.AUDITParametrosVBindingSource.DataMember = "AUDIT_ParametrosV"
@@ -306,10 +333,11 @@ Partial Class frmAuditoriaMod
         '
         'btnAgregar
         '
+        Me.btnAgregar.Enabled = False
         Me.btnAgregar.Location = New System.Drawing.Point(957, 505)
         Me.btnAgregar.Name = "btnAgregar"
         Me.btnAgregar.Size = New System.Drawing.Size(75, 23)
-        Me.btnAgregar.TabIndex = 11
+        Me.btnAgregar.TabIndex = 10
         Me.btnAgregar.Text = "Agregar"
         Me.btnAgregar.UseVisualStyleBackColor = True
         '
@@ -339,11 +367,31 @@ Partial Class frmAuditoriaMod
         Me.btnSalir.Text = "Salir"
         Me.btnSalir.UseVisualStyleBackColor = True
         '
+        'FechaRelizacionDateTimePicker
+        '
+        Me.FechaRelizacionDateTimePicker.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.AUDIT_AuditoriasBindingSource, "FechaRelizacion", True))
+        Me.FechaRelizacionDateTimePicker.Location = New System.Drawing.Point(871, 38)
+        Me.FechaRelizacionDateTimePicker.Name = "FechaRelizacionDateTimePicker"
+        Me.FechaRelizacionDateTimePicker.Size = New System.Drawing.Size(200, 20)
+        Me.FechaRelizacionDateTimePicker.TabIndex = 7
+        '
+        'FolAuditoriaTextBox
+        '
+        Me.FolAuditoriaTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.AUDIT_AuditoriasBindingSource, "folAuditoria", True))
+        Me.FolAuditoriaTextBox.Location = New System.Drawing.Point(871, 64)
+        Me.FolAuditoriaTextBox.Name = "FolAuditoriaTextBox"
+        Me.FolAuditoriaTextBox.Size = New System.Drawing.Size(150, 20)
+        Me.FolAuditoriaTextBox.TabIndex = 8
+        '
         'frmAuditoriaMod
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1206, 543)
+        Me.ClientSize = New System.Drawing.Size(1214, 548)
+        Me.Controls.Add(FolAuditoriaLabel)
+        Me.Controls.Add(Me.FolAuditoriaTextBox)
+        Me.Controls.Add(FechaRelizacionLabel)
+        Me.Controls.Add(Me.FechaRelizacionDateTimePicker)
         Me.Controls.Add(Me.btnSalir)
         Me.Controls.Add(Me.btnAgregar)
         Me.Controls.Add(Me.DataGridView1)
@@ -358,7 +406,7 @@ Partial Class frmAuditoriaMod
         Me.Controls.Add(Me.AnexoTextBox)
         Me.Name = "frmAuditoriaMod"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "frmAuditoriaMod"
+        Me.Text = "Condiciones"
         CType(Me.ProductionDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.AUDIT_AuditoriasBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.AUDITParametrosBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -397,7 +445,10 @@ Partial Class frmAuditoriaMod
     Friend WithEvents AUDIT_ParametrosVTableAdapter As ProductionDataSetTableAdapters.AUDIT_ParametrosVTableAdapter
     Friend WithEvents AUDITParametrosHBindingSource As BindingSource
     Friend WithEvents AUDIT_ParametrosHTableAdapter As ProductionDataSetTableAdapters.AUDIT_ParametrosHTableAdapter
-    Friend WithEvents Id_Condicion As DataGridViewComboBoxColumn
+    Friend WithEvents btnSalir As Button
+    Friend WithEvents FechaRelizacionDateTimePicker As DateTimePicker
+    Friend WithEvents FolAuditoriaTextBox As TextBox
+    Friend WithEvents Id_Condicion As DataGridViewTextBoxColumn
     Friend WithEvents Validacion As DataGridViewTextBoxColumn
     Friend WithEvents CategoriaHallazgo As DataGridViewTextBoxColumn
     Friend WithEvents id_auditoria As DataGridViewTextBoxColumn
@@ -405,5 +456,5 @@ Partial Class frmAuditoriaMod
     Friend WithEvents FechaSolventacion As DataGridViewTextBoxColumn
     Friend WithEvents Comentarios As DataGridViewTextBoxColumn
     Friend WithEvents Id_auditoriaCondicion As DataGridViewTextBoxColumn
-    Friend WithEvents btnSalir As Button
+    Friend WithEvents id_Cond As DataGridViewTextBoxColumn
 End Class
