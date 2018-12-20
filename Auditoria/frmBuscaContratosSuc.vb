@@ -1,33 +1,30 @@
-﻿Public Class frmBuscaContratos
-
-    Private Sub frmBuscaContratos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'TODO: esta línea de código carga datos en la tabla 'ProductionDataSet.Vw_Anexos' Puede moverla o quitarla según sea necesario.
-        Me.Vw_AnexosTableAdapter.Fill(Me.ProductionDataSet.Vw_Anexos)
-        'TODO: esta línea de código carga datos en la tabla 'ProductionDataSet.Clientes' Puede moverla o quitarla según sea necesario.
-        Me.ClientesTableAdapter.Fill(Me.ProductionDataSet.Clientes)
+﻿Public Class frmBuscaContratosSuc
+    Private Sub frmBuscaContratosSuc_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: esta línea de código carga datos en la tabla 'ProductionDataSet1.Sucursales' Puede moverla o quitarla según sea necesario.
+        Me.SucursalesTableAdapter.Fill(Me.ProductionDataSet1.Sucursales)
 
     End Sub
 
-    Private Sub cmbClientes_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbClientes.SelectedIndexChanged
-        Dim taVWAnexos As New ProductionDataSetTableAdapters.Vw_AnexosTableAdapter
-
-        If Not cmbClientes.SelectedValue Is Nothing Then
-            taVWAnexos.ObtCont_FillBy(ProductionDataSet.Vw_Anexos, cmbClientes.SelectedValue.ToString)
+    Private Sub cmbSucursales_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbSucursales.SelectedIndexChanged
+        Dim taAnexosSucursales As New ProductionDataSetTableAdapters.Vw_AnexosTableAdapter
+        If Not cmbSucursales.SelectedValue Is Nothing Then
+            taAnexosSucursales.ObtSuc_FillBy(ProductionDataSet.Vw_Anexos, cmbSucursales.Text)
             lbxContratos.Items.Clear()
 
             For Each rows As ProductionDataSet.Vw_AnexosRow In ProductionDataSet.Vw_Anexos.Rows
                 If rows.Ciclo <> "" Then
-                    lbxContratos.Items.Add(rows.Nombre_Sucursal.Trim + " / " + rows.TipoCredito + " / " + rows.Anexo.Trim + " / " + rows.Ciclo)
+                    lbxContratos.Items.Add(rows.Nombre_Sucursal.Trim + " / " + rows.TipoCredito + " / " + rows.Anexo + " / " + rows.Ciclo)
                 Else
-                    lbxContratos.Items.Add(rows.Nombre_Sucursal.Trim + " / " + rows.TipoCredito + " / " + rows.Anexo.Trim)
+                    lbxContratos.Items.Add(rows.Nombre_Sucursal.Trim + " / " + rows.TipoCredito + " / " + rows.Anexo)
                 End If
             Next
         End If
     End Sub
 
+
     Private Sub lbxContratos_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lbxContratos.SelectedIndexChanged
         Me.Cursor = Cursors.WaitCursor
-        cmbClientes.Enabled = False
+        cmbSucursales.Enabled = False
         If lbxContratos.Items.Count > 0 Then
             Dim taCiclo As New ProductionDataSetTableAdapters.Vw_AnexosTableAdapter
             Dim taAuditorias As New ProductionDataSetTableAdapters.AUDIT_AuditoriasTableAdapter
@@ -42,9 +39,8 @@
             End If
             frmAuditorias.var_anexo = datos(2) 'lbxContratos.SelectedItem
             frmAuditorias.var_ciclo = datos(3) 'taCiclo.ObtCicloScalar(datos(2).Trim)
-            frmAuditorias.var_consecutivo = taAuditorias.ContadorAuditorias(datos(2).Trim, datos(3))
-
-            taAuditorias.ObtAudit_FillBy(ProductionDataSet.AUDIT_Auditorias, datos(2).Trim, datos(3))
+            frmAuditorias.var_consecutivo = taAuditorias.ContadorAuditorias(datos(2).Trim, datos(3).Trim)
+            taAuditorias.ObtAudit_FillBy(ProductionDataSet.AUDIT_Auditorias, datos(2).Trim, datos(3).Trim)
             Me.Enabled = False
             If ProductionDataSet.AUDIT_Auditorias.Rows.Count = 0 Then
                 If MsgBox("El contrato no tiene auditorias relacionadas, ¿Deséa auditar?", MsgBoxStyle.YesNoCancel) = MsgBoxResult.Yes Then
@@ -59,7 +55,7 @@
             End If
         End If
         Me.Cursor = Cursors.Default
-        cmbClientes.Enabled = True
+        cmbSucursales.Enabled = True
     End Sub
 
     Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click

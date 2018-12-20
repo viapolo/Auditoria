@@ -2,6 +2,8 @@
     Public var_anexoAM As String
     Public var_consecAM As String
     Public var_numeceldas As Integer
+    Public var_id_auditoria As Integer
+    Public var_ciclo As String
 
     Public bandera As Boolean = False
     Dim dtpFecha As DateTimePicker
@@ -24,22 +26,23 @@
         'TODO: esta línea de código carga datos en la tabla 'ProductionDataSet.AUDIT_Parametros' Puede moverla o quitarla según sea necesario.
         Me.AUDIT_ParametrosTableAdapter.Fill(Me.ProductionDataSet.AUDIT_Parametros)
         'TODO: esta línea de código carga datos en la tabla 'ProductionDataSet.AUDIT_Auditorias' Puede moverla o quitarla según sea necesario.
-        Me.AUDIT_AuditoriasTableAdapter.ObtAuditConsec_FillBy(Me.ProductionDataSet.AUDIT_Auditorias, var_anexoAM, var_consecAM)
+        Me.AUDIT_AuditoriasTableAdapter.ObtAuditConsec_FillBy(Me.ProductionDataSet.AUDIT_Auditorias, var_anexoAM.Trim, var_consecAM.Trim, var_ciclo)
         If cmbEstatus.Text = "ABIERTO" Then
             actdes("H")
         ElseIf cmbEstatus.Text = "CERRADO" Then
             actdes("D")
         End If
-        dtpFecha = New DateTimePicker
-        dtpFecha.Format = DateTimePickerFormat.Short
-        dtpFecha.Visible = False
-        dtpFecha.Width = 100
-        DataGridView1.Controls.Add(dtpFecha)
+        'dtpFecha = New DateTimePicker
+        'dtpFecha.Format = DateTimePickerFormat.Short
+        'dtpFecha.Visible = False
+        'dtpFecha.Width = 100
+        'DataGridView1.Controls.Add(dtpFecha)
 
         Dim taDetalleAuditCondiciones As New ProductionDataSetTableAdapters.AUDIT_AuditoriasCondicionesTableAdapter
         Dim Detalle As ProductionDataSet.AUDIT_AuditoriasCondicionesRow
 
-        taDetalleAuditCondiciones.Obt_AllDetalleAuditCond_FillBy(ProductionDataSet.AUDIT_AuditoriasCondiciones, AUDIT_AuditoriasBindingSource.Current("id_Auditoria"))
+        'taDetalleAuditCondiciones.Obt_AllDetalleAuditCond_FillBy(ProductionDataSet.AUDIT_AuditoriasCondiciones, AUDIT_AuditoriasBindingSource.Current("id_Auditoria"))
+        taDetalleAuditCondiciones.Obt_AllDetalleAuditCond_FillBy(ProductionDataSet.AUDIT_AuditoriasCondiciones, var_id_auditoria)
 
         Dim cont As Integer = 0
 
@@ -47,15 +50,20 @@
 
         For Each Detalle In ProductionDataSet.AUDIT_AuditoriasCondiciones.Rows
             DataGridView1.Rows.Add()
-            DataGridView1.Item(0, cont).Value = AUDIT_CondicionesTableAdapter.ObtCond_ScalarQuery(Detalle.Id_Condicion) 'Detalle.Id_Condicion
+            If Detalle.ConsecRevisiones <> 1 Then
+                DataGridView1.Item(0, cont).Value = AUDIT_CondicionesTableAdapter.ObtCond_ScalarQuery(Detalle.Id_Condicion) + " (" + Detalle.ConsecRevisiones.ToString + ")" 'Detalle.Id_Condicion
+            Else
+                DataGridView1.Item(0, cont).Value = AUDIT_CondicionesTableAdapter.ObtCond_ScalarQuery(Detalle.Id_Condicion) 'Detalle.Id_Condicion
+            End If
             DataGridView1.Item(1, cont).Value = AUDIT_ParametrosVTableAdapter.ObtDesc_ScalarQuery(Detalle.Validacion)  'CInt(Detalle.Validacion)
             DataGridView1.Item(2, cont).Value = AUDIT_ParametrosHTableAdapter.ObtDesc_ScalarQuery(Detalle.CategoriaHallazgo) 'CInt(Detalle.CategoriaHallazgo)
             DataGridView1.Item(3, cont).Value = Detalle.Id_auditoria
             DataGridView1.Item(4, cont).Value = Detalle.Observaciones
-            DataGridView1.Item(5, cont).Value = Detalle.FechaSolventacion
-            DataGridView1.Item(6, cont).Value = Detalle.Comentarios
-            DataGridView1.Item(7, cont).Value = Detalle.Id_auditoriaCondicion
-            DataGridView1.Item(8, cont).Value = Detalle.Id_Condicion
+            DataGridView1.Item(5, cont).Value = AUDIT_ParametrosVTableAdapter.ObtDescComp_ScalarQuery(Detalle.deptoResponsable)
+            DataGridView1.Item(6, cont).Value = Detalle.FechaSolventacion.ToString.Replace("01/01/1900 12:00:00 a. m.", "")
+            DataGridView1.Item(7, cont).Value = Detalle.Comentarios
+            DataGridView1.Item(8, cont).Value = Detalle.Id_auditoriaCondicion
+            DataGridView1.Item(9, cont).Value = Detalle.Id_Condicion
             cont += 1
         Next
         If cont > 0 And cmbEstatus.Text <> "ABIERTO" = True Then
@@ -103,7 +111,7 @@
         'Me.Update()
         'Call frmAuditoriaMod_Load(sender, e)
 
-        Me.AUDIT_AuditoriasTableAdapter.ObtAuditConsec_FillBy(Me.ProductionDataSet.AUDIT_Auditorias, var_anexoAM, var_consecAM)
+        Me.AUDIT_AuditoriasTableAdapter.ObtAuditConsec_FillBy(Me.ProductionDataSet.AUDIT_Auditorias, var_anexoAM, var_consecAM, CicloTextBox.Text)
         If cmbEstatus.Text = "ABIERTO" Then
             actdes("H")
         ElseIf cmbEstatus.Text = "CERRADO" Then
@@ -131,13 +139,13 @@
     End Sub
 
     Private Sub DataGridView1_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellEndEdit
-        Try
-            If DataGridView1.Focused And DataGridView1.CurrentCell.ColumnIndex = 5 Then
-                DataGridView1.CurrentCell.Value = dtpFecha.Value.Date
-            End If
-        Catch ex As Exception
+        'Try
+        '    If DataGridView1.Focused And DataGridView1.CurrentCell.ColumnIndex = 5 Then
+        '        DataGridView1.CurrentCell.Value = dtpFecha.Value.Date
+        '    End If
+        'Catch ex As Exception
 
-        End Try
+        'End Try
     End Sub
 
     Private Sub dtpFecha_ValueChanged(sender As Object, e As EventArgs)
@@ -162,15 +170,17 @@
     Private Sub DataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellClick
         frmAuditoriaCondiciones.var_estatusBtnGuardar = False
         frmAuditoriaCondiciones.var_estatusBtnActualizar = True
+        frmAuditoriaCondiciones.var_idAuditoriaCondiciones = DataGridView1.Item(8, e.RowIndex).Value
+
         If DataGridView1.Item(7, e.RowIndex).Value = Nothing Then
-            frmAuditoriaCondiciones.var_idAuditoria = AUDIT_AuditoriasBindingSource.Current("id_Auditoria")
-            frmAuditoriaCondiciones.var_idCondicion = DataGridView1.Item(8, e.RowIndex).Value
+            frmAuditoriaCondiciones.var_idAuditoria = var_id_auditoria 'AUDIT_AuditoriasBindingSource.Current("id_Auditoria")
+            frmAuditoriaCondiciones.var_idCondicion = DataGridView1.Item(9, e.RowIndex).Value
             frmAuditoriaCondiciones.MdiParent = MDIAuditoria
             frmAuditoriaCondiciones.Show()
         Else
-            frmAuditoriaCondiciones.var_idAuditoria = AUDIT_AuditoriasBindingSource.Current("id_Auditoria")
-            frmAuditoriaCondiciones.var_idAuditoriaCondiciones = DataGridView1.Item(7, e.RowIndex).Value
-            frmAuditoriaCondiciones.var_idCondicion = DataGridView1.Item(8, e.RowIndex).Value
+            frmAuditoriaCondiciones.var_idAuditoria = var_id_auditoria 'AUDIT_AuditoriasBindingSource.Current("id_Auditoria")
+
+            frmAuditoriaCondiciones.var_idCondicion = DataGridView1.Item(9, e.RowIndex).Value
             frmAuditoriaCondiciones.MdiParent = MDIAuditoria
             frmAuditoriaCondiciones.Show()
         End If

@@ -50,6 +50,7 @@ Partial Class frmAuditoriaMod
         Me.CategoriaHallazgo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.id_auditoria = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Observaciones = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.deptoResponsable = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FechaSolventacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Comentarios = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Id_auditoriaCondicion = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -155,10 +156,12 @@ Partial Class frmAuditoriaMod
         Me.TableAdapterManager.AUDIT_AuditoriasCondicionesTableAdapter = Nothing
         Me.TableAdapterManager.AUDIT_AuditoriasTableAdapter = Me.AUDIT_AuditoriasTableAdapter
         Me.TableAdapterManager.AUDIT_CondicionesTableAdapter = Nothing
+        Me.TableAdapterManager.AUDIT_ParametrosDTableAdapter = Nothing
         Me.TableAdapterManager.AUDIT_ParametrosHTableAdapter = Nothing
         Me.TableAdapterManager.AUDIT_ParametrosTableAdapter = Nothing
         Me.TableAdapterManager.AUDIT_ParametrosVTableAdapter = Nothing
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.SucursalesTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = Auditoria.ProductionDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
         'AnexoTextBox
@@ -244,7 +247,7 @@ Partial Class frmAuditoriaMod
         Me.DataGridView1.AllowUserToAddRows = False
         Me.DataGridView1.AllowUserToDeleteRows = False
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Id_Condicion, Me.Validacion, Me.CategoriaHallazgo, Me.id_auditoria, Me.Observaciones, Me.FechaSolventacion, Me.Comentarios, Me.Id_auditoriaCondicion, Me.id_Cond})
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Id_Condicion, Me.Validacion, Me.CategoriaHallazgo, Me.id_auditoria, Me.Observaciones, Me.deptoResponsable, Me.FechaSolventacion, Me.Comentarios, Me.Id_auditoriaCondicion, Me.id_Cond})
         Me.DataGridView1.Location = New System.Drawing.Point(16, 133)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
@@ -293,9 +296,15 @@ Partial Class frmAuditoriaMod
         Me.Observaciones.ReadOnly = True
         Me.Observaciones.Width = 328
         '
+        'deptoResponsable
+        '
+        Me.deptoResponsable.HeaderText = "Depto. Responsable"
+        Me.deptoResponsable.Name = "deptoResponsable"
+        Me.deptoResponsable.ReadOnly = True
+        '
         'FechaSolventacion
         '
-        Me.FechaSolventacion.HeaderText = "FechaSolventacion"
+        Me.FechaSolventacion.HeaderText = "Fecha Solventacion"
         Me.FechaSolventacion.Name = "FechaSolventacion"
         Me.FechaSolventacion.ReadOnly = True
         '
@@ -320,6 +329,7 @@ Partial Class frmAuditoriaMod
         Me.id_Cond.HeaderText = "id_Cond"
         Me.id_Cond.Name = "id_Cond"
         Me.id_Cond.ReadOnly = True
+        Me.id_Cond.Visible = False
         '
         'AUDITCondicionesBindingSource
         '
@@ -453,6 +463,7 @@ Partial Class frmAuditoriaMod
     Friend WithEvents CategoriaHallazgo As DataGridViewTextBoxColumn
     Friend WithEvents id_auditoria As DataGridViewTextBoxColumn
     Friend WithEvents Observaciones As DataGridViewTextBoxColumn
+    Friend WithEvents deptoResponsable As DataGridViewTextBoxColumn
     Friend WithEvents FechaSolventacion As DataGridViewTextBoxColumn
     Friend WithEvents Comentarios As DataGridViewTextBoxColumn
     Friend WithEvents Id_auditoriaCondicion As DataGridViewTextBoxColumn

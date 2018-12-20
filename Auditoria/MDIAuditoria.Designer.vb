@@ -34,6 +34,7 @@ Partial Class MDIAuditoria
         Me.StatusStrip = New System.Windows.Forms.StatusStrip()
         Me.ToolStripStatusLabel = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
+        Me.SucursalToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip.SuspendLayout()
         Me.StatusStrip.SuspendLayout()
         Me.SuspendLayout()
@@ -49,7 +50,7 @@ Partial Class MDIAuditoria
         '
         'FileMenu
         '
-        Me.FileMenu.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ConsultaNombre, Me.ToolStripSeparator3, Me.ConsultaAnexo, Me.ToolStripSeparator5, Me.ExitToolStripMenuItem})
+        Me.FileMenu.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SucursalToolStripMenuItem, Me.ConsultaNombre, Me.ToolStripSeparator3, Me.ConsultaAnexo, Me.ToolStripSeparator5, Me.ExitToolStripMenuItem})
         Me.FileMenu.ImageTransparentColor = System.Drawing.SystemColors.ActiveBorder
         Me.FileMenu.Name = "FileMenu"
         Me.FileMenu.Size = New System.Drawing.Size(60, 20)
@@ -99,6 +100,12 @@ Partial Class MDIAuditoria
         Me.ToolStripStatusLabel.Size = New System.Drawing.Size(42, 17)
         Me.ToolStripStatusLabel.Text = "Estado"
         '
+        'SucursalToolStripMenuItem
+        '
+        Me.SucursalToolStripMenuItem.Name = "SucursalToolStripMenuItem"
+        Me.SucursalToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.SucursalToolStripMenuItem.Text = "Sucursal"
+        '
         'MDIAuditoria
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -130,5 +137,5 @@ Partial Class MDIAuditoria
     Friend WithEvents ConsultaNombre As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ToolStripSeparator3 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents MenuStrip As System.Windows.Forms.MenuStrip
-
+    Friend WithEvents SucursalToolStripMenuItem As ToolStripMenuItem
 End Class

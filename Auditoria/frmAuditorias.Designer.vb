@@ -62,15 +62,6 @@ Partial Class frmAuditorias
         Me.AUDITParametrosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.AUDIT_ParametrosTableAdapter = New Auditoria.ProductionDataSetTableAdapters.AUDIT_ParametrosTableAdapter()
         Me.btnSalir = New System.Windows.Forms.Button()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.txtRev4 = New System.Windows.Forms.TextBox()
-        Me.txtRev3 = New System.Windows.Forms.TextBox()
-        Me.txtRev2 = New System.Windows.Forms.TextBox()
-        Me.txtRev1 = New System.Windows.Forms.TextBox()
         Me.txtAuditoria = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         AnexoLabel = New System.Windows.Forms.Label()
@@ -87,7 +78,6 @@ Partial Class frmAuditorias
         CType(Me.ProductionDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.AUDITParametrosBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.AUDITParametrosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'AnexoLabel
@@ -321,6 +311,7 @@ Partial Class frmAuditorias
         '
         'ObervacionesTextBox
         '
+        Me.ObervacionesTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.AUDIT_AuditoriasBindingSource, "Obervaciones", True))
         Me.ObervacionesTextBox.Enabled = False
         Me.ObervacionesTextBox.Location = New System.Drawing.Point(126, 125)
         Me.ObervacionesTextBox.Multiline = True
@@ -363,6 +354,7 @@ Partial Class frmAuditorias
         Me.TableAdapterManager.AUDIT_ParametrosTableAdapter = Nothing
         Me.TableAdapterManager.AUDIT_ParametrosVTableAdapter = Nothing
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.SucursalesTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = Auditoria.ProductionDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
         'ConsecutivoTextBox
@@ -405,93 +397,9 @@ Partial Class frmAuditorias
         Me.btnSalir.Text = "Salir"
         Me.btnSalir.UseVisualStyleBackColor = True
         '
-        'GroupBox1
-        '
-        Me.GroupBox1.Controls.Add(Me.Label4)
-        Me.GroupBox1.Controls.Add(Me.Label3)
-        Me.GroupBox1.Controls.Add(Me.Label2)
-        Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Controls.Add(Me.txtRev4)
-        Me.GroupBox1.Controls.Add(Me.txtRev3)
-        Me.GroupBox1.Controls.Add(Me.txtRev2)
-        Me.GroupBox1.Controls.Add(Me.txtRev1)
-        Me.GroupBox1.Location = New System.Drawing.Point(372, 43)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(721, 72)
-        Me.GroupBox1.TabIndex = 3
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Revisiones:"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(330, 48)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(158, 13)
-        Me.Label4.TabIndex = 7
-        Me.Label4.Text = "Cédula de Verificación Técnica:"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(330, 22)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(44, 13)
-        Me.Label3.TabIndex = 6
-        Me.Label3.Text = "Pagaré:"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(6, 48)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(119, 13)
-        Me.Label2.TabIndex = 5
-        Me.Label2.Text = "Reporte de supervisión:"
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(6, 22)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(114, 13)
-        Me.Label1.TabIndex = 4
-        Me.Label1.Text = "Información financiera:"
-        '
-        'txtRev4
-        '
-        Me.txtRev4.Location = New System.Drawing.Point(589, 45)
-        Me.txtRev4.Name = "txtRev4"
-        Me.txtRev4.Size = New System.Drawing.Size(30, 20)
-        Me.txtRev4.TabIndex = 6
-        Me.txtRev4.Text = "1"
-        '
-        'txtRev3
-        '
-        Me.txtRev3.Location = New System.Drawing.Point(589, 19)
-        Me.txtRev3.Name = "txtRev3"
-        Me.txtRev3.Size = New System.Drawing.Size(30, 20)
-        Me.txtRev3.TabIndex = 5
-        Me.txtRev3.Text = "1"
-        '
-        'txtRev2
-        '
-        Me.txtRev2.Location = New System.Drawing.Point(261, 45)
-        Me.txtRev2.Name = "txtRev2"
-        Me.txtRev2.Size = New System.Drawing.Size(30, 20)
-        Me.txtRev2.TabIndex = 4
-        Me.txtRev2.Text = "1"
-        '
-        'txtRev1
-        '
-        Me.txtRev1.Location = New System.Drawing.Point(261, 19)
-        Me.txtRev1.Name = "txtRev1"
-        Me.txtRev1.Size = New System.Drawing.Size(30, 20)
-        Me.txtRev1.TabIndex = 3
-        Me.txtRev1.Text = "1"
-        '
         'txtAuditoria
         '
+        Me.txtAuditoria.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.AUDIT_AuditoriasBindingSource, "folAuditoria", True))
         Me.txtAuditoria.Location = New System.Drawing.Point(126, 91)
         Me.txtAuditoria.Name = "txtAuditoria"
         Me.txtAuditoria.Size = New System.Drawing.Size(150, 20)
@@ -513,7 +421,6 @@ Partial Class frmAuditorias
         Me.ClientSize = New System.Drawing.Size(1105, 527)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.txtAuditoria)
-        Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.btnSalir)
         Me.Controls.Add(Me.cmbEstatus)
         Me.Controls.Add(ConsecutivoLabel)
@@ -543,8 +450,6 @@ Partial Class frmAuditorias
         CType(Me.ProductionDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.AUDITParametrosBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.AUDITParametrosBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -577,15 +482,6 @@ Partial Class frmAuditorias
     Friend WithEvents DataGridViewTextBoxColumn8 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn9 As DataGridViewTextBoxColumn
     Friend WithEvents btnSalir As Button
-    Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents txtRev1 As TextBox
-    Friend WithEvents txtRev4 As TextBox
-    Friend WithEvents txtRev3 As TextBox
-    Friend WithEvents txtRev2 As TextBox
-    Friend WithEvents Label4 As Label
-    Friend WithEvents Label3 As Label
-    Friend WithEvents Label2 As Label
-    Friend WithEvents Label1 As Label
     Friend WithEvents txtAuditoria As TextBox
     Friend WithEvents Label5 As Label
 End Class

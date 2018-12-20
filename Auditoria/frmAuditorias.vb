@@ -7,21 +7,21 @@
 
         Me.AUDIT_ParametrosTableAdapter.Fill(Me.ProductionDataSet.AUDIT_Parametros)
 
-        AnexoTextBox.Text = var_anexo
-        CicloTextBox.Text = var_ciclo
+        AnexoTextBox.Text = var_anexo.Trim
+        CicloTextBox.Text = var_ciclo.Trim
         ConsecutivoTextBox.Text = (var_consecutivo + 1).ToString
         frmBuscaContratos.Enabled = False
 
-        taAuditorias.ObtAudit_FillBy(ProductionDataSet.AUDIT_Auditorias, var_anexo)
+        taAuditorias.ObtAudit_FillBy(ProductionDataSet.AUDIT_Auditorias, var_anexo.Trim, var_ciclo.Trim)
 
         If ConsecutivoTextBox.Text = "1" Then
             FechaRelizacionDateTimePicker.Enabled = True
             ObervacionesTextBox.Enabled = True
             txtAuditoria.Enabled = True
-            txtRev1.Enabled = True
-            txtRev2.Enabled = True
-            txtRev3.Enabled = True
-            txtRev4.Enabled = True
+            'txtRev1.Enabled = True
+            'txtRev2.Enabled = True
+            'txtRev3.Enabled = True
+            'txtRev4.Enabled = True
             btnAgregar.Enabled = False
             btnGuardar.Enabled = True
         Else
@@ -30,10 +30,10 @@
             btnAgregar.Enabled = True
             btnGuardar.Enabled = False
             txtAuditoria.Enabled = False
-            txtRev1.Enabled = False
-            txtRev2.Enabled = False
-            txtRev3.Enabled = False
-            txtRev4.Enabled = False
+            'txtRev1.Enabled = False
+            'txtRev2.Enabled = False
+            'txtRev3.Enabled = False
+            'txtRev4.Enabled = False
         End If
 
     End Sub
@@ -44,8 +44,8 @@
         Dim taAuditorias As New ProductionDataSetTableAdapters.AUDIT_AuditoriasTableAdapter
         Dim DetalleMod As ProductionDataSet.AUDIT_AuditoriasCondicionesRow
 
-        If taAuditorias.ObtieneEstatus_ScalarQuery(var_anexo) = "ABIERTO" Then
-            MsgBox("Existe una auditoria con estatus " + taAuditorias.ObtieneEstatus_ScalarQuery(var_anexo) + "...", MsgBoxStyle.Exclamation)
+        If taAuditorias.ObtieneEstatus_ScalarQuery(var_anexo.Trim, var_ciclo) = "ABIERTO" Then
+            MsgBox("Existe una auditoria con estatus " + taAuditorias.ObtieneEstatus_ScalarQuery(var_anexo.Trim, var_ciclo) + "...", MsgBoxStyle.Exclamation)
             Exit Sub
         End If
 
@@ -57,30 +57,30 @@
         btnAgregar.Enabled = False
 
         Try
-            taAuditoriasCond.Obt_AllDetalleAuditCond_FillBy(ProductionDataSet.AUDIT_AuditoriasCondiciones, taAuditorias.UltimoReg_ScalarQuery(var_anexo))
+            taAuditoriasCond.Obt_AllDetalleAuditCond_FillBy(ProductionDataSet.AUDIT_AuditoriasCondiciones, taAuditorias.UltimoReg_ScalarQuery(var_anexo.Trim, var_ciclo.Trim))
             Me.AUDIT_AuditoriasTableAdapter.Insert(AnexoTextBox.Text.Trim, CicloTextBox.Text.Trim, FechaCreacionDateTimePicker.Value, UltimaActualizacionDateTimePicker.Value, AUDIT_AuditoriasBindingSource.Current("FechaRelizacion"), AUDIT_AuditoriasBindingSource.Current("Obervaciones"), cmbEstatus.Text, UsuarioTextBox.Text, ConsecutivoTextBox.Text, AUDIT_AuditoriasBindingSource.Current("folAuditoria"), AUDIT_AuditoriasBindingSource.Current("nRevInfFinanciera"), AUDIT_AuditoriasBindingSource.Current("nRevRepSup"), AUDIT_AuditoriasBindingSource.Current("nRevPagare"), AUDIT_AuditoriasBindingSource.Current("ncedVerific"))
             For Each DetalleMod In ProductionDataSet.AUDIT_AuditoriasCondiciones.Rows
-                If DetalleMod.Id_Condicion = 33 Then
-                    For i = 1 To CInt(AUDIT_AuditoriasBindingSource.Current("nRevInfFinanciera"))
-                        taAuditoriasCond.Insert(taAuditorias.UltimoReg_ScalarQuery(var_anexo), DetalleMod.Id_Condicion, DetalleMod.Validacion, DetalleMod.Observaciones, DetalleMod.CategoriaHallazgo, Date.Now, DetalleMod.Comentarios, i, Date.Now, 32, DetalleMod.estatus)
-                    Next
-                ElseIf DetalleMod.Id_Condicion = 37 Then
-                    For i = 1 To CInt(AUDIT_AuditoriasBindingSource.Current("nRevRepSup"))
-                        taAuditoriasCond.Insert(taAuditorias.UltimoReg_ScalarQuery(var_anexo), DetalleMod.Id_Condicion, DetalleMod.Validacion, DetalleMod.Observaciones, DetalleMod.CategoriaHallazgo, Date.Now, DetalleMod.Comentarios, i, Date.Now, 32, DetalleMod.estatus)
-                    Next
-                ElseIf DetalleMod.Id_Condicion = 35 Then
-                    For i = 1 To CInt(AUDIT_AuditoriasBindingSource.Current("nRevPagare"))
-                        taAuditoriasCond.Insert(taAuditorias.UltimoReg_ScalarQuery(var_anexo), DetalleMod.Id_Condicion, DetalleMod.Validacion, DetalleMod.Observaciones, DetalleMod.CategoriaHallazgo, Date.Now, DetalleMod.Comentarios, i, Date.Now, 32, DetalleMod.estatus)
-                    Next
-                ElseIf DetalleMod.Id_Condicion = 36 Then
-                    For i = 1 To CInt(AUDIT_AuditoriasBindingSource.Current("ncedVerific"))
-                        taAuditoriasCond.Insert(taAuditorias.UltimoReg_ScalarQuery(var_anexo), DetalleMod.Id_Condicion, DetalleMod.Validacion, DetalleMod.Observaciones, DetalleMod.CategoriaHallazgo, Date.Now, DetalleMod.Comentarios, i, Date.Now, 32, DetalleMod.estatus)
-                    Next
-                Else
-                    taAuditoriasCond.Insert(taAuditorias.UltimoReg_ScalarQuery(var_anexo), DetalleMod.Id_Condicion, DetalleMod.Validacion, DetalleMod.Observaciones, DetalleMod.CategoriaHallazgo, Date.Now, DetalleMod.Comentarios, 1, Date.Now, 32, DetalleMod.estatus)
-                End If
+                'If DetalleMod.Id_Condicion = 33 Then
+                '    For i = 1 To CInt(AUDIT_AuditoriasBindingSource.Current("nRevInfFinanciera"))
+                '        taAuditoriasCond.Insert(taAuditorias.UltimoReg_ScalarQuery(var_anexo), DetalleMod.Id_Condicion, DetalleMod.Validacion, DetalleMod.Observaciones, DetalleMod.CategoriaHallazgo, Date.Now, DetalleMod.Comentarios, i, Date.Now, DetalleMod.deptoResponsable, DetalleMod.estatus)
+                '    Next
+                'ElseIf DetalleMod.Id_Condicion = 37 Then
+                '    For i = 1 To CInt(AUDIT_AuditoriasBindingSource.Current("nRevRepSup"))
+                '        taAuditoriasCond.Insert(taAuditorias.UltimoReg_ScalarQuery(var_anexo), DetalleMod.Id_Condicion, DetalleMod.Validacion, DetalleMod.Observaciones, DetalleMod.CategoriaHallazgo, Date.Now, DetalleMod.Comentarios, i, Date.Now, DetalleMod.deptoResponsable, DetalleMod.estatus)
+                '    Next
+                'ElseIf DetalleMod.Id_Condicion = 35 Then
+                '    For i = 1 To CInt(AUDIT_AuditoriasBindingSource.Current("nRevPagare"))
+                '        taAuditoriasCond.Insert(taAuditorias.UltimoReg_ScalarQuery(var_anexo), DetalleMod.Id_Condicion, DetalleMod.Validacion, DetalleMod.Observaciones, DetalleMod.CategoriaHallazgo, Date.Now, DetalleMod.Comentarios, i, Date.Now, DetalleMod.deptoResponsable, DetalleMod.estatus)
+                '    Next
+                'ElseIf DetalleMod.Id_Condicion = 36 Then
+                '    For i = 1 To CInt(AUDIT_AuditoriasBindingSource.Current("ncedVerific"))
+                '        taAuditoriasCond.Insert(taAuditorias.UltimoReg_ScalarQuery(var_anexo), DetalleMod.Id_Condicion, DetalleMod.Validacion, DetalleMod.Observaciones, DetalleMod.CategoriaHallazgo, Date.Now, DetalleMod.Comentarios, i, Date.Now, DetalleMod.deptoResponsable, DetalleMod.estatus)
+                '    Next
+                'Else
+                taAuditoriasCond.Insert(taAuditorias.UltimoReg_ScalarQuery(var_anexo.Trim, var_ciclo), DetalleMod.Id_Condicion, DetalleMod.Validacion, DetalleMod.Observaciones, DetalleMod.CategoriaHallazgo, System.Data.SqlTypes.SqlDateTime.Null, DetalleMod.Comentarios, DetalleMod.ConsecRevisiones, Date.Now, DetalleMod.deptoResponsable, DetalleMod.estatus)
+                'End If
             Next
-            taAuditorias.ObtAudit_FillBy(ProductionDataSet.AUDIT_Auditorias, var_anexo)
+            taAuditorias.ObtAudit_FillBy(ProductionDataSet.AUDIT_Auditorias, var_anexo.Trim, var_ciclo.Trim)
             MsgBox("Se agregó una nueva auditoría...", MsgBoxStyle.Information)
         Catch ex As Exception
             MsgBox(ex.ToString, MsgBoxStyle.Critical, "Error al actualizar registro...")
@@ -88,7 +88,12 @@
     End Sub
 
     Private Sub frmAuditorias_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
-        frmBuscaContratos.Enabled = True
+        If frmBuscaContratos.Enabled = False Then
+            frmBuscaContratos.Enabled = True
+        End If
+        If frmBuscaContratosSuc.Enabled = False Then
+            frmBuscaContratosSuc.Enabled = True
+        End If
     End Sub
 
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
@@ -96,38 +101,20 @@
         Dim taAudt As New ProductionDataSetTableAdapters.AUDIT_CondicionesTableAdapter
         Dim taAuditoriasCond As New ProductionDataSetTableAdapters.AUDIT_AuditoriasCondicionesTableAdapter
 
-        If taAuditorias.ObtieneEstatus_ScalarQuery(var_anexo) = "ABIERTO" Then
-            MsgBox("Existe una auditoria con estatus " + taAuditorias.ObtieneEstatus_ScalarQuery(var_anexo) + "...", MsgBoxStyle.Exclamation)
+        If taAuditorias.ObtieneEstatus_ScalarQuery(var_anexo.Trim, var_ciclo) = "ABIERTO" Then
+            MsgBox("Existe una auditoria con estatus " + taAuditorias.ObtieneEstatus_ScalarQuery(var_anexo.Trim, var_ciclo) + "...", MsgBoxStyle.Exclamation)
             Exit Sub
         End If
 
         taAudt.Fill(ProductionDataSet.AUDIT_Condiciones)
         Try
-            Me.AUDIT_AuditoriasTableAdapter.Insert(AnexoTextBox.Text.Trim, CicloTextBox.Text.Trim, FechaCreacionDateTimePicker.Value, UltimaActualizacionDateTimePicker.Value, FechaRelizacionDateTimePicker.Value, ObervacionesTextBox.Text.Trim, cmbEstatus.Text, UsuarioTextBox.Text, ConsecutivoTextBox.Text, txtAuditoria.Text, txtRev1.Text, txtRev2.Text, txtRev3.Text, txtRev4.Text)
+            Me.AUDIT_AuditoriasTableAdapter.Insert(AnexoTextBox.Text.Trim, CicloTextBox.Text.Trim, FechaCreacionDateTimePicker.Value, UltimaActualizacionDateTimePicker.Value, FechaRelizacionDateTimePicker.Value, ObervacionesTextBox.Text.Trim, cmbEstatus.Text, UsuarioTextBox.Text, ConsecutivoTextBox.Text, txtAuditoria.Text, 1, 1, 1, 1)
             For Each DetalleMod In ProductionDataSet.AUDIT_Condiciones.Rows
-                If DetalleMod.id_Condicion = 33 Then
-                    For i = 1 To CInt(txtRev1.Text)
-                        taAuditoriasCond.Insert(taAuditorias.UltimoReg_ScalarQuery(var_anexo), DetalleMod.id_Condicion, 1, "", 11, Date.Now, "", i, Date.Now, 32, False)
-                    Next
-                ElseIf DetalleMod.id_Condicion = 37 Then
-                    For i = 1 To CInt(txtRev2.Text)
-                        taAuditoriasCond.Insert(taAuditorias.UltimoReg_ScalarQuery(var_anexo), DetalleMod.id_Condicion, 1, "", 11, Date.Now, "", i, Date.Now, 32, False)
-                    Next
-                ElseIf DetalleMod.id_Condicion = 35 Then
-                    For i = 1 To CInt(txtRev3.Text)
-                        taAuditoriasCond.Insert(taAuditorias.UltimoReg_ScalarQuery(var_anexo), DetalleMod.id_Condicion, 1, "", 11, Date.Now, "", i, Date.Now, 32, False)
-                    Next
-                ElseIf DetalleMod.id_Condicion = 36 Then
-                    For i = 1 To CInt(txtRev4.Text)
-                        taAuditoriasCond.Insert(taAuditorias.UltimoReg_ScalarQuery(var_anexo), DetalleMod.id_Condicion, 1, "", 11, Date.Now, "", i, Date.Now, 32, False)
-                    Next
-                Else
-                    taAuditoriasCond.Insert(taAuditorias.UltimoReg_ScalarQuery(var_anexo), DetalleMod.id_Condicion, 1, "", 11, Date.Now, "", 1, Date.Now, 32, False)
-                End If
+                taAuditoriasCond.Insert(taAuditorias.UltimoReg_ScalarQuery(var_anexo.Trim, var_ciclo), DetalleMod.id_Condicion, 1, "", 11, System.Data.SqlTypes.SqlDateTime.Null, "", 1, Date.Now, 32, False)
             Next
 
             MsgBox("Actualización existosa...", MsgBoxStyle.Information)
-            taAuditorias.ObtAudit_FillBy(ProductionDataSet.AUDIT_Auditorias, var_anexo)
+            taAuditorias.ObtAudit_FillBy(ProductionDataSet.AUDIT_Auditorias, var_anexo.Trim, CicloTextBox.Text)
             Me.Update()
 
             FechaRelizacionDateTimePicker.Enabled = False
@@ -158,9 +145,12 @@
 
     Private Sub AUDIT_AuditoriasDataGridView_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles AUDIT_AuditoriasDataGridView.CellContentClick
 
-        frmAuditoriaMod.var_anexoAM = var_anexo
+        frmAuditoriaMod.var_id_auditoria = AUDIT_AuditoriasBindingSource.Current("id_Auditoria")
+        frmAuditoriaMod.var_anexoAM = var_anexo.Trim
         frmAuditoriaMod.var_consecAM = AUDIT_AuditoriasDataGridView.Item(0, e.RowIndex).Value
+        frmAuditoriaMod.var_ciclo = var_ciclo
         frmAuditoriaMod.MdiParent = MDIAuditoria
+        frmAuditoriaCondiciones.var_num_celdasfrm1 = AUDIT_AuditoriasDataGridView.Rows.Count
         frmAuditoriaMod.Show()
         If AUDIT_AuditoriasDataGridView.Rows.Count > 1 Then
             frmAuditoriaMod.btnAgregar.Enabled = False

@@ -32,6 +32,7 @@ Partial Class frmBuscaContratos
         Me.lblClientes = New System.Windows.Forms.Label()
         Me.lblAnexos = New System.Windows.Forms.Label()
         Me.btnSalir = New System.Windows.Forms.Button()
+        Me.Vw_AnexosTableAdapter = New Auditoria.ProductionDataSetTableAdapters.Vw_AnexosTableAdapter()
         CType(Me.ClientesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ProductionDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ProductionDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -70,7 +71,7 @@ Partial Class frmBuscaContratos
         Me.lbxContratos.FormattingEnabled = True
         Me.lbxContratos.Location = New System.Drawing.Point(551, 32)
         Me.lbxContratos.Name = "lbxContratos"
-        Me.lbxContratos.Size = New System.Drawing.Size(168, 173)
+        Me.lbxContratos.Size = New System.Drawing.Size(358, 186)
         Me.lbxContratos.TabIndex = 1
         '
         'ClientesTableAdapter
@@ -98,18 +99,22 @@ Partial Class frmBuscaContratos
         '
         'btnSalir
         '
-        Me.btnSalir.Location = New System.Drawing.Point(644, 211)
+        Me.btnSalir.Location = New System.Drawing.Point(834, 226)
         Me.btnSalir.Name = "btnSalir"
         Me.btnSalir.Size = New System.Drawing.Size(75, 23)
         Me.btnSalir.TabIndex = 5
         Me.btnSalir.Text = "Salir"
         Me.btnSalir.UseVisualStyleBackColor = True
         '
+        'Vw_AnexosTableAdapter
+        '
+        Me.Vw_AnexosTableAdapter.ClearBeforeFill = True
+        '
         'frmBuscaContratos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(731, 241)
+        Me.ClientSize = New System.Drawing.Size(934, 261)
         Me.Controls.Add(Me.btnSalir)
         Me.Controls.Add(Me.lblAnexos)
         Me.Controls.Add(Me.lblClientes)
@@ -136,4 +141,5 @@ Partial Class frmBuscaContratos
     Friend WithEvents lblClientes As Label
     Friend WithEvents lblAnexos As Label
     Friend WithEvents btnSalir As Button
+    Friend WithEvents Vw_AnexosTableAdapter As ProductionDataSetTableAdapters.Vw_AnexosTableAdapter
 End Class

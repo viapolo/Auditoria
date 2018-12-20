@@ -30,7 +30,6 @@ Partial Class frmAuditoriaCondiciones
         Dim CategoriaHallazgoLabel As System.Windows.Forms.Label
         Dim FechaSolventacionLabel As System.Windows.Forms.Label
         Dim ComentariosLabel As System.Windows.Forms.Label
-        Dim FechaVigenciaLabel As System.Windows.Forms.Label
         Dim Id_auditoriaCondicionLabel As System.Windows.Forms.Label
         Me.ProductionDataSet = New Auditoria.ProductionDataSet()
         Me.Id_auditoriaTextBox = New System.Windows.Forms.TextBox()
@@ -60,6 +59,7 @@ Partial Class frmAuditoriaCondiciones
         Me.Label2 = New System.Windows.Forms.Label()
         Me.AUDIT_ParametrosDTableAdapter = New Auditoria.ProductionDataSetTableAdapters.AUDIT_ParametrosDTableAdapter()
         Me.Id_auditoriaCondicionTextBox = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
         Id_auditoriaLabel = New System.Windows.Forms.Label()
         Id_CondicionLabel = New System.Windows.Forms.Label()
         ValidacionLabel = New System.Windows.Forms.Label()
@@ -67,7 +67,6 @@ Partial Class frmAuditoriaCondiciones
         CategoriaHallazgoLabel = New System.Windows.Forms.Label()
         FechaSolventacionLabel = New System.Windows.Forms.Label()
         ComentariosLabel = New System.Windows.Forms.Label()
-        FechaVigenciaLabel = New System.Windows.Forms.Label()
         Id_auditoriaCondicionLabel = New System.Windows.Forms.Label()
         CType(Me.ProductionDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.AUDIT_AuditoriasCondicionesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -140,14 +139,14 @@ Partial Class frmAuditoriaCondiciones
         ComentariosLabel.TabIndex = 12
         ComentariosLabel.Text = "Comentarios:"
         '
-        'FechaVigenciaLabel
+        'Id_auditoriaCondicionLabel
         '
-        FechaVigenciaLabel.AutoSize = True
-        FechaVigenciaLabel.Location = New System.Drawing.Point(562, 70)
-        FechaVigenciaLabel.Name = "FechaVigenciaLabel"
-        FechaVigenciaLabel.Size = New System.Drawing.Size(99, 13)
-        FechaVigenciaLabel.TabIndex = 21
-        FechaVigenciaLabel.Text = "Fecha de Vigencia:"
+        Id_auditoriaCondicionLabel.AutoSize = True
+        Id_auditoriaCondicionLabel.Location = New System.Drawing.Point(48, 224)
+        Id_auditoriaCondicionLabel.Name = "Id_auditoriaCondicionLabel"
+        Id_auditoriaCondicionLabel.Size = New System.Drawing.Size(66, 13)
+        Id_auditoriaCondicionLabel.TabIndex = 23
+        Id_auditoriaCondicionLabel.Text = "Id AudCond:"
         '
         'ProductionDataSet
         '
@@ -167,6 +166,7 @@ Partial Class frmAuditoriaCondiciones
         'ObservacionesTextBox
         '
         Me.ObservacionesTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.AUDIT_AuditoriasCondicionesBindingSource, "Observaciones", True))
+        Me.ObservacionesTextBox.Enabled = False
         Me.ObservacionesTextBox.Location = New System.Drawing.Point(120, 92)
         Me.ObservacionesTextBox.Multiline = True
         Me.ObservacionesTextBox.Name = "ObservacionesTextBox"
@@ -181,6 +181,7 @@ Partial Class frmAuditoriaCondiciones
         'FechaSolventacionDateTimePicker
         '
         Me.FechaSolventacionDateTimePicker.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.AUDIT_AuditoriasCondicionesBindingSource, "FechaSolventacion", True))
+        Me.FechaSolventacionDateTimePicker.Enabled = False
         Me.FechaSolventacionDateTimePicker.Location = New System.Drawing.Point(348, 66)
         Me.FechaSolventacionDateTimePicker.Name = "FechaSolventacionDateTimePicker"
         Me.FechaSolventacionDateTimePicker.Size = New System.Drawing.Size(200, 20)
@@ -189,6 +190,7 @@ Partial Class frmAuditoriaCondiciones
         'ComentariosTextBox
         '
         Me.ComentariosTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.AUDIT_AuditoriasCondicionesBindingSource, "Comentarios", True))
+        Me.ComentariosTextBox.Enabled = False
         Me.ComentariosTextBox.Location = New System.Drawing.Point(120, 157)
         Me.ComentariosTextBox.Multiline = True
         Me.ComentariosTextBox.Name = "ComentariosTextBox"
@@ -218,6 +220,7 @@ Partial Class frmAuditoriaCondiciones
         Me.cmbCondicion.DataBindings.Add(New System.Windows.Forms.Binding("SelectedValue", Me.AUDIT_AuditoriasCondicionesBindingSource, "Id_Condicion", True))
         Me.cmbCondicion.DataSource = Me.AUDITCondicionesBindingSource
         Me.cmbCondicion.DisplayMember = "Condicion"
+        Me.cmbCondicion.Enabled = False
         Me.cmbCondicion.FormattingEnabled = True
         Me.cmbCondicion.Location = New System.Drawing.Point(349, 37)
         Me.cmbCondicion.Name = "cmbCondicion"
@@ -239,6 +242,7 @@ Partial Class frmAuditoriaCondiciones
         Me.cmbHallago.DataBindings.Add(New System.Windows.Forms.Binding("SelectedValue", Me.AUDIT_AuditoriasCondicionesBindingSource, "CategoriaHallazgo", True))
         Me.cmbHallago.DataSource = Me.AUDITParametrosHBindingSource
         Me.cmbHallago.DisplayMember = "Descripcion"
+        Me.cmbHallago.Enabled = False
         Me.cmbHallago.FormattingEnabled = True
         Me.cmbHallago.Location = New System.Drawing.Point(120, 64)
         Me.cmbHallago.Name = "cmbHallago"
@@ -256,6 +260,7 @@ Partial Class frmAuditoriaCondiciones
         Me.cmbValidacion.DataBindings.Add(New System.Windows.Forms.Binding("SelectedValue", Me.AUDIT_AuditoriasCondicionesBindingSource, "Validacion", True))
         Me.cmbValidacion.DataSource = Me.AUDITParametrosVBindingSource
         Me.cmbValidacion.DisplayMember = "Descripcion"
+        Me.cmbValidacion.Enabled = False
         Me.cmbValidacion.FormattingEnabled = True
         Me.cmbValidacion.Location = New System.Drawing.Point(120, 37)
         Me.cmbValidacion.Name = "cmbValidacion"
@@ -289,6 +294,7 @@ Partial Class frmAuditoriaCondiciones
         '
         Me.cmbRevisiones.DataSource = Me.AUDIT_AuditoriasCondicionesBindingSource
         Me.cmbRevisiones.DisplayMember = "ConsecRevisiones"
+        Me.cmbRevisiones.Enabled = False
         Me.cmbRevisiones.FormattingEnabled = True
         Me.cmbRevisiones.Location = New System.Drawing.Point(349, 10)
         Me.cmbRevisiones.Name = "cmbRevisiones"
@@ -318,6 +324,7 @@ Partial Class frmAuditoriaCondiciones
         Me.TableAdapterManager.AUDIT_ParametrosTableAdapter = Nothing
         Me.TableAdapterManager.AUDIT_ParametrosVTableAdapter = Me.AUDIT_ParametrosVTableAdapter
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.SucursalesTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = Auditoria.ProductionDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
         'FechaVigenciaDateTimePicker
@@ -334,6 +341,7 @@ Partial Class frmAuditoriaCondiciones
         Me.cmbDeptoResponsable.DataBindings.Add(New System.Windows.Forms.Binding("SelectedValue", Me.AUDIT_AuditoriasCondicionesBindingSource, "deptoResponsable", True))
         Me.cmbDeptoResponsable.DataSource = Me.AUDITParametrosDBindingSource
         Me.cmbDeptoResponsable.DisplayMember = "descripcionCompleta"
+        Me.cmbDeptoResponsable.Enabled = False
         Me.cmbDeptoResponsable.FormattingEnabled = True
         Me.cmbDeptoResponsable.Location = New System.Drawing.Point(598, 8)
         Me.cmbDeptoResponsable.Name = "cmbDeptoResponsable"
@@ -359,22 +367,23 @@ Partial Class frmAuditoriaCondiciones
         '
         Me.AUDIT_ParametrosDTableAdapter.ClearBeforeFill = True
         '
-        'Id_auditoriaCondicionLabel
-        '
-        Id_auditoriaCondicionLabel.AutoSize = True
-        Id_auditoriaCondicionLabel.Location = New System.Drawing.Point(2, 224)
-        Id_auditoriaCondicionLabel.Name = "Id_auditoriaCondicionLabel"
-        Id_auditoriaCondicionLabel.Size = New System.Drawing.Size(112, 13)
-        Id_auditoriaCondicionLabel.TabIndex = 23
-        Id_auditoriaCondicionLabel.Text = "Id auditoria Condicion:"
-        '
         'Id_auditoriaCondicionTextBox
         '
         Me.Id_auditoriaCondicionTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.AUDIT_AuditoriasCondicionesBindingSource, "Id_auditoriaCondicion", True))
+        Me.Id_auditoriaCondicionTextBox.Enabled = False
         Me.Id_auditoriaCondicionTextBox.Location = New System.Drawing.Point(120, 221)
         Me.Id_auditoriaCondicionTextBox.Name = "Id_auditoriaCondicionTextBox"
         Me.Id_auditoriaCondicionTextBox.Size = New System.Drawing.Size(100, 20)
         Me.Id_auditoriaCondicionTextBox.TabIndex = 24
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(563, 70)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(98, 13)
+        Me.Label3.TabIndex = 25
+        Me.Label3.Text = "Fecha de vigencia:"
         '
         'frmAuditoriaCondiciones
         '
@@ -382,11 +391,11 @@ Partial Class frmAuditoriaCondiciones
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.ClientSize = New System.Drawing.Size(887, 258)
+        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Id_auditoriaCondicionLabel)
         Me.Controls.Add(Me.Id_auditoriaCondicionTextBox)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.cmbDeptoResponsable)
-        Me.Controls.Add(FechaVigenciaLabel)
         Me.Controls.Add(Me.FechaVigenciaDateTimePicker)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.cmbRevisiones)
@@ -451,4 +460,5 @@ Partial Class frmAuditoriaCondiciones
     Friend WithEvents AUDITParametrosDBindingSource As BindingSource
     Friend WithEvents AUDIT_ParametrosDTableAdapter As ProductionDataSetTableAdapters.AUDIT_ParametrosDTableAdapter
     Friend WithEvents Id_auditoriaCondicionTextBox As TextBox
+    Friend WithEvents Label3 As Label
 End Class
