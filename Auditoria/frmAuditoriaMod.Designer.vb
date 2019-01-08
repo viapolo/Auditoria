@@ -153,6 +153,7 @@ Partial Class frmAuditoriaMod
         '
         'TableAdapterManager
         '
+        Me.TableAdapterManager.ActifijoTableAdapter = Nothing
         Me.TableAdapterManager.AUDIT_AuditoriasCondicionesTableAdapter = Nothing
         Me.TableAdapterManager.AUDIT_AuditoriasTableAdapter = Me.AUDIT_AuditoriasTableAdapter
         Me.TableAdapterManager.AUDIT_CondicionesTableAdapter = Nothing
@@ -350,6 +351,7 @@ Partial Class frmAuditoriaMod
         Me.btnAgregar.TabIndex = 10
         Me.btnAgregar.Text = "Agregar"
         Me.btnAgregar.UseVisualStyleBackColor = True
+        Me.btnAgregar.Visible = False
         '
         'AUDIT_CondicionesTableAdapter
         '

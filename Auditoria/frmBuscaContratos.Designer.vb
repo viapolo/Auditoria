@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frmBuscaContratos
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class frmBuscaContratos
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.cmbClientes = New System.Windows.Forms.ComboBox()
@@ -33,15 +33,16 @@ Partial Class frmBuscaContratos
         Me.lblAnexos = New System.Windows.Forms.Label()
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.Vw_AnexosTableAdapter = New Auditoria.ProductionDataSetTableAdapters.Vw_AnexosTableAdapter()
+        Me.Vw_AnexosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.TableAdapterManager = New Auditoria.ProductionDataSetTableAdapters.TableAdapterManager()
         CType(Me.ClientesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ProductionDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ProductionDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Vw_AnexosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'cmbClientes
         '
-        Me.cmbClientes.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
-        Me.cmbClientes.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
         Me.cmbClientes.DataSource = Me.ClientesBindingSource
         Me.cmbClientes.DisplayMember = "Descr"
         Me.cmbClientes.FormattingEnabled = True
@@ -110,11 +111,31 @@ Partial Class frmBuscaContratos
         '
         Me.Vw_AnexosTableAdapter.ClearBeforeFill = True
         '
+        'Vw_AnexosBindingSource
+        '
+        Me.Vw_AnexosBindingSource.DataMember = "Vw_Anexos"
+        Me.Vw_AnexosBindingSource.DataSource = Me.ProductionDataSet
+        '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.ActifijoTableAdapter = Nothing
+        Me.TableAdapterManager.AUDIT_AuditoriasCondicionesTableAdapter = Nothing
+        Me.TableAdapterManager.AUDIT_AuditoriasTableAdapter = Nothing
+        Me.TableAdapterManager.AUDIT_CondicionesTableAdapter = Nothing
+        Me.TableAdapterManager.AUDIT_ParametrosDTableAdapter = Nothing
+        Me.TableAdapterManager.AUDIT_ParametrosHTableAdapter = Nothing
+        Me.TableAdapterManager.AUDIT_ParametrosTableAdapter = Nothing
+        Me.TableAdapterManager.AUDIT_ParametrosVTableAdapter = Nothing
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.Connection = Nothing
+        Me.TableAdapterManager.SucursalesTableAdapter = Nothing
+        Me.TableAdapterManager.UpdateOrder = Auditoria.ProductionDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        '
         'frmBuscaContratos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(934, 261)
+        Me.ClientSize = New System.Drawing.Size(934, 267)
         Me.Controls.Add(Me.btnSalir)
         Me.Controls.Add(Me.lblAnexos)
         Me.Controls.Add(Me.lblClientes)
@@ -128,6 +149,7 @@ Partial Class frmBuscaContratos
         CType(Me.ClientesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ProductionDataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ProductionDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Vw_AnexosBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -142,4 +164,6 @@ Partial Class frmBuscaContratos
     Friend WithEvents lblAnexos As Label
     Friend WithEvents btnSalir As Button
     Friend WithEvents Vw_AnexosTableAdapter As ProductionDataSetTableAdapters.Vw_AnexosTableAdapter
+    Friend WithEvents Vw_AnexosBindingSource As BindingSource
+    Friend WithEvents TableAdapterManager As ProductionDataSetTableAdapters.TableAdapterManager
 End Class

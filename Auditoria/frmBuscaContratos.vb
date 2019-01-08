@@ -5,7 +5,6 @@
         Me.Vw_AnexosTableAdapter.Fill(Me.ProductionDataSet.Vw_Anexos)
         'TODO: esta línea de código carga datos en la tabla 'ProductionDataSet.Clientes' Puede moverla o quitarla según sea necesario.
         Me.ClientesTableAdapter.Fill(Me.ProductionDataSet.Clientes)
-
     End Sub
 
     Private Sub cmbClientes_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbClientes.SelectedIndexChanged
@@ -14,7 +13,6 @@
         If Not cmbClientes.SelectedValue Is Nothing Then
             taVWAnexos.ObtCont_FillBy(ProductionDataSet.Vw_Anexos, cmbClientes.SelectedValue.ToString)
             lbxContratos.Items.Clear()
-
             For Each rows As ProductionDataSet.Vw_AnexosRow In ProductionDataSet.Vw_Anexos.Rows
                 If rows.Ciclo <> "" Then
                     lbxContratos.Items.Add(rows.Nombre_Sucursal.Trim + " / " + rows.TipoCredito + " / " + rows.Anexo.Trim + " / " + rows.Ciclo)
@@ -31,7 +29,7 @@
         If lbxContratos.Items.Count > 0 Then
             Dim taCiclo As New ProductionDataSetTableAdapters.Vw_AnexosTableAdapter
             Dim taAuditorias As New ProductionDataSetTableAdapters.AUDIT_AuditoriasTableAdapter
-            'Dim fAudi As New frmAuditorias
+            Dim taActfijo As New ProductionDataSetTableAdapters.ActifijoTableAdapter
             Dim datos(3) As String
             datos = lbxContratos.SelectedItem.ToString.Split("/")
             If datos.Length = 3 Then
@@ -40,14 +38,21 @@
             Else
                 datos(3) = datos(3).Trim
             End If
-            frmAuditorias.var_anexo = datos(2) 'lbxContratos.SelectedItem
-            frmAuditorias.var_ciclo = datos(3) 'taCiclo.ObtCicloScalar(datos(2).Trim)
+            frmAuditorias.var_anexo = datos(2)
+            frmAuditorias.var_ciclo = datos(3)
             frmAuditorias.var_consecutivo = taAuditorias.ContadorAuditorias(datos(2).Trim, datos(3))
-
             taAuditorias.ObtAudit_FillBy(ProductionDataSet.AUDIT_Auditorias, datos(2).Trim, datos(3))
+            frmAuditorias.var_cliente = taCiclo.ObtNomCliente_ScalarQuery(datos(2).Trim)
+            frmAuditorias.var_sucursal = Vw_AnexosBindingSource.Current("Nombre_Sucursal")
+            frmAuditorias.var_tipoCredito = Vw_AnexosBindingSource.Current("TipoCredito")
+            frmAuditorias.var_recursos = Vw_AnexosBindingSource.Current("Fondeotit")
+            frmAuditorias.var_fechaDispo = Vw_AnexosBindingSource.Current("Fecha_Pago")
+            frmAuditorias.var_promotor = Vw_AnexosBindingSource.Current("Nombre_Promotor")
+            frmAuditorias.var_destino = taActfijo.Obtdestino_ScalarQuery(lblAnexos.Text)
+
             Me.Enabled = False
             If ProductionDataSet.AUDIT_Auditorias.Rows.Count = 0 Then
-                If MsgBox("El contrato no tiene auditorias relacionadas, ¿Deséa auditar?", MsgBoxStyle.YesNoCancel) = MsgBoxResult.Yes Then
+                If MsgBox("El contrato no tiene auditorias relacionadas, ¿Deséa auditar?", MsgBoxStyle.OkOnly) = MsgBoxResult.ok Then
                     frmAuditorias.MdiParent = MDIAuditoria
                     frmAuditorias.Show()
                 Else

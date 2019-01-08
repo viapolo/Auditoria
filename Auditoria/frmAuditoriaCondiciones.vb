@@ -33,7 +33,6 @@ Public Class frmAuditoriaCondiciones
         Dim DetalleMod As ProductionDataSet.AUDIT_AuditoriasCondicionesRow
         Dim taAuditoriasCond As New ProductionDataSetTableAdapters.AUDIT_AuditoriasCondicionesTableAdapter
 
-
         Id_auditoriaTextBox.Text = var_idAuditoria.ToString
         btnActualizar.Enabled = var_estatusBtnActualizar
         btnGuardar.Enabled = var_estatusBtnGuardar
@@ -43,7 +42,6 @@ Public Class frmAuditoriaCondiciones
         Try
             If cmbCondicion.SelectedValue = 33 And var_num_celdasfrm1 = 1 And taAuditorias.ObtnRevInfFinanciera_ScalarQuery(Id_auditoriaTextBox.Text) = 1 Then
                 var_revisiones = CInt(InputBox("Ingrese número de revisiones por condición adicionales (por defaul se registra una revisión)", "Revisiones periódicas", 0))
-                'taAuditoriasCond.Obt_AllDetalleAuditCond_FillBy(ProductionDataSet.AUDIT_AuditoriasCondiciones, Id_auditoriaTextBox.Text)
 
                 taAuditoriasCond.ObtDetalleAuditCond_FillBy(ProductionDataSet.AUDIT_AuditoriasCondiciones, var_idAuditoriaCondiciones)
                 For Each DetalleMod In ProductionDataSet.AUDIT_AuditoriasCondiciones.Rows
@@ -59,7 +57,6 @@ Public Class frmAuditoriaCondiciones
 
             ElseIf cmbCondicion.SelectedValue = 37 And var_num_celdasfrm1 = 1 And taAuditorias.ObtnRevRepSup_ScalarQuery(Id_auditoriaTextBox.Text) = 1 Then
                 var_revisiones = CInt(InputBox("Ingrese número de revisiones por condición (por defaul se registra una revisión)", "Revisiones periódicas", 0))
-
                 taAuditoriasCond.ObtDetalleAuditCond_FillBy(ProductionDataSet.AUDIT_AuditoriasCondiciones, var_idAuditoriaCondiciones)
                 For Each DetalleMod In ProductionDataSet.AUDIT_AuditoriasCondiciones.Rows
                     For i = 1 To var_revisiones
@@ -109,59 +106,50 @@ Public Class frmAuditoriaCondiciones
 
         Me.AUDIT_AuditoriasCondicionesTableAdapter.ObtDetalleAuditCond_FillBy(Me.ProductionDataSet.AUDIT_AuditoriasCondiciones, var_idAuditoriaCondiciones)
 
-        'If frmAuditoriaMod.cmbEstatus.Text = "CERRADO" Then
-        '    btnActualizar.Enabled = True
-        '    cmbCondicion.Enabled = False
-        '    cmbHallago.Enabled = False
-        '    cmbValidacion.Enabled = False
-        '    ObservacionesTextBox.Enabled = False
-        '    ComentariosTextBox.Enabled = True
-        '    btnGuardar.Enabled = False
-        '    FechaVigenciaDateTimePicker.Enabled = False
-        '    cmbDeptoResponsable.Enabled = False
-        'Else
-        '    cmbHallago.Enabled = True
-        '    cmbValidacion.Enabled = True
-        '    cmbDeptoResponsable.Enabled = True
-        '    If cmbCondicion.SelectedValue = 39 Or cmbCondicion.SelectedValue = 40 Or cmbCondicion.SelectedValue = 41 Then
-        '        FechaVigenciaDateTimePicker.Enabled = True
-        '    End If
-        'End If
         If cmbRevisiones.Items.Count = 1 Then
             cmbRevisiones.Enabled = False
         End If
 
-        'If cmbValidacion.SelectedValue = 4 Or cmbHallago.SelectedValue = 5 Then
-        '    cmbHallago.Enabled = False
-        '    cmbValidacion.Enabled = False
-        '    ObservacionesTextBox.Enabled = False
-        '    ComentariosTextBox.Enabled = False
-        '    FechaSolventacionDateTimePicker.Enabled = False
-        '    cmbDeptoResponsable.Enabled = False
-        'Else
-        '    cmbDeptoResponsable.Enabled = True
-        'End If
-
-        If frmAuditoriaMod.cmbEstatus.Text = "CERRADO" Then
-            btnActualizar.Enabled = True
-            cmbHallago.Enabled = False
-            cmbValidacion.Enabled = False
-            ObservacionesTextBox.Enabled = False
-            ComentariosTextBox.Enabled = True
-            btnGuardar.Enabled = False
-            FechaVigenciaDateTimePicker.Enabled = False
-            cmbDeptoResponsable.Enabled = False
-            FechaSolventacionDateTimePicker.Enabled = True
-        Else
+        If frmAuditoriaMod.cmbEstatus.Text = "ABIERTO" Then
             btnActualizar.Enabled = True
             cmbHallago.Enabled = True
             cmbValidacion.Enabled = True
             ObservacionesTextBox.Enabled = True
             ComentariosTextBox.Enabled = True
             btnGuardar.Enabled = True
+            FechaVigenciaDateTimePicker.Enabled = True
             cmbDeptoResponsable.Enabled = True
-            If cmbCondicion.SelectedValue = 39 Or cmbCondicion.SelectedValue = 40 Or cmbCondicion.SelectedValue = 41 Then
-                FechaVigenciaDateTimePicker.Enabled = True
+            FechaSolventacionDateTimePicker.Enabled = True
+
+            'btnActualizar.Enabled = True
+            'cmbHallago.Enabled = False
+            'cmbValidacion.Enabled = False
+            'ObservacionesTextBox.Enabled = False
+            'ComentariosTextBox.Enabled = True
+            'btnGuardar.Enabled = False
+            'FechaVigenciaDateTimePicker.Enabled = False
+            'cmbDeptoResponsable.Enabled = False
+            'FechaSolventacionDateTimePicker.Enabled = True
+            If cmbCondicion.SelectedValue = 39 Or cmbCondicion.SelectedValue = 40 Then
+                FechaVigenciaDateTimePicker.Visible = True
+                Label3.Visible = True
+            Else
+                FechaVigenciaDateTimePicker.Visible = False
+                Label3.Visible = False
+            End If
+        Else
+            'btnActualizar.Enabled = True
+            'cmbHallago.Enabled = True
+            'cmbValidacion.Enabled = True
+            'ObservacionesTextBox.Enabled = True
+            'ComentariosTextBox.Enabled = True
+            'btnGuardar.Enabled = True
+            cmbDeptoResponsable.Enabled = False
+            btnAgregarRev.Enabled = False
+            'FechaSolventacionDateTimePicker.Enabled = True
+            If cmbCondicion.SelectedValue = 39 Or cmbCondicion.SelectedValue = 40 Then
+                FechaVigenciaDateTimePicker.Visible = True
+                Label3.Visible = True
             Else
                 FechaVigenciaDateTimePicker.Visible = False
                 Label3.Visible = False
@@ -194,26 +182,13 @@ Public Class frmAuditoriaCondiciones
 
     Private Sub btnActualizar_Click(sender As Object, e As EventArgs) Handles btnActualizar.Click
         Dim taAuditCond As New ProductionDataSetTableAdapters.AUDIT_AuditoriasCondicionesTableAdapter
-        'Dim taExisteCondicion As New ProductionDataSetTableAdapters.AUDIT_AuditoriasCondicionesTableAdapter
-        'If taExisteCondicion.ExisteCondicion_ScalarQuery(var_idAuditoria, cmbCondicion.SelectedValue) <> 0 Then
-        '    MsgBox("Ya existe esta condición...", MsgBoxStyle.Exclamation)
-        '    Exit Sub
-        'End If
         If cmbHallago.Text = "" Or cmbValidacion.Text = "" Or cmbCondicion.Text = "" Then
             MsgBox("No se ha selaccionado un parametro para hallazgo o validación...", MsgBoxStyle.Exclamation)
             Exit Sub
         End If
 
         If cmbValidacion.SelectedValue = 4 Or cmbHallago.SelectedValue = 5 Then
-            'taAuditCond.ActualizaEstatus_UpdateQuery(CInt(Id_auditoriaCondicionTextBox.Text))
             AUDIT_AuditoriasCondicionesBindingSource.Current("estatus") = True
-            'cmbHallago.Enabled = False
-            'cmbValidacion.Enabled = False
-            'ObservacionesTextBox.Enabled = False
-            'ComentariosTextBox.Enabled = False
-            'FechaSolventacionDateTimePicker.Enabled = False
-            'btnActualizar.Enabled = False
-            'cmbDeptoResponsable.Enabled = False
         End If
 
         Me.Validate()
@@ -236,26 +211,48 @@ Public Class frmAuditoriaCondiciones
             cmbDeptoResponsable.Enabled = False
         End If
 
-        If frmAuditoriaMod.cmbEstatus.Text = "CERRADO" Then
-            btnActualizar.Enabled = True
-            cmbHallago.Enabled = False
-            cmbValidacion.Enabled = False
-            ObservacionesTextBox.Enabled = False
-            ComentariosTextBox.Enabled = True
-            btnGuardar.Enabled = False
-            FechaVigenciaDateTimePicker.Enabled = False
-            cmbDeptoResponsable.Enabled = False
-            FechaSolventacionDateTimePicker.Enabled = True
-        Else
+        If frmAuditoriaMod.cmbEstatus.Text = "ABIERTO" Then
             btnActualizar.Enabled = True
             cmbHallago.Enabled = True
             cmbValidacion.Enabled = True
             ObservacionesTextBox.Enabled = True
             ComentariosTextBox.Enabled = True
             btnGuardar.Enabled = True
+            FechaVigenciaDateTimePicker.Enabled = True
             cmbDeptoResponsable.Enabled = True
-            If cmbCondicion.SelectedValue = 39 Or cmbCondicion.SelectedValue = 40 Or cmbCondicion.SelectedValue = 41 Then
-                FechaVigenciaDateTimePicker.Enabled = True
+            FechaSolventacionDateTimePicker.Enabled = True
+
+            'btnActualizar.Enabled = True
+            'cmbHallago.Enabled = False
+            'cmbValidacion.Enabled = False
+            'ObservacionesTextBox.Enabled = False
+            'ComentariosTextBox.Enabled = True
+            'btnGuardar.Enabled = False
+            'FechaVigenciaDateTimePicker.Enabled = False
+            'cmbDeptoResponsable.Enabled = False
+            'FechaSolventacionDateTimePicker.Enabled = True
+            If cmbCondicion.SelectedValue = 39 Or cmbCondicion.SelectedValue = 40 Then
+                FechaVigenciaDateTimePicker.Visible = True
+                Label3.Visible = True
+            Else
+                FechaVigenciaDateTimePicker.Visible = False
+                Label3.Visible = False
+            End If
+        Else
+            'btnActualizar.Enabled = True
+            'cmbHallago.Enabled = True
+            'cmbValidacion.Enabled = True
+            'ObservacionesTextBox.Enabled = True
+            'ComentariosTextBox.Enabled = True
+            'btnGuardar.Enabled = True
+            btnAgregarRev.Enabled = False
+            cmbDeptoResponsable.Enabled = False
+            If cmbCondicion.SelectedValue = 39 Or cmbCondicion.SelectedValue = 40 Then
+                FechaVigenciaDateTimePicker.Visible = True
+                Label3.Visible = True
+            Else
+                FechaVigenciaDateTimePicker.Visible = False
+                Label3.Visible = False
             End If
             If cmbHallago.SelectedValue = 5 And cmbValidacion.SelectedValue = 2 Then
                 ObservacionesTextBox.Enabled = True
@@ -270,8 +267,6 @@ Public Class frmAuditoriaCondiciones
                 cmbDeptoResponsable.Enabled = False
             End If
         End If
-
-        'Me.Close()
         Me.Update()
     End Sub
 
@@ -301,65 +296,28 @@ Public Class frmAuditoriaCondiciones
         End Try
     End Sub
 
-    Private Sub cmbCondicion_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbCondicion.SelectedIndexChanged
-
-    End Sub
     Private Sub frmAuditoriaCondiciones_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
         frmAuditoriaMod.Enabled = True
-        'frmAuditoriaMod.AUDIT_AuditoriasTableAdapter.ObtAuditConsec_FillBy(Me.ProductionDataSet.AUDIT_Auditorias, var_anexoAMC, var_consecAMC)
         frmAuditoriaMod.bandera = True
         frmAuditoriaMod.frmAuditoriaMod_Load(sender, e)
-    End Sub
-
-    Private Sub cmbCondicion_SelectedValueChanged(sender As Object, e As EventArgs) Handles cmbCondicion.SelectedValueChanged
-
     End Sub
 
     Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
         Me.Close()
     End Sub
 
-    Private Sub cmbRevisiones_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbRevisiones.SelectedIndexChanged
+    Private Sub btnAgregarRev_Click(sender As Object, e As EventArgs) Handles btnAgregarRev.Click
+        Dim taAuditorias As New ProductionDataSetTableAdapters.AUDIT_AuditoriasTableAdapter
+        Dim taAuditoriasCond As New ProductionDataSetTableAdapters.AUDIT_AuditoriasCondicionesTableAdapter
 
+        var_revisiones = CInt(InputBox("Ingrese número de revisiones adicionales", "Revisiones periódicas", 0))
 
-        'MsgBox(AUDIT_AuditoriasCondicionesBindingSource.Current("Id_auditoriaCondicion"))
-
-
-    End Sub
-
-    Private Sub Id_auditoriaCondicionTextBox_TextChanged(sender As Object, e As EventArgs) Handles Id_auditoriaCondicionTextBox.TextChanged
-        'Dim taEstatus As New ProductionDataSetTableAdapters.AUDIT_AuditoriasCondicionesTableAdapter
-        'If Id_auditoriaCondicionTextBox.Text <> "" Then
-        '    If taEstatus.ObtEstatus_ScalarQuery(CInt(Id_auditoriaCondicionTextBox.Text)) = "True" Then
-        '        cmbHallago.Enabled = False
-        '        cmbValidacion.Enabled = False
-        '        ObservacionesTextBox.Enabled = False
-        '        ComentariosTextBox.Enabled = False
-        '        FechaSolventacionDateTimePicker.Enabled = False
-        '        'btnActualizar.Enabled = False
-        '        'cmbDeptoResponsable.Enabled = True
-        '    Else
-        '        If frmAuditoriaMod.cmbEstatus.Text <> "CERRADO" Then
-        '            cmbHallago.Enabled = True
-        '            cmbValidacion.Enabled = True
-        '            ObservacionesTextBox.Enabled = True
-        '            ComentariosTextBox.Enabled = True
-        '            'btnActualizar.Enabled = True
-        '            cmbDeptoResponsable.Enabled = True
-        '            If cmbCondicion.SelectedValue = 39 Or cmbCondicion.SelectedValue = 40 Or cmbCondicion.SelectedValue = 41 Then
-        '                FechaVigenciaDateTimePicker.Enabled = True
-        '            End If
-        '        End If
-        '    End If
-        'End If
-        'Me.Update()
-    End Sub
-
-    Private Sub cmbValidacion_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbValidacion.SelectedIndexChanged
-
-    End Sub
-
-    Private Sub FechaVigenciaLabel_Click(sender As Object, e As EventArgs)
-
+        taAuditoriasCond.ObtDetalleAuditCond_FillBy(ProductionDataSet.AUDIT_AuditoriasCondiciones, var_idAuditoriaCondiciones)
+        'For Each DetalleMod In ProductionDataSet.AUDIT_AuditoriasCondiciones.Rows
+        Dim var_ini As Integer = taAuditoriasCond.CuentaRegistros_ScalarQuery(CInt(Id_auditoriaTextBox.Text), CInt(cmbCondicion.SelectedValue))
+        For i = var_ini To var_ini + var_revisiones - 1
+            taAuditoriasCond.Insert(Id_auditoriaTextBox.Text, CInt(cmbCondicion.SelectedValue), 1, "", 11, System.Data.SqlTypes.SqlDateTime.Null, "", i + 1, Date.Now, 32, False)
+        Next
+        'Next
     End Sub
 End Class

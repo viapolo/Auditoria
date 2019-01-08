@@ -33,6 +33,8 @@ Partial Class frmBuscaContratosSuc
         Me.lblClientes = New System.Windows.Forms.Label()
         Me.lblAnexos = New System.Windows.Forms.Label()
         Me.btnSalir = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.lblNombreCliente = New System.Windows.Forms.Label()
         CType(Me.SucursalesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ProductionDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ProductionDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -109,11 +111,31 @@ Partial Class frmBuscaContratosSuc
         Me.btnSalir.Text = "Salir"
         Me.btnSalir.UseVisualStyleBackColor = True
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(12, 246)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(50, 13)
+        Me.Label1.TabIndex = 7
+        Me.Label1.Text = "Cliente:"
+        '
+        'lblNombreCliente
+        '
+        Me.lblNombreCliente.AutoSize = True
+        Me.lblNombreCliente.Location = New System.Drawing.Point(69, 246)
+        Me.lblNombreCliente.Name = "lblNombreCliente"
+        Me.lblNombreCliente.Size = New System.Drawing.Size(0, 13)
+        Me.lblNombreCliente.TabIndex = 8
+        '
         'frmBuscaContratosSuc
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(775, 271)
+        Me.Controls.Add(Me.lblNombreCliente)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btnSalir)
         Me.Controls.Add(Me.lblAnexos)
         Me.Controls.Add(Me.lblClientes)
@@ -126,6 +148,7 @@ Partial Class frmBuscaContratosSuc
         CType(Me.ProductionDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.VwAnexosBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -139,4 +162,6 @@ Partial Class frmBuscaContratosSuc
     Friend WithEvents lblClientes As Label
     Friend WithEvents lblAnexos As Label
     Friend WithEvents btnSalir As Button
+    Friend WithEvents Label1 As Label
+    Friend WithEvents lblNombreCliente As Label
 End Class
