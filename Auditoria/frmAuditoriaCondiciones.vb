@@ -1,4 +1,6 @@
 ﻿Imports System.Data.SqlClient
+Imports System.IO
+Imports System
 Public Class frmAuditoriaCondiciones
 
     Public var_idAuditoria As Integer
@@ -46,7 +48,7 @@ Public Class frmAuditoriaCondiciones
                 taAuditoriasCond.ObtDetalleAuditCond_FillBy(ProductionDataSet.AUDIT_AuditoriasCondiciones, var_idAuditoriaCondiciones)
                 For Each DetalleMod In ProductionDataSet.AUDIT_AuditoriasCondiciones.Rows
                     For i = 1 To var_revisiones
-                        taAuditoriasCond.Insert(Id_auditoriaTextBox.Text, DetalleMod.Id_Condicion, DetalleMod.Validacion, DetalleMod.Observaciones, DetalleMod.CategoriaHallazgo, Date.Now, DetalleMod.Comentarios, i + 1, Date.Now, DetalleMod.deptoResponsable, DetalleMod.estatus)
+                        taAuditoriasCond.Insert(Id_auditoriaTextBox.Text, DetalleMod.Id_Condicion, DetalleMod.Validacion, DetalleMod.Observaciones, DetalleMod.CategoriaHallazgo, Date.Now, DetalleMod.Comentarios, i + 1, Date.Now, DetalleMod.deptoResponsable, DetalleMod.estatus, Nothing, Nothing, Nothing)
                     Next
                 Next
                 If var_revisiones = 0 Then
@@ -60,7 +62,7 @@ Public Class frmAuditoriaCondiciones
                 taAuditoriasCond.ObtDetalleAuditCond_FillBy(ProductionDataSet.AUDIT_AuditoriasCondiciones, var_idAuditoriaCondiciones)
                 For Each DetalleMod In ProductionDataSet.AUDIT_AuditoriasCondiciones.Rows
                     For i = 1 To var_revisiones
-                        taAuditoriasCond.Insert(Id_auditoriaTextBox.Text, DetalleMod.Id_Condicion, DetalleMod.Validacion, DetalleMod.Observaciones, DetalleMod.CategoriaHallazgo, Date.Now, DetalleMod.Comentarios, i + 1, Date.Now, DetalleMod.deptoResponsable, DetalleMod.estatus)
+                        taAuditoriasCond.Insert(Id_auditoriaTextBox.Text, DetalleMod.Id_Condicion, DetalleMod.Validacion, DetalleMod.Observaciones, DetalleMod.CategoriaHallazgo, Date.Now, DetalleMod.Comentarios, i + 1, Date.Now, DetalleMod.deptoResponsable, DetalleMod.estatus, Nothing, Nothing, Nothing)
                     Next
                 Next
                 If var_revisiones = 0 Then
@@ -75,7 +77,7 @@ Public Class frmAuditoriaCondiciones
                 taAuditoriasCond.ObtDetalleAuditCond_FillBy(ProductionDataSet.AUDIT_AuditoriasCondiciones, var_idAuditoriaCondiciones)
                 For Each DetalleMod In ProductionDataSet.AUDIT_AuditoriasCondiciones.Rows
                     For i = 1 To var_revisiones
-                        taAuditoriasCond.Insert(Id_auditoriaTextBox.Text, DetalleMod.Id_Condicion, DetalleMod.Validacion, DetalleMod.Observaciones, DetalleMod.CategoriaHallazgo, Date.Now, DetalleMod.Comentarios, i + 1, Date.Now, DetalleMod.deptoResponsable, DetalleMod.estatus)
+                        taAuditoriasCond.Insert(Id_auditoriaTextBox.Text, DetalleMod.Id_Condicion, DetalleMod.Validacion, DetalleMod.Observaciones, DetalleMod.CategoriaHallazgo, Date.Now, DetalleMod.Comentarios, i + 1, Date.Now, DetalleMod.deptoResponsable, DetalleMod.estatus, Nothing, Nothing, Nothing)
                     Next
                 Next
                 If var_revisiones = 0 Then
@@ -90,7 +92,7 @@ Public Class frmAuditoriaCondiciones
                 taAuditoriasCond.ObtDetalleAuditCond_FillBy(ProductionDataSet.AUDIT_AuditoriasCondiciones, var_idAuditoriaCondiciones)
                 For Each DetalleMod In ProductionDataSet.AUDIT_AuditoriasCondiciones.Rows
                     For i = 1 To var_revisiones
-                        taAuditoriasCond.Insert(Id_auditoriaTextBox.Text, DetalleMod.Id_Condicion, DetalleMod.Validacion, DetalleMod.Observaciones, DetalleMod.CategoriaHallazgo, Date.Now, DetalleMod.Comentarios, i + 1, Date.Now, DetalleMod.deptoResponsable, DetalleMod.estatus)
+                        taAuditoriasCond.Insert(Id_auditoriaTextBox.Text, DetalleMod.Id_Condicion, DetalleMod.Validacion, DetalleMod.Observaciones, DetalleMod.CategoriaHallazgo, Date.Now, DetalleMod.Comentarios, i + 1, Date.Now, DetalleMod.deptoResponsable, DetalleMod.estatus, Nothing, Nothing, Nothing)
                     Next
                 Next
                 If var_revisiones = 0 Then
@@ -283,9 +285,9 @@ Public Class frmAuditoriaCondiciones
 
         Try
             If cmbValidacion.SelectedValue = 4 Or cmbHallago.SelectedValue = 5 Then
-                AUDIT_AuditoriasCondicionesTableAdapter.Insert(Id_auditoriaTextBox.Text, cmbCondicion.SelectedValue, cmbValidacion.SelectedValue, ObservacionesTextBox.Text, cmbHallago.SelectedValue, FechaSolventacionDateTimePicker.Value, ComentariosTextBox.Text, 1, FechaVigenciaDateTimePicker.Value, cmbDeptoResponsable.SelectedValue, True)
+                AUDIT_AuditoriasCondicionesTableAdapter.Insert(Id_auditoriaTextBox.Text, cmbCondicion.SelectedValue, cmbValidacion.SelectedValue, ObservacionesTextBox.Text, cmbHallago.SelectedValue, FechaSolventacionDateTimePicker.Value, ComentariosTextBox.Text, 1, FechaVigenciaDateTimePicker.Value, cmbDeptoResponsable.SelectedValue, True, Nothing, Nothing, Nothing)
             Else
-                AUDIT_AuditoriasCondicionesTableAdapter.Insert(Id_auditoriaTextBox.Text, cmbCondicion.SelectedValue, cmbValidacion.SelectedValue, ObservacionesTextBox.Text, cmbHallago.SelectedValue, FechaSolventacionDateTimePicker.Value, ComentariosTextBox.Text, 1, FechaVigenciaDateTimePicker.Value, cmbDeptoResponsable.SelectedValue, False)
+                AUDIT_AuditoriasCondicionesTableAdapter.Insert(Id_auditoriaTextBox.Text, cmbCondicion.SelectedValue, cmbValidacion.SelectedValue, ObservacionesTextBox.Text, cmbHallago.SelectedValue, FechaSolventacionDateTimePicker.Value, ComentariosTextBox.Text, 1, FechaVigenciaDateTimePicker.Value, cmbDeptoResponsable.SelectedValue, False, Nothing, Nothing, Nothing)
             End If
             taActulizaAudit.UpdateFechaActualizacion(Date.Now, var_anexoAMC, var_consecAMC)
             MsgBox("Actualización existosa...", MsgBoxStyle.Information)
@@ -316,8 +318,20 @@ Public Class frmAuditoriaCondiciones
         'For Each DetalleMod In ProductionDataSet.AUDIT_AuditoriasCondiciones.Rows
         Dim var_ini As Integer = taAuditoriasCond.CuentaRegistros_ScalarQuery(CInt(Id_auditoriaTextBox.Text), CInt(cmbCondicion.SelectedValue))
         For i = var_ini To var_ini + var_revisiones - 1
-            taAuditoriasCond.Insert(Id_auditoriaTextBox.Text, CInt(cmbCondicion.SelectedValue), 1, "", 11, System.Data.SqlTypes.SqlDateTime.Null, "", i + 1, Date.Now, 32, False)
+            taAuditoriasCond.Insert(Id_auditoriaTextBox.Text, CInt(cmbCondicion.SelectedValue), 1, "", 11, System.Data.SqlTypes.SqlDateTime.Null, "", i + 1, Date.Now, 32, False, Nothing, Nothing, Nothing)
         Next
         'Next
+    End Sub
+
+    Private Sub btnArchivo1_Click(sender As Object, e As EventArgs) Handles btnArchivo1.Click
+        MsgBox(AUDIT_AuditoriasCondicionesTableAdapter.EsNULLArchivo1_ScalarQuery(Id_auditoriaCondicionTextBox.Text.Trim).ToString.Length)
+        If AUDIT_AuditoriasCondicionesTableAdapter.EsNULLArchivo1_ScalarQuery(Id_auditoriaCondicionTextBox.Text.Trim).ToString.Length <= 0 Then
+            If pfdCargarArchivos.ShowDialog = System.Windows.Forms.DialogResult.OK Then
+                Dim archivo1 As Byte() = File.ReadAllBytes(pfdCargarArchivos.FileName)
+                AUDIT_AuditoriasCondicionesTableAdapter.Archivo1_UpdateQuery(archivo1, Id_auditoriaCondicionTextBox.Text.Trim)
+            End If
+        Else
+            MsgBox("existe archivo")
+        End If
     End Sub
 End Class

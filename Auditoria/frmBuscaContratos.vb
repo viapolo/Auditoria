@@ -14,10 +14,20 @@
             taVWAnexos.ObtCont_FillBy(ProductionDataSet.Vw_Anexos, cmbClientes.SelectedValue.ToString)
             lbxContratos.Items.Clear()
             For Each rows As ProductionDataSet.Vw_AnexosRow In ProductionDataSet.Vw_Anexos.Rows
-                If rows.Ciclo <> "" Then
-                    lbxContratos.Items.Add(rows.Nombre_Sucursal.Trim + " / " + rows.TipoCredito + " / " + rows.Anexo.Trim + " / " + rows.Ciclo)
+                If rows.TipoCredito = "CUENTA CORRIENTE" Then
+                    If rows.Ciclo <> "" Then
+                        If rows.Ciclo = "01" Then
+                            lbxContratos.Items.Add(rows.Nombre_Sucursal.Trim + " / " + rows.TipoCredito + " / " + rows.Anexo.Trim + "") '+ " / " + rows.Ciclo)
+                        End If
+                        'Else
+                        '        lbxContratos.Items.Add(rows.Nombre_Sucursal.Trim + " / " + rows.TipoCredito + " / " + rows.Anexo.Trim)
+                    End If
                 Else
-                    lbxContratos.Items.Add(rows.Nombre_Sucursal.Trim + " / " + rows.TipoCredito + " / " + rows.Anexo.Trim)
+                    If rows.Ciclo <> "" Then
+                        lbxContratos.Items.Add(rows.Nombre_Sucursal.Trim + " / " + rows.TipoCredito + " / " + rows.Anexo.Trim + " / " + rows.Ciclo)
+                    Else
+                        lbxContratos.Items.Add(rows.Nombre_Sucursal.Trim + " / " + rows.TipoCredito + " / " + rows.Anexo.Trim)
+                    End If
                 End If
             Next
         End If
@@ -40,8 +50,10 @@
             End If
             frmAuditorias.var_anexo = datos(2)
             frmAuditorias.var_ciclo = datos(3)
+            lblTipoDeCredito.Text = datos(1)
             frmAuditorias.var_consecutivo = taAuditorias.ContadorAuditorias(datos(2).Trim, datos(3))
             taAuditorias.ObtAudit_FillBy(ProductionDataSet.AUDIT_Auditorias, datos(2).Trim, datos(3))
+
             frmAuditorias.var_cliente = taCiclo.ObtNomCliente_ScalarQuery(datos(2).Trim)
             frmAuditorias.var_sucursal = Vw_AnexosBindingSource.Current("Nombre_Sucursal")
             frmAuditorias.var_tipoCredito = Vw_AnexosBindingSource.Current("TipoCredito")
@@ -50,9 +62,10 @@
             frmAuditorias.var_promotor = Vw_AnexosBindingSource.Current("Nombre_Promotor")
             frmAuditorias.var_destino = taActfijo.Obtdestino_ScalarQuery(lblAnexos.Text)
 
+
             Me.Enabled = False
             If ProductionDataSet.AUDIT_Auditorias.Rows.Count = 0 Then
-                If MsgBox("El contrato no tiene auditorias relacionadas, ¿Deséa auditar?", MsgBoxStyle.OkOnly) = MsgBoxResult.ok Then
+                If MsgBox("El contrato no tiene auditorias relacionadas, ¿Deséa auditar?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
                     frmAuditorias.MdiParent = MDIAuditoria
                     frmAuditorias.Show()
                 Else

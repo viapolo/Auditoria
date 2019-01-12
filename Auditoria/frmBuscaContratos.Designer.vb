@@ -35,6 +35,8 @@ Partial Class frmBuscaContratos
         Me.Vw_AnexosTableAdapter = New Auditoria.ProductionDataSetTableAdapters.Vw_AnexosTableAdapter()
         Me.Vw_AnexosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.TableAdapterManager = New Auditoria.ProductionDataSetTableAdapters.TableAdapterManager()
+        Me.lblTipoCredito = New System.Windows.Forms.Label()
+        Me.lblTipoDeCredito = New System.Windows.Forms.Label()
         CType(Me.ClientesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ProductionDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ProductionDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -119,9 +121,11 @@ Partial Class frmBuscaContratos
         'TableAdapterManager
         '
         Me.TableAdapterManager.ActifijoTableAdapter = Nothing
+        Me.TableAdapterManager.AUDIT_AnalistasTableAdapter = Nothing
         Me.TableAdapterManager.AUDIT_AuditoriasCondicionesTableAdapter = Nothing
         Me.TableAdapterManager.AUDIT_AuditoriasTableAdapter = Nothing
         Me.TableAdapterManager.AUDIT_CondicionesTableAdapter = Nothing
+        Me.TableAdapterManager.AUDIT_OrgAutorizacionTableAdapter = Nothing
         Me.TableAdapterManager.AUDIT_ParametrosDTableAdapter = Nothing
         Me.TableAdapterManager.AUDIT_ParametrosHTableAdapter = Nothing
         Me.TableAdapterManager.AUDIT_ParametrosTableAdapter = Nothing
@@ -131,11 +135,32 @@ Partial Class frmBuscaContratos
         Me.TableAdapterManager.SucursalesTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = Auditoria.ProductionDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
+        'lblTipoCredito
+        '
+        Me.lblTipoCredito.AutoSize = True
+        Me.lblTipoCredito.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTipoCredito.Location = New System.Drawing.Point(12, 245)
+        Me.lblTipoCredito.Name = "lblTipoCredito"
+        Me.lblTipoCredito.Size = New System.Drawing.Size(97, 13)
+        Me.lblTipoCredito.TabIndex = 6
+        Me.lblTipoCredito.Text = "Tipo de crédito:"
+        '
+        'lblTipoDeCredito
+        '
+        Me.lblTipoDeCredito.AutoSize = True
+        Me.lblTipoDeCredito.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTipoDeCredito.Location = New System.Drawing.Point(112, 245)
+        Me.lblTipoDeCredito.Name = "lblTipoDeCredito"
+        Me.lblTipoDeCredito.Size = New System.Drawing.Size(0, 13)
+        Me.lblTipoDeCredito.TabIndex = 7
+        '
         'frmBuscaContratos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(934, 267)
+        Me.Controls.Add(Me.lblTipoDeCredito)
+        Me.Controls.Add(Me.lblTipoCredito)
         Me.Controls.Add(Me.btnSalir)
         Me.Controls.Add(Me.lblAnexos)
         Me.Controls.Add(Me.lblClientes)
@@ -151,6 +176,7 @@ Partial Class frmBuscaContratos
         CType(Me.ProductionDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Vw_AnexosBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -166,4 +192,6 @@ Partial Class frmBuscaContratos
     Friend WithEvents Vw_AnexosTableAdapter As ProductionDataSetTableAdapters.Vw_AnexosTableAdapter
     Friend WithEvents Vw_AnexosBindingSource As BindingSource
     Friend WithEvents TableAdapterManager As ProductionDataSetTableAdapters.TableAdapterManager
+    Friend WithEvents lblTipoCredito As Label
+    Friend WithEvents lblTipoDeCredito As Label
 End Class

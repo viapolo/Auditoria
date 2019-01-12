@@ -175,8 +175,8 @@
     </None>
     <None Include="ProductionDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>ProductionDataSet.Designer.vb</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>ProductionDataSet.Designer.vb</LastGenOutput>
     </None>
     <None Include="ProductionDataSet.xss">
       <DependentUpon>ProductionDataSet.xsd</DependentUpon>

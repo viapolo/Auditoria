@@ -61,6 +61,11 @@ Partial Class frmAuditoriaCondiciones
         Me.Id_auditoriaCondicionTextBox = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.btnAgregarRev = New System.Windows.Forms.Button()
+        Me.grbDocumentosAdjuntos = New System.Windows.Forms.GroupBox()
+        Me.btnArchivo1 = New System.Windows.Forms.Button()
+        Me.btnArchivo2 = New System.Windows.Forms.Button()
+        Me.btnArchivo3 = New System.Windows.Forms.Button()
+        Me.pfdCargarArchivos = New System.Windows.Forms.OpenFileDialog()
         Id_auditoriaLabel = New System.Windows.Forms.Label()
         Id_CondicionLabel = New System.Windows.Forms.Label()
         ValidacionLabel = New System.Windows.Forms.Label()
@@ -75,6 +80,7 @@ Partial Class frmAuditoriaCondiciones
         CType(Me.AUDITParametrosHBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.AUDITParametrosVBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.AUDITParametrosDBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.grbDocumentosAdjuntos.SuspendLayout()
         Me.SuspendLayout()
         '
         'Id_auditoriaLabel
@@ -171,7 +177,7 @@ Partial Class frmAuditoriaCondiciones
         Me.ObservacionesTextBox.Location = New System.Drawing.Point(120, 92)
         Me.ObservacionesTextBox.Multiline = True
         Me.ObservacionesTextBox.Name = "ObservacionesTextBox"
-        Me.ObservacionesTextBox.Size = New System.Drawing.Size(747, 158)
+        Me.ObservacionesTextBox.Size = New System.Drawing.Size(605, 158)
         Me.ObservacionesTextBox.TabIndex = 9
         '
         'AUDIT_AuditoriasCondicionesBindingSource
@@ -318,9 +324,11 @@ Partial Class frmAuditoriaCondiciones
         'TableAdapterManager
         '
         Me.TableAdapterManager.ActifijoTableAdapter = Nothing
+        Me.TableAdapterManager.AUDIT_AnalistasTableAdapter = Nothing
         Me.TableAdapterManager.AUDIT_AuditoriasCondicionesTableAdapter = Me.AUDIT_AuditoriasCondicionesTableAdapter
         Me.TableAdapterManager.AUDIT_AuditoriasTableAdapter = Nothing
         Me.TableAdapterManager.AUDIT_CondicionesTableAdapter = Me.AUDIT_CondicionesTableAdapter
+        Me.TableAdapterManager.AUDIT_OrgAutorizacionTableAdapter = Nothing
         Me.TableAdapterManager.AUDIT_ParametrosDTableAdapter = Nothing
         Me.TableAdapterManager.AUDIT_ParametrosHTableAdapter = Me.AUDIT_ParametrosHTableAdapter
         Me.TableAdapterManager.AUDIT_ParametrosTableAdapter = Nothing
@@ -398,12 +406,56 @@ Partial Class frmAuditoriaCondiciones
         Me.btnAgregarRev.Text = "Agregar Revisiones"
         Me.btnAgregarRev.UseVisualStyleBackColor = True
         '
+        'grbDocumentosAdjuntos
+        '
+        Me.grbDocumentosAdjuntos.Controls.Add(Me.btnArchivo3)
+        Me.grbDocumentosAdjuntos.Controls.Add(Me.btnArchivo2)
+        Me.grbDocumentosAdjuntos.Controls.Add(Me.btnArchivo1)
+        Me.grbDocumentosAdjuntos.Location = New System.Drawing.Point(731, 109)
+        Me.grbDocumentosAdjuntos.Name = "grbDocumentosAdjuntos"
+        Me.grbDocumentosAdjuntos.Size = New System.Drawing.Size(136, 121)
+        Me.grbDocumentosAdjuntos.TabIndex = 27
+        Me.grbDocumentosAdjuntos.TabStop = False
+        Me.grbDocumentosAdjuntos.Text = "Documentos adjuntos"
+        '
+        'btnArchivo1
+        '
+        Me.btnArchivo1.Location = New System.Drawing.Point(6, 25)
+        Me.btnArchivo1.Name = "btnArchivo1"
+        Me.btnArchivo1.Size = New System.Drawing.Size(124, 23)
+        Me.btnArchivo1.TabIndex = 0
+        Me.btnArchivo1.Text = "Adjuntar archivo..."
+        Me.btnArchivo1.UseVisualStyleBackColor = True
+        '
+        'btnArchivo2
+        '
+        Me.btnArchivo2.Location = New System.Drawing.Point(6, 54)
+        Me.btnArchivo2.Name = "btnArchivo2"
+        Me.btnArchivo2.Size = New System.Drawing.Size(124, 23)
+        Me.btnArchivo2.TabIndex = 1
+        Me.btnArchivo2.Text = "Adjuntar archivo..."
+        Me.btnArchivo2.UseVisualStyleBackColor = True
+        '
+        'btnArchivo3
+        '
+        Me.btnArchivo3.Location = New System.Drawing.Point(7, 84)
+        Me.btnArchivo3.Name = "btnArchivo3"
+        Me.btnArchivo3.Size = New System.Drawing.Size(123, 23)
+        Me.btnArchivo3.TabIndex = 2
+        Me.btnArchivo3.Text = "Adjuntar archivo..."
+        Me.btnArchivo3.UseVisualStyleBackColor = True
+        '
+        'pfdCargarArchivos
+        '
+        Me.pfdCargarArchivos.FileName = "OpenFileDialog1"
+        '
         'frmAuditoriaCondiciones
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.ClientSize = New System.Drawing.Size(900, 449)
+        Me.ClientSize = New System.Drawing.Size(887, 449)
+        Me.Controls.Add(Me.grbDocumentosAdjuntos)
         Me.Controls.Add(Me.btnAgregarRev)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Id_auditoriaCondicionLabel)
@@ -441,6 +493,7 @@ Partial Class frmAuditoriaCondiciones
         CType(Me.AUDITParametrosHBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.AUDITParametrosVBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.AUDITParametrosDBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.grbDocumentosAdjuntos.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -476,4 +529,9 @@ Partial Class frmAuditoriaCondiciones
     Friend WithEvents Id_auditoriaCondicionTextBox As TextBox
     Friend WithEvents Label3 As Label
     Friend WithEvents btnAgregarRev As Button
+    Friend WithEvents grbDocumentosAdjuntos As GroupBox
+    Friend WithEvents btnArchivo3 As Button
+    Friend WithEvents btnArchivo2 As Button
+    Friend WithEvents btnArchivo1 As Button
+    Friend WithEvents pfdCargarArchivos As OpenFileDialog
 End Class

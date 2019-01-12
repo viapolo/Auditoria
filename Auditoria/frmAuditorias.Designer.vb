@@ -72,7 +72,10 @@ Partial Class frmAuditorias
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.cmbOrganoDeAutorizacion = New System.Windows.Forms.ComboBox()
+        Me.AUDITOrgAutorizacionBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.ProductionDataSet1 = New Auditoria.ProductionDataSet()
         Me.cmbAnalista = New System.Windows.Forms.ComboBox()
+        Me.AUDITAnalistasBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.dtpFechaAutorizacion = New System.Windows.Forms.DateTimePicker()
         Me.dtpFechaSolicitud = New System.Windows.Forms.DateTimePicker()
         Me.txtMontoSolicitado = New System.Windows.Forms.TextBox()
@@ -91,6 +94,9 @@ Partial Class frmAuditorias
         Me.txtTipoCredito = New System.Windows.Forms.TextBox()
         Me.txtSucursal = New System.Windows.Forms.TextBox()
         Me.txtCliente = New System.Windows.Forms.TextBox()
+        Me.btnCopiarAuditoria = New System.Windows.Forms.Button()
+        Me.AUDIT_AnalistasTableAdapter = New Auditoria.ProductionDataSetTableAdapters.AUDIT_AnalistasTableAdapter()
+        Me.AUDIT_OrgAutorizacionTableAdapter = New Auditoria.ProductionDataSetTableAdapters.AUDIT_OrgAutorizacionTableAdapter()
         AnexoLabel = New System.Windows.Forms.Label()
         CicloLabel = New System.Windows.Forms.Label()
         FechaCreacionLabel = New System.Windows.Forms.Label()
@@ -106,6 +112,9 @@ Partial Class frmAuditorias
         CType(Me.AUDITParametrosBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.AUDITParametrosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
+        CType(Me.AUDITOrgAutorizacionBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ProductionDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.AUDITAnalistasBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'AnexoLabel
@@ -191,11 +200,11 @@ Partial Class frmAuditorias
         '
         'btnAgregar
         '
-        Me.btnAgregar.Location = New System.Drawing.Point(807, 517)
+        Me.btnAgregar.Location = New System.Drawing.Point(913, 212)
         Me.btnAgregar.Name = "btnAgregar"
-        Me.btnAgregar.Size = New System.Drawing.Size(75, 23)
+        Me.btnAgregar.Size = New System.Drawing.Size(125, 23)
         Me.btnAgregar.TabIndex = 8
-        Me.btnAgregar.Text = "Agregar"
+        Me.btnAgregar.Text = "Agregar Auditoría"
         Me.btnAgregar.UseVisualStyleBackColor = True
         '
         'AUDIT_AuditoriasDataGridView
@@ -358,7 +367,7 @@ Partial Class frmAuditorias
         'btnGuardar
         '
         Me.btnGuardar.Enabled = False
-        Me.btnGuardar.Location = New System.Drawing.Point(888, 517)
+        Me.btnGuardar.Location = New System.Drawing.Point(913, 241)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(125, 23)
         Me.btnGuardar.TabIndex = 9
@@ -372,9 +381,11 @@ Partial Class frmAuditorias
         'TableAdapterManager
         '
         Me.TableAdapterManager.ActifijoTableAdapter = Nothing
+        Me.TableAdapterManager.AUDIT_AnalistasTableAdapter = Nothing
         Me.TableAdapterManager.AUDIT_AuditoriasCondicionesTableAdapter = Nothing
         Me.TableAdapterManager.AUDIT_AuditoriasTableAdapter = Me.AUDIT_AuditoriasTableAdapter
         Me.TableAdapterManager.AUDIT_CondicionesTableAdapter = Nothing
+        Me.TableAdapterManager.AUDIT_OrgAutorizacionTableAdapter = Nothing
         Me.TableAdapterManager.AUDIT_ParametrosDTableAdapter = Nothing
         Me.TableAdapterManager.AUDIT_ParametrosHTableAdapter = Nothing
         Me.TableAdapterManager.AUDIT_ParametrosTableAdapter = Nothing
@@ -415,7 +426,7 @@ Partial Class frmAuditorias
         '
         'btnSalir
         '
-        Me.btnSalir.Location = New System.Drawing.Point(1019, 517)
+        Me.btnSalir.Location = New System.Drawing.Point(1018, 520)
         Me.btnSalir.Name = "btnSalir"
         Me.btnSalir.Size = New System.Drawing.Size(75, 23)
         Me.btnSalir.TabIndex = 10
@@ -471,7 +482,7 @@ Partial Class frmAuditorias
         Me.GroupBox1.Controls.Add(Me.txtCliente)
         Me.GroupBox1.Location = New System.Drawing.Point(18, 46)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(1075, 218)
+        Me.GroupBox1.Size = New System.Drawing.Size(864, 218)
         Me.GroupBox1.TabIndex = 23
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Datos del crédito:"
@@ -532,22 +543,48 @@ Partial Class frmAuditorias
         '
         'cmbOrganoDeAutorizacion
         '
+        Me.cmbOrganoDeAutorizacion.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.AUDIT_AuditoriasBindingSource, "organoDeAutorizacion", True))
+        Me.cmbOrganoDeAutorizacion.DataBindings.Add(New System.Windows.Forms.Binding("SelectedValue", Me.AUDIT_AuditoriasBindingSource, "organoDeAutorizacion", True))
+        Me.cmbOrganoDeAutorizacion.DataSource = Me.AUDITOrgAutorizacionBindingSource
+        Me.cmbOrganoDeAutorizacion.DisplayMember = "nombre"
         Me.cmbOrganoDeAutorizacion.FormattingEnabled = True
         Me.cmbOrganoDeAutorizacion.Location = New System.Drawing.Point(583, 153)
         Me.cmbOrganoDeAutorizacion.Name = "cmbOrganoDeAutorizacion"
         Me.cmbOrganoDeAutorizacion.Size = New System.Drawing.Size(270, 21)
         Me.cmbOrganoDeAutorizacion.TabIndex = 29
+        Me.cmbOrganoDeAutorizacion.ValueMember = "ir_OrgAutorizacion"
+        '
+        'AUDITOrgAutorizacionBindingSource
+        '
+        Me.AUDITOrgAutorizacionBindingSource.DataMember = "AUDIT_OrgAutorizacion"
+        Me.AUDITOrgAutorizacionBindingSource.DataSource = Me.ProductionDataSet1
+        '
+        'ProductionDataSet1
+        '
+        Me.ProductionDataSet1.DataSetName = "ProductionDataSet"
+        Me.ProductionDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'cmbAnalista
         '
+        Me.cmbAnalista.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.AUDIT_AuditoriasBindingSource, "analista", True))
+        Me.cmbAnalista.DataBindings.Add(New System.Windows.Forms.Binding("SelectedValue", Me.AUDIT_AuditoriasBindingSource, "analista", True))
+        Me.cmbAnalista.DataSource = Me.AUDITAnalistasBindingSource
+        Me.cmbAnalista.DisplayMember = "nombre"
         Me.cmbAnalista.FormattingEnabled = True
         Me.cmbAnalista.Location = New System.Drawing.Point(583, 125)
         Me.cmbAnalista.Name = "cmbAnalista"
         Me.cmbAnalista.Size = New System.Drawing.Size(270, 21)
         Me.cmbAnalista.TabIndex = 28
+        Me.cmbAnalista.ValueMember = "id_Analista"
+        '
+        'AUDITAnalistasBindingSource
+        '
+        Me.AUDITAnalistasBindingSource.DataMember = "AUDIT_Analistas"
+        Me.AUDITAnalistasBindingSource.DataSource = Me.ProductionDataSet1
         '
         'dtpFechaAutorizacion
         '
+        Me.dtpFechaAutorizacion.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.AUDIT_AuditoriasBindingSource, "fechaAutorizacion", True))
         Me.dtpFechaAutorizacion.Location = New System.Drawing.Point(583, 99)
         Me.dtpFechaAutorizacion.Name = "dtpFechaAutorizacion"
         Me.dtpFechaAutorizacion.Size = New System.Drawing.Size(200, 20)
@@ -555,6 +592,7 @@ Partial Class frmAuditorias
         '
         'dtpFechaSolicitud
         '
+        Me.dtpFechaSolicitud.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.AUDIT_AuditoriasBindingSource, "fechaSolicitud", True))
         Me.dtpFechaSolicitud.Location = New System.Drawing.Point(583, 72)
         Me.dtpFechaSolicitud.Name = "dtpFechaSolicitud"
         Me.dtpFechaSolicitud.Size = New System.Drawing.Size(200, 20)
@@ -562,6 +600,7 @@ Partial Class frmAuditorias
         '
         'txtMontoSolicitado
         '
+        Me.txtMontoSolicitado.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.AUDIT_AuditoriasBindingSource, "montoSolicitado", True))
         Me.txtMontoSolicitado.Location = New System.Drawing.Point(583, 46)
         Me.txtMontoSolicitado.Name = "txtMontoSolicitado"
         Me.txtMontoSolicitado.Size = New System.Drawing.Size(270, 20)
@@ -569,6 +608,7 @@ Partial Class frmAuditorias
         '
         'txtMontoFinanciado
         '
+        Me.txtMontoFinanciado.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.AUDIT_AuditoriasBindingSource, "montoFinanciado", True))
         Me.txtMontoFinanciado.Location = New System.Drawing.Point(583, 19)
         Me.txtMontoFinanciado.Name = "txtMontoFinanciado"
         Me.txtMontoFinanciado.Size = New System.Drawing.Size(270, 20)
@@ -639,14 +679,15 @@ Partial Class frmAuditorias
         '
         'txtDestino
         '
+        Me.txtDestino.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.AUDIT_AuditoriasBindingSource, "destino", True))
         Me.txtDestino.Location = New System.Drawing.Point(133, 180)
         Me.txtDestino.Name = "txtDestino"
-        Me.txtDestino.ReadOnly = True
         Me.txtDestino.Size = New System.Drawing.Size(270, 20)
         Me.txtDestino.TabIndex = 6
         '
         'txtEjecutivo
         '
+        Me.txtEjecutivo.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.AUDIT_AuditoriasBindingSource, "ejecutivo", True))
         Me.txtEjecutivo.Location = New System.Drawing.Point(133, 153)
         Me.txtEjecutivo.Name = "txtEjecutivo"
         Me.txtEjecutivo.ReadOnly = True
@@ -655,6 +696,7 @@ Partial Class frmAuditorias
         '
         'dtpFechaDispo
         '
+        Me.dtpFechaDispo.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.AUDIT_AuditoriasBindingSource, "fechaDisposicion", True))
         Me.dtpFechaDispo.Enabled = False
         Me.dtpFechaDispo.Location = New System.Drawing.Point(133, 126)
         Me.dtpFechaDispo.Name = "dtpFechaDispo"
@@ -663,6 +705,7 @@ Partial Class frmAuditorias
         '
         'txtRecursos
         '
+        Me.txtRecursos.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.AUDIT_AuditoriasBindingSource, "recursos", True))
         Me.txtRecursos.Location = New System.Drawing.Point(133, 100)
         Me.txtRecursos.Name = "txtRecursos"
         Me.txtRecursos.ReadOnly = True
@@ -671,6 +714,7 @@ Partial Class frmAuditorias
         '
         'txtTipoCredito
         '
+        Me.txtTipoCredito.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.AUDIT_AuditoriasBindingSource, "tipoCredito", True))
         Me.txtTipoCredito.Location = New System.Drawing.Point(133, 73)
         Me.txtTipoCredito.Name = "txtTipoCredito"
         Me.txtTipoCredito.ReadOnly = True
@@ -679,6 +723,7 @@ Partial Class frmAuditorias
         '
         'txtSucursal
         '
+        Me.txtSucursal.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.AUDIT_AuditoriasBindingSource, "sucursal", True))
         Me.txtSucursal.Location = New System.Drawing.Point(133, 46)
         Me.txtSucursal.Name = "txtSucursal"
         Me.txtSucursal.ReadOnly = True
@@ -687,17 +732,36 @@ Partial Class frmAuditorias
         '
         'txtCliente
         '
+        Me.txtCliente.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.AUDIT_AuditoriasBindingSource, "cliente", True))
         Me.txtCliente.Location = New System.Drawing.Point(133, 20)
         Me.txtCliente.Name = "txtCliente"
         Me.txtCliente.ReadOnly = True
         Me.txtCliente.Size = New System.Drawing.Size(270, 20)
         Me.txtCliente.TabIndex = 0
         '
+        'btnCopiarAuditoria
+        '
+        Me.btnCopiarAuditoria.Location = New System.Drawing.Point(913, 183)
+        Me.btnCopiarAuditoria.Name = "btnCopiarAuditoria"
+        Me.btnCopiarAuditoria.Size = New System.Drawing.Size(125, 23)
+        Me.btnCopiarAuditoria.TabIndex = 24
+        Me.btnCopiarAuditoria.Text = "Copiar Auditoria"
+        Me.btnCopiarAuditoria.UseVisualStyleBackColor = True
+        '
+        'AUDIT_AnalistasTableAdapter
+        '
+        Me.AUDIT_AnalistasTableAdapter.ClearBeforeFill = True
+        '
+        'AUDIT_OrgAutorizacionTableAdapter
+        '
+        Me.AUDIT_OrgAutorizacionTableAdapter.ClearBeforeFill = True
+        '
         'frmAuditorias
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1105, 550)
+        Me.Controls.Add(Me.btnCopiarAuditoria)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.btnSalir)
         Me.Controls.Add(Me.cmbEstatus)
@@ -730,6 +794,9 @@ Partial Class frmAuditorias
         CType(Me.AUDITParametrosBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        CType(Me.AUDITOrgAutorizacionBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ProductionDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.AUDITAnalistasBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -791,4 +858,10 @@ Partial Class frmAuditorias
     Friend WithEvents Label12 As Label
     Friend WithEvents Label10 As Label
     Friend WithEvents Label9 As Label
+    Friend WithEvents btnCopiarAuditoria As Button
+    Friend WithEvents ProductionDataSet1 As ProductionDataSet
+    Friend WithEvents AUDITAnalistasBindingSource As BindingSource
+    Friend WithEvents AUDIT_AnalistasTableAdapter As ProductionDataSetTableAdapters.AUDIT_AnalistasTableAdapter
+    Friend WithEvents AUDITOrgAutorizacionBindingSource As BindingSource
+    Friend WithEvents AUDIT_OrgAutorizacionTableAdapter As ProductionDataSetTableAdapters.AUDIT_OrgAutorizacionTableAdapter
 End Class
