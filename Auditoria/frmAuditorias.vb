@@ -30,20 +30,15 @@ Public Class frmAuditorias
         'TODO: esta línea de código carga datos en la tabla 'ProductionDataSet1.AUDIT_Analistas' Puede moverla o quitarla según sea necesario.
         Me.AUDIT_AnalistasTableAdapter.Fill(Me.ProductionDataSet1.AUDIT_Analistas)
 
-
-
         Me.AUDIT_ParametrosTableAdapter.Fill(Me.ProductionDataSet.AUDIT_Parametros)
         AnexoTextBox.Text = var_anexo.Trim
         CicloTextBox.Text = var_ciclo.Trim
-
-
-
 
         ConsecutivoTextBox.Text = (var_consecutivo + 1).ToString
         frmBuscaContratos.Enabled = False
         taAuditorias.ObtAudit_FillBy(ProductionDataSet.AUDIT_Auditorias, var_anexo.Trim, var_ciclo.Trim)
 
-        If ConsecutivoTextBox.Text = "1" Then
+        If ConsecutivoTextBox.Text = "1" Or txtCliente.Text = "" Then
             FechaRelizacionDateTimePicker.Enabled = True
             ObervacionesTextBox.Enabled = True
             txtAuditoria.Enabled = True
@@ -62,10 +57,18 @@ Public Class frmAuditorias
             txtDestino.Text = var_destino
         Else
             FechaRelizacionDateTimePicker.Enabled = False
-            ObervacionesTextBox.Enabled = False
+            ObervacionesTextBox.ReadOnly = True
             btnAgregar.Enabled = True
             btnGuardar.Enabled = False
-            txtAuditoria.Enabled = False
+            txtAuditoria.ReadOnly = True
+            txtDestino.ReadOnly = True
+            txtMontoFinanciado.ReadOnly = True
+            txtMontoSolicitado.ReadOnly = True
+            dtpFechaDispo.Enabled = False
+            dtpFechaSolicitud.Enabled = False
+            dtpFechaAutorizacion.Enabled = False
+            cmbAnalista.Enabled = False
+            cmbOrganoDeAutorizacion.Enabled = False
         End If
     End Sub
 
@@ -133,7 +136,6 @@ Public Class frmAuditorias
 
             FechaRelizacionDateTimePicker.Enabled = False
             ObervacionesTextBox.Enabled = False
-            btnAgregar.Enabled = False
             btnAgregar.Enabled = True
         Catch ex As Exception
             MsgBox(ex.ToString, MsgBoxStyle.Critical, "Error al actualizar registro...")
@@ -181,20 +183,37 @@ Public Class frmAuditorias
     Private Sub btnCopiarAuditoria_Click(sender As Object, e As EventArgs) Handles btnCopiarAuditoria.Click
         Dim taAuditoriasCond As New ProductionDataSetTableAdapters.AUDIT_AuditoriasCondicionesTableAdapter
         Dim taAuditorias As New ProductionDataSetTableAdapters.AUDIT_AuditoriasTableAdapter
+        Dim taAnexos As New ProductionDataSetTableAdapters.Vw_AnexosTableAdapter
         Dim EncabezadoMod As ProductionDataSet.AUDIT_AuditoriasRow
         Dim DetalleMod As ProductionDataSet.AUDIT_AuditoriasCondicionesRow
         Dim var_anexo_copiar As String
         var_anexo_copiar = InputBox("Copiar última auditoría del anexo " & var_anexo.Trim & " al ", "Copiar anexo", 0)
+        If taAuditorias.ContadorAuditorias(var_anexo_copiar.Trim, var_ciclo.Trim) = 0 Then
 
-        taAuditorias.ObtieneUltimaAuditoriaParCopia_FillBy(ProductionDataSet.AUDIT_Auditorias, var_anexo.Trim)
-        For Each EncabezadoMod In ProductionDataSet.AUDIT_Auditorias.Rows
-            taAuditorias.Insert(var_anexo_copiar.Trim, EncabezadoMod.Ciclo, EncabezadoMod.FechaCreacion, EncabezadoMod.UltimaActualizacion, EncabezadoMod.FechaRelizacion, EncabezadoMod.Obervaciones, "ABIERTO", UsuarioTextBox.Text, 1, EncabezadoMod.folAuditoria, 1, 1, 1, 1, EncabezadoMod.cliente, EncabezadoMod.sucursal, EncabezadoMod.tipoCredito, EncabezadoMod.recursos, EncabezadoMod.fechaDisposicion, EncabezadoMod.ejecutivo, EncabezadoMod.destino, EncabezadoMod.montoFinanciado, EncabezadoMod.montoSolicitado, EncabezadoMod.fechaSolicitud, EncabezadoMod.fechaAutorizacion, EncabezadoMod.analista, EncabezadoMod.organoDeAutorizacion)
-        Next
+            If taAnexos.ObtNumCliente_ScalarQuery(var_anexo.Trim) = taAnexos.ObtNumCliente_ScalarQuery(var_anexo_copiar.Trim) Then
+                Try
+                    taAuditorias.ObtieneUltimaAuditoriaParCopia_FillBy(ProductionDataSet.AUDIT_Auditorias, var_anexo.Trim)
+                    For Each EncabezadoMod In ProductionDataSet.AUDIT_Auditorias.Rows
+                        If Not IsNothing(EncabezadoMod.cliente) Then
+                            taAuditorias.Insert(var_anexo_copiar.Trim, EncabezadoMod.Ciclo, EncabezadoMod.FechaCreacion, EncabezadoMod.UltimaActualizacion, EncabezadoMod.FechaRelizacion, EncabezadoMod.Obervaciones, "ABIERTO", UsuarioTextBox.Text, 1, EncabezadoMod.folAuditoria, 1, 1, 1, 1, EncabezadoMod.cliente, EncabezadoMod.sucursal, EncabezadoMod.tipoCredito, EncabezadoMod.recursos, EncabezadoMod.fechaDisposicion, EncabezadoMod.ejecutivo, EncabezadoMod.destino, EncabezadoMod.montoFinanciado, EncabezadoMod.montoSolicitado, EncabezadoMod.fechaSolicitud, EncabezadoMod.fechaAutorizacion, EncabezadoMod.analista, EncabezadoMod.organoDeAutorizacion)
+                        Else
+                            taAuditorias.Insert(var_anexo_copiar.Trim, EncabezadoMod.Ciclo, EncabezadoMod.FechaCreacion, Date.Now, EncabezadoMod.FechaRelizacion, EncabezadoMod.Obervaciones, "ABIERTO", UsuarioTextBox.Text, 1, EncabezadoMod.folAuditoria, 1, 1, 1, 1, txtCliente.Text.Trim, txtSucursal.Text.Trim, txtTipoCredito.Text.Trim, txtRecursos.Text.Trim, dtpFechaDispo.Value, txtEjecutivo.Text.Trim, txtDestino.Text.Trim, txtMontoFinanciado.Text.Trim, txtMontoSolicitado.Text.Trim, dtpFechaSolicitud.Value, dtpFechaAutorizacion.Value, cmbAnalista.Text.Trim, cmbOrganoDeAutorizacion.Text.Trim)
+                        End If
+                    Next
 
-        taAuditoriasCond.Obt_AllDetalleAuditCond_FillBy(ProductionDataSet.AUDIT_AuditoriasCondiciones, taAuditorias.UltimoReg_ScalarQuery(var_anexo.Trim, var_ciclo.Trim))
-        'Me.AUDIT_AuditoriasTableAdapter.Insert(var_anexo.Trim, CicloTextBox.Text.Trim, FechaCreacionDateTimePicker.Value, UltimaActualizacionDateTimePicker.Value, AUDIT_AuditoriasBindingSource.Current("FechaRelizacion"), AUDIT_AuditoriasBindingSource.Current("Obervaciones"), cmbEstatus.Text, UsuarioTextBox.Text, ConsecutivoTextBox.Text, AUDIT_AuditoriasBindingSource.Current("folAuditoria"), AUDIT_AuditoriasBindingSource.Current("nRevInfFinanciera"), AUDIT_AuditoriasBindingSource.Current("nRevRepSup"), AUDIT_AuditoriasBindingSource.Current("nRevPagare"), AUDIT_AuditoriasBindingSource.Current("ncedVerific"), txtCliente.Text.Trim, txtSucursal.Text.Trim, txtTipoCredito.Text.Trim, txtRecursos.Text.Trim, dtpFechaDispo.Value, txtEjecutivo.Text.Trim, txtDestino.Text.Trim, CDec(txtMontoFinanciado.Text), CDec(txtMontoSolicitado.Text), dtpFechaSolicitud.Value, dtpFechaAutorizacion.Value, cmbAnalista.Text, cmbOrganoDeAutorizacion.Text)
-        For Each DetalleMod In ProductionDataSet.AUDIT_AuditoriasCondiciones.Rows
-            taAuditoriasCond.Insert(taAuditorias.UltimoReg_ScalarQuery(var_anexo_copiar.Trim, var_ciclo), DetalleMod.Id_Condicion, DetalleMod.Validacion, DetalleMod.Observaciones, DetalleMod.CategoriaHallazgo, System.Data.SqlTypes.SqlDateTime.Null, DetalleMod.Comentarios, DetalleMod.ConsecRevisiones, Date.Now, DetalleMod.deptoResponsable, DetalleMod.estatus, Nothing, Nothing, Nothing)
-        Next
+                    taAuditoriasCond.Obt_AllDetalleAuditCond_FillBy(ProductionDataSet.AUDIT_AuditoriasCondiciones, taAuditorias.UltimoReg_ScalarQuery(var_anexo.Trim, var_ciclo.Trim))
+                    For Each DetalleMod In ProductionDataSet.AUDIT_AuditoriasCondiciones.Rows
+                        taAuditoriasCond.Insert(taAuditorias.UltimoReg_ScalarQuery(var_anexo_copiar.Trim, var_ciclo), DetalleMod.Id_Condicion, DetalleMod.Validacion, DetalleMod.Observaciones, DetalleMod.CategoriaHallazgo, System.Data.SqlTypes.SqlDateTime.Null, DetalleMod.Comentarios, DetalleMod.ConsecRevisiones, Date.Now, DetalleMod.deptoResponsable, DetalleMod.estatus, Nothing, Nothing, Nothing)
+                    Next
+                    MsgBox("Copia existosa...", MsgBoxStyle.Information)
+                Catch ex As Exception
+                    MsgBox(ex.ToString, MsgBoxStyle.Critical, "Error al copiar registros registro...")
+                End Try
+            Else
+                MsgBox("El cliente del anexo a copiar no corresponde con el anexo destino...", MsgBoxStyle.Information)
+            End If
+        Else
+            MsgBox("El anexo detino ya contiene auditorias...", MsgBoxStyle.Information)
+        End If
     End Sub
 End Class

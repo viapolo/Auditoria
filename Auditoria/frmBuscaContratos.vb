@@ -9,26 +9,48 @@
 
     Private Sub cmbClientes_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbClientes.SelectedIndexChanged
         Dim taVWAnexos As New ProductionDataSetTableAdapters.Vw_AnexosTableAdapter
+        Dim taAuditorias As New ProductionDataSetTableAdapters.AUDIT_AuditoriasTableAdapter
 
         If Not cmbClientes.SelectedValue Is Nothing Then
             taVWAnexos.ObtCont_FillBy(ProductionDataSet.Vw_Anexos, cmbClientes.SelectedValue.ToString)
             lbxContratos.Items.Clear()
             For Each rows As ProductionDataSet.Vw_AnexosRow In ProductionDataSet.Vw_Anexos.Rows
-                If rows.TipoCredito = "CUENTA CORRIENTE" Then
-                    If rows.Ciclo <> "" Then
-                        If rows.Ciclo = "01" Then
-                            lbxContratos.Items.Add(rows.Nombre_Sucursal.Trim + " / " + rows.TipoCredito + " / " + rows.Anexo.Trim + "") '+ " / " + rows.Ciclo)
+                Dim noAuditorias As Integer = 0
+                noAuditorias = taAuditorias.ContadorAuditorias(rows.Anexo.Trim, rows.Ciclo.Trim)
+                If chkConAuditorias.Checked = True Then
+                    If noAuditorias > 0 Then
+                        If rows.TipoCredito = "CUENTA CORRIENTE" Then
+                            If rows.Ciclo <> "" Then
+                                If rows.Ciclo = "01" Then
+                                    lbxContratos.Items.Add(rows.Nombre_Sucursal.Trim + " / " + rows.TipoCredito + " / " + rows.Anexo.Trim + " / / " + noAuditorias.ToString) '+ " / " + rows.Ciclo)
+                                End If
+                            End If
+                        Else
+                            If rows.Ciclo <> "" Then
+                                lbxContratos.Items.Add(rows.Nombre_Sucursal.Trim + " / " + rows.TipoCredito + " / " + rows.Anexo.Trim + " / " + rows.Ciclo + " / " + noAuditorias.ToString)
+                            Else
+                                lbxContratos.Items.Add(rows.Nombre_Sucursal.Trim + " / " + rows.TipoCredito + " / " + rows.Anexo.Trim + " / / " + noAuditorias.ToString)
+                            End If
                         End If
-                        'Else
-                        '        lbxContratos.Items.Add(rows.Nombre_Sucursal.Trim + " / " + rows.TipoCredito + " / " + rows.Anexo.Trim)
-                    End If
-                Else
-                    If rows.Ciclo <> "" Then
-                        lbxContratos.Items.Add(rows.Nombre_Sucursal.Trim + " / " + rows.TipoCredito + " / " + rows.Anexo.Trim + " / " + rows.Ciclo)
-                    Else
-                        lbxContratos.Items.Add(rows.Nombre_Sucursal.Trim + " / " + rows.TipoCredito + " / " + rows.Anexo.Trim)
                     End If
                 End If
+                If chkSinAuditorias.Checked = True Then
+                        If noAuditorias = 0 Then
+                            If rows.TipoCredito = "CUENTA CORRIENTE" Then
+                                If rows.Ciclo <> "" Then
+                                    If rows.Ciclo = "01" Then
+                                        lbxContratos.Items.Add(rows.Nombre_Sucursal.Trim + " / " + rows.TipoCredito + " / " + rows.Anexo.Trim + " / / " + noAuditorias.ToString) '+ " / " + rows.Ciclo)
+                                    End If
+                                End If
+                            Else
+                                If rows.Ciclo <> "" Then
+                                    lbxContratos.Items.Add(rows.Nombre_Sucursal.Trim + " / " + rows.TipoCredito + " / " + rows.Anexo.Trim + " / " + rows.Ciclo + " / " + noAuditorias.ToString)
+                                Else
+                                    lbxContratos.Items.Add(rows.Nombre_Sucursal.Trim + " / " + rows.TipoCredito + " / " + rows.Anexo.Trim + " / / " + noAuditorias.ToString)
+                                End If
+                            End If
+                        End If
+                    End If
             Next
         End If
     End Sub
@@ -40,7 +62,7 @@
             Dim taCiclo As New ProductionDataSetTableAdapters.Vw_AnexosTableAdapter
             Dim taAuditorias As New ProductionDataSetTableAdapters.AUDIT_AuditoriasTableAdapter
             Dim taActfijo As New ProductionDataSetTableAdapters.ActifijoTableAdapter
-            Dim datos(3) As String
+            Dim datos(4) As String
             datos = lbxContratos.SelectedItem.ToString.Split("/")
             If datos.Length = 3 Then
                 ReDim Preserve datos(3)
@@ -80,7 +102,11 @@
         cmbClientes.Enabled = True
     End Sub
 
-    Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
+    Private Sub btnSalir_Click(sender As Object, e As EventArgs) 
+        Me.Close()
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Me.Close()
     End Sub
 End Class

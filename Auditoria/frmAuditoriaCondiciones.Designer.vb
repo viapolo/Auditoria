@@ -62,9 +62,12 @@ Partial Class frmAuditoriaCondiciones
         Me.Label3 = New System.Windows.Forms.Label()
         Me.btnAgregarRev = New System.Windows.Forms.Button()
         Me.grbDocumentosAdjuntos = New System.Windows.Forms.GroupBox()
-        Me.btnArchivo1 = New System.Windows.Forms.Button()
-        Me.btnArchivo2 = New System.Windows.Forms.Button()
+        Me.lklAbrir3 = New System.Windows.Forms.LinkLabel()
+        Me.lklAbrir2 = New System.Windows.Forms.LinkLabel()
+        Me.lklAbrir1 = New System.Windows.Forms.LinkLabel()
         Me.btnArchivo3 = New System.Windows.Forms.Button()
+        Me.btnArchivo2 = New System.Windows.Forms.Button()
+        Me.btnArchivo1 = New System.Windows.Forms.Button()
         Me.pfdCargarArchivos = New System.Windows.Forms.OpenFileDialog()
         Id_auditoriaLabel = New System.Windows.Forms.Label()
         Id_CondicionLabel = New System.Windows.Forms.Label()
@@ -408,15 +411,69 @@ Partial Class frmAuditoriaCondiciones
         '
         'grbDocumentosAdjuntos
         '
+        Me.grbDocumentosAdjuntos.Controls.Add(Me.lklAbrir3)
+        Me.grbDocumentosAdjuntos.Controls.Add(Me.lklAbrir2)
+        Me.grbDocumentosAdjuntos.Controls.Add(Me.lklAbrir1)
         Me.grbDocumentosAdjuntos.Controls.Add(Me.btnArchivo3)
         Me.grbDocumentosAdjuntos.Controls.Add(Me.btnArchivo2)
         Me.grbDocumentosAdjuntos.Controls.Add(Me.btnArchivo1)
         Me.grbDocumentosAdjuntos.Location = New System.Drawing.Point(731, 109)
         Me.grbDocumentosAdjuntos.Name = "grbDocumentosAdjuntos"
-        Me.grbDocumentosAdjuntos.Size = New System.Drawing.Size(136, 121)
+        Me.grbDocumentosAdjuntos.Size = New System.Drawing.Size(136, 169)
         Me.grbDocumentosAdjuntos.TabIndex = 27
         Me.grbDocumentosAdjuntos.TabStop = False
         Me.grbDocumentosAdjuntos.Text = "Documentos adjuntos"
+        '
+        'lklAbrir3
+        '
+        Me.lklAbrir3.AutoSize = True
+        Me.lklAbrir3.Location = New System.Drawing.Point(101, 144)
+        Me.lklAbrir3.Name = "lklAbrir3"
+        Me.lklAbrir3.Size = New System.Drawing.Size(28, 13)
+        Me.lklAbrir3.TabIndex = 5
+        Me.lklAbrir3.TabStop = True
+        Me.lklAbrir3.Text = "Abrir"
+        Me.lklAbrir3.Visible = False
+        '
+        'lklAbrir2
+        '
+        Me.lklAbrir2.AutoSize = True
+        Me.lklAbrir2.Location = New System.Drawing.Point(101, 98)
+        Me.lklAbrir2.Name = "lklAbrir2"
+        Me.lklAbrir2.Size = New System.Drawing.Size(28, 13)
+        Me.lklAbrir2.TabIndex = 4
+        Me.lklAbrir2.TabStop = True
+        Me.lklAbrir2.Text = "Abrir"
+        Me.lklAbrir2.Visible = False
+        '
+        'lklAbrir1
+        '
+        Me.lklAbrir1.AutoSize = True
+        Me.lklAbrir1.Location = New System.Drawing.Point(102, 51)
+        Me.lklAbrir1.Name = "lklAbrir1"
+        Me.lklAbrir1.Size = New System.Drawing.Size(28, 13)
+        Me.lklAbrir1.TabIndex = 3
+        Me.lklAbrir1.TabStop = True
+        Me.lklAbrir1.Text = "Abrir"
+        Me.lklAbrir1.Visible = False
+        '
+        'btnArchivo3
+        '
+        Me.btnArchivo3.Location = New System.Drawing.Point(6, 118)
+        Me.btnArchivo3.Name = "btnArchivo3"
+        Me.btnArchivo3.Size = New System.Drawing.Size(123, 23)
+        Me.btnArchivo3.TabIndex = 2
+        Me.btnArchivo3.Text = "Adjuntar archivo..."
+        Me.btnArchivo3.UseVisualStyleBackColor = True
+        '
+        'btnArchivo2
+        '
+        Me.btnArchivo2.Location = New System.Drawing.Point(6, 72)
+        Me.btnArchivo2.Name = "btnArchivo2"
+        Me.btnArchivo2.Size = New System.Drawing.Size(124, 23)
+        Me.btnArchivo2.TabIndex = 1
+        Me.btnArchivo2.Text = "Adjuntar archivo..."
+        Me.btnArchivo2.UseVisualStyleBackColor = True
         '
         'btnArchivo1
         '
@@ -426,24 +483,6 @@ Partial Class frmAuditoriaCondiciones
         Me.btnArchivo1.TabIndex = 0
         Me.btnArchivo1.Text = "Adjuntar archivo..."
         Me.btnArchivo1.UseVisualStyleBackColor = True
-        '
-        'btnArchivo2
-        '
-        Me.btnArchivo2.Location = New System.Drawing.Point(6, 54)
-        Me.btnArchivo2.Name = "btnArchivo2"
-        Me.btnArchivo2.Size = New System.Drawing.Size(124, 23)
-        Me.btnArchivo2.TabIndex = 1
-        Me.btnArchivo2.Text = "Adjuntar archivo..."
-        Me.btnArchivo2.UseVisualStyleBackColor = True
-        '
-        'btnArchivo3
-        '
-        Me.btnArchivo3.Location = New System.Drawing.Point(7, 84)
-        Me.btnArchivo3.Name = "btnArchivo3"
-        Me.btnArchivo3.Size = New System.Drawing.Size(123, 23)
-        Me.btnArchivo3.TabIndex = 2
-        Me.btnArchivo3.Text = "Adjuntar archivo..."
-        Me.btnArchivo3.UseVisualStyleBackColor = True
         '
         'pfdCargarArchivos
         '
@@ -494,6 +533,7 @@ Partial Class frmAuditoriaCondiciones
         CType(Me.AUDITParametrosVBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.AUDITParametrosDBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.grbDocumentosAdjuntos.ResumeLayout(False)
+        Me.grbDocumentosAdjuntos.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -534,4 +574,7 @@ Partial Class frmAuditoriaCondiciones
     Friend WithEvents btnArchivo2 As Button
     Friend WithEvents btnArchivo1 As Button
     Friend WithEvents pfdCargarArchivos As OpenFileDialog
+    Friend WithEvents lklAbrir1 As LinkLabel
+    Friend WithEvents lklAbrir3 As LinkLabel
+    Friend WithEvents lklAbrir2 As LinkLabel
 End Class

@@ -605,6 +605,7 @@ Partial Class frmAuditorias
         Me.txtMontoSolicitado.Name = "txtMontoSolicitado"
         Me.txtMontoSolicitado.Size = New System.Drawing.Size(270, 20)
         Me.txtMontoSolicitado.TabIndex = 24
+        Me.txtMontoSolicitado.Text = "0.00"
         '
         'txtMontoFinanciado
         '
@@ -613,6 +614,7 @@ Partial Class frmAuditorias
         Me.txtMontoFinanciado.Name = "txtMontoFinanciado"
         Me.txtMontoFinanciado.Size = New System.Drawing.Size(270, 20)
         Me.txtMontoFinanciado.TabIndex = 23
+        Me.txtMontoFinanciado.Text = "0.00"
         '
         'Label8
         '
@@ -786,6 +788,7 @@ Partial Class frmAuditorias
         Me.Controls.Add(Me.AUDIT_AuditoriasDataGridView)
         Me.Controls.Add(Me.btnAgregar)
         Me.Name = "frmAuditorias"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "win"
         CType(Me.AUDIT_AuditoriasDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.AUDIT_AuditoriasBindingSource, System.ComponentModel.ISupportInitialize).EndInit()

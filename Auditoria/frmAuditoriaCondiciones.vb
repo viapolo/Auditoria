@@ -14,7 +14,10 @@ Public Class frmAuditoriaCondiciones
     Public var_idCondicion As Integer
     Dim var_revisiones As Integer = 0
 
+
     Dim taActulizaAudit As New ProductionDataSetTableAdapters.AUDIT_AuditoriasTableAdapter
+    Dim taAuditorias As New ProductionDataSetTableAdapters.AUDIT_AuditoriasTableAdapter
+    Dim taAuditoriasCond As New ProductionDataSetTableAdapters.AUDIT_AuditoriasCondicionesTableAdapter
     Private Sub frmAuditoriaCondiciones_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: esta línea de código carga datos en la tabla 'ProductionDataSet.AUDIT_ParametrosD' Puede moverla o quitarla según sea necesario.
         Me.AUDIT_ParametrosDTableAdapter.Fill(Me.ProductionDataSet.AUDIT_ParametrosD)
@@ -123,15 +126,6 @@ Public Class frmAuditoriaCondiciones
             cmbDeptoResponsable.Enabled = True
             FechaSolventacionDateTimePicker.Enabled = True
 
-            'btnActualizar.Enabled = True
-            'cmbHallago.Enabled = False
-            'cmbValidacion.Enabled = False
-            'ObservacionesTextBox.Enabled = False
-            'ComentariosTextBox.Enabled = True
-            'btnGuardar.Enabled = False
-            'FechaVigenciaDateTimePicker.Enabled = False
-            'cmbDeptoResponsable.Enabled = False
-            'FechaSolventacionDateTimePicker.Enabled = True
             If cmbCondicion.SelectedValue = 39 Or cmbCondicion.SelectedValue = 40 Then
                 FechaVigenciaDateTimePicker.Visible = True
                 Label3.Visible = True
@@ -139,16 +133,21 @@ Public Class frmAuditoriaCondiciones
                 FechaVigenciaDateTimePicker.Visible = False
                 Label3.Visible = False
             End If
+            If taAuditoriasCond.EsArchivo1_ScalarQuery(Id_auditoriaCondicionTextBox.Text.Trim) <> 0 Then
+                lklAbrir1.Visible = True
+            End If
+            If taAuditoriasCond.EsArchivo2_ScalarQuery(Id_auditoriaCondicionTextBox.Text.Trim) <> 0 Then
+                lklAbrir2.Visible = True
+            End If
+            If taAuditoriasCond.EsArchivo3_ScalarQuery(Id_auditoriaCondicionTextBox.Text.Trim) <> 0 Then
+                lklAbrir3.Visible = True
+            End If
         Else
-            'btnActualizar.Enabled = True
-            'cmbHallago.Enabled = True
-            'cmbValidacion.Enabled = True
-            'ObservacionesTextBox.Enabled = True
-            'ComentariosTextBox.Enabled = True
-            'btnGuardar.Enabled = True
+            btnArchivo1.Enabled = False
+            btnArchivo2.Enabled = False
+            btnArchivo3.Enabled = False
             cmbDeptoResponsable.Enabled = False
             btnAgregarRev.Enabled = False
-            'FechaSolventacionDateTimePicker.Enabled = True
             If cmbCondicion.SelectedValue = 39 Or cmbCondicion.SelectedValue = 40 Then
                 FechaVigenciaDateTimePicker.Visible = True
                 Label3.Visible = True
@@ -224,15 +223,6 @@ Public Class frmAuditoriaCondiciones
             cmbDeptoResponsable.Enabled = True
             FechaSolventacionDateTimePicker.Enabled = True
 
-            'btnActualizar.Enabled = True
-            'cmbHallago.Enabled = False
-            'cmbValidacion.Enabled = False
-            'ObservacionesTextBox.Enabled = False
-            'ComentariosTextBox.Enabled = True
-            'btnGuardar.Enabled = False
-            'FechaVigenciaDateTimePicker.Enabled = False
-            'cmbDeptoResponsable.Enabled = False
-            'FechaSolventacionDateTimePicker.Enabled = True
             If cmbCondicion.SelectedValue = 39 Or cmbCondicion.SelectedValue = 40 Then
                 FechaVigenciaDateTimePicker.Visible = True
                 Label3.Visible = True
@@ -241,12 +231,6 @@ Public Class frmAuditoriaCondiciones
                 Label3.Visible = False
             End If
         Else
-            'btnActualizar.Enabled = True
-            'cmbHallago.Enabled = True
-            'cmbValidacion.Enabled = True
-            'ObservacionesTextBox.Enabled = True
-            'ComentariosTextBox.Enabled = True
-            'btnGuardar.Enabled = True
             btnAgregarRev.Enabled = False
             cmbDeptoResponsable.Enabled = False
             If cmbCondicion.SelectedValue = 39 Or cmbCondicion.SelectedValue = 40 Then
@@ -309,8 +293,7 @@ Public Class frmAuditoriaCondiciones
     End Sub
 
     Private Sub btnAgregarRev_Click(sender As Object, e As EventArgs) Handles btnAgregarRev.Click
-        Dim taAuditorias As New ProductionDataSetTableAdapters.AUDIT_AuditoriasTableAdapter
-        Dim taAuditoriasCond As New ProductionDataSetTableAdapters.AUDIT_AuditoriasCondicionesTableAdapter
+
 
         var_revisiones = CInt(InputBox("Ingrese número de revisiones adicionales", "Revisiones periódicas", 0))
 
@@ -324,14 +307,83 @@ Public Class frmAuditoriaCondiciones
     End Sub
 
     Private Sub btnArchivo1_Click(sender As Object, e As EventArgs) Handles btnArchivo1.Click
-        MsgBox(AUDIT_AuditoriasCondicionesTableAdapter.EsNULLArchivo1_ScalarQuery(Id_auditoriaCondicionTextBox.Text.Trim).ToString.Length)
-        If AUDIT_AuditoriasCondicionesTableAdapter.EsNULLArchivo1_ScalarQuery(Id_auditoriaCondicionTextBox.Text.Trim).ToString.Length <= 0 Then
-            If pfdCargarArchivos.ShowDialog = System.Windows.Forms.DialogResult.OK Then
-                Dim archivo1 As Byte() = File.ReadAllBytes(pfdCargarArchivos.FileName)
-                AUDIT_AuditoriasCondicionesTableAdapter.Archivo1_UpdateQuery(archivo1, Id_auditoriaCondicionTextBox.Text.Trim)
+        Try
+            If AUDIT_AuditoriasCondicionesTableAdapter.EsArchivo1_ScalarQuery(Id_auditoriaCondicionTextBox.Text.Trim) = 0 Then
+                If pfdCargarArchivos.ShowDialog = System.Windows.Forms.DialogResult.OK Then
+                    Dim archivo1 As Byte() = File.ReadAllBytes(pfdCargarArchivos.FileName)
+                    Dim arch_files As FileStream = New FileStream(pfdCargarArchivos.FileName, FileMode.Open)
+                    Dim nameExt() As String = arch_files.Name.Split(".")
+                    AUDIT_AuditoriasCondicionesTableAdapter.Archivo1_UpdateQuery(archivo1, nameExt(1), Id_auditoriaCondicionTextBox.Text.Trim)
+                End If
             End If
-        Else
-            MsgBox("existe archivo")
-        End If
+        Catch ex As Exception
+            MsgBox(ex.ToString, MsgBoxStyle.Critical, "Error al actualizar registro...")
+        End Try
+    End Sub
+
+    Private Sub btnArchivo2_Click(sender As Object, e As EventArgs) Handles btnArchivo2.Click
+        Try
+            If AUDIT_AuditoriasCondicionesTableAdapter.EsArchivo2_ScalarQuery(Id_auditoriaCondicionTextBox.Text.Trim) = 0 Then
+                If pfdCargarArchivos.ShowDialog = System.Windows.Forms.DialogResult.OK Then
+                    Dim archivo2 As Byte() = File.ReadAllBytes(pfdCargarArchivos.FileName)
+                    Dim arch_files As FileStream = New FileStream(pfdCargarArchivos.FileName, FileMode.Open)
+                    Dim nameExt() As String = arch_files.Name.Split(".")
+                    AUDIT_AuditoriasCondicionesTableAdapter.Archivo2_UpdateQuery(archivo2, nameExt(1), Id_auditoriaCondicionTextBox.Text.Trim)
+                End If
+            End If
+        Catch ex As Exception
+            MsgBox(ex.ToString, MsgBoxStyle.Critical, "Error al actualizar registro...")
+        End Try
+    End Sub
+
+    Private Sub btnArchivo3_Click(sender As Object, e As EventArgs) Handles btnArchivo3.Click
+        Try
+            If AUDIT_AuditoriasCondicionesTableAdapter.EsArchivo3_ScalarQuery(Id_auditoriaCondicionTextBox.Text.Trim) = 0 Then
+                If pfdCargarArchivos.ShowDialog = System.Windows.Forms.DialogResult.OK Then
+                    Dim archivo3 As Byte() = File.ReadAllBytes(pfdCargarArchivos.FileName)
+                    Dim arch_files As FileStream = New FileStream(pfdCargarArchivos.FileName, FileMode.Open)
+                    Dim nameExt() As String = arch_files.Name.Split(".")
+                    AUDIT_AuditoriasCondicionesTableAdapter.Archivo3_UpdateQuery(archivo3, nameExt(1), Id_auditoriaCondicionTextBox.Text.Trim)
+                End If
+            End If
+        Catch ex As Exception
+            MsgBox(ex.ToString, MsgBoxStyle.Critical, "Error al actualizar registro...")
+        End Try
+    End Sub
+
+    Private Sub lklAbrir1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lklAbrir1.LinkClicked
+        Dim guidv1 As String = Guid.NewGuid.ToString
+        Try
+            Dim archivoByte As Byte() = taAuditoriasCond.ObtArchivo1_ScalarQuery(Id_auditoriaCondicionTextBox.Text.Trim)
+            Dim ext1 As String = taAuditoriasCond.ObtExt1_ScalarQuery(Id_auditoriaCondicionTextBox.Text.Trim)
+            File.WriteAllBytes("C:\temp\" & guidv1 & "." + ext1, archivoByte)
+            Process.Start("C:\temp\" & guidv1 & "." + ext1)
+        Catch ex As Exception
+            MsgBox(ex.ToString, MsgBoxStyle.Critical, "Error al abrir archivo...")
+        End Try
+    End Sub
+
+    Private Sub lklAbrir2_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lklAbrir2.LinkClicked
+        Dim guidv2 As String = Guid.NewGuid.ToString
+        Try
+            Dim archivoByte As Byte() = taAuditoriasCond.ObtArchivo2_ScalarQuery(Id_auditoriaCondicionTextBox.Text.Trim)
+            Dim ext2 As String = taAuditoriasCond.ObtExt2_ScalarQuery(Id_auditoriaCondicionTextBox.Text.Trim)
+            File.WriteAllBytes("C:\temp\" & guidv2 & "." + ext2, archivoByte)
+            Process.Start("C:\temp\" & guidv2 & "." + ext2)
+        Catch ex As Exception
+            MsgBox(ex.ToString, MsgBoxStyle.Critical, "Error al abrir archivo...")
+        End Try
+    End Sub
+
+    Private Sub lklAbrir3_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lklAbrir3.LinkClicked
+        Dim guidv3 As String = Guid.NewGuid.ToString
+        Try
+            Dim archivoByte As Byte() = taAuditoriasCond.ObtArchivo3_ScalarQuery(Id_auditoriaCondicionTextBox.Text.Trim)
+            Dim ext3 As String = taAuditoriasCond.ObtExt3_ScalarQuery(Id_auditoriaCondicionTextBox.Text.Trim)
+            File.WriteAllBytes("C:\temp\" & guidv3 & "." + ext3, archivoByte)
+            Process.Start("C:\temp\" & guidv3 & "." + ext3)
+        Catch ex As Exception
+            MsgBox(ex.ToString, MsgBoxStyle.Critical, "Error al abrir archivo...")
+        End Try
     End Sub
 End Class

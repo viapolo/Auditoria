@@ -28,15 +28,20 @@ Partial Class frmBuscaContratos
         Me.ProductionDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ProductionDataSet = New Auditoria.ProductionDataSet()
         Me.lbxContratos = New System.Windows.Forms.ListBox()
-        Me.ClientesTableAdapter = New Auditoria.ProductionDataSetTableAdapters.ClientesTableAdapter()
         Me.lblClientes = New System.Windows.Forms.Label()
         Me.lblAnexos = New System.Windows.Forms.Label()
-        Me.btnSalir = New System.Windows.Forms.Button()
-        Me.Vw_AnexosTableAdapter = New Auditoria.ProductionDataSetTableAdapters.Vw_AnexosTableAdapter()
-        Me.Vw_AnexosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.TableAdapterManager = New Auditoria.ProductionDataSetTableAdapters.TableAdapterManager()
         Me.lblTipoCredito = New System.Windows.Forms.Label()
         Me.lblTipoDeCredito = New System.Windows.Forms.Label()
+        Me.ClientesTableAdapter = New Auditoria.ProductionDataSetTableAdapters.ClientesTableAdapter()
+        Me.Vw_AnexosTableAdapter = New Auditoria.ProductionDataSetTableAdapters.Vw_AnexosTableAdapter()
+        Me.Vw_AnexosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.chkConAuditorias = New System.Windows.Forms.CheckBox()
+        Me.chkSinAuditorias = New System.Windows.Forms.CheckBox()
         CType(Me.ClientesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ProductionDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ProductionDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -50,7 +55,7 @@ Partial Class frmBuscaContratos
         Me.cmbClientes.FormattingEnabled = True
         Me.cmbClientes.Location = New System.Drawing.Point(12, 32)
         Me.cmbClientes.Name = "cmbClientes"
-        Me.cmbClientes.Size = New System.Drawing.Size(533, 21)
+        Me.cmbClientes.Size = New System.Drawing.Size(504, 21)
         Me.cmbClientes.TabIndex = 0
         Me.cmbClientes.ValueMember = "Cliente"
         '
@@ -72,14 +77,10 @@ Partial Class frmBuscaContratos
         'lbxContratos
         '
         Me.lbxContratos.FormattingEnabled = True
-        Me.lbxContratos.Location = New System.Drawing.Point(551, 32)
+        Me.lbxContratos.Location = New System.Drawing.Point(522, 32)
         Me.lbxContratos.Name = "lbxContratos"
-        Me.lbxContratos.Size = New System.Drawing.Size(358, 186)
+        Me.lbxContratos.Size = New System.Drawing.Size(400, 186)
         Me.lbxContratos.TabIndex = 1
-        '
-        'ClientesTableAdapter
-        '
-        Me.ClientesTableAdapter.ClearBeforeFill = True
         '
         'lblClientes
         '
@@ -99,24 +100,6 @@ Partial Class frmBuscaContratos
         Me.lblAnexos.TabIndex = 4
         Me.lblAnexos.Text = "Contratos de este cliente"
         Me.lblAnexos.Visible = False
-        '
-        'btnSalir
-        '
-        Me.btnSalir.Location = New System.Drawing.Point(834, 226)
-        Me.btnSalir.Name = "btnSalir"
-        Me.btnSalir.Size = New System.Drawing.Size(75, 23)
-        Me.btnSalir.TabIndex = 5
-        Me.btnSalir.Text = "Salir"
-        Me.btnSalir.UseVisualStyleBackColor = True
-        '
-        'Vw_AnexosTableAdapter
-        '
-        Me.Vw_AnexosTableAdapter.ClearBeforeFill = True
-        '
-        'Vw_AnexosBindingSource
-        '
-        Me.Vw_AnexosBindingSource.DataMember = "Vw_Anexos"
-        Me.Vw_AnexosBindingSource.DataSource = Me.ProductionDataSet
         '
         'TableAdapterManager
         '
@@ -154,14 +137,96 @@ Partial Class frmBuscaContratos
         Me.lblTipoDeCredito.Size = New System.Drawing.Size(0, 13)
         Me.lblTipoDeCredito.TabIndex = 7
         '
+        'ClientesTableAdapter
+        '
+        Me.ClientesTableAdapter.ClearBeforeFill = True
+        '
+        'Vw_AnexosTableAdapter
+        '
+        Me.Vw_AnexosTableAdapter.ClearBeforeFill = True
+        '
+        'Vw_AnexosBindingSource
+        '
+        Me.Vw_AnexosBindingSource.DataMember = "Vw_Anexos"
+        Me.Vw_AnexosBindingSource.DataSource = Me.ProductionDataSet
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, CType(((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic) _
+                Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(519, 221)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(362, 13)
+        Me.Label1.TabIndex = 8
+        Me.Label1.Text = "Sucursal / Tipo de Crédito / Anexo / Ciclo / No. de Auditorías"
+        '
+        'Label2
+        '
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(519, 9)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(197, 16)
+        Me.Label2.TabIndex = 9
+        Me.Label2.Text = "Contratos de este cliente"
+        Me.Label2.Visible = False
+        '
+        'Label3
+        '
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(12, 9)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(363, 16)
+        Me.Label3.TabIndex = 10
+        Me.Label3.Text = "Selecciona un cliente de la siguiente lista"
+        Me.Label3.Visible = False
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(847, 240)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 11
+        Me.Button1.Text = "Salir"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'chkConAuditorias
+        '
+        Me.chkConAuditorias.AutoSize = True
+        Me.chkConAuditorias.Checked = True
+        Me.chkConAuditorias.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.chkConAuditorias.Location = New System.Drawing.Point(15, 72)
+        Me.chkConAuditorias.Name = "chkConAuditorias"
+        Me.chkConAuditorias.Size = New System.Drawing.Size(95, 17)
+        Me.chkConAuditorias.TabIndex = 12
+        Me.chkConAuditorias.Text = "Con auditorías"
+        Me.chkConAuditorias.UseVisualStyleBackColor = True
+        '
+        'chkSinAuditorias
+        '
+        Me.chkSinAuditorias.AutoSize = True
+        Me.chkSinAuditorias.Checked = True
+        Me.chkSinAuditorias.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.chkSinAuditorias.Location = New System.Drawing.Point(183, 72)
+        Me.chkSinAuditorias.Name = "chkSinAuditorias"
+        Me.chkSinAuditorias.Size = New System.Drawing.Size(91, 17)
+        Me.chkSinAuditorias.TabIndex = 13
+        Me.chkSinAuditorias.Text = "Sin auditorías"
+        Me.chkSinAuditorias.UseVisualStyleBackColor = True
+        '
         'frmBuscaContratos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(934, 267)
+        Me.ClientSize = New System.Drawing.Size(934, 273)
+        Me.Controls.Add(Me.chkSinAuditorias)
+        Me.Controls.Add(Me.chkConAuditorias)
+        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.lblTipoDeCredito)
         Me.Controls.Add(Me.lblTipoCredito)
-        Me.Controls.Add(Me.btnSalir)
         Me.Controls.Add(Me.lblAnexos)
         Me.Controls.Add(Me.lblClientes)
         Me.Controls.Add(Me.lbxContratos)
@@ -188,10 +253,15 @@ Partial Class frmBuscaContratos
     Friend WithEvents ClientesTableAdapter As ProductionDataSetTableAdapters.ClientesTableAdapter
     Friend WithEvents lblClientes As Label
     Friend WithEvents lblAnexos As Label
-    Friend WithEvents btnSalir As Button
     Friend WithEvents Vw_AnexosTableAdapter As ProductionDataSetTableAdapters.Vw_AnexosTableAdapter
     Friend WithEvents Vw_AnexosBindingSource As BindingSource
     Friend WithEvents TableAdapterManager As ProductionDataSetTableAdapters.TableAdapterManager
     Friend WithEvents lblTipoCredito As Label
     Friend WithEvents lblTipoDeCredito As Label
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Button1 As Button
+    Friend WithEvents chkConAuditorias As CheckBox
+    Friend WithEvents chkSinAuditorias As CheckBox
 End Class

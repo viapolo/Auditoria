@@ -29,6 +29,19 @@ Partial Class frmAuditoriaMod
         Dim EstatusLabel As System.Windows.Forms.Label
         Dim FechaRelizacionLabel As System.Windows.Forms.Label
         Dim FolAuditoriaLabel As System.Windows.Forms.Label
+        Dim ClienteLabel As System.Windows.Forms.Label
+        Dim SucursalLabel As System.Windows.Forms.Label
+        Dim TipoCreditoLabel As System.Windows.Forms.Label
+        Dim RecursosLabel As System.Windows.Forms.Label
+        Dim FechaDisposicionLabel As System.Windows.Forms.Label
+        Dim EjecutivoLabel As System.Windows.Forms.Label
+        Dim DestinoLabel As System.Windows.Forms.Label
+        Dim MontoFinanciadoLabel As System.Windows.Forms.Label
+        Dim MontoSolicitadoLabel As System.Windows.Forms.Label
+        Dim FechaSolicitudLabel As System.Windows.Forms.Label
+        Dim FechaAutorizacionLabel As System.Windows.Forms.Label
+        Dim AnalistaLabel As System.Windows.Forms.Label
+        Dim OrganoDeAutorizacionLabel As System.Windows.Forms.Label
         Me.ProductionDataSet = New Auditoria.ProductionDataSet()
         Me.AUDIT_AuditoriasBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.AUDIT_AuditoriasTableAdapter = New Auditoria.ProductionDataSetTableAdapters.AUDIT_AuditoriasTableAdapter()
@@ -65,12 +78,39 @@ Partial Class frmAuditoriaMod
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.FechaRelizacionDateTimePicker = New System.Windows.Forms.DateTimePicker()
         Me.FolAuditoriaTextBox = New System.Windows.Forms.TextBox()
+        Me.gbxdatosDelCredito = New System.Windows.Forms.GroupBox()
+        Me.ClienteTextBox = New System.Windows.Forms.TextBox()
+        Me.SucursalTextBox = New System.Windows.Forms.TextBox()
+        Me.TipoCreditoTextBox = New System.Windows.Forms.TextBox()
+        Me.RecursosTextBox = New System.Windows.Forms.TextBox()
+        Me.FechaDisposicionDateTimePicker = New System.Windows.Forms.DateTimePicker()
+        Me.EjecutivoTextBox = New System.Windows.Forms.TextBox()
+        Me.DestinoTextBox = New System.Windows.Forms.TextBox()
+        Me.MontoFinanciadoTextBox = New System.Windows.Forms.TextBox()
+        Me.MontoSolicitadoTextBox = New System.Windows.Forms.TextBox()
+        Me.FechaSolicitudDateTimePicker = New System.Windows.Forms.DateTimePicker()
+        Me.FechaAutorizacionDateTimePicker = New System.Windows.Forms.DateTimePicker()
+        Me.AnalistaTextBox = New System.Windows.Forms.TextBox()
+        Me.OrganoDeAutorizacionTextBox = New System.Windows.Forms.TextBox()
         AnexoLabel = New System.Windows.Forms.Label()
         CicloLabel = New System.Windows.Forms.Label()
         ObervacionesLabel = New System.Windows.Forms.Label()
         EstatusLabel = New System.Windows.Forms.Label()
         FechaRelizacionLabel = New System.Windows.Forms.Label()
         FolAuditoriaLabel = New System.Windows.Forms.Label()
+        ClienteLabel = New System.Windows.Forms.Label()
+        SucursalLabel = New System.Windows.Forms.Label()
+        TipoCreditoLabel = New System.Windows.Forms.Label()
+        RecursosLabel = New System.Windows.Forms.Label()
+        FechaDisposicionLabel = New System.Windows.Forms.Label()
+        EjecutivoLabel = New System.Windows.Forms.Label()
+        DestinoLabel = New System.Windows.Forms.Label()
+        MontoFinanciadoLabel = New System.Windows.Forms.Label()
+        MontoSolicitadoLabel = New System.Windows.Forms.Label()
+        FechaSolicitudLabel = New System.Windows.Forms.Label()
+        FechaAutorizacionLabel = New System.Windows.Forms.Label()
+        AnalistaLabel = New System.Windows.Forms.Label()
+        OrganoDeAutorizacionLabel = New System.Windows.Forms.Label()
         CType(Me.ProductionDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.AUDIT_AuditoriasBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.AUDITParametrosBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -81,6 +121,7 @@ Partial Class frmAuditoriaMod
         CType(Me.AUDITCondicionesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.AUDITParametrosVBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.AUDITParametrosHBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.gbxdatosDelCredito.SuspendLayout()
         Me.SuspendLayout()
         '
         'AnexoLabel
@@ -104,7 +145,7 @@ Partial Class frmAuditoriaMod
         'ObervacionesLabel
         '
         ObervacionesLabel.AutoSize = True
-        ObervacionesLabel.Location = New System.Drawing.Point(13, 41)
+        ObervacionesLabel.Location = New System.Drawing.Point(13, 175)
         ObervacionesLabel.Name = "ObervacionesLabel"
         ObervacionesLabel.Size = New System.Drawing.Size(76, 13)
         ObervacionesLabel.TabIndex = 4
@@ -113,7 +154,7 @@ Partial Class frmAuditoriaMod
         'EstatusLabel
         '
         EstatusLabel.AutoSize = True
-        EstatusLabel.Location = New System.Drawing.Point(44, 109)
+        EstatusLabel.Location = New System.Drawing.Point(23, 570)
         EstatusLabel.Name = "EstatusLabel"
         EstatusLabel.Size = New System.Drawing.Size(45, 13)
         EstatusLabel.TabIndex = 6
@@ -122,7 +163,7 @@ Partial Class frmAuditoriaMod
         'FechaRelizacionLabel
         '
         FechaRelizacionLabel.AutoSize = True
-        FechaRelizacionLabel.Location = New System.Drawing.Point(773, 42)
+        FechaRelizacionLabel.Location = New System.Drawing.Point(221, 572)
         FechaRelizacionLabel.Name = "FechaRelizacionLabel"
         FechaRelizacionLabel.Size = New System.Drawing.Size(92, 13)
         FechaRelizacionLabel.TabIndex = 12
@@ -131,7 +172,7 @@ Partial Class frmAuditoriaMod
         'FolAuditoriaLabel
         '
         FolAuditoriaLabel.AutoSize = True
-        FolAuditoriaLabel.Location = New System.Drawing.Point(797, 67)
+        FolAuditoriaLabel.Location = New System.Drawing.Point(970, 201)
         FolAuditoriaLabel.Name = "FolAuditoriaLabel"
         FolAuditoriaLabel.Size = New System.Drawing.Size(68, 13)
         FolAuditoriaLabel.TabIndex = 14
@@ -154,9 +195,11 @@ Partial Class frmAuditoriaMod
         'TableAdapterManager
         '
         Me.TableAdapterManager.ActifijoTableAdapter = Nothing
+        Me.TableAdapterManager.AUDIT_AnalistasTableAdapter = Nothing
         Me.TableAdapterManager.AUDIT_AuditoriasCondicionesTableAdapter = Nothing
         Me.TableAdapterManager.AUDIT_AuditoriasTableAdapter = Me.AUDIT_AuditoriasTableAdapter
         Me.TableAdapterManager.AUDIT_CondicionesTableAdapter = Nothing
+        Me.TableAdapterManager.AUDIT_OrgAutorizacionTableAdapter = Nothing
         Me.TableAdapterManager.AUDIT_ParametrosDTableAdapter = Nothing
         Me.TableAdapterManager.AUDIT_ParametrosHTableAdapter = Nothing
         Me.TableAdapterManager.AUDIT_ParametrosTableAdapter = Nothing
@@ -188,10 +231,10 @@ Partial Class frmAuditoriaMod
         'ObervacionesTextBox
         '
         Me.ObervacionesTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.AUDIT_AuditoriasBindingSource, "Obervaciones", True))
-        Me.ObervacionesTextBox.Location = New System.Drawing.Point(95, 38)
+        Me.ObervacionesTextBox.Location = New System.Drawing.Point(95, 172)
         Me.ObervacionesTextBox.Multiline = True
         Me.ObervacionesTextBox.Name = "ObervacionesTextBox"
-        Me.ObervacionesTextBox.Size = New System.Drawing.Size(623, 62)
+        Me.ObervacionesTextBox.Size = New System.Drawing.Size(594, 46)
         Me.ObervacionesTextBox.TabIndex = 5
         '
         'cmbEstatus
@@ -200,7 +243,7 @@ Partial Class frmAuditoriaMod
         Me.cmbEstatus.DataSource = Me.AUDITParametrosBindingSource1
         Me.cmbEstatus.DisplayMember = "Descripcion"
         Me.cmbEstatus.FormattingEnabled = True
-        Me.cmbEstatus.Location = New System.Drawing.Point(95, 106)
+        Me.cmbEstatus.Location = New System.Drawing.Point(74, 567)
         Me.cmbEstatus.Name = "cmbEstatus"
         Me.cmbEstatus.Size = New System.Drawing.Size(121, 21)
         Me.cmbEstatus.TabIndex = 6
@@ -222,7 +265,7 @@ Partial Class frmAuditoriaMod
         '
         'btnActualizar
         '
-        Me.btnActualizar.Location = New System.Drawing.Point(1038, 505)
+        Me.btnActualizar.Location = New System.Drawing.Point(1038, 565)
         Me.btnActualizar.Name = "btnActualizar"
         Me.btnActualizar.Size = New System.Drawing.Size(75, 23)
         Me.btnActualizar.TabIndex = 11
@@ -249,10 +292,10 @@ Partial Class frmAuditoriaMod
         Me.DataGridView1.AllowUserToDeleteRows = False
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Id_Condicion, Me.Validacion, Me.CategoriaHallazgo, Me.id_auditoria, Me.Observaciones, Me.deptoResponsable, Me.FechaSolventacion, Me.Comentarios, Me.Id_auditoriaCondicion, Me.id_Cond})
-        Me.DataGridView1.Location = New System.Drawing.Point(16, 133)
+        Me.DataGridView1.Location = New System.Drawing.Point(16, 224)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
-        Me.DataGridView1.Size = New System.Drawing.Size(1178, 366)
+        Me.DataGridView1.Size = New System.Drawing.Size(1178, 331)
         Me.DataGridView1.TabIndex = 9
         '
         'Id_Condicion
@@ -345,7 +388,7 @@ Partial Class frmAuditoriaMod
         'btnAgregar
         '
         Me.btnAgregar.Enabled = False
-        Me.btnAgregar.Location = New System.Drawing.Point(957, 505)
+        Me.btnAgregar.Location = New System.Drawing.Point(957, 565)
         Me.btnAgregar.Name = "btnAgregar"
         Me.btnAgregar.Size = New System.Drawing.Size(75, 23)
         Me.btnAgregar.TabIndex = 10
@@ -372,7 +415,7 @@ Partial Class frmAuditoriaMod
         '
         'btnSalir
         '
-        Me.btnSalir.Location = New System.Drawing.Point(1119, 505)
+        Me.btnSalir.Location = New System.Drawing.Point(1119, 565)
         Me.btnSalir.Name = "btnSalir"
         Me.btnSalir.Size = New System.Drawing.Size(75, 23)
         Me.btnSalir.TabIndex = 12
@@ -382,7 +425,7 @@ Partial Class frmAuditoriaMod
         'FechaRelizacionDateTimePicker
         '
         Me.FechaRelizacionDateTimePicker.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.AUDIT_AuditoriasBindingSource, "FechaRelizacion", True))
-        Me.FechaRelizacionDateTimePicker.Location = New System.Drawing.Point(871, 38)
+        Me.FechaRelizacionDateTimePicker.Location = New System.Drawing.Point(319, 568)
         Me.FechaRelizacionDateTimePicker.Name = "FechaRelizacionDateTimePicker"
         Me.FechaRelizacionDateTimePicker.Size = New System.Drawing.Size(200, 20)
         Me.FechaRelizacionDateTimePicker.TabIndex = 7
@@ -390,16 +433,273 @@ Partial Class frmAuditoriaMod
         'FolAuditoriaTextBox
         '
         Me.FolAuditoriaTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.AUDIT_AuditoriasBindingSource, "folAuditoria", True))
-        Me.FolAuditoriaTextBox.Location = New System.Drawing.Point(871, 64)
+        Me.FolAuditoriaTextBox.Location = New System.Drawing.Point(1044, 198)
         Me.FolAuditoriaTextBox.Name = "FolAuditoriaTextBox"
         Me.FolAuditoriaTextBox.Size = New System.Drawing.Size(150, 20)
         Me.FolAuditoriaTextBox.TabIndex = 8
+        '
+        'gbxdatosDelCredito
+        '
+        Me.gbxdatosDelCredito.Controls.Add(OrganoDeAutorizacionLabel)
+        Me.gbxdatosDelCredito.Controls.Add(Me.OrganoDeAutorizacionTextBox)
+        Me.gbxdatosDelCredito.Controls.Add(AnalistaLabel)
+        Me.gbxdatosDelCredito.Controls.Add(Me.AnalistaTextBox)
+        Me.gbxdatosDelCredito.Controls.Add(FechaAutorizacionLabel)
+        Me.gbxdatosDelCredito.Controls.Add(Me.FechaAutorizacionDateTimePicker)
+        Me.gbxdatosDelCredito.Controls.Add(FechaSolicitudLabel)
+        Me.gbxdatosDelCredito.Controls.Add(Me.FechaSolicitudDateTimePicker)
+        Me.gbxdatosDelCredito.Controls.Add(MontoSolicitadoLabel)
+        Me.gbxdatosDelCredito.Controls.Add(Me.MontoSolicitadoTextBox)
+        Me.gbxdatosDelCredito.Controls.Add(MontoFinanciadoLabel)
+        Me.gbxdatosDelCredito.Controls.Add(Me.MontoFinanciadoTextBox)
+        Me.gbxdatosDelCredito.Controls.Add(DestinoLabel)
+        Me.gbxdatosDelCredito.Controls.Add(Me.DestinoTextBox)
+        Me.gbxdatosDelCredito.Controls.Add(EjecutivoLabel)
+        Me.gbxdatosDelCredito.Controls.Add(Me.EjecutivoTextBox)
+        Me.gbxdatosDelCredito.Controls.Add(FechaDisposicionLabel)
+        Me.gbxdatosDelCredito.Controls.Add(Me.FechaDisposicionDateTimePicker)
+        Me.gbxdatosDelCredito.Controls.Add(RecursosLabel)
+        Me.gbxdatosDelCredito.Controls.Add(Me.RecursosTextBox)
+        Me.gbxdatosDelCredito.Controls.Add(TipoCreditoLabel)
+        Me.gbxdatosDelCredito.Controls.Add(Me.TipoCreditoTextBox)
+        Me.gbxdatosDelCredito.Controls.Add(SucursalLabel)
+        Me.gbxdatosDelCredito.Controls.Add(Me.SucursalTextBox)
+        Me.gbxdatosDelCredito.Controls.Add(ClienteLabel)
+        Me.gbxdatosDelCredito.Controls.Add(Me.ClienteTextBox)
+        Me.gbxdatosDelCredito.Location = New System.Drawing.Point(16, 31)
+        Me.gbxdatosDelCredito.Name = "gbxdatosDelCredito"
+        Me.gbxdatosDelCredito.Size = New System.Drawing.Size(1178, 135)
+        Me.gbxdatosDelCredito.TabIndex = 15
+        Me.gbxdatosDelCredito.TabStop = False
+        Me.gbxdatosDelCredito.Text = "Datos del crédito"
+        '
+        'ClienteLabel
+        '
+        ClienteLabel.AutoSize = True
+        ClienteLabel.Location = New System.Drawing.Point(11, 22)
+        ClienteLabel.Name = "ClienteLabel"
+        ClienteLabel.Size = New System.Drawing.Size(41, 13)
+        ClienteLabel.TabIndex = 0
+        ClienteLabel.Text = "cliente:"
+        '
+        'ClienteTextBox
+        '
+        Me.ClienteTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.AUDIT_AuditoriasBindingSource, "cliente", True))
+        Me.ClienteTextBox.Location = New System.Drawing.Point(58, 19)
+        Me.ClienteTextBox.Name = "ClienteTextBox"
+        Me.ClienteTextBox.Size = New System.Drawing.Size(100, 20)
+        Me.ClienteTextBox.TabIndex = 1
+        '
+        'SucursalLabel
+        '
+        SucursalLabel.AutoSize = True
+        SucursalLabel.Location = New System.Drawing.Point(3, 48)
+        SucursalLabel.Name = "SucursalLabel"
+        SucursalLabel.Size = New System.Drawing.Size(49, 13)
+        SucursalLabel.TabIndex = 2
+        SucursalLabel.Text = "sucursal:"
+        '
+        'SucursalTextBox
+        '
+        Me.SucursalTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.AUDIT_AuditoriasBindingSource, "sucursal", True))
+        Me.SucursalTextBox.Location = New System.Drawing.Point(58, 45)
+        Me.SucursalTextBox.Name = "SucursalTextBox"
+        Me.SucursalTextBox.Size = New System.Drawing.Size(100, 20)
+        Me.SucursalTextBox.TabIndex = 3
+        '
+        'TipoCreditoLabel
+        '
+        TipoCreditoLabel.AutoSize = True
+        TipoCreditoLabel.Location = New System.Drawing.Point(10, 74)
+        TipoCreditoLabel.Name = "TipoCreditoLabel"
+        TipoCreditoLabel.Size = New System.Drawing.Size(63, 13)
+        TipoCreditoLabel.TabIndex = 4
+        TipoCreditoLabel.Text = "tipo Credito:"
+        '
+        'TipoCreditoTextBox
+        '
+        Me.TipoCreditoTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.AUDIT_AuditoriasBindingSource, "tipoCredito", True))
+        Me.TipoCreditoTextBox.Location = New System.Drawing.Point(79, 71)
+        Me.TipoCreditoTextBox.Name = "TipoCreditoTextBox"
+        Me.TipoCreditoTextBox.Size = New System.Drawing.Size(100, 20)
+        Me.TipoCreditoTextBox.TabIndex = 5
+        '
+        'RecursosLabel
+        '
+        RecursosLabel.AutoSize = True
+        RecursosLabel.Location = New System.Drawing.Point(23, 100)
+        RecursosLabel.Name = "RecursosLabel"
+        RecursosLabel.Size = New System.Drawing.Size(50, 13)
+        RecursosLabel.TabIndex = 6
+        RecursosLabel.Text = "recursos:"
+        '
+        'RecursosTextBox
+        '
+        Me.RecursosTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.AUDIT_AuditoriasBindingSource, "recursos", True))
+        Me.RecursosTextBox.Location = New System.Drawing.Point(79, 97)
+        Me.RecursosTextBox.Name = "RecursosTextBox"
+        Me.RecursosTextBox.Size = New System.Drawing.Size(100, 20)
+        Me.RecursosTextBox.TabIndex = 7
+        '
+        'FechaDisposicionLabel
+        '
+        FechaDisposicionLabel.AutoSize = True
+        FechaDisposicionLabel.Location = New System.Drawing.Point(258, 26)
+        FechaDisposicionLabel.Name = "FechaDisposicionLabel"
+        FechaDisposicionLabel.Size = New System.Drawing.Size(94, 13)
+        FechaDisposicionLabel.TabIndex = 8
+        FechaDisposicionLabel.Text = "fecha Disposicion:"
+        '
+        'FechaDisposicionDateTimePicker
+        '
+        Me.FechaDisposicionDateTimePicker.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.AUDIT_AuditoriasBindingSource, "fechaDisposicion", True))
+        Me.FechaDisposicionDateTimePicker.Location = New System.Drawing.Point(358, 22)
+        Me.FechaDisposicionDateTimePicker.Name = "FechaDisposicionDateTimePicker"
+        Me.FechaDisposicionDateTimePicker.Size = New System.Drawing.Size(200, 20)
+        Me.FechaDisposicionDateTimePicker.TabIndex = 9
+        '
+        'EjecutivoLabel
+        '
+        EjecutivoLabel.AutoSize = True
+        EjecutivoLabel.Location = New System.Drawing.Point(299, 51)
+        EjecutivoLabel.Name = "EjecutivoLabel"
+        EjecutivoLabel.Size = New System.Drawing.Size(53, 13)
+        EjecutivoLabel.TabIndex = 10
+        EjecutivoLabel.Text = "ejecutivo:"
+        '
+        'EjecutivoTextBox
+        '
+        Me.EjecutivoTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.AUDIT_AuditoriasBindingSource, "ejecutivo", True))
+        Me.EjecutivoTextBox.Location = New System.Drawing.Point(358, 48)
+        Me.EjecutivoTextBox.Name = "EjecutivoTextBox"
+        Me.EjecutivoTextBox.Size = New System.Drawing.Size(100, 20)
+        Me.EjecutivoTextBox.TabIndex = 11
+        '
+        'DestinoLabel
+        '
+        DestinoLabel.AutoSize = True
+        DestinoLabel.Location = New System.Drawing.Point(308, 74)
+        DestinoLabel.Name = "DestinoLabel"
+        DestinoLabel.Size = New System.Drawing.Size(44, 13)
+        DestinoLabel.TabIndex = 12
+        DestinoLabel.Text = "destino:"
+        '
+        'DestinoTextBox
+        '
+        Me.DestinoTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.AUDIT_AuditoriasBindingSource, "destino", True))
+        Me.DestinoTextBox.Location = New System.Drawing.Point(358, 71)
+        Me.DestinoTextBox.Name = "DestinoTextBox"
+        Me.DestinoTextBox.Size = New System.Drawing.Size(100, 20)
+        Me.DestinoTextBox.TabIndex = 13
+        '
+        'MontoFinanciadoLabel
+        '
+        MontoFinanciadoLabel.AutoSize = True
+        MontoFinanciadoLabel.Location = New System.Drawing.Point(258, 100)
+        MontoFinanciadoLabel.Name = "MontoFinanciadoLabel"
+        MontoFinanciadoLabel.Size = New System.Drawing.Size(94, 13)
+        MontoFinanciadoLabel.TabIndex = 14
+        MontoFinanciadoLabel.Text = "monto Financiado:"
+        '
+        'MontoFinanciadoTextBox
+        '
+        Me.MontoFinanciadoTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.AUDIT_AuditoriasBindingSource, "montoFinanciado", True))
+        Me.MontoFinanciadoTextBox.Location = New System.Drawing.Point(358, 97)
+        Me.MontoFinanciadoTextBox.Name = "MontoFinanciadoTextBox"
+        Me.MontoFinanciadoTextBox.Size = New System.Drawing.Size(100, 20)
+        Me.MontoFinanciadoTextBox.TabIndex = 15
+        '
+        'MontoSolicitadoLabel
+        '
+        MontoSolicitadoLabel.AutoSize = True
+        MontoSolicitadoLabel.Location = New System.Drawing.Point(614, 22)
+        MontoSolicitadoLabel.Name = "MontoSolicitadoLabel"
+        MontoSolicitadoLabel.Size = New System.Drawing.Size(88, 13)
+        MontoSolicitadoLabel.TabIndex = 16
+        MontoSolicitadoLabel.Text = "monto Solicitado:"
+        '
+        'MontoSolicitadoTextBox
+        '
+        Me.MontoSolicitadoTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.AUDIT_AuditoriasBindingSource, "montoSolicitado", True))
+        Me.MontoSolicitadoTextBox.Location = New System.Drawing.Point(708, 19)
+        Me.MontoSolicitadoTextBox.Name = "MontoSolicitadoTextBox"
+        Me.MontoSolicitadoTextBox.Size = New System.Drawing.Size(100, 20)
+        Me.MontoSolicitadoTextBox.TabIndex = 17
+        '
+        'FechaSolicitudLabel
+        '
+        FechaSolicitudLabel.AutoSize = True
+        FechaSolicitudLabel.Location = New System.Drawing.Point(622, 49)
+        FechaSolicitudLabel.Name = "FechaSolicitudLabel"
+        FechaSolicitudLabel.Size = New System.Drawing.Size(80, 13)
+        FechaSolicitudLabel.TabIndex = 18
+        FechaSolicitudLabel.Text = "fecha Solicitud:"
+        '
+        'FechaSolicitudDateTimePicker
+        '
+        Me.FechaSolicitudDateTimePicker.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.AUDIT_AuditoriasBindingSource, "fechaSolicitud", True))
+        Me.FechaSolicitudDateTimePicker.Location = New System.Drawing.Point(708, 45)
+        Me.FechaSolicitudDateTimePicker.Name = "FechaSolicitudDateTimePicker"
+        Me.FechaSolicitudDateTimePicker.Size = New System.Drawing.Size(200, 20)
+        Me.FechaSolicitudDateTimePicker.TabIndex = 19
+        '
+        'FechaAutorizacionLabel
+        '
+        FechaAutorizacionLabel.AutoSize = True
+        FechaAutorizacionLabel.Location = New System.Drawing.Point(604, 72)
+        FechaAutorizacionLabel.Name = "FechaAutorizacionLabel"
+        FechaAutorizacionLabel.Size = New System.Drawing.Size(98, 13)
+        FechaAutorizacionLabel.TabIndex = 20
+        FechaAutorizacionLabel.Text = "fecha Autorizacion:"
+        '
+        'FechaAutorizacionDateTimePicker
+        '
+        Me.FechaAutorizacionDateTimePicker.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.AUDIT_AuditoriasBindingSource, "fechaAutorizacion", True))
+        Me.FechaAutorizacionDateTimePicker.Location = New System.Drawing.Point(708, 68)
+        Me.FechaAutorizacionDateTimePicker.Name = "FechaAutorizacionDateTimePicker"
+        Me.FechaAutorizacionDateTimePicker.Size = New System.Drawing.Size(200, 20)
+        Me.FechaAutorizacionDateTimePicker.TabIndex = 21
+        '
+        'AnalistaLabel
+        '
+        AnalistaLabel.AutoSize = True
+        AnalistaLabel.Location = New System.Drawing.Point(656, 96)
+        AnalistaLabel.Name = "AnalistaLabel"
+        AnalistaLabel.Size = New System.Drawing.Size(46, 13)
+        AnalistaLabel.TabIndex = 22
+        AnalistaLabel.Text = "analista:"
+        '
+        'AnalistaTextBox
+        '
+        Me.AnalistaTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.AUDIT_AuditoriasBindingSource, "analista", True))
+        Me.AnalistaTextBox.Location = New System.Drawing.Point(708, 93)
+        Me.AnalistaTextBox.Name = "AnalistaTextBox"
+        Me.AnalistaTextBox.Size = New System.Drawing.Size(100, 20)
+        Me.AnalistaTextBox.TabIndex = 23
+        '
+        'OrganoDeAutorizacionLabel
+        '
+        OrganoDeAutorizacionLabel.AutoSize = True
+        OrganoDeAutorizacionLabel.Location = New System.Drawing.Point(860, 96)
+        OrganoDeAutorizacionLabel.Name = "OrganoDeAutorizacionLabel"
+        OrganoDeAutorizacionLabel.Size = New System.Drawing.Size(121, 13)
+        OrganoDeAutorizacionLabel.TabIndex = 24
+        OrganoDeAutorizacionLabel.Text = "organo De Autorizacion:"
+        '
+        'OrganoDeAutorizacionTextBox
+        '
+        Me.OrganoDeAutorizacionTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.AUDIT_AuditoriasBindingSource, "organoDeAutorizacion", True))
+        Me.OrganoDeAutorizacionTextBox.Location = New System.Drawing.Point(987, 93)
+        Me.OrganoDeAutorizacionTextBox.Name = "OrganoDeAutorizacionTextBox"
+        Me.OrganoDeAutorizacionTextBox.Size = New System.Drawing.Size(100, 20)
+        Me.OrganoDeAutorizacionTextBox.TabIndex = 25
         '
         'frmAuditoriaMod
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1214, 548)
+        Me.ClientSize = New System.Drawing.Size(1214, 600)
+        Me.Controls.Add(Me.gbxdatosDelCredito)
         Me.Controls.Add(FolAuditoriaLabel)
         Me.Controls.Add(Me.FolAuditoriaTextBox)
         Me.Controls.Add(FechaRelizacionLabel)
@@ -429,6 +729,8 @@ Partial Class frmAuditoriaMod
         CType(Me.AUDITCondicionesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.AUDITParametrosVBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.AUDITParametrosHBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.gbxdatosDelCredito.ResumeLayout(False)
+        Me.gbxdatosDelCredito.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -470,4 +772,18 @@ Partial Class frmAuditoriaMod
     Friend WithEvents Comentarios As DataGridViewTextBoxColumn
     Friend WithEvents Id_auditoriaCondicion As DataGridViewTextBoxColumn
     Friend WithEvents id_Cond As DataGridViewTextBoxColumn
+    Friend WithEvents gbxdatosDelCredito As GroupBox
+    Friend WithEvents OrganoDeAutorizacionTextBox As TextBox
+    Friend WithEvents AnalistaTextBox As TextBox
+    Friend WithEvents FechaAutorizacionDateTimePicker As DateTimePicker
+    Friend WithEvents FechaSolicitudDateTimePicker As DateTimePicker
+    Friend WithEvents MontoSolicitadoTextBox As TextBox
+    Friend WithEvents MontoFinanciadoTextBox As TextBox
+    Friend WithEvents DestinoTextBox As TextBox
+    Friend WithEvents EjecutivoTextBox As TextBox
+    Friend WithEvents FechaDisposicionDateTimePicker As DateTimePicker
+    Friend WithEvents RecursosTextBox As TextBox
+    Friend WithEvents TipoCreditoTextBox As TextBox
+    Friend WithEvents SucursalTextBox As TextBox
+    Friend WithEvents ClienteTextBox As TextBox
 End Class
