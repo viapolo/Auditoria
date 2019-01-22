@@ -2,7 +2,7 @@
 
     Private Sub frmBuscaContratos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: esta línea de código carga datos en la tabla 'ProductionDataSet.Vw_Anexos' Puede moverla o quitarla según sea necesario.
-        Me.Vw_AnexosTableAdapter.Fill(Me.ProductionDataSet.Vw_Anexos)
+        'Me.Vw_AnexosTableAdapter.Fill(Me.ProductionDataSet.Vw_Anexos)
         'TODO: esta línea de código carga datos en la tabla 'ProductionDataSet.Clientes' Puede moverla o quitarla según sea necesario.
         Me.ClientesTableAdapter.Fill(Me.ProductionDataSet.Clientes)
     End Sub

@@ -203,7 +203,7 @@ Partial Class frmAuditorias
         Me.btnAgregar.Location = New System.Drawing.Point(913, 212)
         Me.btnAgregar.Name = "btnAgregar"
         Me.btnAgregar.Size = New System.Drawing.Size(125, 23)
-        Me.btnAgregar.TabIndex = 8
+        Me.btnAgregar.TabIndex = 27
         Me.btnAgregar.Text = "Agregar Auditoría"
         Me.btnAgregar.UseVisualStyleBackColor = True
         '
@@ -219,7 +219,7 @@ Partial Class frmAuditorias
         Me.AUDIT_AuditoriasDataGridView.Name = "AUDIT_AuditoriasDataGridView"
         Me.AUDIT_AuditoriasDataGridView.ReadOnly = True
         Me.AUDIT_AuditoriasDataGridView.Size = New System.Drawing.Size(1081, 189)
-        Me.AUDIT_AuditoriasDataGridView.TabIndex = 7
+        Me.AUDIT_AuditoriasDataGridView.TabIndex = 22
         '
         'DataGridViewTextBoxColumn10
         '
@@ -326,7 +326,7 @@ Partial Class frmAuditorias
         Me.FechaCreacionDateTimePicker.Location = New System.Drawing.Point(102, 520)
         Me.FechaCreacionDateTimePicker.Name = "FechaCreacionDateTimePicker"
         Me.FechaCreacionDateTimePicker.Size = New System.Drawing.Size(200, 20)
-        Me.FechaCreacionDateTimePicker.TabIndex = 5
+        Me.FechaCreacionDateTimePicker.TabIndex = 23
         '
         'UltimaActualizacionDateTimePicker
         '
@@ -334,7 +334,7 @@ Partial Class frmAuditorias
         Me.UltimaActualizacionDateTimePicker.Location = New System.Drawing.Point(423, 520)
         Me.UltimaActualizacionDateTimePicker.Name = "UltimaActualizacionDateTimePicker"
         Me.UltimaActualizacionDateTimePicker.Size = New System.Drawing.Size(200, 20)
-        Me.UltimaActualizacionDateTimePicker.TabIndex = 6
+        Me.UltimaActualizacionDateTimePicker.TabIndex = 24
         '
         'FechaRelizacionDateTimePicker
         '
@@ -342,7 +342,7 @@ Partial Class frmAuditorias
         Me.FechaRelizacionDateTimePicker.Location = New System.Drawing.Point(874, 270)
         Me.FechaRelizacionDateTimePicker.Name = "FechaRelizacionDateTimePicker"
         Me.FechaRelizacionDateTimePicker.Size = New System.Drawing.Size(200, 20)
-        Me.FechaRelizacionDateTimePicker.TabIndex = 0
+        Me.FechaRelizacionDateTimePicker.TabIndex = 21
         '
         'ObervacionesTextBox
         '
@@ -353,7 +353,7 @@ Partial Class frmAuditorias
         Me.ObervacionesTextBox.Name = "ObervacionesTextBox"
         Me.ObervacionesTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both
         Me.ObervacionesTextBox.Size = New System.Drawing.Size(658, 43)
-        Me.ObervacionesTextBox.TabIndex = 2
+        Me.ObervacionesTextBox.TabIndex = 20
         '
         'UsuarioTextBox
         '
@@ -370,7 +370,7 @@ Partial Class frmAuditorias
         Me.btnGuardar.Location = New System.Drawing.Point(913, 241)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(125, 23)
-        Me.btnGuardar.TabIndex = 9
+        Me.btnGuardar.TabIndex = 26
         Me.btnGuardar.Text = "Guardar"
         Me.btnGuardar.UseVisualStyleBackColor = True
         '
@@ -412,7 +412,7 @@ Partial Class frmAuditorias
         Me.cmbEstatus.Location = New System.Drawing.Point(680, 519)
         Me.cmbEstatus.Name = "cmbEstatus"
         Me.cmbEstatus.Size = New System.Drawing.Size(121, 21)
-        Me.cmbEstatus.TabIndex = 8
+        Me.cmbEstatus.TabIndex = 25
         Me.cmbEstatus.ValueMember = "Descripcion"
         '
         'AUDITParametrosBindingSource1
@@ -429,7 +429,7 @@ Partial Class frmAuditorias
         Me.btnSalir.Location = New System.Drawing.Point(1018, 520)
         Me.btnSalir.Name = "btnSalir"
         Me.btnSalir.Size = New System.Drawing.Size(75, 23)
-        Me.btnSalir.TabIndex = 10
+        Me.btnSalir.TabIndex = 29
         Me.btnSalir.Text = "Salir"
         Me.btnSalir.UseVisualStyleBackColor = True
         '
@@ -439,7 +439,7 @@ Partial Class frmAuditorias
         Me.txtAuditoria.Location = New System.Drawing.Point(583, 180)
         Me.txtAuditoria.Name = "txtAuditoria"
         Me.txtAuditoria.Size = New System.Drawing.Size(270, 20)
-        Me.txtAuditoria.TabIndex = 1
+        Me.txtAuditoria.TabIndex = 19
         '
         'Label5
         '
@@ -483,7 +483,7 @@ Partial Class frmAuditorias
         Me.GroupBox1.Location = New System.Drawing.Point(18, 46)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(864, 218)
-        Me.GroupBox1.TabIndex = 23
+        Me.GroupBox1.TabIndex = 5
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Datos del crédito:"
         '
@@ -551,7 +551,7 @@ Partial Class frmAuditorias
         Me.cmbOrganoDeAutorizacion.Location = New System.Drawing.Point(583, 153)
         Me.cmbOrganoDeAutorizacion.Name = "cmbOrganoDeAutorizacion"
         Me.cmbOrganoDeAutorizacion.Size = New System.Drawing.Size(270, 21)
-        Me.cmbOrganoDeAutorizacion.TabIndex = 29
+        Me.cmbOrganoDeAutorizacion.TabIndex = 18
         Me.cmbOrganoDeAutorizacion.ValueMember = "ir_OrgAutorizacion"
         '
         'AUDITOrgAutorizacionBindingSource
@@ -574,7 +574,7 @@ Partial Class frmAuditorias
         Me.cmbAnalista.Location = New System.Drawing.Point(583, 125)
         Me.cmbAnalista.Name = "cmbAnalista"
         Me.cmbAnalista.Size = New System.Drawing.Size(270, 21)
-        Me.cmbAnalista.TabIndex = 28
+        Me.cmbAnalista.TabIndex = 17
         Me.cmbAnalista.ValueMember = "id_Analista"
         '
         'AUDITAnalistasBindingSource
@@ -588,7 +588,7 @@ Partial Class frmAuditorias
         Me.dtpFechaAutorizacion.Location = New System.Drawing.Point(583, 99)
         Me.dtpFechaAutorizacion.Name = "dtpFechaAutorizacion"
         Me.dtpFechaAutorizacion.Size = New System.Drawing.Size(200, 20)
-        Me.dtpFechaAutorizacion.TabIndex = 27
+        Me.dtpFechaAutorizacion.TabIndex = 16
         '
         'dtpFechaSolicitud
         '
@@ -596,7 +596,7 @@ Partial Class frmAuditorias
         Me.dtpFechaSolicitud.Location = New System.Drawing.Point(583, 72)
         Me.dtpFechaSolicitud.Name = "dtpFechaSolicitud"
         Me.dtpFechaSolicitud.Size = New System.Drawing.Size(200, 20)
-        Me.dtpFechaSolicitud.TabIndex = 26
+        Me.dtpFechaSolicitud.TabIndex = 15
         '
         'txtMontoSolicitado
         '
@@ -604,7 +604,7 @@ Partial Class frmAuditorias
         Me.txtMontoSolicitado.Location = New System.Drawing.Point(583, 46)
         Me.txtMontoSolicitado.Name = "txtMontoSolicitado"
         Me.txtMontoSolicitado.Size = New System.Drawing.Size(270, 20)
-        Me.txtMontoSolicitado.TabIndex = 24
+        Me.txtMontoSolicitado.TabIndex = 14
         Me.txtMontoSolicitado.Text = "0.00"
         '
         'txtMontoFinanciado
@@ -613,7 +613,7 @@ Partial Class frmAuditorias
         Me.txtMontoFinanciado.Location = New System.Drawing.Point(583, 19)
         Me.txtMontoFinanciado.Name = "txtMontoFinanciado"
         Me.txtMontoFinanciado.Size = New System.Drawing.Size(270, 20)
-        Me.txtMontoFinanciado.TabIndex = 23
+        Me.txtMontoFinanciado.TabIndex = 13
         Me.txtMontoFinanciado.Text = "0.00"
         '
         'Label8
@@ -685,7 +685,7 @@ Partial Class frmAuditorias
         Me.txtDestino.Location = New System.Drawing.Point(133, 180)
         Me.txtDestino.Name = "txtDestino"
         Me.txtDestino.Size = New System.Drawing.Size(270, 20)
-        Me.txtDestino.TabIndex = 6
+        Me.txtDestino.TabIndex = 12
         '
         'txtEjecutivo
         '
@@ -694,7 +694,7 @@ Partial Class frmAuditorias
         Me.txtEjecutivo.Name = "txtEjecutivo"
         Me.txtEjecutivo.ReadOnly = True
         Me.txtEjecutivo.Size = New System.Drawing.Size(270, 20)
-        Me.txtEjecutivo.TabIndex = 5
+        Me.txtEjecutivo.TabIndex = 11
         '
         'dtpFechaDispo
         '
@@ -703,7 +703,7 @@ Partial Class frmAuditorias
         Me.dtpFechaDispo.Location = New System.Drawing.Point(133, 126)
         Me.dtpFechaDispo.Name = "dtpFechaDispo"
         Me.dtpFechaDispo.Size = New System.Drawing.Size(200, 20)
-        Me.dtpFechaDispo.TabIndex = 4
+        Me.dtpFechaDispo.TabIndex = 10
         '
         'txtRecursos
         '
@@ -712,7 +712,7 @@ Partial Class frmAuditorias
         Me.txtRecursos.Name = "txtRecursos"
         Me.txtRecursos.ReadOnly = True
         Me.txtRecursos.Size = New System.Drawing.Size(270, 20)
-        Me.txtRecursos.TabIndex = 3
+        Me.txtRecursos.TabIndex = 9
         '
         'txtTipoCredito
         '
@@ -721,7 +721,7 @@ Partial Class frmAuditorias
         Me.txtTipoCredito.Name = "txtTipoCredito"
         Me.txtTipoCredito.ReadOnly = True
         Me.txtTipoCredito.Size = New System.Drawing.Size(270, 20)
-        Me.txtTipoCredito.TabIndex = 2
+        Me.txtTipoCredito.TabIndex = 8
         '
         'txtSucursal
         '
@@ -730,7 +730,7 @@ Partial Class frmAuditorias
         Me.txtSucursal.Name = "txtSucursal"
         Me.txtSucursal.ReadOnly = True
         Me.txtSucursal.Size = New System.Drawing.Size(270, 20)
-        Me.txtSucursal.TabIndex = 1
+        Me.txtSucursal.TabIndex = 7
         '
         'txtCliente
         '
@@ -739,14 +739,14 @@ Partial Class frmAuditorias
         Me.txtCliente.Name = "txtCliente"
         Me.txtCliente.ReadOnly = True
         Me.txtCliente.Size = New System.Drawing.Size(270, 20)
-        Me.txtCliente.TabIndex = 0
+        Me.txtCliente.TabIndex = 6
         '
         'btnCopiarAuditoria
         '
         Me.btnCopiarAuditoria.Location = New System.Drawing.Point(913, 183)
         Me.btnCopiarAuditoria.Name = "btnCopiarAuditoria"
         Me.btnCopiarAuditoria.Size = New System.Drawing.Size(125, 23)
-        Me.btnCopiarAuditoria.TabIndex = 24
+        Me.btnCopiarAuditoria.TabIndex = 28
         Me.btnCopiarAuditoria.Text = "Copiar Auditoria"
         Me.btnCopiarAuditoria.UseVisualStyleBackColor = True
         '
@@ -789,7 +789,7 @@ Partial Class frmAuditorias
         Me.Controls.Add(Me.btnAgregar)
         Me.Name = "frmAuditorias"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "win"
+        Me.Text = "Auditorías"
         CType(Me.AUDIT_AuditoriasDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.AUDIT_AuditoriasBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ProductionDataSet, System.ComponentModel.ISupportInitialize).EndInit()

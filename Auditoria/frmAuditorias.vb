@@ -92,9 +92,34 @@ Public Class frmAuditorias
 
         Try
             taAuditoriasCond.Obt_AllDetalleAuditCond_FillBy(ProductionDataSet.AUDIT_AuditoriasCondiciones, taAuditorias.UltimoReg_ScalarQuery(var_anexo.Trim, var_ciclo.Trim))
-            Me.AUDIT_AuditoriasTableAdapter.Insert(AnexoTextBox.Text.Trim, CicloTextBox.Text.Trim, FechaCreacionDateTimePicker.Value, UltimaActualizacionDateTimePicker.Value, AUDIT_AuditoriasBindingSource.Current("FechaRelizacion"), AUDIT_AuditoriasBindingSource.Current("Obervaciones"), cmbEstatus.Text, UsuarioTextBox.Text, ConsecutivoTextBox.Text, AUDIT_AuditoriasBindingSource.Current("folAuditoria"), AUDIT_AuditoriasBindingSource.Current("nRevInfFinanciera"), AUDIT_AuditoriasBindingSource.Current("nRevRepSup"), AUDIT_AuditoriasBindingSource.Current("nRevPagare"), AUDIT_AuditoriasBindingSource.Current("ncedVerific"), txtCliente.Text.Trim, txtSucursal.Text.Trim, txtTipoCredito.Text.Trim,                                                    txtRecursos.Text.Trim, dtpFechaDispo.Value, txtEjecutivo.Text.Trim, txtDestino.Text.Trim, CDec(txtMontoFinanciado.Text),                                                    CDec(txtMontoSolicitado.Text), dtpFechaSolicitud.Value, dtpFechaAutorizacion.Value, cmbAnalista.Text, cmbOrganoDeAutorizacion.Text)
+            Me.AUDIT_AuditoriasTableAdapter.Insert(AnexoTextBox.Text.Trim, CicloTextBox.Text.Trim, FechaCreacionDateTimePicker.Value, UltimaActualizacionDateTimePicker.Value, AUDIT_AuditoriasBindingSource.Current("FechaRelizacion"), AUDIT_AuditoriasBindingSource.Current("Obervaciones"), cmbEstatus.Text, UsuarioTextBox.Text, ConsecutivoTextBox.Text, AUDIT_AuditoriasBindingSource.Current("folAuditoria"), AUDIT_AuditoriasBindingSource.Current("nRevInfFinanciera"), AUDIT_AuditoriasBindingSource.Current("nRevRepSup"), AUDIT_AuditoriasBindingSource.Current("nRevPagare"), AUDIT_AuditoriasBindingSource.Current("ncedVerific"), txtCliente.Text.Trim, txtSucursal.Text.Trim, txtTipoCredito.Text.Trim, txtRecursos.Text.Trim, dtpFechaDispo.Value, txtEjecutivo.Text.Trim, txtDestino.Text.Trim, CDec(txtMontoFinanciado.Text), CDec(txtMontoSolicitado.Text), dtpFechaSolicitud.Value, dtpFechaAutorizacion.Value, cmbAnalista.Text, cmbOrganoDeAutorizacion.Text)
             For Each DetalleMod In ProductionDataSet.AUDIT_AuditoriasCondiciones.Rows
-                taAuditoriasCond.Insert(taAuditorias.UltimoReg_ScalarQuery(var_anexo.Trim, var_ciclo), DetalleMod.Id_Condicion, DetalleMod.Validacion, DetalleMod.Observaciones, DetalleMod.CategoriaHallazgo, System.Data.SqlTypes.SqlDateTime.Null, DetalleMod.Comentarios, DetalleMod.ConsecRevisiones, Date.Now, DetalleMod.deptoResponsable, DetalleMod.estatus, Nothing, Nothing, Nothing)
+                Dim arch1, arch2, arch3 As Byte()
+                Dim ex1, ex2, ex3 As String
+
+                If taAuditoriasCond.EsArchivo1_ScalarQuery(DetalleMod.Id_auditoriaCondicion) > 1 Then
+                    arch1 = DetalleMod.archivo1
+                    ex1 = DetalleMod.ext1
+                Else
+                    arch1 = {0}
+                    ex1 = Nothing
+                End If
+                If taAuditoriasCond.EsArchivo2_ScalarQuery(DetalleMod.Id_auditoriaCondicion) > 1 Then
+                    arch2 = DetalleMod.archivo2
+                    ex2 = DetalleMod.ext2
+                Else
+                    arch2 = {0}
+                    ex2 = Nothing
+                End If
+                If taAuditoriasCond.EsArchivo3_ScalarQuery(DetalleMod.Id_auditoriaCondicion) > 1 Then
+                    arch3 = DetalleMod.archivo3
+                    ex3 = DetalleMod.ext3
+                Else
+                    arch3 = {0}
+                    ex3 = Nothing
+                End If
+
+                taAuditoriasCond.Insert(taAuditorias.UltimoReg_ScalarQuery(var_anexo.Trim, var_ciclo), DetalleMod.Id_Condicion, DetalleMod.Validacion, DetalleMod.Observaciones, DetalleMod.CategoriaHallazgo, System.Data.SqlTypes.SqlDateTime.Null, DetalleMod.Comentarios, DetalleMod.ConsecRevisiones, Date.Now, DetalleMod.deptoResponsable, DetalleMod.estatus, arch1, arch2, arch3, ex1, ex2, ex3)
             Next
             taAuditorias.ObtAudit_FillBy(ProductionDataSet.AUDIT_Auditorias, var_anexo.Trim, var_ciclo.Trim)
             MsgBox("Se agregó una nueva auditoría...", MsgBoxStyle.Information)
@@ -127,7 +152,7 @@ Public Class frmAuditorias
             Me.AUDIT_AuditoriasTableAdapter.Insert(AnexoTextBox.Text.Trim, CicloTextBox.Text.Trim, FechaCreacionDateTimePicker.Value, UltimaActualizacionDateTimePicker.Value, FechaRelizacionDateTimePicker.Value, ObervacionesTextBox.Text.Trim, cmbEstatus.Text, UsuarioTextBox.Text, ConsecutivoTextBox.Text, txtAuditoria.Text, 1, 1, 1, 1, txtCliente.Text.Trim, txtSucursal.Text.Trim, txtTipoCredito.Text.Trim, txtRecursos.Text.Trim, dtpFechaDispo.Value, txtEjecutivo.Text.Trim, txtDestino.Text.Trim, txtMontoFinanciado.Text, txtMontoSolicitado.Text, dtpFechaSolicitud.Value, dtpFechaAutorizacion.Value, cmbAnalista.Text, cmbOrganoDeAutorizacion.Text)
 
             For Each DetalleMod In ProductionDataSet.AUDIT_Condiciones.Rows
-                taAuditoriasCond.Insert(taAuditorias.UltimoReg_ScalarQuery(var_anexo.Trim, var_ciclo), DetalleMod.id_Condicion, 1, "", 11, System.Data.SqlTypes.SqlDateTime.Null, "", 1, Date.Now, 32, False, Nothing, Nothing, Nothing)
+                taAuditoriasCond.Insert(taAuditorias.UltimoReg_ScalarQuery(var_anexo.Trim, var_ciclo), DetalleMod.id_Condicion, 1, "", 11, System.Data.SqlTypes.SqlDateTime.Null, "", 1, Date.Now, 32, False, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing)
             Next
 
             MsgBox("Actualización existosa...", MsgBoxStyle.Information)
@@ -195,7 +220,7 @@ Public Class frmAuditorias
                     taAuditorias.ObtieneUltimaAuditoriaParCopia_FillBy(ProductionDataSet.AUDIT_Auditorias, var_anexo.Trim)
                     For Each EncabezadoMod In ProductionDataSet.AUDIT_Auditorias.Rows
                         If Not IsNothing(EncabezadoMod.cliente) Then
-                            taAuditorias.Insert(var_anexo_copiar.Trim, EncabezadoMod.Ciclo, EncabezadoMod.FechaCreacion, EncabezadoMod.UltimaActualizacion, EncabezadoMod.FechaRelizacion, EncabezadoMod.Obervaciones, "ABIERTO", UsuarioTextBox.Text, 1, EncabezadoMod.folAuditoria, 1, 1, 1, 1, EncabezadoMod.cliente, EncabezadoMod.sucursal, EncabezadoMod.tipoCredito, EncabezadoMod.recursos, EncabezadoMod.fechaDisposicion, EncabezadoMod.ejecutivo, EncabezadoMod.destino, EncabezadoMod.montoFinanciado, EncabezadoMod.montoSolicitado, EncabezadoMod.fechaSolicitud, EncabezadoMod.fechaAutorizacion, EncabezadoMod.analista, EncabezadoMod.organoDeAutorizacion)
+                            taAuditorias.Insert(var_anexo_copiar.Trim, EncabezadoMod.Ciclo, EncabezadoMod.FechaCreacion, Date.Now, EncabezadoMod.FechaRelizacion, EncabezadoMod.Obervaciones, "ABIERTO", UsuarioTextBox.Text, 1, EncabezadoMod.folAuditoria, 1, 1, 1, 1, EncabezadoMod.cliente, EncabezadoMod.sucursal, EncabezadoMod.tipoCredito, EncabezadoMod.recursos, EncabezadoMod.fechaDisposicion, EncabezadoMod.ejecutivo, EncabezadoMod.destino, EncabezadoMod.montoFinanciado, EncabezadoMod.montoSolicitado, EncabezadoMod.fechaSolicitud, EncabezadoMod.fechaAutorizacion, EncabezadoMod.analista, EncabezadoMod.organoDeAutorizacion)
                         Else
                             taAuditorias.Insert(var_anexo_copiar.Trim, EncabezadoMod.Ciclo, EncabezadoMod.FechaCreacion, Date.Now, EncabezadoMod.FechaRelizacion, EncabezadoMod.Obervaciones, "ABIERTO", UsuarioTextBox.Text, 1, EncabezadoMod.folAuditoria, 1, 1, 1, 1, txtCliente.Text.Trim, txtSucursal.Text.Trim, txtTipoCredito.Text.Trim, txtRecursos.Text.Trim, dtpFechaDispo.Value, txtEjecutivo.Text.Trim, txtDestino.Text.Trim, txtMontoFinanciado.Text.Trim, txtMontoSolicitado.Text.Trim, dtpFechaSolicitud.Value, dtpFechaAutorizacion.Value, cmbAnalista.Text.Trim, cmbOrganoDeAutorizacion.Text.Trim)
                         End If
@@ -203,7 +228,32 @@ Public Class frmAuditorias
 
                     taAuditoriasCond.Obt_AllDetalleAuditCond_FillBy(ProductionDataSet.AUDIT_AuditoriasCondiciones, taAuditorias.UltimoReg_ScalarQuery(var_anexo.Trim, var_ciclo.Trim))
                     For Each DetalleMod In ProductionDataSet.AUDIT_AuditoriasCondiciones.Rows
-                        taAuditoriasCond.Insert(taAuditorias.UltimoReg_ScalarQuery(var_anexo_copiar.Trim, var_ciclo), DetalleMod.Id_Condicion, DetalleMod.Validacion, DetalleMod.Observaciones, DetalleMod.CategoriaHallazgo, System.Data.SqlTypes.SqlDateTime.Null, DetalleMod.Comentarios, DetalleMod.ConsecRevisiones, Date.Now, DetalleMod.deptoResponsable, DetalleMod.estatus, Nothing, Nothing, Nothing)
+                        Dim arch1, arch2, arch3 As Byte()
+                        Dim ex1, ex2, ex3 As String
+
+                        If taAuditoriasCond.EsArchivo1_ScalarQuery(DetalleMod.Id_auditoriaCondicion) > 1 Then
+                            arch1 = DetalleMod.archivo1
+                            ex1 = DetalleMod.ext1
+                        Else
+                            arch1 = {0}
+                            ex1 = Nothing
+                        End If
+                        If taAuditoriasCond.EsArchivo2_ScalarQuery(DetalleMod.Id_auditoriaCondicion) > 1 Then
+                            arch2 = DetalleMod.archivo2
+                            ex2 = DetalleMod.ext2
+                        Else
+                            arch2 = {0}
+                            ex2 = Nothing
+                        End If
+                        If taAuditoriasCond.EsArchivo3_ScalarQuery(DetalleMod.Id_auditoriaCondicion) > 1 Then
+                            arch3 = DetalleMod.archivo3
+                            ex3 = DetalleMod.ext3
+                        Else
+                            arch3 = {0}
+                            ex3 = Nothing
+                        End If
+
+                        taAuditoriasCond.Insert(taAuditorias.UltimoReg_ScalarQuery(var_anexo_copiar.Trim, var_ciclo), DetalleMod.Id_Condicion, DetalleMod.Validacion, DetalleMod.Observaciones, DetalleMod.CategoriaHallazgo, System.Data.SqlTypes.SqlDateTime.Null, DetalleMod.Comentarios, DetalleMod.ConsecRevisiones, Date.Now, DetalleMod.deptoResponsable, DetalleMod.estatus, arch1, arch2, arch3, ex1, ex2, ex3)
                     Next
                     MsgBox("Copia existosa...", MsgBoxStyle.Information)
                 Catch ex As Exception

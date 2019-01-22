@@ -16,7 +16,7 @@
         'TODO: esta línea de código carga datos en la tabla 'ProductionDataSet.AUDIT_Condiciones' Puede moverla o quitarla según sea necesario.
         Me.AUDIT_CondicionesTableAdapter.Fill(Me.ProductionDataSet.AUDIT_Condiciones)
         'TODO: esta línea de código carga datos en la tabla 'ProductionDataSet.AUDIT_AuditoriasCondiciones' Puede moverla o quitarla según sea necesario.
-        Me.AUDIT_AuditoriasCondicionesTableAdapter.Fill(Me.ProductionDataSet.AUDIT_AuditoriasCondiciones)
+        'Me.AUDIT_AuditoriasCondicionesTableAdapter.Fill(Me.ProductionDataSet.AUDIT_AuditoriasCondiciones)
         'TODO: esta línea de código carga datos en la tabla 'ProductionDataSet.AUDIT_Parametros' Puede moverla o quitarla según sea necesario.
         Me.AUDIT_ParametrosTableAdapter.Fill(Me.ProductionDataSet.AUDIT_Parametros)
         'TODO: esta línea de código carga datos en la tabla 'ProductionDataSet.AUDIT_Auditorias' Puede moverla o quitarla según sea necesario.
@@ -70,8 +70,26 @@
                 btnAgregar.Enabled = True
             End If
             btnActualizar.Enabled = True
-            ElseIf parametro = "D" Then
-                AnexoTextBox.Enabled = False
+
+            FechaRelizacionDateTimePicker.Enabled = False
+            ObervacionesTextBox.ReadOnly = True
+            btnAgregar.Enabled = True
+
+            ClienteTextBox.Enabled = True
+            SucursalTextBox.Enabled = True
+            TipoCreditoTextBox.Enabled = True
+            RecursosTextBox.Enabled = True
+            FechaDisposicionDateTimePicker.Enabled = True
+            EjecutivoTextBox.Enabled = True
+            DestinoTextBox.Enabled = True
+            AnalistaTextBox.Enabled = True
+            MontoSolicitadoTextBox.Enabled = True
+            MontoFinanciadoTextBox.Enabled = True
+            FechaSolicitudDateTimePicker.Enabled = True
+            FechaAutorizacionDateTimePicker.Enabled = True
+            OrganoDeAutorizacionTextBox.Enabled = True
+        ElseIf parametro = "D" Then
+            AnexoTextBox.Enabled = False
             CicloTextBox.Enabled = False
             ObervacionesTextBox.Enabled = False
             cmbEstatus.Enabled = False
@@ -79,6 +97,20 @@
             btnActualizar.Enabled = False
             FechaRelizacionDateTimePicker.Enabled = False
             FolAuditoriaTextBox.Enabled = False
+
+            ClienteTextBox.Enabled = False
+            SucursalTextBox.Enabled = False
+            TipoCreditoTextBox.Enabled = False
+            RecursosTextBox.Enabled = False
+            FechaDisposicionDateTimePicker.Enabled = False
+            EjecutivoTextBox.Enabled = False
+            DestinoTextBox.Enabled = False
+            AnalistaTextBox.Enabled = False
+            MontoSolicitadoTextBox.Enabled = False
+            MontoFinanciadoTextBox.Enabled = False
+            FechaSolicitudDateTimePicker.Enabled = False
+            FechaAutorizacionDateTimePicker.Enabled = False
+            OrganoDeAutorizacionTextBox.Enabled = False
         End If
     End Sub
 

@@ -171,7 +171,7 @@ Partial Class frmAuditoriaCondiciones
         Me.Id_auditoriaTextBox.Name = "Id_auditoriaTextBox"
         Me.Id_auditoriaTextBox.ReadOnly = True
         Me.Id_auditoriaTextBox.Size = New System.Drawing.Size(100, 13)
-        Me.Id_auditoriaTextBox.TabIndex = 1
+        Me.Id_auditoriaTextBox.TabIndex = 0
         '
         'ObservacionesTextBox
         '
@@ -181,7 +181,7 @@ Partial Class frmAuditoriaCondiciones
         Me.ObservacionesTextBox.Multiline = True
         Me.ObservacionesTextBox.Name = "ObservacionesTextBox"
         Me.ObservacionesTextBox.Size = New System.Drawing.Size(605, 158)
-        Me.ObservacionesTextBox.TabIndex = 9
+        Me.ObservacionesTextBox.TabIndex = 8
         '
         'AUDIT_AuditoriasCondicionesBindingSource
         '
@@ -195,7 +195,7 @@ Partial Class frmAuditoriaCondiciones
         Me.FechaSolventacionDateTimePicker.Location = New System.Drawing.Point(348, 66)
         Me.FechaSolventacionDateTimePicker.Name = "FechaSolventacionDateTimePicker"
         Me.FechaSolventacionDateTimePicker.Size = New System.Drawing.Size(200, 20)
-        Me.FechaSolventacionDateTimePicker.TabIndex = 7
+        Me.FechaSolventacionDateTimePicker.TabIndex = 6
         '
         'ComentariosTextBox
         '
@@ -205,14 +205,14 @@ Partial Class frmAuditoriaCondiciones
         Me.ComentariosTextBox.Multiline = True
         Me.ComentariosTextBox.Name = "ComentariosTextBox"
         Me.ComentariosTextBox.Size = New System.Drawing.Size(605, 158)
-        Me.ComentariosTextBox.TabIndex = 10
+        Me.ComentariosTextBox.TabIndex = 9
         '
         'btnActualizar
         '
         Me.btnActualizar.Location = New System.Drawing.Point(748, 330)
         Me.btnActualizar.Name = "btnActualizar"
         Me.btnActualizar.Size = New System.Drawing.Size(119, 23)
-        Me.btnActualizar.TabIndex = 11
+        Me.btnActualizar.TabIndex = 16
         Me.btnActualizar.Text = "Actualizar"
         Me.btnActualizar.UseVisualStyleBackColor = True
         '
@@ -221,7 +221,7 @@ Partial Class frmAuditoriaCondiciones
         Me.btnSalir.Location = New System.Drawing.Point(748, 386)
         Me.btnSalir.Name = "btnSalir"
         Me.btnSalir.Size = New System.Drawing.Size(119, 23)
-        Me.btnSalir.TabIndex = 13
+        Me.btnSalir.TabIndex = 19
         Me.btnSalir.Text = "Salir"
         Me.btnSalir.UseVisualStyleBackColor = True
         '
@@ -257,7 +257,7 @@ Partial Class frmAuditoriaCondiciones
         Me.cmbHallago.Location = New System.Drawing.Point(120, 64)
         Me.cmbHallago.Name = "cmbHallago"
         Me.cmbHallago.Size = New System.Drawing.Size(100, 21)
-        Me.cmbHallago.TabIndex = 4
+        Me.cmbHallago.TabIndex = 2
         Me.cmbHallago.ValueMember = "id_Parametro"
         '
         'AUDITParametrosHBindingSource
@@ -275,7 +275,7 @@ Partial Class frmAuditoriaCondiciones
         Me.cmbValidacion.Location = New System.Drawing.Point(120, 37)
         Me.cmbValidacion.Name = "cmbValidacion"
         Me.cmbValidacion.Size = New System.Drawing.Size(100, 21)
-        Me.cmbValidacion.TabIndex = 6
+        Me.cmbValidacion.TabIndex = 1
         Me.cmbValidacion.ValueMember = "id_Parametro"
         '
         'AUDITParametrosVBindingSource
@@ -293,10 +293,11 @@ Partial Class frmAuditoriaCondiciones
         '
         'btnGuardar
         '
+        Me.btnGuardar.Enabled = False
         Me.btnGuardar.Location = New System.Drawing.Point(748, 359)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(119, 23)
-        Me.btnGuardar.TabIndex = 12
+        Me.btnGuardar.TabIndex = 17
         Me.btnGuardar.Text = "Guardar"
         Me.btnGuardar.UseVisualStyleBackColor = True
         '
@@ -309,7 +310,7 @@ Partial Class frmAuditoriaCondiciones
         Me.cmbRevisiones.Location = New System.Drawing.Point(349, 10)
         Me.cmbRevisiones.Name = "cmbRevisiones"
         Me.cmbRevisiones.Size = New System.Drawing.Size(79, 21)
-        Me.cmbRevisiones.TabIndex = 2
+        Me.cmbRevisiones.TabIndex = 3
         '
         'Label1
         '
@@ -347,7 +348,7 @@ Partial Class frmAuditoriaCondiciones
         Me.FechaVigenciaDateTimePicker.Location = New System.Drawing.Point(667, 66)
         Me.FechaVigenciaDateTimePicker.Name = "FechaVigenciaDateTimePicker"
         Me.FechaVigenciaDateTimePicker.Size = New System.Drawing.Size(200, 20)
-        Me.FechaVigenciaDateTimePicker.TabIndex = 8
+        Me.FechaVigenciaDateTimePicker.TabIndex = 7
         Me.FechaVigenciaDateTimePicker.Visible = False
         '
         'cmbDeptoResponsable
@@ -360,7 +361,7 @@ Partial Class frmAuditoriaCondiciones
         Me.cmbDeptoResponsable.Location = New System.Drawing.Point(551, 8)
         Me.cmbDeptoResponsable.Name = "cmbDeptoResponsable"
         Me.cmbDeptoResponsable.Size = New System.Drawing.Size(316, 21)
-        Me.cmbDeptoResponsable.TabIndex = 22
+        Me.cmbDeptoResponsable.TabIndex = 4
         Me.cmbDeptoResponsable.ValueMember = "id_Parametro"
         '
         'AUDITParametrosDBindingSource
@@ -388,7 +389,7 @@ Partial Class frmAuditoriaCondiciones
         Me.Id_auditoriaCondicionTextBox.Location = New System.Drawing.Point(120, 420)
         Me.Id_auditoriaCondicionTextBox.Name = "Id_auditoriaCondicionTextBox"
         Me.Id_auditoriaCondicionTextBox.Size = New System.Drawing.Size(100, 20)
-        Me.Id_auditoriaCondicionTextBox.TabIndex = 24
+        Me.Id_auditoriaCondicionTextBox.TabIndex = 10
         '
         'Label3
         '
@@ -405,7 +406,7 @@ Partial Class frmAuditoriaCondiciones
         Me.btnAgregarRev.Location = New System.Drawing.Point(748, 301)
         Me.btnAgregarRev.Name = "btnAgregarRev"
         Me.btnAgregarRev.Size = New System.Drawing.Size(119, 23)
-        Me.btnAgregarRev.TabIndex = 26
+        Me.btnAgregarRev.TabIndex = 18
         Me.btnAgregarRev.Text = "Agregar Revisiones"
         Me.btnAgregarRev.UseVisualStyleBackColor = True
         '
@@ -430,7 +431,7 @@ Partial Class frmAuditoriaCondiciones
         Me.lklAbrir3.Location = New System.Drawing.Point(101, 144)
         Me.lklAbrir3.Name = "lklAbrir3"
         Me.lklAbrir3.Size = New System.Drawing.Size(28, 13)
-        Me.lklAbrir3.TabIndex = 5
+        Me.lklAbrir3.TabIndex = 15
         Me.lklAbrir3.TabStop = True
         Me.lklAbrir3.Text = "Abrir"
         Me.lklAbrir3.Visible = False
@@ -441,7 +442,7 @@ Partial Class frmAuditoriaCondiciones
         Me.lklAbrir2.Location = New System.Drawing.Point(101, 98)
         Me.lklAbrir2.Name = "lklAbrir2"
         Me.lklAbrir2.Size = New System.Drawing.Size(28, 13)
-        Me.lklAbrir2.TabIndex = 4
+        Me.lklAbrir2.TabIndex = 13
         Me.lklAbrir2.TabStop = True
         Me.lklAbrir2.Text = "Abrir"
         Me.lklAbrir2.Visible = False
@@ -452,7 +453,7 @@ Partial Class frmAuditoriaCondiciones
         Me.lklAbrir1.Location = New System.Drawing.Point(102, 51)
         Me.lklAbrir1.Name = "lklAbrir1"
         Me.lklAbrir1.Size = New System.Drawing.Size(28, 13)
-        Me.lklAbrir1.TabIndex = 3
+        Me.lklAbrir1.TabIndex = 11
         Me.lklAbrir1.TabStop = True
         Me.lklAbrir1.Text = "Abrir"
         Me.lklAbrir1.Visible = False
@@ -462,7 +463,7 @@ Partial Class frmAuditoriaCondiciones
         Me.btnArchivo3.Location = New System.Drawing.Point(6, 118)
         Me.btnArchivo3.Name = "btnArchivo3"
         Me.btnArchivo3.Size = New System.Drawing.Size(123, 23)
-        Me.btnArchivo3.TabIndex = 2
+        Me.btnArchivo3.TabIndex = 14
         Me.btnArchivo3.Text = "Adjuntar archivo..."
         Me.btnArchivo3.UseVisualStyleBackColor = True
         '
@@ -471,7 +472,7 @@ Partial Class frmAuditoriaCondiciones
         Me.btnArchivo2.Location = New System.Drawing.Point(6, 72)
         Me.btnArchivo2.Name = "btnArchivo2"
         Me.btnArchivo2.Size = New System.Drawing.Size(124, 23)
-        Me.btnArchivo2.TabIndex = 1
+        Me.btnArchivo2.TabIndex = 12
         Me.btnArchivo2.Text = "Adjuntar archivo..."
         Me.btnArchivo2.UseVisualStyleBackColor = True
         '
@@ -480,7 +481,7 @@ Partial Class frmAuditoriaCondiciones
         Me.btnArchivo1.Location = New System.Drawing.Point(6, 25)
         Me.btnArchivo1.Name = "btnArchivo1"
         Me.btnArchivo1.Size = New System.Drawing.Size(124, 23)
-        Me.btnArchivo1.TabIndex = 0
+        Me.btnArchivo1.TabIndex = 10
         Me.btnArchivo1.Text = "Adjuntar archivo..."
         Me.btnArchivo1.UseVisualStyleBackColor = True
         '

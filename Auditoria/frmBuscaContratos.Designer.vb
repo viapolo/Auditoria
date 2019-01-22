@@ -80,7 +80,7 @@ Partial Class frmBuscaContratos
         Me.lbxContratos.Location = New System.Drawing.Point(522, 32)
         Me.lbxContratos.Name = "lbxContratos"
         Me.lbxContratos.Size = New System.Drawing.Size(400, 186)
-        Me.lbxContratos.TabIndex = 1
+        Me.lbxContratos.TabIndex = 3
         '
         'lblClientes
         '
@@ -186,7 +186,7 @@ Partial Class frmBuscaContratos
         Me.Button1.Location = New System.Drawing.Point(847, 240)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 11
+        Me.Button1.TabIndex = 4
         Me.Button1.Text = "Salir"
         Me.Button1.UseVisualStyleBackColor = True
         '
@@ -198,7 +198,7 @@ Partial Class frmBuscaContratos
         Me.chkConAuditorias.Location = New System.Drawing.Point(15, 72)
         Me.chkConAuditorias.Name = "chkConAuditorias"
         Me.chkConAuditorias.Size = New System.Drawing.Size(95, 17)
-        Me.chkConAuditorias.TabIndex = 12
+        Me.chkConAuditorias.TabIndex = 1
         Me.chkConAuditorias.Text = "Con auditorías"
         Me.chkConAuditorias.UseVisualStyleBackColor = True
         '
@@ -210,7 +210,7 @@ Partial Class frmBuscaContratos
         Me.chkSinAuditorias.Location = New System.Drawing.Point(183, 72)
         Me.chkSinAuditorias.Name = "chkSinAuditorias"
         Me.chkSinAuditorias.Size = New System.Drawing.Size(91, 17)
-        Me.chkSinAuditorias.TabIndex = 13
+        Me.chkSinAuditorias.TabIndex = 2
         Me.chkSinAuditorias.Text = "Sin auditorías"
         Me.chkSinAuditorias.UseVisualStyleBackColor = True
         '
@@ -235,7 +235,7 @@ Partial Class frmBuscaContratos
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "frmBuscaContratos"
-        Me.Text = "Busca Contratos por Nombre"
+        Me.Text = "Buscar Contratos por Nombre"
         CType(Me.ClientesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ProductionDataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ProductionDataSet, System.ComponentModel.ISupportInitialize).EndInit()

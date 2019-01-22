@@ -70,7 +70,7 @@ Partial Class frmBuscaContratosSuc
         Me.lbxContratos.Location = New System.Drawing.Point(361, 43)
         Me.lbxContratos.Name = "lbxContratos"
         Me.lbxContratos.Size = New System.Drawing.Size(402, 186)
-        Me.lbxContratos.TabIndex = 1
+        Me.lbxContratos.TabIndex = 3
         '
         'ProductionDataSet
         '
@@ -110,7 +110,7 @@ Partial Class frmBuscaContratosSuc
         Me.btnSalir.Location = New System.Drawing.Point(688, 248)
         Me.btnSalir.Name = "btnSalir"
         Me.btnSalir.Size = New System.Drawing.Size(75, 23)
-        Me.btnSalir.TabIndex = 6
+        Me.btnSalir.TabIndex = 4
         Me.btnSalir.Text = "Salir"
         Me.btnSalir.UseVisualStyleBackColor = True
         '
@@ -151,7 +151,7 @@ Partial Class frmBuscaContratosSuc
         Me.chkConAuditorias.Location = New System.Drawing.Point(17, 79)
         Me.chkConAuditorias.Name = "chkConAuditorias"
         Me.chkConAuditorias.Size = New System.Drawing.Size(95, 17)
-        Me.chkConAuditorias.TabIndex = 10
+        Me.chkConAuditorias.TabIndex = 1
         Me.chkConAuditorias.Text = "Con auditorías"
         Me.chkConAuditorias.UseVisualStyleBackColor = True
         '
@@ -163,7 +163,7 @@ Partial Class frmBuscaContratosSuc
         Me.chkSinAuditorias.Location = New System.Drawing.Point(206, 79)
         Me.chkSinAuditorias.Name = "chkSinAuditorias"
         Me.chkSinAuditorias.Size = New System.Drawing.Size(91, 17)
-        Me.chkSinAuditorias.TabIndex = 11
+        Me.chkSinAuditorias.TabIndex = 2
         Me.chkSinAuditorias.Text = "Sin auditorías"
         Me.chkSinAuditorias.UseVisualStyleBackColor = True
         '
