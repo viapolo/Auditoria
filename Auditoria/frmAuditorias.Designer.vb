@@ -681,6 +681,8 @@ Partial Class frmAuditorias
         '
         'txtDestino
         '
+        Me.txtDestino.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtDestino.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.txtDestino.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.AUDIT_AuditoriasBindingSource, "destino", True))
         Me.txtDestino.Location = New System.Drawing.Point(133, 180)
         Me.txtDestino.Name = "txtDestino"
@@ -689,6 +691,7 @@ Partial Class frmAuditorias
         '
         'txtEjecutivo
         '
+        Me.txtEjecutivo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtEjecutivo.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.AUDIT_AuditoriasBindingSource, "ejecutivo", True))
         Me.txtEjecutivo.Location = New System.Drawing.Point(133, 153)
         Me.txtEjecutivo.Name = "txtEjecutivo"
@@ -707,6 +710,7 @@ Partial Class frmAuditorias
         '
         'txtRecursos
         '
+        Me.txtRecursos.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtRecursos.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.AUDIT_AuditoriasBindingSource, "recursos", True))
         Me.txtRecursos.Location = New System.Drawing.Point(133, 100)
         Me.txtRecursos.Name = "txtRecursos"
@@ -716,6 +720,7 @@ Partial Class frmAuditorias
         '
         'txtTipoCredito
         '
+        Me.txtTipoCredito.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtTipoCredito.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.AUDIT_AuditoriasBindingSource, "tipoCredito", True))
         Me.txtTipoCredito.Location = New System.Drawing.Point(133, 73)
         Me.txtTipoCredito.Name = "txtTipoCredito"
@@ -725,6 +730,7 @@ Partial Class frmAuditorias
         '
         'txtSucursal
         '
+        Me.txtSucursal.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtSucursal.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.AUDIT_AuditoriasBindingSource, "sucursal", True))
         Me.txtSucursal.Location = New System.Drawing.Point(133, 46)
         Me.txtSucursal.Name = "txtSucursal"
@@ -734,6 +740,7 @@ Partial Class frmAuditorias
         '
         'txtCliente
         '
+        Me.txtCliente.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtCliente.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.AUDIT_AuditoriasBindingSource, "cliente", True))
         Me.txtCliente.Location = New System.Drawing.Point(133, 20)
         Me.txtCliente.Name = "txtCliente"

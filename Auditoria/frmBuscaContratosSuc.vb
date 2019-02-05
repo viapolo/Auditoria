@@ -20,7 +20,7 @@
                         If rows.TipoCredito = "CUENTA CORRIENTE" Then
                             If rows.Ciclo <> "" Then
                                 If rows.Ciclo = "01" Then
-                                    lbxContratos.Items.Add(rows.Nombre_Sucursal.Trim + " / " + rows.TipoCredito + " / " + rows.Anexo.Trim + " / / " + noAuditorias.ToString) '+ " / " + rows.Ciclo)
+                                    lbxContratos.Items.Add(rows.Nombre_Sucursal.Trim + " / " + rows.TipoCredito + " / " + rows.Anexo.Trim + " /" + rows.Ciclo + " / " + noAuditorias.ToString) '+ " / " + rows.Ciclo)
                                 End If
                             End If
                         Else
@@ -37,7 +37,7 @@
                         If rows.TipoCredito = "CUENTA CORRIENTE" Then
                             If rows.Ciclo <> "" Then
                                 If rows.Ciclo = "01" Then
-                                    lbxContratos.Items.Add(rows.Nombre_Sucursal.Trim + " / " + rows.TipoCredito + " / " + rows.Anexo.Trim + " / / " + noAuditorias.ToString) '+ " / " + rows.Ciclo)
+                                    lbxContratos.Items.Add(rows.Nombre_Sucursal.Trim + " / " + rows.TipoCredito + " / " + rows.Anexo.Trim + " / " + rows.Ciclo + "/ " + noAuditorias.ToString) '+ " / " + rows.Ciclo)
                                 End If
                             End If
                         Else
@@ -77,14 +77,21 @@
             frmAuditorias.var_consecutivo = taAuditorias.ContadorAuditorias(datos(2).Trim, datos(3).Trim)
             taAuditorias.ObtAudit_FillBy(ProductionDataSet.AUDIT_Auditorias, datos(2).Trim, datos(3).Trim)
 
-            frmAuditorias.var_cliente = taCiclo.ObtNomCliente_ScalarQuery(datos(2).Trim)
-            frmAuditorias.var_sucursal = VwAnexosBindingSource.Current("Nombre_Sucursal")
-            frmAuditorias.var_tipoCredito = VwAnexosBindingSource.Current("TipoCredito")
-            frmAuditorias.var_recursos = VwAnexosBindingSource.Current("Fondeotit")
-            frmAuditorias.var_fechaDispo = VwAnexosBindingSource.Current("Fecha_Pago")
-            frmAuditorias.var_promotor = VwAnexosBindingSource.Current("Nombre_Promotor")
-            frmAuditorias.var_destino = taActfijo.Obtdestino_ScalarQuery(lblAnexos.Text)
+            'frmAuditorias.var_cliente = taCiclo.ObtNomCliente_ScalarQuery(datos(2).Trim)
+            'frmAuditorias.var_sucursal = VwAnexosBindingSource.Current("Nombre_Sucursal")
+            'frmAuditorias.var_tipoCredito = VwAnexosBindingSource.Current("TipoCredito")
+            'frmAuditorias.var_recursos = VwAnexosBindingSource.Current("Fondeotit")
+            'frmAuditorias.var_fechaDispo = VwAnexosBindingSource.Current("Fecha_Pago")
+            'frmAuditorias.var_promotor = VwAnexosBindingSource.Current("Nombre_Promotor")
+            'frmAuditorias.var_destino = taActfijo.Obtdestino_ScalarQuery(lblAnexos.Text)
 
+            frmAuditorias.var_cliente = taCiclo.ObtNomCliente_ScalarQuery(datos(2).Trim).Trim
+            frmAuditorias.var_sucursal = taCiclo.ObtNomSuc_ScalarQuery(datos(2).Trim, datos(3)) 'Vw_AnexosBindingSource.Current("Nombre_Sucursal")
+            frmAuditorias.var_tipoCredito = taCiclo.ObtTipoCred_ScalarQuery(datos(2).Trim, datos(3)) 'Vw_AnexosBindingSource.Current("TipoCredito")
+            frmAuditorias.var_recursos = taCiclo.ObtFondeotit_ScalarQuery(datos(2).Trim, datos(3)) 'Vw_AnexosBindingSource.Current("Fondeotit")
+            frmAuditorias.var_fechaDispo = taCiclo.ObtFecha_Pago_ScalarQuery(datos(2).Trim, datos(3)) 'Vw_AnexosBindingSource.Current("Fecha_Pago")
+            frmAuditorias.var_promotor = taCiclo.ObtNombre_Promotor_ScalarQuery(datos(2).Trim, datos(3)) 'Vw_AnexosBindingSource.Current("Nombre_Promotor")
+            frmAuditorias.var_destino = taActfijo.Obtdestino_ScalarQuery(lblAnexos.Text)
 
             Me.Enabled = False
             If ProductionDataSet.AUDIT_Auditorias.Rows.Count = 0 Then

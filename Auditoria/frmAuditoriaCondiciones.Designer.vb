@@ -31,6 +31,7 @@ Partial Class frmAuditoriaCondiciones
         Dim FechaSolventacionLabel As System.Windows.Forms.Label
         Dim ComentariosLabel As System.Windows.Forms.Label
         Dim Id_auditoriaCondicionLabel As System.Windows.Forms.Label
+        Dim NomOtrosLabel As System.Windows.Forms.Label
         Me.ProductionDataSet = New Auditoria.ProductionDataSet()
         Me.Id_auditoriaTextBox = New System.Windows.Forms.TextBox()
         Me.ObservacionesTextBox = New System.Windows.Forms.TextBox()
@@ -69,6 +70,7 @@ Partial Class frmAuditoriaCondiciones
         Me.btnArchivo2 = New System.Windows.Forms.Button()
         Me.btnArchivo1 = New System.Windows.Forms.Button()
         Me.pfdCargarArchivos = New System.Windows.Forms.OpenFileDialog()
+        Me.NomOtrosTextBox = New System.Windows.Forms.TextBox()
         Id_auditoriaLabel = New System.Windows.Forms.Label()
         Id_CondicionLabel = New System.Windows.Forms.Label()
         ValidacionLabel = New System.Windows.Forms.Label()
@@ -77,6 +79,7 @@ Partial Class frmAuditoriaCondiciones
         FechaSolventacionLabel = New System.Windows.Forms.Label()
         ComentariosLabel = New System.Windows.Forms.Label()
         Id_auditoriaCondicionLabel = New System.Windows.Forms.Label()
+        NomOtrosLabel = New System.Windows.Forms.Label()
         CType(Me.ProductionDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.AUDIT_AuditoriasCondicionesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.AUDITCondicionesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -157,6 +160,15 @@ Partial Class frmAuditoriaCondiciones
         Id_auditoriaCondicionLabel.Size = New System.Drawing.Size(66, 13)
         Id_auditoriaCondicionLabel.TabIndex = 23
         Id_auditoriaCondicionLabel.Text = "Id AudCond:"
+        '
+        'NomOtrosLabel
+        '
+        NomOtrosLabel.AutoSize = True
+        NomOtrosLabel.Location = New System.Drawing.Point(241, 423)
+        NomOtrosLabel.Name = "NomOtrosLabel"
+        NomOtrosLabel.Size = New System.Drawing.Size(75, 13)
+        NomOtrosLabel.TabIndex = 27
+        NomOtrosLabel.Text = "Nombre Otros:"
         '
         'ProductionDataSet
         '
@@ -489,12 +501,23 @@ Partial Class frmAuditoriaCondiciones
         '
         Me.pfdCargarArchivos.FileName = "OpenFileDialog1"
         '
+        'NomOtrosTextBox
+        '
+        Me.NomOtrosTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.AUDIT_AuditoriasCondicionesBindingSource, "nomOtros", True))
+        Me.NomOtrosTextBox.Enabled = False
+        Me.NomOtrosTextBox.Location = New System.Drawing.Point(322, 420)
+        Me.NomOtrosTextBox.Name = "NomOtrosTextBox"
+        Me.NomOtrosTextBox.Size = New System.Drawing.Size(144, 20)
+        Me.NomOtrosTextBox.TabIndex = 28
+        '
         'frmAuditoriaCondiciones
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.ClientSize = New System.Drawing.Size(887, 449)
+        Me.ClientSize = New System.Drawing.Size(887, 459)
+        Me.Controls.Add(NomOtrosLabel)
+        Me.Controls.Add(Me.NomOtrosTextBox)
         Me.Controls.Add(Me.grbDocumentosAdjuntos)
         Me.Controls.Add(Me.btnAgregarRev)
         Me.Controls.Add(Me.Label3)
@@ -578,4 +601,5 @@ Partial Class frmAuditoriaCondiciones
     Friend WithEvents lklAbrir1 As LinkLabel
     Friend WithEvents lklAbrir3 As LinkLabel
     Friend WithEvents lklAbrir2 As LinkLabel
+    Friend WithEvents NomOtrosTextBox As TextBox
 End Class

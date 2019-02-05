@@ -38,8 +38,11 @@
             DataGridView1.Rows.Add()
             If Detalle.ConsecRevisiones <> 1 Then
                 DataGridView1.Item(0, cont).Value = AUDIT_CondicionesTableAdapter.ObtCond_ScalarQuery(Detalle.Id_Condicion) + " (" + Detalle.ConsecRevisiones.ToString + ")" 'Detalle.Id_Condicion
+                If cmbEstatus.Text = "ABIERTO" Then
+                    DataGridView1.Item(10, cont).Value = "Eliminar"
+                End If
             Else
-                DataGridView1.Item(0, cont).Value = AUDIT_CondicionesTableAdapter.ObtCond_ScalarQuery(Detalle.Id_Condicion) 'Detalle.Id_Condicion
+                    DataGridView1.Item(0, cont).Value = AUDIT_CondicionesTableAdapter.ObtCond_ScalarQuery(Detalle.Id_Condicion) 'Detalle.Id_Condicion
             End If
             DataGridView1.Item(1, cont).Value = AUDIT_ParametrosVTableAdapter.ObtDesc_ScalarQuery(Detalle.Validacion)  'CInt(Detalle.Validacion)
             DataGridView1.Item(2, cont).Value = AUDIT_ParametrosHTableAdapter.ObtDesc_ScalarQuery(Detalle.CategoriaHallazgo) 'CInt(Detalle.CategoriaHallazgo)
@@ -55,7 +58,6 @@
         If cont > 0 And cmbEstatus.Text <> "ABIERTO" = True Then
             btnAgregar.Enabled = False
         End If
-
     End Sub
 
     Public Sub actdes(parametro As String)
@@ -72,7 +74,7 @@
             btnActualizar.Enabled = True
 
             FechaRelizacionDateTimePicker.Enabled = False
-            ObervacionesTextBox.ReadOnly = True
+            'ObervacionesTextBox.ReadOnly = True
             btnAgregar.Enabled = True
 
             ClienteTextBox.Enabled = True
@@ -162,28 +164,36 @@
     End Sub
 
     Private Sub DataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellClick
+
         frmAuditoriaCondiciones.var_estatusBtnGuardar = False
         frmAuditoriaCondiciones.var_estatusBtnActualizar = True
         frmAuditoriaCondiciones.var_idAuditoriaCondiciones = DataGridView1.Item(8, e.RowIndex).Value
+        If e.ColumnIndex < 10 Then
+            If DataGridView1.Item(7, e.RowIndex).Value = Nothing Then
+                frmAuditoriaCondiciones.var_idAuditoria = var_id_auditoria
+                frmAuditoriaCondiciones.var_idCondicion = DataGridView1.Item(9, e.RowIndex).Value
+                frmAuditoriaCondiciones.MdiParent = MDIAuditoria
+                frmAuditoriaCondiciones.Show()
+            Else
+                frmAuditoriaCondiciones.var_idAuditoria = var_id_auditoria
 
-        If DataGridView1.Item(7, e.RowIndex).Value = Nothing Then
-            frmAuditoriaCondiciones.var_idAuditoria = var_id_auditoria
-            frmAuditoriaCondiciones.var_idCondicion = DataGridView1.Item(9, e.RowIndex).Value
-            frmAuditoriaCondiciones.MdiParent = MDIAuditoria
-            frmAuditoriaCondiciones.Show()
-        Else
-            frmAuditoriaCondiciones.var_idAuditoria = var_id_auditoria
+                frmAuditoriaCondiciones.var_idCondicion = DataGridView1.Item(9, e.RowIndex).Value
+                frmAuditoriaCondiciones.MdiParent = MDIAuditoria
+                frmAuditoriaCondiciones.Show()
+            End If
+            Me.Enabled = False
 
-            frmAuditoriaCondiciones.var_idCondicion = DataGridView1.Item(9, e.RowIndex).Value
-            frmAuditoriaCondiciones.MdiParent = MDIAuditoria
-            frmAuditoriaCondiciones.Show()
+            frmAuditoriaCondiciones.var_anexoAMC = var_anexoAM
+            frmAuditoriaCondiciones.var_consecAMC = var_consecAM
+            frmAuditoriaCondiciones.var_num_celdas = DataGridView1.Rows.Count
+            frmAuditoriaCondiciones.cmbCondicion.Enabled = False
+        ElseIf DataGridView1.Item("eliminar", e.RowIndex).Value = "Eliminar" And e.ColumnIndex = 10 And cmbEstatus.Text = "ABIERTO" Then
+            If MsgBox("Eliminar condición, ¿Deséa eliminar el registro?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
+                AUDIT_AuditoriasCondicionesTableAdapter.ElimCond_DeleteQuery(DataGridView1.Item(8, e.RowIndex).Value)
+            Else
+                MsgBox("Proceso cancelado...", MsgBoxStyle.Information)
+            End If
         End If
-        Me.Enabled = False
-
-        frmAuditoriaCondiciones.var_anexoAMC = var_anexoAM
-        frmAuditoriaCondiciones.var_consecAMC = var_consecAM
-        frmAuditoriaCondiciones.var_num_celdas = DataGridView1.Rows.Count
-        frmAuditoriaCondiciones.cmbCondicion.Enabled = False
     End Sub
 
 

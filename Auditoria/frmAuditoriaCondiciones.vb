@@ -44,70 +44,70 @@ Public Class frmAuditoriaCondiciones
 
         var_num_celdasfrm1 = frmAuditorias.AUDIT_AuditoriasDataGridView.Rows.Count
 
-        Try
-            If cmbCondicion.SelectedValue = 33 And var_num_celdasfrm1 = 1 And taAuditorias.ObtnRevInfFinanciera_ScalarQuery(Id_auditoriaTextBox.Text) = 1 Then
-                var_revisiones = CInt(InputBox("Ingrese número de revisiones por condición adicionales (por defaul se registra una revisión)", "Revisiones periódicas", 0))
+        'Try
+        '    If cmbCondicion.SelectedValue = 33 And var_num_celdasfrm1 = 1 And taAuditorias.ObtnRevInfFinanciera_ScalarQuery(Id_auditoriaTextBox.Text) = 1 Then
+        '        var_revisiones = CInt(InputBox("Ingrese número de revisiones por condición adicionales (por defaul se registra una revisión)", "Revisiones periódicas", 0))
 
-                taAuditoriasCond.ObtDetalleAuditCond_FillBy(ProductionDataSet.AUDIT_AuditoriasCondiciones, var_idAuditoriaCondiciones)
-                For Each DetalleMod In ProductionDataSet.AUDIT_AuditoriasCondiciones.Rows
-                    For i = 1 To var_revisiones
-                        taAuditoriasCond.Insert(Id_auditoriaTextBox.Text, DetalleMod.Id_Condicion, DetalleMod.Validacion, DetalleMod.Observaciones, DetalleMod.CategoriaHallazgo, Date.Now, DetalleMod.Comentarios, i + 1, Date.Now, DetalleMod.deptoResponsable, DetalleMod.estatus, DetalleMod.archivo1, DetalleMod.archivo2, DetalleMod.archivo3, DetalleMod.ext1, DetalleMod.ext2, DetalleMod.ext3)
-                    Next
-                Next
-                If var_revisiones = 0 Then
-                    taAuditorias.nRevInfFinanciera_UpdateQuery(0, Id_auditoriaTextBox.Text)
-                Else
-                    taAuditorias.nRevInfFinanciera_UpdateQuery(var_revisiones + 1, Id_auditoriaTextBox.Text)
-                End If
+        '        taAuditoriasCond.ObtDetalleAuditCond_FillBy(ProductionDataSet.AUDIT_AuditoriasCondiciones, var_idAuditoriaCondiciones)
+        '        For Each DetalleMod In ProductionDataSet.AUDIT_AuditoriasCondiciones.Rows
+        '            For i = 1 To var_revisiones
+        '                taAuditoriasCond.Insert(Id_auditoriaTextBox.Text, DetalleMod.Id_Condicion, DetalleMod.Validacion, DetalleMod.Observaciones, DetalleMod.CategoriaHallazgo, Date.Now, DetalleMod.Comentarios, i + 1, Date.Now, DetalleMod.deptoResponsable, DetalleMod.estatus, DetalleMod.archivo1, DetalleMod.archivo2, DetalleMod.archivo3, DetalleMod.ext1, DetalleMod.ext2, DetalleMod.ext3, DetalleMod.nomOtros)
+        '            Next
+        '        Next
+        '        If var_revisiones = 0 Then
+        '            taAuditorias.nRevInfFinanciera_UpdateQuery(0, Id_auditoriaTextBox.Text)
+        '        Else
+        '            taAuditorias.nRevInfFinanciera_UpdateQuery(var_revisiones + 1, Id_auditoriaTextBox.Text)
+        '        End If
 
-            ElseIf cmbCondicion.SelectedValue = 37 And var_num_celdasfrm1 = 1 And taAuditorias.ObtnRevRepSup_ScalarQuery(Id_auditoriaTextBox.Text) = 1 Then
-                var_revisiones = CInt(InputBox("Ingrese número de revisiones por condición (por defaul se registra una revisión)", "Revisiones periódicas", 0))
-                taAuditoriasCond.ObtDetalleAuditCond_FillBy(ProductionDataSet.AUDIT_AuditoriasCondiciones, var_idAuditoriaCondiciones)
-                For Each DetalleMod In ProductionDataSet.AUDIT_AuditoriasCondiciones.Rows
-                    For i = 1 To var_revisiones
-                        taAuditoriasCond.Insert(Id_auditoriaTextBox.Text, DetalleMod.Id_Condicion, DetalleMod.Validacion, DetalleMod.Observaciones, DetalleMod.CategoriaHallazgo, Date.Now, DetalleMod.Comentarios, i + 1, Date.Now, DetalleMod.deptoResponsable, DetalleMod.estatus, DetalleMod.archivo1, DetalleMod.archivo2, DetalleMod.archivo3, DetalleMod.ext1, DetalleMod.ext2, DetalleMod.ext3)
-                    Next
-                Next
-                If var_revisiones = 0 Then
-                    taAuditorias.nRevRepSup_UpdateQuery(0, Id_auditoriaTextBox.Text)
-                Else
-                    taAuditorias.nRevRepSup_UpdateQuery(var_revisiones + 1, Id_auditoriaTextBox.Text)
-                End If
+        '    ElseIf cmbCondicion.SelectedValue = 37 And var_num_celdasfrm1 = 1 And taAuditorias.ObtnRevRepSup_ScalarQuery(Id_auditoriaTextBox.Text) = 1 Then
+        '        var_revisiones = CInt(InputBox("Ingrese número de revisiones por condición (por defaul se registra una revisión)", "Revisiones periódicas", 0))
+        '        taAuditoriasCond.ObtDetalleAuditCond_FillBy(ProductionDataSet.AUDIT_AuditoriasCondiciones, var_idAuditoriaCondiciones)
+        '        For Each DetalleMod In ProductionDataSet.AUDIT_AuditoriasCondiciones.Rows
+        '            For i = 1 To var_revisiones
+        '                taAuditoriasCond.Insert(Id_auditoriaTextBox.Text, DetalleMod.Id_Condicion, DetalleMod.Validacion, DetalleMod.Observaciones, DetalleMod.CategoriaHallazgo, Date.Now, DetalleMod.Comentarios, i + 1, Date.Now, DetalleMod.deptoResponsable, DetalleMod.estatus, DetalleMod.archivo1, DetalleMod.archivo2, DetalleMod.archivo3, DetalleMod.ext1, DetalleMod.ext2, DetalleMod.ext3, DetalleMod.nomOtros)
+        '            Next
+        '        Next
+        '        If var_revisiones = 0 Then
+        '            taAuditorias.nRevRepSup_UpdateQuery(0, Id_auditoriaTextBox.Text)
+        '        Else
+        '            taAuditorias.nRevRepSup_UpdateQuery(var_revisiones + 1, Id_auditoriaTextBox.Text)
+        '        End If
 
-            ElseIf cmbCondicion.SelectedValue = 35 And var_num_celdasfrm1 = 1 And taAuditorias.ObtnRevPagare_ScalarQuery(Id_auditoriaTextBox.Text) = 1 Then
-                var_revisiones = CInt(InputBox("Ingrese número de revisiones por condición (por defaul se registra una revisión)", "Revisiones periódicas", 0))
+        '    ElseIf cmbCondicion.SelectedValue = 35 And var_num_celdasfrm1 = 1 And taAuditorias.ObtnRevPagare_ScalarQuery(Id_auditoriaTextBox.Text) = 1 Then
+        '        var_revisiones = CInt(InputBox("Ingrese número de revisiones por condición (por defaul se registra una revisión)", "Revisiones periódicas", 0))
 
-                taAuditoriasCond.ObtDetalleAuditCond_FillBy(ProductionDataSet.AUDIT_AuditoriasCondiciones, var_idAuditoriaCondiciones)
-                For Each DetalleMod In ProductionDataSet.AUDIT_AuditoriasCondiciones.Rows
-                    For i = 1 To var_revisiones
-                        taAuditoriasCond.Insert(Id_auditoriaTextBox.Text, DetalleMod.Id_Condicion, DetalleMod.Validacion, DetalleMod.Observaciones, DetalleMod.CategoriaHallazgo, Date.Now, DetalleMod.Comentarios, i + 1, Date.Now, DetalleMod.deptoResponsable, DetalleMod.estatus, DetalleMod.archivo1, DetalleMod.archivo2, DetalleMod.archivo3, DetalleMod.ext1, DetalleMod.ext2, DetalleMod.ext3)
-                    Next
-                Next
-                If var_revisiones = 0 Then
-                    taAuditorias.nRevPagare_UpdateQuery(0, Id_auditoriaTextBox.Text)
-                Else
-                    taAuditorias.nRevPagare_UpdateQuery(var_revisiones + 1, Id_auditoriaTextBox.Text)
-                End If
+        '        taAuditoriasCond.ObtDetalleAuditCond_FillBy(ProductionDataSet.AUDIT_AuditoriasCondiciones, var_idAuditoriaCondiciones)
+        '        For Each DetalleMod In ProductionDataSet.AUDIT_AuditoriasCondiciones.Rows
+        '            For i = 1 To var_revisiones
+        '                taAuditoriasCond.Insert(Id_auditoriaTextBox.Text, DetalleMod.Id_Condicion, DetalleMod.Validacion, DetalleMod.Observaciones, DetalleMod.CategoriaHallazgo, Date.Now, DetalleMod.Comentarios, i + 1, Date.Now, DetalleMod.deptoResponsable, DetalleMod.estatus, DetalleMod.archivo1, DetalleMod.archivo2, DetalleMod.archivo3, DetalleMod.ext1, DetalleMod.ext2, DetalleMod.ext3, DetalleMod.nomOtros)
+        '            Next
+        '        Next
+        '        If var_revisiones = 0 Then
+        '            taAuditorias.nRevPagare_UpdateQuery(0, Id_auditoriaTextBox.Text)
+        '        Else
+        '            taAuditorias.nRevPagare_UpdateQuery(var_revisiones + 1, Id_auditoriaTextBox.Text)
+        '        End If
 
-            ElseIf cmbCondicion.SelectedValue = 36 And var_num_celdasfrm1 = 1 And taAuditorias.ObtncedVerific_ScalarQuery(Id_auditoriaTextBox.Text) = 1 Then
-                var_revisiones = CInt(InputBox("Ingrese número de revisiones por condición (por defaul se registra una revisión)", "Revisiones periódicas", 0))
+        '    ElseIf cmbCondicion.SelectedValue = 36 And var_num_celdasfrm1 = 1 And taAuditorias.ObtncedVerific_ScalarQuery(Id_auditoriaTextBox.Text) = 1 Then
+        '        var_revisiones = CInt(InputBox("Ingrese número de revisiones por condición (por defaul se registra una revisión)", "Revisiones periódicas", 0))
 
-                taAuditoriasCond.ObtDetalleAuditCond_FillBy(ProductionDataSet.AUDIT_AuditoriasCondiciones, var_idAuditoriaCondiciones)
-                For Each DetalleMod In ProductionDataSet.AUDIT_AuditoriasCondiciones.Rows
-                    For i = 1 To var_revisiones
-                        taAuditoriasCond.Insert(Id_auditoriaTextBox.Text, DetalleMod.Id_Condicion, DetalleMod.Validacion, DetalleMod.Observaciones, DetalleMod.CategoriaHallazgo, Date.Now, DetalleMod.Comentarios, i + 1, Date.Now, DetalleMod.deptoResponsable, DetalleMod.estatus, DetalleMod.archivo1, DetalleMod.archivo2, DetalleMod.archivo3, DetalleMod.ext1, DetalleMod.ext2, DetalleMod.ext3)
-                    Next
-                Next
-                If var_revisiones = 0 Then
-                    taAuditorias.ncedVerific_UpdateQuery(0, Id_auditoriaTextBox.Text)
-                Else
-                    taAuditorias.ncedVerific_UpdateQuery(var_revisiones + 1, Id_auditoriaTextBox.Text)
-                End If
+        '        taAuditoriasCond.ObtDetalleAuditCond_FillBy(ProductionDataSet.AUDIT_AuditoriasCondiciones, var_idAuditoriaCondiciones)
+        '        For Each DetalleMod In ProductionDataSet.AUDIT_AuditoriasCondiciones.Rows
+        '            For i = 1 To var_revisiones
+        '                taAuditoriasCond.Insert(Id_auditoriaTextBox.Text, DetalleMod.Id_Condicion, DetalleMod.Validacion, DetalleMod.Observaciones, DetalleMod.CategoriaHallazgo, Date.Now, DetalleMod.Comentarios, i + 1, Date.Now, DetalleMod.deptoResponsable, DetalleMod.estatus, DetalleMod.archivo1, DetalleMod.archivo2, DetalleMod.archivo3, DetalleMod.ext1, DetalleMod.ext2, DetalleMod.ext3, DetalleMod.nomOtros)
+        '            Next
+        '        Next
+        '        If var_revisiones = 0 Then
+        '            taAuditorias.ncedVerific_UpdateQuery(0, Id_auditoriaTextBox.Text)
+        '        Else
+        '            taAuditorias.ncedVerific_UpdateQuery(var_revisiones + 1, Id_auditoriaTextBox.Text)
+        '        End If
 
-            End If
-        Catch ex As Exception
-            MsgBox(ex.ToString, MsgBoxStyle.Critical)
-        End Try
+        '    End If
+        'Catch ex As Exception
+        '    MsgBox(ex.ToString, MsgBoxStyle.Critical)
+        'End Try
 
         Me.AUDIT_AuditoriasCondicionesTableAdapter.ObtDetalleAuditCond_FillBy(Me.ProductionDataSet.AUDIT_AuditoriasCondiciones, var_idAuditoriaCondiciones)
 
@@ -186,6 +186,9 @@ Public Class frmAuditoriaCondiciones
                 FechaVigenciaDateTimePicker.Enabled = False
                 cmbDeptoResponsable.Enabled = False
             End If
+        End If
+        If cmbCondicion.SelectedValue = 44 And frmAuditoriaMod.cmbEstatus.Text = "ABIERTO" Then
+            NomOtrosTextBox.Enabled = True
         End If
     End Sub
 
@@ -328,13 +331,14 @@ Public Class frmAuditoriaCondiciones
         'For Each DetalleMod In ProductionDataSet.AUDIT_AuditoriasCondiciones.Rows
         Dim var_ini As Integer = taAuditoriasCond.CuentaRegistros_ScalarQuery(CInt(Id_auditoriaTextBox.Text), CInt(cmbCondicion.SelectedValue))
         For i = var_ini To var_ini + var_revisiones - 1
-            taAuditoriasCond.Insert(Id_auditoriaTextBox.Text, CInt(cmbCondicion.SelectedValue), 1, "", 11, System.Data.SqlTypes.SqlDateTime.Null, "", i + 1, Date.Now, 32, False, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing)
+            taAuditoriasCond.Insert(Id_auditoriaTextBox.Text, CInt(cmbCondicion.SelectedValue), 1, "", 11, System.Data.SqlTypes.SqlDateTime.Null, "", i + 1, Date.Now, 32, False, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing)
         Next
         'Next
     End Sub
 
     Private Sub btnArchivo1_Click(sender As Object, e As EventArgs) Handles btnArchivo1.Click
         Try
+            Me.btnActualizar_Click(sender, e)
             If AUDIT_AuditoriasCondicionesTableAdapter.EsArchivo1_ScalarQuery(Id_auditoriaCondicionTextBox.Text.Trim) <= 1 Then
                 If pfdCargarArchivos.ShowDialog = System.Windows.Forms.DialogResult.OK Then
                     Dim archivo1 As Byte() = File.ReadAllBytes(pfdCargarArchivos.FileName)
@@ -345,7 +349,7 @@ Public Class frmAuditoriaCondiciones
                     arch_files.Close()
                 End If
             Else
-                If MsgBox("Ya se guardó un archivo anteriormente, ¿desea cargarlo nuevamente?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
+                If MsgBox("Se guardó un archivo anteriormente, ¿desea cargarlo nuevamente?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
                     If pfdCargarArchivos.ShowDialog = System.Windows.Forms.DialogResult.OK Then
                         Dim archivo1 As Byte() = File.ReadAllBytes(pfdCargarArchivos.FileName)
                         Dim arch_files As FileStream = New FileStream(pfdCargarArchivos.FileName, FileMode.Open)
@@ -356,16 +360,19 @@ Public Class frmAuditoriaCondiciones
                     End If
                 End If
             End If
+
         Catch ex As Exception
             MsgBox(ex.ToString, MsgBoxStyle.Critical, "Error al actualizar registro...")
         End Try
         Me.Update()
         taActulizaAudit.UpdateFechaActualizacion(Date.Now, var_anexoAMC, var_consecAMC)
         Me.frmAuditoriaCondiciones_Load(sender, e)
+
     End Sub
 
     Private Sub btnArchivo2_Click(sender As Object, e As EventArgs) Handles btnArchivo2.Click
         Try
+            Me.btnActualizar_Click(sender, e)
             If AUDIT_AuditoriasCondicionesTableAdapter.EsArchivo2_ScalarQuery(Id_auditoriaCondicionTextBox.Text.Trim) <= 1 Then
                 If pfdCargarArchivos.ShowDialog = System.Windows.Forms.DialogResult.OK Then
                     Dim archivo2 As Byte() = File.ReadAllBytes(pfdCargarArchivos.FileName)
@@ -376,7 +383,7 @@ Public Class frmAuditoriaCondiciones
                     arch_files.Close()
                 End If
             Else
-                If MsgBox("Ya se guardó un archivo anteriormente, ¿desea cargarlo nuevamente?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
+                If MsgBox("Se guardó un archivo anteriormente, ¿desea cargarlo nuevamente?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
                     If pfdCargarArchivos.ShowDialog = System.Windows.Forms.DialogResult.OK Then
                         Dim archivo2 As Byte() = File.ReadAllBytes(pfdCargarArchivos.FileName)
                         Dim arch_files As FileStream = New FileStream(pfdCargarArchivos.FileName, FileMode.Open)
@@ -387,6 +394,7 @@ Public Class frmAuditoriaCondiciones
                     End If
                 End If
             End If
+
         Catch ex As Exception
             MsgBox(ex.ToString, MsgBoxStyle.Critical, "Error al actualizar registro...")
         End Try
@@ -397,6 +405,7 @@ Public Class frmAuditoriaCondiciones
 
     Private Sub btnArchivo3_Click(sender As Object, e As EventArgs) Handles btnArchivo3.Click
         Try
+            Me.btnActualizar_Click(sender, e)
             If AUDIT_AuditoriasCondicionesTableAdapter.EsArchivo3_ScalarQuery(Id_auditoriaCondicionTextBox.Text.Trim) <= 1 Then
                 If pfdCargarArchivos.ShowDialog = System.Windows.Forms.DialogResult.OK Then
                     Dim archivo3 As Byte() = File.ReadAllBytes(pfdCargarArchivos.FileName)
@@ -418,6 +427,7 @@ Public Class frmAuditoriaCondiciones
                     End If
                 End If
             End If
+
         Catch ex As Exception
             MsgBox(ex.ToString, MsgBoxStyle.Critical, "Error al actualizar registro...")
         End Try
@@ -436,6 +446,7 @@ Public Class frmAuditoriaCondiciones
         Catch ex As Exception
             MsgBox(ex.ToString, MsgBoxStyle.Critical, "Error al abrir archivo...")
         End Try
+
     End Sub
 
     Private Sub lklAbrir2_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lklAbrir2.LinkClicked
