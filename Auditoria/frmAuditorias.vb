@@ -74,6 +74,7 @@ Public Class frmAuditorias
             cmbAnalista.Enabled = False
             cmbOrganoDeAutorizacion.Enabled = False
         End If
+        formato_moneda()
     End Sub
 
     Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
@@ -269,5 +270,21 @@ Public Class frmAuditorias
         Else
             MsgBox("El anexo detino ya contiene auditorias...", MsgBoxStyle.Information)
         End If
+    End Sub
+
+    Public Sub formato_moneda()
+        If txtMontoFinanciado.Text <> "" Then
+            txtMontoFinanciado.Text = Format(CDec(txtMontoFinanciado.Text), "C")
+        End If
+        If txtMontoSolicitado.Text <> "" Then
+            txtMontoSolicitado.Text = Format(CDec(txtMontoSolicitado.Text), "C")
+        End If
+    End Sub
+
+    Private Sub txtMontoFinanciado_LostFocus(sender As Object, e As EventArgs) Handles txtMontoFinanciado.LostFocus
+        formato_moneda()
+    End Sub
+    Private Sub txtMontoSolicitado_LostFocus(sender As Object, e As EventArgs) Handles txtMontoSolicitado.LostFocus
+        formato_moneda()
     End Sub
 End Class

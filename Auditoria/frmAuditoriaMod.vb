@@ -51,6 +51,7 @@
         If cont > 0 And cmbEstatus.Text <> "ABIERTO" = True Then
             btnAgregar.Enabled = False
         End If
+        formato_moneda()
     End Sub
 
     Public Sub actdes(parametro As String)
@@ -109,7 +110,6 @@
     End Sub
 
     Private Sub btnActualizar_Click(sender As Object, e As EventArgs) Handles btnActualizar.Click
-
         Me.AUDIT_AuditoriasBindingSource.Current("UltimaActualizacion") = Date.Now
         Me.AUDIT_AuditoriasBindingSource.EndEdit()
         Me.TableAdapterManager.UpdateAll(Me.ProductionDataSet)
@@ -120,6 +120,7 @@
         ElseIf cmbEstatus.Text = "CERRADO" Then
             actdes("D")
         End If
+        formato_moneda()
     End Sub
 
     Private Sub DataGridView1_CellBeginEdit(sender As Object, e As DataGridViewCellCancelEventArgs) Handles DataGridView1.CellBeginEdit
@@ -196,5 +197,20 @@
 
     Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
         Me.Close()
+    End Sub
+    Public Sub formato_moneda()
+        If MontoFinanciadoTextBox.Text <> "" Then
+            MontoFinanciadoTextBox.Text = Format(CDec(MontoFinanciadoTextBox.Text), "C")
+        End If
+        If MontoSolicitadoTextBox.Text <> "" Then
+            MontoSolicitadoTextBox.Text = Format(CDec(MontoSolicitadoTextBox.Text), "C")
+        End If
+    End Sub
+    Private Sub MontoSolicitadoTextBox_LostFocus(sender As Object, e As EventArgs) Handles MontoSolicitadoTextBox.LostFocus
+        formato_moneda()
+    End Sub
+
+    Private Sub MontoFinanciadoTextBox_LostFocus(sender As Object, e As EventArgs) Handles MontoFinanciadoTextBox.LostFocus
+        formato_moneda()
     End Sub
 End Class
