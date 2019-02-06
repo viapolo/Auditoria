@@ -9,17 +9,10 @@
     Dim dtpFecha As DateTimePicker
 
     Public Sub frmAuditoriaMod_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'TODO: esta línea de código carga datos en la tabla 'ProductionDataSet.AUDIT_ParametrosH' Puede moverla o quitarla según sea necesario.
         Me.AUDIT_ParametrosHTableAdapter.Fill(Me.ProductionDataSet.AUDIT_ParametrosH)
-        'TODO: esta línea de código carga datos en la tabla 'ProductionDataSet.AUDIT_ParametrosV' Puede moverla o quitarla según sea necesario.
         Me.AUDIT_ParametrosVTableAdapter.Fill(Me.ProductionDataSet.AUDIT_ParametrosV)
-        'TODO: esta línea de código carga datos en la tabla 'ProductionDataSet.AUDIT_Condiciones' Puede moverla o quitarla según sea necesario.
         Me.AUDIT_CondicionesTableAdapter.Fill(Me.ProductionDataSet.AUDIT_Condiciones)
-        'TODO: esta línea de código carga datos en la tabla 'ProductionDataSet.AUDIT_AuditoriasCondiciones' Puede moverla o quitarla según sea necesario.
-        'Me.AUDIT_AuditoriasCondicionesTableAdapter.Fill(Me.ProductionDataSet.AUDIT_AuditoriasCondiciones)
-        'TODO: esta línea de código carga datos en la tabla 'ProductionDataSet.AUDIT_Parametros' Puede moverla o quitarla según sea necesario.
         Me.AUDIT_ParametrosTableAdapter.Fill(Me.ProductionDataSet.AUDIT_Parametros)
-        'TODO: esta línea de código carga datos en la tabla 'ProductionDataSet.AUDIT_Auditorias' Puede moverla o quitarla según sea necesario.
         Me.AUDIT_AuditoriasTableAdapter.ObtAuditConsec_FillBy(Me.ProductionDataSet.AUDIT_Auditorias, var_anexoAM.Trim, var_consecAM.Trim, var_ciclo)
         If cmbEstatus.Text = "ABIERTO" Then
             actdes("H")
@@ -42,10 +35,10 @@
                     DataGridView1.Item(10, cont).Value = "Eliminar"
                 End If
             Else
-                    DataGridView1.Item(0, cont).Value = AUDIT_CondicionesTableAdapter.ObtCond_ScalarQuery(Detalle.Id_Condicion) 'Detalle.Id_Condicion
+                DataGridView1.Item(0, cont).Value = AUDIT_CondicionesTableAdapter.ObtCond_ScalarQuery(Detalle.Id_Condicion)
             End If
-            DataGridView1.Item(1, cont).Value = AUDIT_ParametrosVTableAdapter.ObtDesc_ScalarQuery(Detalle.Validacion)  'CInt(Detalle.Validacion)
-            DataGridView1.Item(2, cont).Value = AUDIT_ParametrosHTableAdapter.ObtDesc_ScalarQuery(Detalle.CategoriaHallazgo) 'CInt(Detalle.CategoriaHallazgo)
+            DataGridView1.Item(1, cont).Value = AUDIT_ParametrosVTableAdapter.ObtDesc_ScalarQuery(Detalle.Validacion)
+            DataGridView1.Item(2, cont).Value = AUDIT_ParametrosHTableAdapter.ObtDesc_ScalarQuery(Detalle.CategoriaHallazgo)
             DataGridView1.Item(3, cont).Value = Detalle.Id_auditoria
             DataGridView1.Item(4, cont).Value = Detalle.Observaciones
             DataGridView1.Item(5, cont).Value = AUDIT_ParametrosVTableAdapter.ObtDescComp_ScalarQuery(Detalle.deptoResponsable)
@@ -74,7 +67,6 @@
             btnActualizar.Enabled = True
 
             FechaRelizacionDateTimePicker.Enabled = False
-            'ObervacionesTextBox.ReadOnly = True
             btnAgregar.Enabled = True
 
             ClienteTextBox.Enabled = True
@@ -190,12 +182,12 @@
         ElseIf DataGridView1.Item("eliminar", e.RowIndex).Value = "Eliminar" And e.ColumnIndex = 10 And cmbEstatus.Text = "ABIERTO" Then
             If MsgBox("Eliminar condición, ¿Deséa eliminar el registro?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
                 AUDIT_AuditoriasCondicionesTableAdapter.ElimCond_DeleteQuery(DataGridView1.Item(8, e.RowIndex).Value)
+                frmAuditoriaMod_Load(sender, e)
             Else
                 MsgBox("Proceso cancelado...", MsgBoxStyle.Information)
             End If
         End If
     End Sub
-
 
     Private Sub frmAuditoriasMod_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
         frmAuditorias.Enabled = True
@@ -204,9 +196,5 @@
 
     Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
         Me.Close()
-    End Sub
-
-    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
-
     End Sub
 End Class

@@ -27,9 +27,7 @@ Public Class frmAuditorias
 
     Public taAuditorias As New ProductionDataSetTableAdapters.AUDIT_AuditoriasTableAdapter
     Public Sub frmAuditorias_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'TODO: esta línea de código carga datos en la tabla 'ProductionDataSet1.AUDIT_OrgAutorizacion' Puede moverla o quitarla según sea necesario.
         Me.AUDIT_OrgAutorizacionTableAdapter.Fill(Me.ProductionDataSet1.AUDIT_OrgAutorizacion)
-        'TODO: esta línea de código carga datos en la tabla 'ProductionDataSet1.AUDIT_Analistas' Puede moverla o quitarla según sea necesario.
         Me.AUDIT_AnalistasTableAdapter.Fill(Me.ProductionDataSet1.AUDIT_Analistas)
 
         Me.AUDIT_ParametrosTableAdapter.Fill(Me.ProductionDataSet.AUDIT_Parametros)

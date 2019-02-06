@@ -58,6 +58,17 @@ Partial Class frmAuditoriaMod
         Me.AUDIT_AuditoriasCondicionesTableAdapter = New Auditoria.ProductionDataSetTableAdapters.AUDIT_AuditoriasCondicionesTableAdapter()
         Me.AUDIT_AuditoriasCondicionesBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.Id_Condicion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Validacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CategoriaHallazgo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.id_auditoria = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Observaciones = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.deptoResponsable = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FechaSolventacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Comentarios = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Id_auditoriaCondicion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.id_Cond = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.eliminar = New System.Windows.Forms.DataGridViewLinkColumn()
         Me.AUDITCondicionesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.AUDITParametrosVBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.btnAgregar = New System.Windows.Forms.Button()
@@ -82,17 +93,6 @@ Partial Class frmAuditoriaMod
         Me.TipoCreditoTextBox = New System.Windows.Forms.TextBox()
         Me.SucursalTextBox = New System.Windows.Forms.TextBox()
         Me.ClienteTextBox = New System.Windows.Forms.TextBox()
-        Me.Id_Condicion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Validacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CategoriaHallazgo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.id_auditoria = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Observaciones = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.deptoResponsable = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FechaSolventacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Comentarios = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Id_auditoriaCondicion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.id_Cond = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.eliminar = New System.Windows.Forms.DataGridViewLinkColumn()
         AnexoLabel = New System.Windows.Forms.Label()
         CicloLabel = New System.Windows.Forms.Label()
         ObervacionesLabel = New System.Windows.Forms.Label()
@@ -416,6 +416,102 @@ Partial Class frmAuditoriaMod
         Me.DataGridView1.Size = New System.Drawing.Size(1178, 331)
         Me.DataGridView1.TabIndex = 18
         '
+        'Id_Condicion
+        '
+        Me.Id_Condicion.DataPropertyName = "Id_Condicion"
+        Me.Id_Condicion.Frozen = True
+        Me.Id_Condicion.HeaderText = "Condicion"
+        Me.Id_Condicion.Name = "Id_Condicion"
+        Me.Id_Condicion.ReadOnly = True
+        Me.Id_Condicion.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Id_Condicion.Width = 250
+        '
+        'Validacion
+        '
+        Me.Validacion.DataPropertyName = "Validacion"
+        Me.Validacion.Frozen = True
+        Me.Validacion.HeaderText = "Validacion"
+        Me.Validacion.Name = "Validacion"
+        Me.Validacion.ReadOnly = True
+        Me.Validacion.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        '
+        'CategoriaHallazgo
+        '
+        Me.CategoriaHallazgo.DataPropertyName = "CategoriaHallazgo"
+        Me.CategoriaHallazgo.Frozen = True
+        Me.CategoriaHallazgo.HeaderText = "CategoriaHallazgo"
+        Me.CategoriaHallazgo.Name = "CategoriaHallazgo"
+        Me.CategoriaHallazgo.ReadOnly = True
+        Me.CategoriaHallazgo.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        '
+        'id_auditoria
+        '
+        Me.id_auditoria.Frozen = True
+        Me.id_auditoria.HeaderText = "id_auditoria"
+        Me.id_auditoria.Name = "id_auditoria"
+        Me.id_auditoria.ReadOnly = True
+        Me.id_auditoria.Visible = False
+        Me.id_auditoria.Width = 20
+        '
+        'Observaciones
+        '
+        Me.Observaciones.Frozen = True
+        Me.Observaciones.HeaderText = "Observaciones"
+        Me.Observaciones.Name = "Observaciones"
+        Me.Observaciones.ReadOnly = True
+        Me.Observaciones.Width = 200
+        '
+        'deptoResponsable
+        '
+        Me.deptoResponsable.Frozen = True
+        Me.deptoResponsable.HeaderText = "Depto. Responsable"
+        Me.deptoResponsable.Name = "deptoResponsable"
+        Me.deptoResponsable.ReadOnly = True
+        Me.deptoResponsable.Width = 80
+        '
+        'FechaSolventacion
+        '
+        Me.FechaSolventacion.Frozen = True
+        Me.FechaSolventacion.HeaderText = "Fecha Solventacion"
+        Me.FechaSolventacion.Name = "FechaSolventacion"
+        Me.FechaSolventacion.ReadOnly = True
+        '
+        'Comentarios
+        '
+        Me.Comentarios.Frozen = True
+        Me.Comentarios.HeaderText = "Comentarios"
+        Me.Comentarios.Name = "Comentarios"
+        Me.Comentarios.ReadOnly = True
+        Me.Comentarios.Width = 200
+        '
+        'Id_auditoriaCondicion
+        '
+        Me.Id_auditoriaCondicion.DataPropertyName = "Id_auditoriaCondicion"
+        Me.Id_auditoriaCondicion.Frozen = True
+        Me.Id_auditoriaCondicion.HeaderText = "Id"
+        Me.Id_auditoriaCondicion.Name = "Id_auditoriaCondicion"
+        Me.Id_auditoriaCondicion.ReadOnly = True
+        Me.Id_auditoriaCondicion.Width = 50
+        '
+        'id_Cond
+        '
+        Me.id_Cond.DataPropertyName = "Id_Condicion"
+        Me.id_Cond.Frozen = True
+        Me.id_Cond.HeaderText = "id_Cond"
+        Me.id_Cond.Name = "id_Cond"
+        Me.id_Cond.ReadOnly = True
+        Me.id_Cond.Visible = False
+        '
+        'eliminar
+        '
+        Me.eliminar.Frozen = True
+        Me.eliminar.HeaderText = "Eliminar"
+        Me.eliminar.Name = "eliminar"
+        Me.eliminar.ReadOnly = True
+        Me.eliminar.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.eliminar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        Me.eliminar.Width = 60
+        '
         'AUDITCondicionesBindingSource
         '
         Me.AUDITCondicionesBindingSource.DataMember = "AUDIT_Condiciones"
@@ -617,102 +713,6 @@ Partial Class frmAuditoriaMod
         Me.ClienteTextBox.Name = "ClienteTextBox"
         Me.ClienteTextBox.Size = New System.Drawing.Size(268, 20)
         Me.ClienteTextBox.TabIndex = 3
-        '
-        'Id_Condicion
-        '
-        Me.Id_Condicion.DataPropertyName = "Id_Condicion"
-        Me.Id_Condicion.Frozen = True
-        Me.Id_Condicion.HeaderText = "Condicion"
-        Me.Id_Condicion.Name = "Id_Condicion"
-        Me.Id_Condicion.ReadOnly = True
-        Me.Id_Condicion.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Id_Condicion.Width = 250
-        '
-        'Validacion
-        '
-        Me.Validacion.DataPropertyName = "Validacion"
-        Me.Validacion.Frozen = True
-        Me.Validacion.HeaderText = "Validacion"
-        Me.Validacion.Name = "Validacion"
-        Me.Validacion.ReadOnly = True
-        Me.Validacion.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        '
-        'CategoriaHallazgo
-        '
-        Me.CategoriaHallazgo.DataPropertyName = "CategoriaHallazgo"
-        Me.CategoriaHallazgo.Frozen = True
-        Me.CategoriaHallazgo.HeaderText = "CategoriaHallazgo"
-        Me.CategoriaHallazgo.Name = "CategoriaHallazgo"
-        Me.CategoriaHallazgo.ReadOnly = True
-        Me.CategoriaHallazgo.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        '
-        'id_auditoria
-        '
-        Me.id_auditoria.Frozen = True
-        Me.id_auditoria.HeaderText = "id_auditoria"
-        Me.id_auditoria.Name = "id_auditoria"
-        Me.id_auditoria.ReadOnly = True
-        Me.id_auditoria.Visible = False
-        Me.id_auditoria.Width = 20
-        '
-        'Observaciones
-        '
-        Me.Observaciones.Frozen = True
-        Me.Observaciones.HeaderText = "Observaciones"
-        Me.Observaciones.Name = "Observaciones"
-        Me.Observaciones.ReadOnly = True
-        Me.Observaciones.Width = 200
-        '
-        'deptoResponsable
-        '
-        Me.deptoResponsable.Frozen = True
-        Me.deptoResponsable.HeaderText = "Depto. Responsable"
-        Me.deptoResponsable.Name = "deptoResponsable"
-        Me.deptoResponsable.ReadOnly = True
-        Me.deptoResponsable.Width = 80
-        '
-        'FechaSolventacion
-        '
-        Me.FechaSolventacion.Frozen = True
-        Me.FechaSolventacion.HeaderText = "Fecha Solventacion"
-        Me.FechaSolventacion.Name = "FechaSolventacion"
-        Me.FechaSolventacion.ReadOnly = True
-        '
-        'Comentarios
-        '
-        Me.Comentarios.Frozen = True
-        Me.Comentarios.HeaderText = "Comentarios"
-        Me.Comentarios.Name = "Comentarios"
-        Me.Comentarios.ReadOnly = True
-        Me.Comentarios.Width = 200
-        '
-        'Id_auditoriaCondicion
-        '
-        Me.Id_auditoriaCondicion.DataPropertyName = "Id_auditoriaCondicion"
-        Me.Id_auditoriaCondicion.Frozen = True
-        Me.Id_auditoriaCondicion.HeaderText = "Id"
-        Me.Id_auditoriaCondicion.Name = "Id_auditoriaCondicion"
-        Me.Id_auditoriaCondicion.ReadOnly = True
-        Me.Id_auditoriaCondicion.Width = 50
-        '
-        'id_Cond
-        '
-        Me.id_Cond.DataPropertyName = "Id_Condicion"
-        Me.id_Cond.Frozen = True
-        Me.id_Cond.HeaderText = "id_Cond"
-        Me.id_Cond.Name = "id_Cond"
-        Me.id_Cond.ReadOnly = True
-        Me.id_Cond.Visible = False
-        '
-        'eliminar
-        '
-        Me.eliminar.Frozen = True
-        Me.eliminar.HeaderText = "Eliminar"
-        Me.eliminar.Name = "eliminar"
-        Me.eliminar.ReadOnly = True
-        Me.eliminar.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.eliminar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        Me.eliminar.Width = 60
         '
         'frmAuditoriaMod
         '

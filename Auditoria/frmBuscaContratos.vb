@@ -1,9 +1,6 @@
 ﻿Public Class frmBuscaContratos
 
     Private Sub frmBuscaContratos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'TODO: esta línea de código carga datos en la tabla 'ProductionDataSet.Vw_Anexos' Puede moverla o quitarla según sea necesario.
-        'Me.Vw_AnexosTableAdapter.Fill(Me.ProductionDataSet.Vw_Anexos)
-        'TODO: esta línea de código carga datos en la tabla 'ProductionDataSet.Clientes' Puede moverla o quitarla según sea necesario.
         Me.ClientesTableAdapter.Fill(Me.ProductionDataSet.Clientes)
     End Sub
 
@@ -77,11 +74,11 @@
             taAuditorias.ObtAudit_FillBy(ProductionDataSet.AUDIT_Auditorias, datos(2).Trim, datos(3))
 
             frmAuditorias.var_cliente = taCiclo.ObtNomCliente_ScalarQuery(datos(2).Trim).Trim
-            frmAuditorias.var_sucursal = taCiclo.ObtNomSuc_ScalarQuery(datos(2).Trim, datos(3)) 'Vw_AnexosBindingSource.Current("Nombre_Sucursal")
-            frmAuditorias.var_tipoCredito = taCiclo.ObtTipoCred_ScalarQuery(datos(2).Trim, datos(3)) 'Vw_AnexosBindingSource.Current("TipoCredito")
-            frmAuditorias.var_recursos = taCiclo.ObtFondeotit_ScalarQuery(datos(2).Trim, datos(3)) 'Vw_AnexosBindingSource.Current("Fondeotit")
-            frmAuditorias.var_fechaDispo = taCiclo.ObtFecha_Pago_ScalarQuery(datos(2).Trim, datos(3)) 'Vw_AnexosBindingSource.Current("Fecha_Pago")
-            frmAuditorias.var_promotor = taCiclo.ObtNombre_Promotor_ScalarQuery(datos(2).Trim, datos(3)) 'Vw_AnexosBindingSource.Current("Nombre_Promotor")
+            frmAuditorias.var_sucursal = taCiclo.ObtNomSuc_ScalarQuery(datos(2).Trim, datos(3))
+            frmAuditorias.var_tipoCredito = taCiclo.ObtTipoCred_ScalarQuery(datos(2).Trim, datos(3))
+            frmAuditorias.var_recursos = taCiclo.ObtFondeotit_ScalarQuery(datos(2).Trim, datos(3))
+            frmAuditorias.var_fechaDispo = taCiclo.ObtFecha_Pago_ScalarQuery(datos(2).Trim, datos(3))
+            frmAuditorias.var_promotor = taCiclo.ObtNombre_Promotor_ScalarQuery(datos(2).Trim, datos(3))
             frmAuditorias.var_destino = taActfijo.Obtdestino_ScalarQuery(lblAnexos.Text)
 
 
