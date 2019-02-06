@@ -32,9 +32,9 @@ Partial Class frmAuditorias
         Dim EstatusLabel As System.Windows.Forms.Label
         Dim UsuarioLabel As System.Windows.Forms.Label
         Dim ConsecutivoLabel As System.Windows.Forms.Label
-        Dim DataGridViewCellStyle70 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle71 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle72 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.btnAgregar = New System.Windows.Forms.Button()
         Me.AUDIT_AuditoriasDataGridView = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -234,9 +234,9 @@ Partial Class frmAuditorias
         '
         Me.DataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader
         Me.DataGridViewTextBoxColumn4.DataPropertyName = "FechaCreacion"
-        DataGridViewCellStyle70.Format = "G"
-        DataGridViewCellStyle70.NullValue = Nothing
-        Me.DataGridViewTextBoxColumn4.DefaultCellStyle = DataGridViewCellStyle70
+        DataGridViewCellStyle4.Format = "G"
+        DataGridViewCellStyle4.NullValue = Nothing
+        Me.DataGridViewTextBoxColumn4.DefaultCellStyle = DataGridViewCellStyle4
         Me.DataGridViewTextBoxColumn4.HeaderText = "FechaCreacion"
         Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
         Me.DataGridViewTextBoxColumn4.ReadOnly = True
@@ -246,9 +246,9 @@ Partial Class frmAuditorias
         '
         Me.DataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader
         Me.DataGridViewTextBoxColumn5.DataPropertyName = "UltimaActualizacion"
-        DataGridViewCellStyle71.Format = "G"
-        DataGridViewCellStyle71.NullValue = Nothing
-        Me.DataGridViewTextBoxColumn5.DefaultCellStyle = DataGridViewCellStyle71
+        DataGridViewCellStyle5.Format = "G"
+        DataGridViewCellStyle5.NullValue = Nothing
+        Me.DataGridViewTextBoxColumn5.DefaultCellStyle = DataGridViewCellStyle5
         Me.DataGridViewTextBoxColumn5.HeaderText = "UltimaActualizacion"
         Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
         Me.DataGridViewTextBoxColumn5.ReadOnly = True
@@ -258,9 +258,9 @@ Partial Class frmAuditorias
         '
         Me.DataGridViewTextBoxColumn6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader
         Me.DataGridViewTextBoxColumn6.DataPropertyName = "FechaRelizacion"
-        DataGridViewCellStyle72.Format = "G"
-        DataGridViewCellStyle72.NullValue = Nothing
-        Me.DataGridViewTextBoxColumn6.DefaultCellStyle = DataGridViewCellStyle72
+        DataGridViewCellStyle6.Format = "G"
+        DataGridViewCellStyle6.NullValue = Nothing
+        Me.DataGridViewTextBoxColumn6.DefaultCellStyle = DataGridViewCellStyle6
         Me.DataGridViewTextBoxColumn6.HeaderText = "FechaRelizacion"
         Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
         Me.DataGridViewTextBoxColumn6.ReadOnly = True
@@ -361,7 +361,7 @@ Partial Class frmAuditorias
         Me.UsuarioTextBox.Enabled = False
         Me.UsuarioTextBox.Location = New System.Drawing.Point(462, 12)
         Me.UsuarioTextBox.Name = "UsuarioTextBox"
-        Me.UsuarioTextBox.Size = New System.Drawing.Size(100, 20)
+        Me.UsuarioTextBox.Size = New System.Drawing.Size(137, 20)
         Me.UsuarioTextBox.TabIndex = 4
         '
         'btnGuardar
