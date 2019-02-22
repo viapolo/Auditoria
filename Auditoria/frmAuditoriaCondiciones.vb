@@ -18,7 +18,12 @@ Public Class frmAuditoriaCondiciones
     Dim taActulizaAudit As New ProductionDataSetTableAdapters.AUDIT_AuditoriasTableAdapter
     Dim taAuditorias As New ProductionDataSetTableAdapters.AUDIT_AuditoriasTableAdapter
     Dim taAuditoriasCond As New ProductionDataSetTableAdapters.AUDIT_AuditoriasCondicionesTableAdapter
+    Dim taSeguridad As New SeguridadTableAdapters.USUARIOTableAdapter
+    Dim taAuditD As New ProductionDataSetTableAdapters.AUDIT_ParametrosDTableAdapter
     Private Sub frmAuditoriaCondiciones_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: esta línea de código carga datos en la tabla 'Seguridad.USUARIO' Puede moverla o quitarla según sea necesario.
+        Me.USUARIOTableAdapter.Fill(Me.Seguridad.USUARIO)
+        'TODO: esta línea de código carga datos en la tabla 'Seguridad.USUARIO' Puede moverla o quitarla según sea necesario.
         Me.AUDIT_ParametrosDTableAdapter.Fill(Me.ProductionDataSet.AUDIT_ParametrosD)
         Me.AUDIT_ParametrosVTableAdapter.Fill(Me.ProductionDataSet.AUDIT_ParametrosV)
         Me.AUDIT_ParametrosHTableAdapter.Fill(Me.ProductionDataSet.AUDIT_ParametrosH)
@@ -228,7 +233,7 @@ Public Class frmAuditoriaCondiciones
         taAuditoriasCond.ObtDetalleAuditCond_FillBy(ProductionDataSet.AUDIT_AuditoriasCondiciones, var_idAuditoriaCondiciones)
         Dim var_ini As Integer = taAuditoriasCond.CuentaRegistros_ScalarQuery(CInt(Id_auditoriaTextBox.Text), CInt(cmbCondicion.SelectedValue))
         For i = var_ini To var_ini + var_revisiones - 1
-            taAuditoriasCond.Insert(Id_auditoriaTextBox.Text, CInt(cmbCondicion.SelectedValue), 1, "", 11, System.Data.SqlTypes.SqlDateTime.Null, "", i + 1, Date.Now, 32, False, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing)
+            taAuditoriasCond.Insert(Id_auditoriaTextBox.Text, CInt(cmbCondicion.SelectedValue), 1, "", 11, System.Data.SqlTypes.SqlDateTime.Null, "", i + 1, Date.Now, 32, False, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, 32, System.Data.SqlTypes.SqlDateTime.Null)
         Next
     End Sub
 
@@ -367,5 +372,11 @@ Public Class frmAuditoriaCondiciones
         Catch ex As Exception
             MsgBox(ex.ToString, MsgBoxStyle.Critical, "Error al abrir archivo...")
         End Try
+    End Sub
+
+    Private Sub cmbDeptoResponsable_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbDeptoResponsable.SelectedIndexChanged
+        If Not cmbDeptoResponsable.SelectedValue Is Nothing Then
+            Me.taSeguridad.UsuariosXDpto_FillBy(Me.Seguridad.USUARIO, Me.taAuditD.ObtIdDpto_ScalarQuery(cmbDeptoResponsable.SelectedValue).ToString)
+        End If
     End Sub
 End Class

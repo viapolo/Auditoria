@@ -64,6 +64,17 @@ Namespace My
                 Return CType(Me("ProductionConnectionString"),String)
             End Get
         End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=server-RAID\;Initial Catalog=SeguridadNva;Persist Security Info=True;"& _ 
+            "User ID=User_PRO;Password=User_PRO2015")>  _
+        Public ReadOnly Property SeguridadNvaConnectionString() As String
+            Get
+                Return CType(Me("SeguridadNvaConnectionString"),String)
+            End Get
+        End Property
     End Class
 End Namespace
 
