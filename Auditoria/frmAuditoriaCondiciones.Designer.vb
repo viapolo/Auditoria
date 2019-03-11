@@ -80,6 +80,14 @@ Partial Class frmAuditoriaCondiciones
         Me.AUDIT_ParametrosDTableAdapter = New Auditoria.ProductionDataSetTableAdapters.AUDIT_ParametrosDTableAdapter()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.FechaCompromisoDateTimePicker = New System.Windows.Forms.DateTimePicker()
+        Me.AUDITEstatusBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.cmbEstatus = New System.Windows.Forms.ComboBox()
+        Me.AUDIT_ParametrosTableAdapter = New Auditoria.ProductionDataSetTableAdapters.AUDIT_ParametrosTableAdapter()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.bsoEstatusEnvio = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.AUDIT_ParametrosAllTableAdapter = New Auditoria.ProductionDataSetTableAdapters.AUDIT_ParametrosAllTableAdapter()
         Id_auditoriaLabel = New System.Windows.Forms.Label()
         Id_CondicionLabel = New System.Windows.Forms.Label()
         ValidacionLabel = New System.Windows.Forms.Label()
@@ -101,12 +109,14 @@ Partial Class frmAuditoriaCondiciones
         CType(Me.SeguridadBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Seguridad, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.USUARIOBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.AUDITEstatusBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.bsoEstatusEnvio, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Id_auditoriaLabel
         '
         Id_auditoriaLabel.AutoSize = True
-        Id_auditoriaLabel.Location = New System.Drawing.Point(442, 424)
+        Id_auditoriaLabel.Location = New System.Drawing.Point(316, 425)
         Id_auditoriaLabel.Name = "Id_auditoriaLabel"
         Id_auditoriaLabel.Size = New System.Drawing.Size(62, 13)
         Id_auditoriaLabel.TabIndex = 1
@@ -115,7 +125,7 @@ Partial Class frmAuditoriaCondiciones
         'Id_CondicionLabel
         '
         Id_CondicionLabel.AutoSize = True
-        Id_CondicionLabel.Location = New System.Drawing.Point(231, 422)
+        Id_CondicionLabel.Location = New System.Drawing.Point(155, 423)
         Id_CondicionLabel.Name = "Id_CondicionLabel"
         Id_CondicionLabel.Size = New System.Drawing.Size(69, 13)
         Id_CondicionLabel.TabIndex = 2
@@ -169,7 +179,7 @@ Partial Class frmAuditoriaCondiciones
         'Id_auditoriaCondicionLabel
         '
         Id_auditoriaCondicionLabel.AutoSize = True
-        Id_auditoriaCondicionLabel.Location = New System.Drawing.Point(48, 423)
+        Id_auditoriaCondicionLabel.Location = New System.Drawing.Point(18, 423)
         Id_auditoriaCondicionLabel.Name = "Id_auditoriaCondicionLabel"
         Id_auditoriaCondicionLabel.Size = New System.Drawing.Size(66, 13)
         Id_auditoriaCondicionLabel.TabIndex = 23
@@ -184,14 +194,23 @@ Partial Class frmAuditoriaCondiciones
         NomOtrosLabel.TabIndex = 27
         NomOtrosLabel.Text = "Nombre Otros:"
         '
+        'FechaCompromisoLabel
+        '
+        FechaCompromisoLabel.AutoSize = True
+        FechaCompromisoLabel.Location = New System.Drawing.Point(561, 66)
+        FechaCompromisoLabel.Name = "FechaCompromisoLabel"
+        FechaCompromisoLabel.Size = New System.Drawing.Size(100, 13)
+        FechaCompromisoLabel.TabIndex = 31
+        FechaCompromisoLabel.Text = "Fecha Compromiso:"
+        '
         'Id_auditoriaTextBox
         '
         Me.Id_auditoriaTextBox.BackColor = System.Drawing.SystemColors.Window
         Me.Id_auditoriaTextBox.Enabled = False
-        Me.Id_auditoriaTextBox.Location = New System.Drawing.Point(510, 420)
+        Me.Id_auditoriaTextBox.Location = New System.Drawing.Point(384, 422)
         Me.Id_auditoriaTextBox.Name = "Id_auditoriaTextBox"
         Me.Id_auditoriaTextBox.ReadOnly = True
-        Me.Id_auditoriaTextBox.Size = New System.Drawing.Size(100, 20)
+        Me.Id_auditoriaTextBox.Size = New System.Drawing.Size(63, 20)
         Me.Id_auditoriaTextBox.TabIndex = 0
         '
         'ObservacionesTextBox
@@ -258,9 +277,9 @@ Partial Class frmAuditoriaCondiciones
         Me.cmbCondicion.DisplayMember = "Condicion"
         Me.cmbCondicion.Enabled = False
         Me.cmbCondicion.FormattingEnabled = True
-        Me.cmbCondicion.Location = New System.Drawing.Point(307, 419)
+        Me.cmbCondicion.Location = New System.Drawing.Point(231, 420)
         Me.cmbCondicion.Name = "cmbCondicion"
-        Me.cmbCondicion.Size = New System.Drawing.Size(120, 21)
+        Me.cmbCondicion.Size = New System.Drawing.Size(80, 21)
         Me.cmbCondicion.TabIndex = 5
         Me.cmbCondicion.ValueMember = "id_Condicion"
         '
@@ -377,9 +396,9 @@ Partial Class frmAuditoriaCondiciones
         '
         Me.Id_auditoriaCondicionTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.AUDIT_AuditoriasCondicionesBindingSource, "Id_auditoriaCondicion", True))
         Me.Id_auditoriaCondicionTextBox.Enabled = False
-        Me.Id_auditoriaCondicionTextBox.Location = New System.Drawing.Point(120, 420)
+        Me.Id_auditoriaCondicionTextBox.Location = New System.Drawing.Point(90, 420)
         Me.Id_auditoriaCondicionTextBox.Name = "Id_auditoriaCondicionTextBox"
-        Me.Id_auditoriaCondicionTextBox.Size = New System.Drawing.Size(100, 20)
+        Me.Id_auditoriaCondicionTextBox.Size = New System.Drawing.Size(63, 20)
         Me.Id_auditoriaCondicionTextBox.TabIndex = 10
         '
         'Label3
@@ -549,11 +568,13 @@ Partial Class frmAuditoriaCondiciones
         Me.TableAdapterManager.AUDIT_AuditoriasTableAdapter = Nothing
         Me.TableAdapterManager.AUDIT_CondicionesTableAdapter = Me.AUDIT_CondicionesTableAdapter
         Me.TableAdapterManager.AUDIT_OrgAutorizacionTableAdapter = Nothing
+        Me.TableAdapterManager.AUDIT_ParametrosAllTableAdapter = Nothing
         Me.TableAdapterManager.AUDIT_ParametrosDTableAdapter = Nothing
         Me.TableAdapterManager.AUDIT_ParametrosHTableAdapter = Me.AUDIT_ParametrosHTableAdapter
         Me.TableAdapterManager.AUDIT_ParametrosTableAdapter = Nothing
         Me.TableAdapterManager.AUDIT_ParametrosVTableAdapter = Me.AUDIT_ParametrosVTableAdapter
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.GEN_Correos_SistemaFinagilTableAdapter = Nothing
         Me.TableAdapterManager.SucursalesTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = Auditoria.ProductionDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
@@ -570,15 +591,6 @@ Partial Class frmAuditoriaCondiciones
         Me.Label4.TabIndex = 30
         Me.Label4.Text = "Usuario responsable:"
         '
-        'FechaCompromisoLabel
-        '
-        FechaCompromisoLabel.AutoSize = True
-        FechaCompromisoLabel.Location = New System.Drawing.Point(561, 66)
-        FechaCompromisoLabel.Name = "FechaCompromisoLabel"
-        FechaCompromisoLabel.Size = New System.Drawing.Size(100, 13)
-        FechaCompromisoLabel.TabIndex = 31
-        FechaCompromisoLabel.Text = "Fecha Compromiso:"
-        '
         'FechaCompromisoDateTimePicker
         '
         Me.FechaCompromisoDateTimePicker.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.AUDIT_AuditoriasCondicionesBindingSource, "fechaCompromiso", True))
@@ -587,12 +599,79 @@ Partial Class frmAuditoriaCondiciones
         Me.FechaCompromisoDateTimePicker.Size = New System.Drawing.Size(200, 20)
         Me.FechaCompromisoDateTimePicker.TabIndex = 32
         '
+        'AUDITEstatusBindingSource
+        '
+        Me.AUDITEstatusBindingSource.DataMember = "AUDIT_Parametros"
+        Me.AUDITEstatusBindingSource.DataSource = Me.ProductionDataSet
+        Me.AUDITEstatusBindingSource.Filter = "Tipo = 'ESTATUSC'"
+        '
+        'cmbEstatus
+        '
+        Me.cmbEstatus.DataBindings.Add(New System.Windows.Forms.Binding("SelectedValue", Me.AUDIT_AuditoriasCondicionesBindingSource, "estatusCond", True))
+        Me.cmbEstatus.DataSource = Me.AUDITEstatusBindingSource
+        Me.cmbEstatus.DisplayMember = "Descripcion"
+        Me.cmbEstatus.FormattingEnabled = True
+        Me.cmbEstatus.Location = New System.Drawing.Point(512, 421)
+        Me.cmbEstatus.Name = "cmbEstatus"
+        Me.cmbEstatus.Size = New System.Drawing.Size(95, 21)
+        Me.cmbEstatus.TabIndex = 33
+        Me.cmbEstatus.ValueMember = "id_Parametro"
+        '
+        'AUDIT_ParametrosTableAdapter
+        '
+        Me.AUDIT_ParametrosTableAdapter.ClearBeforeFill = True
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(461, 423)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(45, 13)
+        Me.Label5.TabIndex = 34
+        Me.Label5.Text = "Estatus:"
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.DataBindings.Add(New System.Windows.Forms.Binding("SelectedValue", Me.AUDIT_AuditoriasCondicionesBindingSource, "estatusEnv", True))
+        Me.ComboBox1.DataSource = Me.bsoEstatusEnvio
+        Me.ComboBox1.DisplayMember = "Descripcion"
+        Me.ComboBox1.Enabled = False
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Location = New System.Drawing.Point(679, 422)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(95, 21)
+        Me.ComboBox1.TabIndex = 35
+        Me.ComboBox1.ValueMember = "id_Parametro"
+        '
+        'bsoEstatusEnvio
+        '
+        Me.bsoEstatusEnvio.DataMember = "AUDIT_ParametrosAll"
+        Me.bsoEstatusEnvio.DataSource = Me.ProductionDataSet
+        Me.bsoEstatusEnvio.Filter = "Tipo='ESTATUSE' and Activo=1"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(623, 425)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(50, 13)
+        Me.Label6.TabIndex = 36
+        Me.Label6.Text = "Est. Env:"
+        '
+        'AUDIT_ParametrosAllTableAdapter
+        '
+        Me.AUDIT_ParametrosAllTableAdapter.ClearBeforeFill = True
+        '
         'frmAuditoriaCondiciones
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.ClientSize = New System.Drawing.Size(895, 460)
+        Me.Controls.Add(Me.Label6)
+        Me.Controls.Add(Me.ComboBox1)
+        Me.Controls.Add(Me.Label5)
+        Me.Controls.Add(Me.cmbEstatus)
         Me.Controls.Add(FechaCompromisoLabel)
         Me.Controls.Add(Me.FechaCompromisoDateTimePicker)
         Me.Controls.Add(Me.Label4)
@@ -643,6 +722,8 @@ Partial Class frmAuditoriaCondiciones
         CType(Me.SeguridadBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Seguridad, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.USUARIOBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.AUDITEstatusBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.bsoEstatusEnvio, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -695,4 +776,12 @@ Partial Class frmAuditoriaCondiciones
     Friend WithEvents USUARIOBindingSource1 As BindingSource
     Friend WithEvents Label4 As Label
     Friend WithEvents FechaCompromisoDateTimePicker As DateTimePicker
+    Friend WithEvents AUDITEstatusBindingSource As BindingSource
+    Friend WithEvents cmbEstatus As ComboBox
+    Friend WithEvents AUDIT_ParametrosTableAdapter As ProductionDataSetTableAdapters.AUDIT_ParametrosTableAdapter
+    Friend WithEvents Label5 As Label
+    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents Label6 As Label
+    Friend WithEvents bsoEstatusEnvio As BindingSource
+    Friend WithEvents AUDIT_ParametrosAllTableAdapter As ProductionDataSetTableAdapters.AUDIT_ParametrosAllTableAdapter
 End Class

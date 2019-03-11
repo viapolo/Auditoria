@@ -7,7 +7,7 @@
 
     Public bandera As Boolean = False
     Dim dtpFecha As DateTimePicker
-
+    Dim taCorreosFinagil As New ProductionDataSetTableAdapters.GEN_Correos_SistemaFinagilTableAdapter
     Public Sub frmAuditoriaMod_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.AUDIT_ParametrosHTableAdapter.Fill(Me.ProductionDataSet.AUDIT_ParametrosH)
         Me.AUDIT_ParametrosVTableAdapter.Fill(Me.ProductionDataSet.AUDIT_ParametrosV)
@@ -110,6 +110,7 @@
     End Sub
 
     Private Sub btnActualizar_Click(sender As Object, e As EventArgs) Handles btnActualizar.Click
+        Dim taParametros As New ProductionDataSetTableAdapters.AUDIT_ParametrosAllTableAdapter
         Me.AUDIT_AuditoriasBindingSource.Current("UltimaActualizacion") = Date.Now
         Me.AUDIT_AuditoriasBindingSource.EndEdit()
         Me.TableAdapterManager.UpdateAll(Me.ProductionDataSet)
@@ -119,6 +120,12 @@
             actdes("H")
         ElseIf cmbEstatus.Text = "CERRADO" Then
             actdes("D")
+            'Me.AUDIT_AuditoriasCondicionesTableAdapter.ActEstatusEnv_UpdateQuery("39", var_id_auditoria)
+            Me.AUDIT_AuditoriasCondicionesTableAdapter.AgrupaNotificCorreo_FillBy(Me.ProductionDataSet.AUDIT_AuditoriasCondiciones, var_id_auditoria)
+
+            For Each row As ProductionDataSet.AUDIT_AuditoriasCondicionesRow In ProductionDataSet.AUDIT_AuditoriasCondiciones.Rows
+                Me.taCorreosFinagil.Insert("viapolo@lamoderna.com.mx", taParametros.obtMail_ScalarQuery(row.deptoResponsable), "Notificación de auditoría: " & var_id_auditoria, "<br>Notificación de incidencias en la auditoría del contrato: " & var_anexoAM & "<br>Del Cliente: " & ClienteTextBox.Text & "<br>Para ver el detalle de las observaciones realizadas vaya a la siguiente liga: <br><A HREF='http://server-raid/WEBtasas/2002db3535.aspx?ID=" & row.Id_auditoria & "&User=" & row.deptoResponsable & "'>Observaciones</A>", 0, Date.Now, "")
+            Next
         End If
         formato_moneda()
     End Sub

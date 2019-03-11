@@ -318,6 +318,7 @@ Partial Class frmAuditoriaMod
         Me.TableAdapterManager.AUDIT_AuditoriasTableAdapter = Me.AUDIT_AuditoriasTableAdapter
         Me.TableAdapterManager.AUDIT_CondicionesTableAdapter = Nothing
         Me.TableAdapterManager.AUDIT_OrgAutorizacionTableAdapter = Nothing
+        Me.TableAdapterManager.AUDIT_ParametrosAllTableAdapter = Nothing
         Me.TableAdapterManager.AUDIT_ParametrosDTableAdapter = Nothing
         Me.TableAdapterManager.AUDIT_ParametrosHTableAdapter = Nothing
         Me.TableAdapterManager.AUDIT_ParametrosTableAdapter = Nothing
@@ -371,6 +372,7 @@ Partial Class frmAuditoriaMod
         '
         Me.AUDITParametrosBindingSource1.DataMember = "AUDIT_Parametros"
         Me.AUDITParametrosBindingSource1.DataSource = Me.ProductionDataSet
+        Me.AUDITParametrosBindingSource1.Filter = "Tipo='ESTATUS'"
         '
         'AUDITParametrosBindingSource
         '

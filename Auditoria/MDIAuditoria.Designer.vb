@@ -26,6 +26,7 @@ Partial Class MDIAuditoria
         Me.components = New System.ComponentModel.Container()
         Me.MenuStrip = New System.Windows.Forms.MenuStrip()
         Me.FileMenu = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SucursalToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ConsultaNombre = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
         Me.ConsultaAnexo = New System.Windows.Forms.ToolStripMenuItem()
@@ -34,14 +35,15 @@ Partial Class MDIAuditoria
         Me.StatusStrip = New System.Windows.Forms.StatusStrip()
         Me.ToolStripStatusLabel = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
-        Me.SucursalToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ReportesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AuditoríasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip.SuspendLayout()
         Me.StatusStrip.SuspendLayout()
         Me.SuspendLayout()
         '
         'MenuStrip
         '
-        Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileMenu})
+        Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileMenu, Me.ReportesToolStripMenuItem})
         Me.MenuStrip.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip.Name = "MenuStrip"
         Me.MenuStrip.Size = New System.Drawing.Size(884, 24)
@@ -55,6 +57,12 @@ Partial Class MDIAuditoria
         Me.FileMenu.Name = "FileMenu"
         Me.FileMenu.Size = New System.Drawing.Size(60, 20)
         Me.FileMenu.Text = "&Archivo"
+        '
+        'SucursalToolStripMenuItem
+        '
+        Me.SucursalToolStripMenuItem.Name = "SucursalToolStripMenuItem"
+        Me.SucursalToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.SucursalToolStripMenuItem.Text = "Sucursal"
         '
         'ConsultaNombre
         '
@@ -100,11 +108,18 @@ Partial Class MDIAuditoria
         Me.ToolStripStatusLabel.Size = New System.Drawing.Size(42, 17)
         Me.ToolStripStatusLabel.Text = "Estado"
         '
-        'SucursalToolStripMenuItem
+        'ReportesToolStripMenuItem
         '
-        Me.SucursalToolStripMenuItem.Name = "SucursalToolStripMenuItem"
-        Me.SucursalToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.SucursalToolStripMenuItem.Text = "Sucursal"
+        Me.ReportesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AuditoríasToolStripMenuItem})
+        Me.ReportesToolStripMenuItem.Name = "ReportesToolStripMenuItem"
+        Me.ReportesToolStripMenuItem.Size = New System.Drawing.Size(65, 20)
+        Me.ReportesToolStripMenuItem.Text = "&Reportes"
+        '
+        'AuditoríasToolStripMenuItem
+        '
+        Me.AuditoríasToolStripMenuItem.Name = "AuditoríasToolStripMenuItem"
+        Me.AuditoríasToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.AuditoríasToolStripMenuItem.Text = "A&uditorías"
         '
         'MDIAuditoria
         '
@@ -138,4 +153,6 @@ Partial Class MDIAuditoria
     Friend WithEvents ToolStripSeparator3 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents MenuStrip As System.Windows.Forms.MenuStrip
     Friend WithEvents SucursalToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ReportesToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents AuditoríasToolStripMenuItem As ToolStripMenuItem
 End Class

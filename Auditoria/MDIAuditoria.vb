@@ -22,4 +22,13 @@ Public Class MDIAuditoria
         Me.Cursor = Cursors.Default
         MenuStrip.Enabled = True
     End Sub
+
+    Private Sub AuditoríasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AuditoríasToolStripMenuItem.Click
+        Me.Cursor = Cursors.WaitCursor
+        MenuStrip.Enabled = False
+        frmRptAuditoriasA.MdiParent = Me
+        frmRptAuditoriasA.Show()
+        Me.Cursor = Cursors.Default
+        MenuStrip.Enabled = True
+    End Sub
 End Class

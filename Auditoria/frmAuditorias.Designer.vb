@@ -32,9 +32,9 @@ Partial Class frmAuditorias
         Dim EstatusLabel As System.Windows.Forms.Label
         Dim UsuarioLabel As System.Windows.Forms.Label
         Dim ConsecutivoLabel As System.Windows.Forms.Label
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.btnAgregar = New System.Windows.Forms.Button()
         Me.AUDIT_AuditoriasDataGridView = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -234,9 +234,9 @@ Partial Class frmAuditorias
         '
         Me.DataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader
         Me.DataGridViewTextBoxColumn4.DataPropertyName = "FechaCreacion"
-        DataGridViewCellStyle4.Format = "G"
-        DataGridViewCellStyle4.NullValue = Nothing
-        Me.DataGridViewTextBoxColumn4.DefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle1.Format = "G"
+        DataGridViewCellStyle1.NullValue = Nothing
+        Me.DataGridViewTextBoxColumn4.DefaultCellStyle = DataGridViewCellStyle1
         Me.DataGridViewTextBoxColumn4.HeaderText = "FechaCreacion"
         Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
         Me.DataGridViewTextBoxColumn4.ReadOnly = True
@@ -246,9 +246,9 @@ Partial Class frmAuditorias
         '
         Me.DataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader
         Me.DataGridViewTextBoxColumn5.DataPropertyName = "UltimaActualizacion"
-        DataGridViewCellStyle5.Format = "G"
-        DataGridViewCellStyle5.NullValue = Nothing
-        Me.DataGridViewTextBoxColumn5.DefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle2.Format = "G"
+        DataGridViewCellStyle2.NullValue = Nothing
+        Me.DataGridViewTextBoxColumn5.DefaultCellStyle = DataGridViewCellStyle2
         Me.DataGridViewTextBoxColumn5.HeaderText = "UltimaActualizacion"
         Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
         Me.DataGridViewTextBoxColumn5.ReadOnly = True
@@ -258,9 +258,9 @@ Partial Class frmAuditorias
         '
         Me.DataGridViewTextBoxColumn6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader
         Me.DataGridViewTextBoxColumn6.DataPropertyName = "FechaRelizacion"
-        DataGridViewCellStyle6.Format = "G"
-        DataGridViewCellStyle6.NullValue = Nothing
-        Me.DataGridViewTextBoxColumn6.DefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle3.Format = "G"
+        DataGridViewCellStyle3.NullValue = Nothing
+        Me.DataGridViewTextBoxColumn6.DefaultCellStyle = DataGridViewCellStyle3
         Me.DataGridViewTextBoxColumn6.HeaderText = "FechaRelizacion"
         Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
         Me.DataGridViewTextBoxColumn6.ReadOnly = True
@@ -386,6 +386,7 @@ Partial Class frmAuditorias
         Me.TableAdapterManager.AUDIT_AuditoriasTableAdapter = Me.AUDIT_AuditoriasTableAdapter
         Me.TableAdapterManager.AUDIT_CondicionesTableAdapter = Nothing
         Me.TableAdapterManager.AUDIT_OrgAutorizacionTableAdapter = Nothing
+        Me.TableAdapterManager.AUDIT_ParametrosAllTableAdapter = Nothing
         Me.TableAdapterManager.AUDIT_ParametrosDTableAdapter = Nothing
         Me.TableAdapterManager.AUDIT_ParametrosHTableAdapter = Nothing
         Me.TableAdapterManager.AUDIT_ParametrosTableAdapter = Nothing
@@ -419,6 +420,7 @@ Partial Class frmAuditorias
         '
         Me.AUDITParametrosBindingSource1.DataMember = "AUDIT_Parametros"
         Me.AUDITParametrosBindingSource1.DataSource = Me.ProductionDataSet
+        Me.AUDITParametrosBindingSource1.Filter = "Tipo='ESTATUS'"
         '
         'AUDIT_ParametrosTableAdapter
         '
