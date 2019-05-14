@@ -32,18 +32,22 @@ Partial Class MDIAuditoria
         Me.ConsultaAnexo = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator5 = New System.Windows.Forms.ToolStripSeparator()
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ReportesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AuditoríasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ActualiToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DetallesDeContratoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.StatusStrip = New System.Windows.Forms.StatusStrip()
         Me.ToolStripStatusLabel = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
-        Me.ReportesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AuditoríasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ofdActualizaDetallesContrato = New System.Windows.Forms.OpenFileDialog()
+        Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip.SuspendLayout()
         Me.StatusStrip.SuspendLayout()
         Me.SuspendLayout()
         '
         'MenuStrip
         '
-        Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileMenu, Me.ReportesToolStripMenuItem})
+        Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileMenu, Me.ReportesToolStripMenuItem, Me.ActualiToolStripMenuItem, Me.SalirToolStripMenuItem})
         Me.MenuStrip.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip.Name = "MenuStrip"
         Me.MenuStrip.Size = New System.Drawing.Size(884, 24)
@@ -61,37 +65,63 @@ Partial Class MDIAuditoria
         'SucursalToolStripMenuItem
         '
         Me.SucursalToolStripMenuItem.Name = "SucursalToolStripMenuItem"
-        Me.SucursalToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.SucursalToolStripMenuItem.Size = New System.Drawing.Size(118, 22)
         Me.SucursalToolStripMenuItem.Text = "Sucursal"
         '
         'ConsultaNombre
         '
         Me.ConsultaNombre.ImageTransparentColor = System.Drawing.Color.Black
         Me.ConsultaNombre.Name = "ConsultaNombre"
-        Me.ConsultaNombre.Size = New System.Drawing.Size(152, 22)
+        Me.ConsultaNombre.Size = New System.Drawing.Size(118, 22)
         Me.ConsultaNombre.Text = "&Nombre"
         '
         'ToolStripSeparator3
         '
         Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
-        Me.ToolStripSeparator3.Size = New System.Drawing.Size(149, 6)
+        Me.ToolStripSeparator3.Size = New System.Drawing.Size(115, 6)
         '
         'ConsultaAnexo
         '
         Me.ConsultaAnexo.Name = "ConsultaAnexo"
-        Me.ConsultaAnexo.Size = New System.Drawing.Size(152, 22)
+        Me.ConsultaAnexo.Size = New System.Drawing.Size(118, 22)
         Me.ConsultaAnexo.Text = "&Anexo"
         '
         'ToolStripSeparator5
         '
         Me.ToolStripSeparator5.Name = "ToolStripSeparator5"
-        Me.ToolStripSeparator5.Size = New System.Drawing.Size(149, 6)
+        Me.ToolStripSeparator5.Size = New System.Drawing.Size(115, 6)
         '
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(118, 22)
         Me.ExitToolStripMenuItem.Text = "&Salir"
+        '
+        'ReportesToolStripMenuItem
+        '
+        Me.ReportesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AuditoríasToolStripMenuItem})
+        Me.ReportesToolStripMenuItem.Name = "ReportesToolStripMenuItem"
+        Me.ReportesToolStripMenuItem.Size = New System.Drawing.Size(65, 20)
+        Me.ReportesToolStripMenuItem.Text = "&Reportes"
+        '
+        'AuditoríasToolStripMenuItem
+        '
+        Me.AuditoríasToolStripMenuItem.Name = "AuditoríasToolStripMenuItem"
+        Me.AuditoríasToolStripMenuItem.Size = New System.Drawing.Size(128, 22)
+        Me.AuditoríasToolStripMenuItem.Text = "A&uditorías"
+        '
+        'ActualiToolStripMenuItem
+        '
+        Me.ActualiToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DetallesDeContratoToolStripMenuItem})
+        Me.ActualiToolStripMenuItem.Name = "ActualiToolStripMenuItem"
+        Me.ActualiToolStripMenuItem.Size = New System.Drawing.Size(90, 20)
+        Me.ActualiToolStripMenuItem.Text = "A&ctualización"
+        '
+        'DetallesDeContratoToolStripMenuItem
+        '
+        Me.DetallesDeContratoToolStripMenuItem.Name = "DetallesDeContratoToolStripMenuItem"
+        Me.DetallesDeContratoToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.DetallesDeContratoToolStripMenuItem.Text = "Detalles de contrato"
         '
         'StatusStrip
         '
@@ -108,18 +138,15 @@ Partial Class MDIAuditoria
         Me.ToolStripStatusLabel.Size = New System.Drawing.Size(42, 17)
         Me.ToolStripStatusLabel.Text = "Estado"
         '
-        'ReportesToolStripMenuItem
+        'ofdActualizaDetallesContrato
         '
-        Me.ReportesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AuditoríasToolStripMenuItem})
-        Me.ReportesToolStripMenuItem.Name = "ReportesToolStripMenuItem"
-        Me.ReportesToolStripMenuItem.Size = New System.Drawing.Size(65, 20)
-        Me.ReportesToolStripMenuItem.Text = "&Reportes"
+        Me.ofdActualizaDetallesContrato.FileName = "ofdActualizaDetallesContrato"
         '
-        'AuditoríasToolStripMenuItem
+        'SalirToolStripMenuItem
         '
-        Me.AuditoríasToolStripMenuItem.Name = "AuditoríasToolStripMenuItem"
-        Me.AuditoríasToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.AuditoríasToolStripMenuItem.Text = "A&uditorías"
+        Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
+        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(41, 20)
+        Me.SalirToolStripMenuItem.Text = "Sali&r"
         '
         'MDIAuditoria
         '
@@ -155,4 +182,8 @@ Partial Class MDIAuditoria
     Friend WithEvents SucursalToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ReportesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AuditoríasToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ActualiToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents DetallesDeContratoToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ofdActualizaDetallesContrato As OpenFileDialog
+    Friend WithEvents SalirToolStripMenuItem As ToolStripMenuItem
 End Class
