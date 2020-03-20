@@ -21,6 +21,10 @@ Public Class frmAuditoriaCondiciones
     Dim taSeguridad As New SeguridadTableAdapters.USUARIOTableAdapter
     Dim taAuditD As New ProductionDataSetTableAdapters.AUDIT_ParametrosDTableAdapter
     Private Sub frmAuditoriaCondiciones_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: esta línea de código carga datos en la tabla 'ProductionDataSet.AUDIT_ParametrosA' Puede moverla o quitarla según sea necesario.
+        Me.AUDIT_ParametrosATableAdapter.Fill(Me.ProductionDataSet.AUDIT_ParametrosA)
+        'TODO: esta línea de código carga datos en la tabla 'ProductionDataSet.AUDIT_ParametrosR' Puede moverla o quitarla según sea necesario.
+        Me.AUDIT_ParametrosRTableAdapter.Fill(Me.ProductionDataSet.AUDIT_ParametrosR)
         'TODO: esta línea de código carga datos en la tabla 'ProductionDataSet.AUDIT_ParametrosAll' Puede moverla o quitarla según sea necesario.
         Me.AUDIT_ParametrosAllTableAdapter.Fill(Me.ProductionDataSet.AUDIT_ParametrosAll)
         'TODO: esta línea de código carga datos en la tabla 'ProductionDataSet.AUDIT_Parametros' Puede moverla o quitarla según sea necesario.
@@ -242,7 +246,7 @@ Public Class frmAuditoriaCondiciones
         taAuditoriasCond.ObtDetalleAuditCond_FillBy(ProductionDataSet.AUDIT_AuditoriasCondiciones, var_idAuditoriaCondiciones)
         Dim var_ini As Integer = taAuditoriasCond.CuentaRegistros_ScalarQuery(CInt(Id_auditoriaTextBox.Text), CInt(cmbCondicion.SelectedValue))
         For i = var_ini To var_ini + var_revisiones - 1
-            taAuditoriasCond.Insert(Id_auditoriaTextBox.Text, CInt(cmbCondicion.SelectedValue), 1, "", 11, System.Data.SqlTypes.SqlDateTime.Null, "", i + 1, Date.Now, 32, False, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, 32, System.Data.SqlTypes.SqlDateTime.Null, 36, 37)
+            taAuditoriasCond.Insert(Id_auditoriaTextBox.Text, CInt(cmbCondicion.SelectedValue), 1, "", 11, System.Data.SqlTypes.SqlDateTime.Null, "", i + 1, Date.Now, 32, False, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, 32, System.Data.SqlTypes.SqlDateTime.Null, 36, 37, Nothing, Nothing, Nothing, Nothing)
         Next
     End Sub
 

@@ -176,9 +176,9 @@ Partial Class frmAuditorias
         EstatusLabel.AutoSize = True
         EstatusLabel.Location = New System.Drawing.Point(629, 522)
         EstatusLabel.Name = "EstatusLabel"
-        EstatusLabel.Size = New System.Drawing.Size(45, 13)
+        EstatusLabel.Size = New System.Drawing.Size(105, 13)
         EstatusLabel.TabIndex = 14
-        EstatusLabel.Text = "Estatus:"
+        EstatusLabel.Text = "Estatus de auditoría:"
         '
         'UsuarioLabel
         '
@@ -392,6 +392,7 @@ Partial Class frmAuditorias
         Me.TableAdapterManager.AUDIT_ParametrosTableAdapter = Nothing
         Me.TableAdapterManager.AUDIT_ParametrosVTableAdapter = Nothing
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.GEN_Correos_SistemaFinagilTableAdapter = Nothing
         Me.TableAdapterManager.SucursalesTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = Auditoria.ProductionDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
@@ -410,7 +411,7 @@ Partial Class frmAuditorias
         Me.cmbEstatus.DisplayMember = "Descripcion"
         Me.cmbEstatus.Enabled = False
         Me.cmbEstatus.FormattingEnabled = True
-        Me.cmbEstatus.Location = New System.Drawing.Point(680, 519)
+        Me.cmbEstatus.Location = New System.Drawing.Point(740, 519)
         Me.cmbEstatus.Name = "cmbEstatus"
         Me.cmbEstatus.Size = New System.Drawing.Size(121, 21)
         Me.cmbEstatus.TabIndex = 25
@@ -530,9 +531,9 @@ Partial Class frmAuditorias
         Me.Label10.AutoSize = True
         Me.Label10.Location = New System.Drawing.Point(452, 49)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(87, 13)
+        Me.Label10.Size = New System.Drawing.Size(92, 13)
         Me.Label10.TabIndex = 31
-        Me.Label10.Text = "Monto solicitado:"
+        Me.Label10.Text = "Monto autorizado:"
         '
         'Label9
         '

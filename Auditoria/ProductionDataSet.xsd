@@ -112,7 +112,7 @@ order by Descr asc</CommandText>
               <Mapping SourceColumn="CVE_LOC" DataSetColumn="CVE_LOC" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ObtNomCliente_ScalarQuery" Modifier="Public" Name="ObtNomCliente_ScalarQuery" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="ObtNomCliente_ScalarQuery">
+              <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ObtNomCliente_ScalarQuery" Modifier="Public" Name="ObtNomCliente_ScalarQuery" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="ObtNomCliente_ScalarQuery">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        ISNULL(MAX(Descr), 'NE') AS Descr
@@ -128,7 +128,7 @@ WHERE        (Cliente = @Cliente)</CommandText>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Vw_AnexosTableAdapter" GeneratorDataComponentClassName="Vw_AnexosTableAdapter" Name="Vw_Anexos" UserDataComponentName="Vw_AnexosTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        Vw_Anexos.Anexo, Vw_Anexos.AnexoCon, Vw_Anexos.AnexoSin, Vw_Anexos.Ciclo, Vw_Anexos.fecha, Vw_Anexos.Cliente, Vw_Anexos.DescPlaza, Vw_Anexos.Tipar, Vw_Anexos.Descr, Vw_Anexos.Giro, Vw_Anexos.DescGiro, 
@@ -215,7 +215,7 @@ GROUP BY Anexo</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ObtCicloScalar" Modifier="Public" Name="ObtCicloScalar" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="ObtCicloScalar">
+              <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ObtCicloScalar" Modifier="Public" Name="ObtCicloScalar" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="ObtCicloScalar">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        ISNULL(MAX(Ciclo), '-') AS CicloN
@@ -241,7 +241,7 @@ WHERE        (Cliente = @Cliente)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ObtFecha_Pago_ScalarQuery" Modifier="Public" Name="ObtFecha_Pago_ScalarQuery" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="ObtFecha_Pago_ScalarQuery">
+              <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ObtFecha_Pago_ScalarQuery" Modifier="Public" Name="ObtFecha_Pago_ScalarQuery" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="ObtFecha_Pago_ScalarQuery">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        ISNULL(MAX(Fecha_Pago), 'NE') AS Fecha_Pago
@@ -254,7 +254,7 @@ WHERE        (Anexo = @Anexo) AND (Ciclo = @Ciclo)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ObtFondeotit_ScalarQuery" Modifier="Public" Name="ObtFondeotit_ScalarQuery" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="ObtFondeotit_ScalarQuery">
+              <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ObtFondeotit_ScalarQuery" Modifier="Public" Name="ObtFondeotit_ScalarQuery" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="ObtFondeotit_ScalarQuery">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        ISNULL(MAX(Fondeotit), 'NE') AS Fondeotit
@@ -267,7 +267,7 @@ WHERE        (Anexo = @Anexo) AND (Ciclo = @Ciclo)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ObtNombre_Promotor_ScalarQuery" Modifier="Public" Name="ObtNombre_Promotor_ScalarQuery" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="ObtNombre_Promotor_ScalarQuery">
+              <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ObtNombre_Promotor_ScalarQuery" Modifier="Public" Name="ObtNombre_Promotor_ScalarQuery" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="ObtNombre_Promotor_ScalarQuery">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        ISNULL(MAX(Nombre_Promotor), 'NE') AS Nombre_Promotor
@@ -280,7 +280,7 @@ WHERE        (Anexo = @Anexo) AND (Ciclo = @Ciclo)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ObtNomCliente_ScalarQuery" Modifier="Public" Name="ObtNomCliente_ScalarQuery" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="ObtNomCliente_ScalarQuery">
+              <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ObtNomCliente_ScalarQuery" Modifier="Public" Name="ObtNomCliente_ScalarQuery" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="ObtNomCliente_ScalarQuery">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        ISNULL(MAX(Descr), 'NE') AS Descr
@@ -292,7 +292,7 @@ WHERE        (Anexo = @Anexo)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ObtNomSuc_ScalarQuery" Modifier="Public" Name="ObtNomSuc_ScalarQuery" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="ObtNomSuc_ScalarQuery">
+              <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ObtNomSuc_ScalarQuery" Modifier="Public" Name="ObtNomSuc_ScalarQuery" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="ObtNomSuc_ScalarQuery">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        ISNULL(MAX(Nombre_Sucursal), 'NE') AS Nombre_Sucursal
@@ -305,7 +305,7 @@ WHERE        (Anexo = @Anexo) AND (Ciclo = @Ciclo)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ObtNumCliente_ScalarQuery" Modifier="Public" Name="ObtNumCliente_ScalarQuery" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy6" UserSourceName="ObtNumCliente_ScalarQuery">
+              <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ObtNumCliente_ScalarQuery" Modifier="Public" Name="ObtNumCliente_ScalarQuery" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy6" UserSourceName="ObtNumCliente_ScalarQuery">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        ISNULL(MAX(Cliente), 'NE') AS Cliente
@@ -331,7 +331,7 @@ WHERE        (Nombre_Sucursal = @Nombre_Sucursal)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ObtTipoCred_ScalarQuery" Modifier="Public" Name="ObtTipoCred_ScalarQuery" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy7" UserSourceName="ObtTipoCred_ScalarQuery">
+              <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ObtTipoCred_ScalarQuery" Modifier="Public" Name="ObtTipoCred_ScalarQuery" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy7" UserSourceName="ObtTipoCred_ScalarQuery">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        ISNULL(MAX(TipoCredito), 'NE') AS TipoCredito
@@ -574,7 +574,7 @@ SELECT id_Auditoria, Anexo, Ciclo, FechaCreacion, UltimaActualizacion, FechaReli
               <Mapping SourceColumn="organoDeAutorizacion" DataSetColumn="organoDeAutorizacion" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ContadorAuditorias" Modifier="Public" Name="ContadorAuditorias" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="ContadorAuditorias">
+              <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ContadorAuditorias" Modifier="Public" Name="ContadorAuditorias" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="ContadorAuditorias">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        COUNT(*) AS Contador
@@ -587,7 +587,7 @@ WHERE        (Anexo = @Anexo) AND (Ciclo = @Ciclo)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="CuentaAuditorias_ScalarQuery" Modifier="Public" Name="CuentaAuditorias_ScalarQuery" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="CuentaAuditorias_ScalarQuery">
+              <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="CuentaAuditorias_ScalarQuery" Modifier="Public" Name="CuentaAuditorias_ScalarQuery" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="CuentaAuditorias_ScalarQuery">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        COUNT(*) AS Total
@@ -652,7 +652,7 @@ WHERE        (id_Auditoria = @id_Auditoria)</CommandText>
                   </DbCommand>
                 </UpdateCommand>
               </DbSource>
-              <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="obtAnexo_ScalarQuery" Modifier="Public" Name="obtAnexo_ScalarQuery" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy6" UserSourceName="obtAnexo_ScalarQuery">
+              <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="obtAnexo_ScalarQuery" Modifier="Public" Name="obtAnexo_ScalarQuery" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy6" UserSourceName="obtAnexo_ScalarQuery">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        ISNULL(MAX(Anexo), 0) AS Anexo
@@ -687,7 +687,7 @@ WHERE        (id_Auditoria = @id_Auditoria)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ObtieneEstatus_ScalarQuery" Modifier="Public" Name="ObtieneEstatus_ScalarQuery" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy7" UserSourceName="ObtieneEstatus_ScalarQuery">
+              <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ObtieneEstatus_ScalarQuery" Modifier="Public" Name="ObtieneEstatus_ScalarQuery" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy7" UserSourceName="ObtieneEstatus_ScalarQuery">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        ISNULL(MAX(Estatus), 'NE') AS Estatus
@@ -714,7 +714,7 @@ ORDER BY id_Auditoria DESC</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ObtncedVerific_ScalarQuery" Modifier="Public" Name="ObtncedVerific_ScalarQuery" QueryType="Scalar" ScalarCallRetval="System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy9" UserSourceName="ObtncedVerific_ScalarQuery">
+              <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ObtncedVerific_ScalarQuery" Modifier="Public" Name="ObtncedVerific_ScalarQuery" QueryType="Scalar" ScalarCallRetval="System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy9" UserSourceName="ObtncedVerific_ScalarQuery">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        ISNULL(MAX(ncedVerific), 0) AS ncedVerific
@@ -726,7 +726,7 @@ WHERE        (id_Auditoria = @id_Auditoria)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ObtnRevInfFinanciera_ScalarQuery" Modifier="Public" Name="ObtnRevInfFinanciera_ScalarQuery" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy10" UserSourceName="ObtnRevInfFinanciera_ScalarQuery">
+              <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ObtnRevInfFinanciera_ScalarQuery" Modifier="Public" Name="ObtnRevInfFinanciera_ScalarQuery" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy10" UserSourceName="ObtnRevInfFinanciera_ScalarQuery">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        ISNULL(MAX(nRevInfFinanciera), 0) AS nRevInfFinanciera
@@ -738,7 +738,7 @@ WHERE        (id_Auditoria = @id_Auditoria)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ObtnRevPagare_ScalarQuery" Modifier="Public" Name="ObtnRevPagare_ScalarQuery" QueryType="Scalar" ScalarCallRetval="System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy11" UserSourceName="ObtnRevPagare_ScalarQuery">
+              <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ObtnRevPagare_ScalarQuery" Modifier="Public" Name="ObtnRevPagare_ScalarQuery" QueryType="Scalar" ScalarCallRetval="System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy11" UserSourceName="ObtnRevPagare_ScalarQuery">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        ISNULL(MAX(nRevPagare), 0) AS nRevPagare
@@ -750,7 +750,7 @@ WHERE        (id_Auditoria = @id_Auditoria)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ObtnRevRepSup_ScalarQuery" Modifier="Public" Name="ObtnRevRepSup_ScalarQuery" QueryType="Scalar" ScalarCallRetval="System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy12" UserSourceName="ObtnRevRepSup_ScalarQuery">
+              <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ObtnRevRepSup_ScalarQuery" Modifier="Public" Name="ObtnRevRepSup_ScalarQuery" QueryType="Scalar" ScalarCallRetval="System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy12" UserSourceName="ObtnRevRepSup_ScalarQuery">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        ISNULL(MAX(nRevRepSup), 0) AS nRevRepSup
@@ -762,7 +762,7 @@ WHERE        (id_Auditoria = @id_Auditoria)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UltimoReg_ScalarQuery" Modifier="Public" Name="UltimoReg_ScalarQuery" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy13" UserSourceName="UltimoReg_ScalarQuery">
+              <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UltimoReg_ScalarQuery" Modifier="Public" Name="UltimoReg_ScalarQuery" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy13" UserSourceName="UltimoReg_ScalarQuery">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        ISNULL(MAX(id_Auditoria), 0) AS id_Auditoria
@@ -929,7 +929,7 @@ SELECT id_Condicion, Condicion, Tipo, Activo FROM AUDIT_Condiciones WHERE (id_Co
               <Mapping SourceColumn="Activo" DataSetColumn="Activo" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ObtCond_ScalarQuery" Modifier="Public" Name="ObtCond_ScalarQuery" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="ObtCond_ScalarQuery">
+              <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ObtCond_ScalarQuery" Modifier="Public" Name="ObtCond_ScalarQuery" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="ObtCond_ScalarQuery">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        ISNULL(MAX(Condicion), 0) AS Condicion
@@ -1007,7 +1007,7 @@ SELECT id_Parametro, Descripcion, Tipo, Activo FROM AUDIT_Parametros WHERE (id_P
               <Mapping SourceColumn="Activo" DataSetColumn="Activo" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ObtDesc_ScalarQuery" Modifier="Public" Name="ObtDesc_ScalarQuery" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="ObtDesc_ScalarQuery">
+              <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ObtDesc_ScalarQuery" Modifier="Public" Name="ObtDesc_ScalarQuery" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="ObtDesc_ScalarQuery">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        ISNULL(MAX(Descripcion), 0) AS Descripcion
@@ -1085,7 +1085,7 @@ SELECT id_Parametro, Descripcion, Tipo, Activo FROM AUDIT_Parametros WHERE (id_P
               <Mapping SourceColumn="Activo" DataSetColumn="Activo" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ObtDesc_ScalarQuery" Modifier="Public" Name="ObtDesc_ScalarQuery" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="ObtDesc_ScalarQuery">
+              <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ObtDesc_ScalarQuery" Modifier="Public" Name="ObtDesc_ScalarQuery" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="ObtDesc_ScalarQuery">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        ISNULL(MAX(Descripcion), 0) AS Descripcion
@@ -1097,7 +1097,7 @@ WHERE        (id_Parametro = @Parametro)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ObtDescComp_ScalarQuery" Modifier="Public" Name="ObtDescComp_ScalarQuery" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="ObtDescComp_ScalarQuery">
+              <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ObtDescComp_ScalarQuery" Modifier="Public" Name="ObtDescComp_ScalarQuery" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="ObtDescComp_ScalarQuery">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        ISNULL(MAX(descripcionCompleta), 0) AS descripcionCompleta
@@ -1116,7 +1116,7 @@ WHERE        (id_Parametro = @Parametro)</CommandText>
               <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectName="Production.dbo.AUDIT_AuditoriasCondiciones" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>DELETE FROM [AUDIT_AuditoriasCondiciones] WHERE (([Id_auditoriaCondicion] = @Original_Id_auditoriaCondicion) AND ((@IsNull_Id_auditoria = 1 AND [Id_auditoria] IS NULL) OR ([Id_auditoria] = @Original_Id_auditoria)) AND ((@IsNull_Id_Condicion = 1 AND [Id_Condicion] IS NULL) OR ([Id_Condicion] = @Original_Id_Condicion)) AND ((@IsNull_Validacion = 1 AND [Validacion] IS NULL) OR ([Validacion] = @Original_Validacion)) AND ((@IsNull_CategoriaHallazgo = 1 AND [CategoriaHallazgo] IS NULL) OR ([CategoriaHallazgo] = @Original_CategoriaHallazgo)) AND ((@IsNull_FechaSolventacion = 1 AND [FechaSolventacion] IS NULL) OR ([FechaSolventacion] = @Original_FechaSolventacion)) AND ((@IsNull_ConsecRevisiones = 1 AND [ConsecRevisiones] IS NULL) OR ([ConsecRevisiones] = @Original_ConsecRevisiones)) AND ((@IsNull_fechaVigencia = 1 AND [fechaVigencia] IS NULL) OR ([fechaVigencia] = @Original_fechaVigencia)) AND ((@IsNull_deptoResponsable = 1 AND [deptoResponsable] IS NULL) OR ([deptoResponsable] = @Original_deptoResponsable)) AND ((@IsNull_estatus = 1 AND [estatus] IS NULL) OR ([estatus] = @Original_estatus)) AND ((@IsNull_ext1 = 1 AND [ext1] IS NULL) OR ([ext1] = @Original_ext1)) AND ((@IsNull_ext2 = 1 AND [ext2] IS NULL) OR ([ext2] = @Original_ext2)) AND ((@IsNull_ext3 = 1 AND [ext3] IS NULL) OR ([ext3] = @Original_ext3)) AND ((@IsNull_nomOtros = 1 AND [nomOtros] IS NULL) OR ([nomOtros] = @Original_nomOtros)) AND ((@IsNull_usuarioResponsable = 1 AND [usuarioResponsable] IS NULL) OR ([usuarioResponsable] = @Original_usuarioResponsable)) AND ((@IsNull_fechaCompromiso = 1 AND [fechaCompromiso] IS NULL) OR ([fechaCompromiso] = @Original_fechaCompromiso)) AND ((@IsNull_estatusCond = 1 AND [estatusCond] IS NULL) OR ([estatusCond] = @Original_estatusCond)) AND ((@IsNull_estatusEnv = 1 AND [estatusEnv] IS NULL) OR ([estatusEnv] = @Original_estatusEnv)))</CommandText>
+                    <CommandText>DELETE FROM [AUDIT_AuditoriasCondiciones] WHERE (([Id_auditoriaCondicion] = @Original_Id_auditoriaCondicion) AND ((@IsNull_Id_auditoria = 1 AND [Id_auditoria] IS NULL) OR ([Id_auditoria] = @Original_Id_auditoria)) AND ((@IsNull_Id_Condicion = 1 AND [Id_Condicion] IS NULL) OR ([Id_Condicion] = @Original_Id_Condicion)) AND ((@IsNull_Validacion = 1 AND [Validacion] IS NULL) OR ([Validacion] = @Original_Validacion)) AND ((@IsNull_CategoriaHallazgo = 1 AND [CategoriaHallazgo] IS NULL) OR ([CategoriaHallazgo] = @Original_CategoriaHallazgo)) AND ((@IsNull_FechaSolventacion = 1 AND [FechaSolventacion] IS NULL) OR ([FechaSolventacion] = @Original_FechaSolventacion)) AND ((@IsNull_ConsecRevisiones = 1 AND [ConsecRevisiones] IS NULL) OR ([ConsecRevisiones] = @Original_ConsecRevisiones)) AND ((@IsNull_fechaVigencia = 1 AND [fechaVigencia] IS NULL) OR ([fechaVigencia] = @Original_fechaVigencia)) AND ((@IsNull_deptoResponsable = 1 AND [deptoResponsable] IS NULL) OR ([deptoResponsable] = @Original_deptoResponsable)) AND ((@IsNull_estatus = 1 AND [estatus] IS NULL) OR ([estatus] = @Original_estatus)) AND ((@IsNull_ext1 = 1 AND [ext1] IS NULL) OR ([ext1] = @Original_ext1)) AND ((@IsNull_ext2 = 1 AND [ext2] IS NULL) OR ([ext2] = @Original_ext2)) AND ((@IsNull_ext3 = 1 AND [ext3] IS NULL) OR ([ext3] = @Original_ext3)) AND ((@IsNull_nomOtros = 1 AND [nomOtros] IS NULL) OR ([nomOtros] = @Original_nomOtros)) AND ((@IsNull_usuarioResponsable = 1 AND [usuarioResponsable] IS NULL) OR ([usuarioResponsable] = @Original_usuarioResponsable)) AND ((@IsNull_fechaCompromiso = 1 AND [fechaCompromiso] IS NULL) OR ([fechaCompromiso] = @Original_fechaCompromiso)) AND ((@IsNull_estatusCond = 1 AND [estatusCond] IS NULL) OR ([estatusCond] = @Original_estatusCond)) AND ((@IsNull_estatusEnv = 1 AND [estatusEnv] IS NULL) OR ([estatusEnv] = @Original_estatusEnv)) AND ((@IsNull_nivelRiesgo = 1 AND [nivelRiesgo] IS NULL) OR ([nivelRiesgo] = @Original_nivelRiesgo)) AND ((@IsNull_tipoAccion = 1 AND [tipoAccion] IS NULL) OR ([tipoAccion] = @Original_tipoAccion)))</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_Id_auditoriaCondicion" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="Id_auditoriaCondicion" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Id_auditoria" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Id_auditoria" SourceColumnNullMapping="true" SourceVersion="Original" />
@@ -1153,13 +1153,17 @@ WHERE        (id_Parametro = @Parametro)</CommandText>
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_estatusCond" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="estatusCond" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_estatusEnv" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="estatusEnv" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_estatusEnv" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="estatusEnv" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_nivelRiesgo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="nivelRiesgo" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_nivelRiesgo" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="nivelRiesgo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_tipoAccion" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="tipoAccion" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_tipoAccion" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="tipoAccion" SourceColumnNullMapping="false" SourceVersion="Original" />
                     </Parameters>
                   </DbCommand>
                 </DeleteCommand>
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>INSERT INTO [AUDIT_AuditoriasCondiciones] ([Id_auditoria], [Id_Condicion], [Validacion], [Observaciones], [CategoriaHallazgo], [FechaSolventacion], [Comentarios], [ConsecRevisiones], [fechaVigencia], [deptoResponsable], [estatus], [archivo1], [archivo2], [archivo3], [ext1], [ext2], [ext3], [nomOtros], [usuarioResponsable], [fechaCompromiso], [estatusCond], [estatusEnv]) VALUES (@Id_auditoria, @Id_Condicion, @Validacion, @Observaciones, @CategoriaHallazgo, @FechaSolventacion, @Comentarios, @ConsecRevisiones, @fechaVigencia, @deptoResponsable, @estatus, @archivo1, @archivo2, @archivo3, @ext1, @ext2, @ext3, @nomOtros, @usuarioResponsable, @fechaCompromiso, @estatusCond, @estatusEnv);
-SELECT Id_auditoriaCondicion, Id_auditoria, Id_Condicion, Validacion, Observaciones, CategoriaHallazgo, FechaSolventacion, Comentarios, ConsecRevisiones, fechaVigencia, deptoResponsable, estatus, archivo1, archivo2, archivo3, ext1, ext2, ext3, nomOtros, usuarioResponsable, fechaCompromiso, estatusCond, estatusEnv FROM AUDIT_AuditoriasCondiciones WHERE (Id_auditoriaCondicion = SCOPE_IDENTITY())</CommandText>
+                    <CommandText>INSERT INTO [AUDIT_AuditoriasCondiciones] ([Id_auditoria], [Id_Condicion], [Validacion], [Observaciones], [CategoriaHallazgo], [FechaSolventacion], [Comentarios], [ConsecRevisiones], [fechaVigencia], [deptoResponsable], [estatus], [archivo1], [archivo2], [archivo3], [ext1], [ext2], [ext3], [nomOtros], [usuarioResponsable], [fechaCompromiso], [estatusCond], [estatusEnv], [nivelRiesgo], [tipoAccion], [comAreaResp], [recomendaciones]) VALUES (@Id_auditoria, @Id_Condicion, @Validacion, @Observaciones, @CategoriaHallazgo, @FechaSolventacion, @Comentarios, @ConsecRevisiones, @fechaVigencia, @deptoResponsable, @estatus, @archivo1, @archivo2, @archivo3, @ext1, @ext2, @ext3, @nomOtros, @usuarioResponsable, @fechaCompromiso, @estatusCond, @estatusEnv, @nivelRiesgo, @tipoAccion, @comAreaResp, @recomendaciones);
+SELECT Id_auditoriaCondicion, Id_auditoria, Id_Condicion, Validacion, Observaciones, CategoriaHallazgo, FechaSolventacion, Comentarios, ConsecRevisiones, fechaVigencia, deptoResponsable, estatus, archivo1, archivo2, archivo3, ext1, ext2, ext3, nomOtros, usuarioResponsable, fechaCompromiso, estatusCond, estatusEnv, nivelRiesgo, tipoAccion, comAreaResp, recomendaciones FROM AUDIT_AuditoriasCondiciones WHERE (Id_auditoriaCondicion = SCOPE_IDENTITY())</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Id_auditoria" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="Id_auditoria" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Id_Condicion" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="Id_Condicion" SourceColumnNullMapping="false" SourceVersion="Current" />
@@ -1183,21 +1187,25 @@ SELECT Id_auditoriaCondicion, Id_auditoria, Id_Condicion, Validacion, Observacio
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@fechaCompromiso" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="fechaCompromiso" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@estatusCond" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="estatusCond" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@estatusEnv" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="estatusEnv" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@nivelRiesgo" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="nivelRiesgo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@tipoAccion" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="tipoAccion" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@comAreaResp" Precision="0" ProviderType="Text" Scale="0" Size="0" SourceColumn="comAreaResp" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@recomendaciones" Precision="0" ProviderType="Text" Scale="0" Size="0" SourceColumn="recomendaciones" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </InsertCommand>
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        Id_auditoriaCondicion, Id_auditoria, Id_Condicion, Validacion, Observaciones, CategoriaHallazgo, FechaSolventacion, Comentarios, ConsecRevisiones, fechaVigencia, deptoResponsable, estatus, archivo1, archivo2, archivo3, 
-                         ext1, ext2, ext3, nomOtros, usuarioResponsable, fechaCompromiso, estatusCond, estatusEnv
+                         ext1, ext2, ext3, nomOtros, usuarioResponsable, fechaCompromiso, estatusCond, estatusEnv, nivelRiesgo, tipoAccion, comAreaResp, recomendaciones
 FROM            AUDIT_AuditoriasCondiciones</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>UPDATE [AUDIT_AuditoriasCondiciones] SET [Id_auditoria] = @Id_auditoria, [Id_Condicion] = @Id_Condicion, [Validacion] = @Validacion, [Observaciones] = @Observaciones, [CategoriaHallazgo] = @CategoriaHallazgo, [FechaSolventacion] = @FechaSolventacion, [Comentarios] = @Comentarios, [ConsecRevisiones] = @ConsecRevisiones, [fechaVigencia] = @fechaVigencia, [deptoResponsable] = @deptoResponsable, [estatus] = @estatus, [archivo1] = @archivo1, [archivo2] = @archivo2, [archivo3] = @archivo3, [ext1] = @ext1, [ext2] = @ext2, [ext3] = @ext3, [nomOtros] = @nomOtros, [usuarioResponsable] = @usuarioResponsable, [fechaCompromiso] = @fechaCompromiso, [estatusCond] = @estatusCond, [estatusEnv] = @estatusEnv WHERE (([Id_auditoriaCondicion] = @Original_Id_auditoriaCondicion) AND ((@IsNull_Id_auditoria = 1 AND [Id_auditoria] IS NULL) OR ([Id_auditoria] = @Original_Id_auditoria)) AND ((@IsNull_Id_Condicion = 1 AND [Id_Condicion] IS NULL) OR ([Id_Condicion] = @Original_Id_Condicion)) AND ((@IsNull_Validacion = 1 AND [Validacion] IS NULL) OR ([Validacion] = @Original_Validacion)) AND ((@IsNull_CategoriaHallazgo = 1 AND [CategoriaHallazgo] IS NULL) OR ([CategoriaHallazgo] = @Original_CategoriaHallazgo)) AND ((@IsNull_FechaSolventacion = 1 AND [FechaSolventacion] IS NULL) OR ([FechaSolventacion] = @Original_FechaSolventacion)) AND ((@IsNull_ConsecRevisiones = 1 AND [ConsecRevisiones] IS NULL) OR ([ConsecRevisiones] = @Original_ConsecRevisiones)) AND ((@IsNull_fechaVigencia = 1 AND [fechaVigencia] IS NULL) OR ([fechaVigencia] = @Original_fechaVigencia)) AND ((@IsNull_deptoResponsable = 1 AND [deptoResponsable] IS NULL) OR ([deptoResponsable] = @Original_deptoResponsable)) AND ((@IsNull_estatus = 1 AND [estatus] IS NULL) OR ([estatus] = @Original_estatus)) AND ((@IsNull_ext1 = 1 AND [ext1] IS NULL) OR ([ext1] = @Original_ext1)) AND ((@IsNull_ext2 = 1 AND [ext2] IS NULL) OR ([ext2] = @Original_ext2)) AND ((@IsNull_ext3 = 1 AND [ext3] IS NULL) OR ([ext3] = @Original_ext3)) AND ((@IsNull_nomOtros = 1 AND [nomOtros] IS NULL) OR ([nomOtros] = @Original_nomOtros)) AND ((@IsNull_usuarioResponsable = 1 AND [usuarioResponsable] IS NULL) OR ([usuarioResponsable] = @Original_usuarioResponsable)) AND ((@IsNull_fechaCompromiso = 1 AND [fechaCompromiso] IS NULL) OR ([fechaCompromiso] = @Original_fechaCompromiso)) AND ((@IsNull_estatusCond = 1 AND [estatusCond] IS NULL) OR ([estatusCond] = @Original_estatusCond)) AND ((@IsNull_estatusEnv = 1 AND [estatusEnv] IS NULL) OR ([estatusEnv] = @Original_estatusEnv)));
-SELECT Id_auditoriaCondicion, Id_auditoria, Id_Condicion, Validacion, Observaciones, CategoriaHallazgo, FechaSolventacion, Comentarios, ConsecRevisiones, fechaVigencia, deptoResponsable, estatus, archivo1, archivo2, archivo3, ext1, ext2, ext3, nomOtros, usuarioResponsable, fechaCompromiso, estatusCond, estatusEnv FROM AUDIT_AuditoriasCondiciones WHERE (Id_auditoriaCondicion = @Id_auditoriaCondicion)</CommandText>
+                    <CommandText>UPDATE [AUDIT_AuditoriasCondiciones] SET [Id_auditoria] = @Id_auditoria, [Id_Condicion] = @Id_Condicion, [Validacion] = @Validacion, [Observaciones] = @Observaciones, [CategoriaHallazgo] = @CategoriaHallazgo, [FechaSolventacion] = @FechaSolventacion, [Comentarios] = @Comentarios, [ConsecRevisiones] = @ConsecRevisiones, [fechaVigencia] = @fechaVigencia, [deptoResponsable] = @deptoResponsable, [estatus] = @estatus, [archivo1] = @archivo1, [archivo2] = @archivo2, [archivo3] = @archivo3, [ext1] = @ext1, [ext2] = @ext2, [ext3] = @ext3, [nomOtros] = @nomOtros, [usuarioResponsable] = @usuarioResponsable, [fechaCompromiso] = @fechaCompromiso, [estatusCond] = @estatusCond, [estatusEnv] = @estatusEnv, [nivelRiesgo] = @nivelRiesgo, [tipoAccion] = @tipoAccion, [comAreaResp] = @comAreaResp, [recomendaciones] = @recomendaciones WHERE (([Id_auditoriaCondicion] = @Original_Id_auditoriaCondicion) AND ((@IsNull_Id_auditoria = 1 AND [Id_auditoria] IS NULL) OR ([Id_auditoria] = @Original_Id_auditoria)) AND ((@IsNull_Id_Condicion = 1 AND [Id_Condicion] IS NULL) OR ([Id_Condicion] = @Original_Id_Condicion)) AND ((@IsNull_Validacion = 1 AND [Validacion] IS NULL) OR ([Validacion] = @Original_Validacion)) AND ((@IsNull_CategoriaHallazgo = 1 AND [CategoriaHallazgo] IS NULL) OR ([CategoriaHallazgo] = @Original_CategoriaHallazgo)) AND ((@IsNull_FechaSolventacion = 1 AND [FechaSolventacion] IS NULL) OR ([FechaSolventacion] = @Original_FechaSolventacion)) AND ((@IsNull_ConsecRevisiones = 1 AND [ConsecRevisiones] IS NULL) OR ([ConsecRevisiones] = @Original_ConsecRevisiones)) AND ((@IsNull_fechaVigencia = 1 AND [fechaVigencia] IS NULL) OR ([fechaVigencia] = @Original_fechaVigencia)) AND ((@IsNull_deptoResponsable = 1 AND [deptoResponsable] IS NULL) OR ([deptoResponsable] = @Original_deptoResponsable)) AND ((@IsNull_estatus = 1 AND [estatus] IS NULL) OR ([estatus] = @Original_estatus)) AND ((@IsNull_ext1 = 1 AND [ext1] IS NULL) OR ([ext1] = @Original_ext1)) AND ((@IsNull_ext2 = 1 AND [ext2] IS NULL) OR ([ext2] = @Original_ext2)) AND ((@IsNull_ext3 = 1 AND [ext3] IS NULL) OR ([ext3] = @Original_ext3)) AND ((@IsNull_nomOtros = 1 AND [nomOtros] IS NULL) OR ([nomOtros] = @Original_nomOtros)) AND ((@IsNull_usuarioResponsable = 1 AND [usuarioResponsable] IS NULL) OR ([usuarioResponsable] = @Original_usuarioResponsable)) AND ((@IsNull_fechaCompromiso = 1 AND [fechaCompromiso] IS NULL) OR ([fechaCompromiso] = @Original_fechaCompromiso)) AND ((@IsNull_estatusCond = 1 AND [estatusCond] IS NULL) OR ([estatusCond] = @Original_estatusCond)) AND ((@IsNull_estatusEnv = 1 AND [estatusEnv] IS NULL) OR ([estatusEnv] = @Original_estatusEnv)) AND ((@IsNull_nivelRiesgo = 1 AND [nivelRiesgo] IS NULL) OR ([nivelRiesgo] = @Original_nivelRiesgo)) AND ((@IsNull_tipoAccion = 1 AND [tipoAccion] IS NULL) OR ([tipoAccion] = @Original_tipoAccion)));
+SELECT Id_auditoriaCondicion, Id_auditoria, Id_Condicion, Validacion, Observaciones, CategoriaHallazgo, FechaSolventacion, Comentarios, ConsecRevisiones, fechaVigencia, deptoResponsable, estatus, archivo1, archivo2, archivo3, ext1, ext2, ext3, nomOtros, usuarioResponsable, fechaCompromiso, estatusCond, estatusEnv, nivelRiesgo, tipoAccion, comAreaResp, recomendaciones FROM AUDIT_AuditoriasCondiciones WHERE (Id_auditoriaCondicion = @Id_auditoriaCondicion)</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Id_auditoria" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="Id_auditoria" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Id_Condicion" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="Id_Condicion" SourceColumnNullMapping="false" SourceVersion="Current" />
@@ -1221,6 +1229,10 @@ SELECT Id_auditoriaCondicion, Id_auditoria, Id_Condicion, Validacion, Observacio
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@fechaCompromiso" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="fechaCompromiso" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@estatusCond" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="estatusCond" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@estatusEnv" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="estatusEnv" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@nivelRiesgo" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="nivelRiesgo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@tipoAccion" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="tipoAccion" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@comAreaResp" Precision="0" ProviderType="Text" Scale="0" Size="0" SourceColumn="comAreaResp" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@recomendaciones" Precision="0" ProviderType="Text" Scale="0" Size="0" SourceColumn="recomendaciones" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_Id_auditoriaCondicion" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="Id_auditoriaCondicion" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Id_auditoria" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Id_auditoria" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_Id_auditoria" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="Id_auditoria" SourceColumnNullMapping="false" SourceVersion="Original" />
@@ -1256,6 +1268,10 @@ SELECT Id_auditoriaCondicion, Id_auditoria, Id_Condicion, Validacion, Observacio
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_estatusCond" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="estatusCond" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_estatusEnv" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="estatusEnv" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_estatusEnv" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="estatusEnv" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_nivelRiesgo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="nivelRiesgo" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_nivelRiesgo" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="nivelRiesgo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_tipoAccion" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="tipoAccion" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_tipoAccion" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="tipoAccion" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="false" AutogeneratedName="Id_auditoriaCondicion" ColumnName="Id_auditoriaCondicion" DataSourceName="Production.dbo.AUDIT_AuditoriasCondiciones" DataTypeServer="numeric" DbType="Decimal" Direction="Input" ParameterName="@Id_auditoriaCondicion" Precision="18" ProviderType="Decimal" Scale="0" Size="9" SourceColumn="Id_auditoriaCondicion" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
@@ -1286,9 +1302,13 @@ SELECT Id_auditoriaCondicion, Id_auditoria, Id_Condicion, Validacion, Observacio
               <Mapping SourceColumn="fechaCompromiso" DataSetColumn="fechaCompromiso" />
               <Mapping SourceColumn="estatusCond" DataSetColumn="estatusCond" />
               <Mapping SourceColumn="estatusEnv" DataSetColumn="estatusEnv" />
+              <Mapping SourceColumn="nivelRiesgo" DataSetColumn="nivelRiesgo" />
+              <Mapping SourceColumn="tipoAccion" DataSetColumn="tipoAccion" />
+              <Mapping SourceColumn="comAreaResp" DataSetColumn="comAreaResp" />
+              <Mapping SourceColumn="recomendaciones" DataSetColumn="recomendaciones" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Act_Estatus_FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="Act_Estatus_GetDataBy17" GeneratorSourceName="Act_Estatus_FillBy" GetMethodModifier="Public" GetMethodName="Act_Estatus_GetDataBy17" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="Act_Estatus_GetDataBy17" UserSourceName="Act_Estatus_FillBy">
+              <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Act_Estatus_FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="Act_Estatus_GetDataBy17" GeneratorSourceName="Act_Estatus_FillBy" GetMethodModifier="Public" GetMethodName="Act_Estatus_GetDataBy17" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="Act_Estatus_GetDataBy17" UserSourceName="Act_Estatus_FillBy">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        AUDIT_AuditoriasCondiciones.Id_auditoriaCondicion, AUDIT_AuditoriasCondiciones.Id_auditoria, AUDIT_AuditoriasCondiciones.Id_Condicion, AUDIT_AuditoriasCondiciones.Validacion, 
@@ -1334,7 +1354,7 @@ WHERE        (Id_auditoriaCondicion = @Id_auditoriaCondicion)</CommandText>
                   </DbCommand>
                 </UpdateCommand>
               </DbSource>
-              <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ActualizaPorTxt1_UpdateQuery" Modifier="Public" Name="ActualizaPorTxt1_UpdateQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy18" UserSourceName="ActualizaPorTxt1_UpdateQuery">
+              <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ActualizaPorTxt1_UpdateQuery" Modifier="Public" Name="ActualizaPorTxt1_UpdateQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="ActualizaPorTxt1_UpdateQuery">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE       AUDIT_AuditoriasCondiciones
@@ -1350,7 +1370,7 @@ WHERE        (Id_auditoriaCondicion = @Original_Id_auditoriaCondicion)</CommandT
                   </DbCommand>
                 </UpdateCommand>
               </DbSource>
-              <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="AgrupaNotificCorreo_FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="AgrupaNotificCorreo_GetDataBy18" GeneratorSourceName="AgrupaNotificCorreo_FillBy" GetMethodModifier="Public" GetMethodName="AgrupaNotificCorreo_GetDataBy18" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="AgrupaNotificCorreo_GetDataBy18" UserSourceName="AgrupaNotificCorreo_FillBy">
+              <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="AgrupaNotificCorreo_FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="AgrupaNotificCorreo_GetDataBy18" GeneratorSourceName="AgrupaNotificCorreo_FillBy" GetMethodModifier="Public" GetMethodName="AgrupaNotificCorreo_GetDataBy18" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="AgrupaNotificCorreo_GetDataBy18" UserSourceName="AgrupaNotificCorreo_FillBy">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        AUDIT_AuditoriasCondiciones.Id_auditoria, AUDIT_AuditoriasCondiciones.deptoResponsable, AUDIT_Parametros.Descripcion
@@ -1364,7 +1384,7 @@ GROUP BY AUDIT_AuditoriasCondiciones.Id_auditoria, AUDIT_AuditoriasCondiciones.d
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="Archivo1_UpdateQuery" Modifier="Public" Name="Archivo1_UpdateQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="Archivo1_UpdateQuery">
+              <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="Archivo1_UpdateQuery" Modifier="Public" Name="Archivo1_UpdateQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="Archivo1_UpdateQuery">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE       AUDIT_AuditoriasCondiciones
@@ -1378,7 +1398,7 @@ WHERE        (Id_auditoriaCondicion = @Original_Id_auditoriaCondicion)</CommandT
                   </DbCommand>
                 </UpdateCommand>
               </DbSource>
-              <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="Archivo2_UpdateQuery" Modifier="Public" Name="Archivo2_UpdateQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="Archivo2_UpdateQuery">
+              <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="Archivo2_UpdateQuery" Modifier="Public" Name="Archivo2_UpdateQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="Archivo2_UpdateQuery">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE       AUDIT_AuditoriasCondiciones
@@ -1392,7 +1412,7 @@ WHERE        (Id_auditoriaCondicion = @Original_Id_auditoriaCondicion) </Command
                   </DbCommand>
                 </UpdateCommand>
               </DbSource>
-              <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="Archivo3_UpdateQuery" Modifier="Public" Name="Archivo3_UpdateQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="Archivo3_UpdateQuery">
+              <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="Archivo3_UpdateQuery" Modifier="Public" Name="Archivo3_UpdateQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="Archivo3_UpdateQuery">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE       AUDIT_AuditoriasCondiciones
@@ -1406,7 +1426,7 @@ WHERE        (Id_auditoriaCondicion = @Original_Id_auditoriaCondicion) </Command
                   </DbCommand>
                 </UpdateCommand>
               </DbSource>
-              <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="CuentaRegistros_ScalarQuery" Modifier="Public" Name="CuentaRegistros_ScalarQuery" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="CuentaRegistros_ScalarQuery">
+              <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="CuentaRegistros_ScalarQuery" Modifier="Public" Name="CuentaRegistros_ScalarQuery" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy6" UserSourceName="CuentaRegistros_ScalarQuery">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        COUNT(Id_auditoria) AS Total
@@ -1420,7 +1440,7 @@ GROUP BY Id_auditoria</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ElimCond_DeleteQuery" Modifier="Public" Name="ElimCond_DeleteQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy6" UserSourceName="ElimCond_DeleteQuery">
+              <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ElimCond_DeleteQuery" Modifier="Public" Name="ElimCond_DeleteQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy7" UserSourceName="ElimCond_DeleteQuery">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>DELETE FROM AUDIT_AuditoriasCondiciones
@@ -1431,7 +1451,7 @@ WHERE        (Id_auditoriaCondicion = @Id_auditoriaCondicion)</CommandText>
                   </DbCommand>
                 </DeleteCommand>
               </DbSource>
-              <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy7" GeneratorSourceName="EsArchivo1_ScalarQuery" Modifier="Public" Name="EsArchivo1_ScalarQuery" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy7" UserSourceName="EsArchivo1_ScalarQuery">
+              <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy7" GeneratorSourceName="EsArchivo1_ScalarQuery" Modifier="Public" Name="EsArchivo1_ScalarQuery" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy8" UserSourceName="EsArchivo1_ScalarQuery">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        ISNULL(DATALENGTH(archivo1), 0) AS archivo1
@@ -1443,7 +1463,7 @@ WHERE        (Id_auditoriaCondicion = @Id_auditoriaCondicion)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="EsArchivo2_ScalarQuery" Modifier="Public" Name="EsArchivo2_ScalarQuery" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy8" UserSourceName="EsArchivo2_ScalarQuery">
+              <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="EsArchivo2_ScalarQuery" Modifier="Public" Name="EsArchivo2_ScalarQuery" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy9" UserSourceName="EsArchivo2_ScalarQuery">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        ISNULL(DATALENGTH(archivo2), 0) AS archivo2
@@ -1455,7 +1475,7 @@ WHERE        (Id_auditoriaCondicion = @Id_auditoriaCondicion)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="EsArchivo3_ScalarQuery" Modifier="Public" Name="EsArchivo3_ScalarQuery" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy9" UserSourceName="EsArchivo3_ScalarQuery">
+              <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="EsArchivo3_ScalarQuery" Modifier="Public" Name="EsArchivo3_ScalarQuery" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy10" UserSourceName="EsArchivo3_ScalarQuery">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        ISNULL(DATALENGTH(archivo3), 0) AS archivo3
@@ -1467,7 +1487,7 @@ WHERE        (Id_auditoriaCondicion = @Id_auditoriaCondicion)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ExisteCondicion_ScalarQuery" Modifier="Public" Name="ExisteCondicion_ScalarQuery" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy10" UserSourceName="ExisteCondicion_ScalarQuery">
+              <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ExisteCondicion_ScalarQuery" Modifier="Public" Name="ExisteCondicion_ScalarQuery" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy11" UserSourceName="ExisteCondicion_ScalarQuery">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        ISNULL(MAX(Id_Condicion), 0) AS Id_Condicion
@@ -1483,14 +1503,14 @@ WHERE        (Id_auditoria = @Id_auditoria) AND (Id_Condicion = @Id_Condicion)</
               <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectName="Production.dbo.AUDIT_AuditoriasCondiciones" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Obt_AllDetalleAuditCond_FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="Obt_AllDetalleAuditCond_GetDataBy" GeneratorSourceName="Obt_AllDetalleAuditCond_FillBy" GetMethodModifier="Public" GetMethodName="Obt_AllDetalleAuditCond_GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="Obt_AllDetalleAuditCond_GetDataBy" UserSourceName="Obt_AllDetalleAuditCond_FillBy">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT CategoriaHallazgo, Comentarios, ConsecRevisiones, FechaSolventacion, Id_Condicion, Id_auditoria, Id_auditoriaCondicion, Observaciones, Validacion, archivo1, archivo2, archivo3, deptoResponsable, estatus, estatusCond, estatusEnv, ext1, ext2, ext3, fechaCompromiso, fechaVigencia, nomOtros, usuarioResponsable FROM AUDIT_AuditoriasCondiciones WHERE (Id_auditoria = @Id_auditoria) ORDER BY Id_auditoria, Id_Condicion, ConsecRevisiones</CommandText>
+                    <CommandText>SELECT CategoriaHallazgo, Comentarios, ConsecRevisiones, FechaSolventacion, Id_Condicion, Id_auditoria, Id_auditoriaCondicion, Observaciones, Validacion, archivo1, archivo2, archivo3, comAreaResp, deptoResponsable, estatus, estatusCond, estatusEnv, ext1, ext2, ext3, fechaCompromiso, fechaVigencia, nivelRiesgo, nomOtros, recomendaciones, tipoAccion, usuarioResponsable FROM AUDIT_AuditoriasCondiciones WHERE (Id_auditoria = @Id_auditoria) ORDER BY Id_auditoria, Id_Condicion, ConsecRevisiones</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="true" AutogeneratedName="Id_auditoria" ColumnName="Id_auditoria" DataSourceName="Production.dbo.AUDIT_AuditoriasCondiciones" DataTypeServer="numeric(18, 0)" DbType="Decimal" Direction="Input" ParameterName="@Id_auditoria" Precision="18" ProviderType="Decimal" Scale="0" Size="9" SourceColumn="Id_auditoria" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ObtArchivo1_ScalarQuery" Modifier="Public" Name="ObtArchivo1_ScalarQuery" QueryType="Scalar" ScalarCallRetval="System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy11" UserSourceName="ObtArchivo1_ScalarQuery">
+              <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ObtArchivo1_ScalarQuery" Modifier="Public" Name="ObtArchivo1_ScalarQuery" QueryType="Scalar" ScalarCallRetval="System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy12" UserSourceName="ObtArchivo1_ScalarQuery">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        ISNULL(archivo1, 0) AS archivo1
@@ -1502,7 +1522,7 @@ WHERE        (Id_auditoriaCondicion = @Id_auditoriaCondicion)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ObtArchivo2_ScalarQuery" Modifier="Public" Name="ObtArchivo2_ScalarQuery" QueryType="Scalar" ScalarCallRetval="System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy12" UserSourceName="ObtArchivo2_ScalarQuery">
+              <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ObtArchivo2_ScalarQuery" Modifier="Public" Name="ObtArchivo2_ScalarQuery" QueryType="Scalar" ScalarCallRetval="System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy13" UserSourceName="ObtArchivo2_ScalarQuery">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        ISNULL(archivo2, 0) AS archivo2
@@ -1514,7 +1534,7 @@ WHERE        (Id_auditoriaCondicion = @Id_auditoriaCondicion)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ObtArchivo3_ScalarQuery" Modifier="Public" Name="ObtArchivo3_ScalarQuery" QueryType="Scalar" ScalarCallRetval="System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy13" UserSourceName="ObtArchivo3_ScalarQuery">
+              <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ObtArchivo3_ScalarQuery" Modifier="Public" Name="ObtArchivo3_ScalarQuery" QueryType="Scalar" ScalarCallRetval="System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy14" UserSourceName="ObtArchivo3_ScalarQuery">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        ISNULL(archivo3, 0) AS archivo3
@@ -1529,14 +1549,14 @@ WHERE        (Id_auditoriaCondicion = @Id_auditoriaCondicion)</CommandText>
               <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectName="Production.dbo.AUDIT_AuditoriasCondiciones" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="ObtDetalleAuditCond_FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="ObtDetalleAuditCond_GetDataBy" GeneratorSourceName="ObtDetalleAuditCond_FillBy" GetMethodModifier="Public" GetMethodName="ObtDetalleAuditCond_GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="ObtDetalleAuditCond_GetDataBy" UserSourceName="ObtDetalleAuditCond_FillBy">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT CategoriaHallazgo, Comentarios, ConsecRevisiones, FechaSolventacion, Id_Condicion, Id_auditoria, Id_auditoriaCondicion, Observaciones, Validacion, archivo1, archivo2, archivo3, deptoResponsable, estatus, estatusCond, estatusEnv, ext1, ext2, ext3, fechaCompromiso, fechaVigencia, nomOtros, usuarioResponsable FROM AUDIT_AuditoriasCondiciones WHERE (Id_auditoriaCondicion = @Id_auditoriaCondicion)</CommandText>
+                    <CommandText>SELECT CategoriaHallazgo, Comentarios, ConsecRevisiones, FechaSolventacion, Id_Condicion, Id_auditoria, Id_auditoriaCondicion, Observaciones, Validacion, archivo1, archivo2, archivo3, comAreaResp, deptoResponsable, estatus, estatusCond, estatusEnv, ext1, ext2, ext3, fechaCompromiso, fechaVigencia, nivelRiesgo, nomOtros, recomendaciones, tipoAccion, usuarioResponsable FROM AUDIT_AuditoriasCondiciones WHERE (Id_auditoriaCondicion = @Id_auditoriaCondicion)</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="Id_auditoriaCondicion" ColumnName="Id_auditoriaCondicion" DataSourceName="Production.dbo.AUDIT_AuditoriasCondiciones" DataTypeServer="numeric" DbType="Decimal" Direction="Input" ParameterName="@Id_auditoriaCondicion" Precision="18" ProviderType="Decimal" Scale="0" Size="9" SourceColumn="Id_auditoriaCondicion" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ObtEstatus_ScalarQuery" Modifier="Public" Name="ObtEstatus_ScalarQuery" QueryType="Scalar" ScalarCallRetval="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy14" UserSourceName="ObtEstatus_ScalarQuery">
+              <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ObtEstatus_ScalarQuery" Modifier="Public" Name="ObtEstatus_ScalarQuery" QueryType="Scalar" ScalarCallRetval="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy15" UserSourceName="ObtEstatus_ScalarQuery">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        ISNULL(estatus, 'False') AS estatus
@@ -1548,7 +1568,7 @@ WHERE        (Id_auditoriaCondicion = @Id_auditoriaCondicion)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ObtExt1_ScalarQuery" Modifier="Public" Name="ObtExt1_ScalarQuery" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy15" UserSourceName="ObtExt1_ScalarQuery">
+              <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ObtExt1_ScalarQuery" Modifier="Public" Name="ObtExt1_ScalarQuery" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy16" UserSourceName="ObtExt1_ScalarQuery">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        ISNULL(ext1, 0) AS ext1
@@ -1560,7 +1580,7 @@ WHERE        (Id_auditoriaCondicion = @Id_auditoriaCondicion)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ObtExt2_ScalarQuery" Modifier="Public" Name="ObtExt2_ScalarQuery" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy16" UserSourceName="ObtExt2_ScalarQuery">
+              <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ObtExt2_ScalarQuery" Modifier="Public" Name="ObtExt2_ScalarQuery" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy17" UserSourceName="ObtExt2_ScalarQuery">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        ISNULL(ext2, 0) AS ext2
@@ -1572,7 +1592,7 @@ WHERE        (Id_auditoriaCondicion = @Id_auditoriaCondicion)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ObtExt3_ScalarQuery" Modifier="Public" Name="ObtExt3_ScalarQuery" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy17" UserSourceName="ObtExt3_ScalarQuery">
+              <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ObtExt3_ScalarQuery" Modifier="Public" Name="ObtExt3_ScalarQuery" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy18" UserSourceName="ObtExt3_ScalarQuery">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        ISNULL(ext3, 0) AS ext3
@@ -1608,7 +1628,7 @@ WHERE        (Id_auditoriaCondicion = @Id_auditoriaCondicion)</CommandText>
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>INSERT INTO [AUDIT_Parametros] ([Descripcion], [Tipo], [Activo], [descripcionCompleta]) VALUES (@Descripcion, @Tipo, @Activo, @descripcionCompleta);
-SELECT id_Parametro, Descripcion, Tipo, Activo, descripcionCompleta FROM AUDIT_Parametros WHERE (id_Parametro = SCOPE_IDENTITY())</CommandText>
+SELECT id_Parametro, Descripcion, Tipo, Activo, descripcionCompleta FROM AUDIT_Parametros WHERE (id_Parametro = SCOPE_IDENTITY()) ORDER BY Descripcion</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Descripcion" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Descripcion" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Tipo" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Tipo" SourceColumnNullMapping="false" SourceVersion="Current" />
@@ -1621,14 +1641,15 @@ SELECT id_Parametro, Descripcion, Tipo, Activo, descripcionCompleta FROM AUDIT_P
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        id_Parametro, Descripcion, Tipo, Activo, descripcionCompleta
 FROM            AUDIT_Parametros
-WHERE        (Tipo = 'DEPTOS')</CommandText>
+WHERE        (Tipo = 'DEPTOS')
+ORDER BY Descripcion</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>UPDATE [AUDIT_Parametros] SET [Descripcion] = @Descripcion, [Tipo] = @Tipo, [Activo] = @Activo, [descripcionCompleta] = @descripcionCompleta WHERE (([id_Parametro] = @Original_id_Parametro) AND ((@IsNull_Descripcion = 1 AND [Descripcion] IS NULL) OR ([Descripcion] = @Original_Descripcion)) AND ((@IsNull_Tipo = 1 AND [Tipo] IS NULL) OR ([Tipo] = @Original_Tipo)) AND ((@IsNull_Activo = 1 AND [Activo] IS NULL) OR ([Activo] = @Original_Activo)) AND ((@IsNull_descripcionCompleta = 1 AND [descripcionCompleta] IS NULL) OR ([descripcionCompleta] = @Original_descripcionCompleta)));
-SELECT id_Parametro, Descripcion, Tipo, Activo, descripcionCompleta FROM AUDIT_Parametros WHERE (id_Parametro = @id_Parametro)</CommandText>
+SELECT id_Parametro, Descripcion, Tipo, Activo, descripcionCompleta FROM AUDIT_Parametros WHERE (id_Parametro = @id_Parametro) ORDER BY Descripcion</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Descripcion" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Descripcion" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Tipo" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Tipo" SourceColumnNullMapping="false" SourceVersion="Current" />
@@ -1657,7 +1678,7 @@ SELECT id_Parametro, Descripcion, Tipo, Activo, descripcionCompleta FROM AUDIT_P
               <Mapping SourceColumn="descripcionCompleta" DataSetColumn="descripcionCompleta" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ObtIdDpto_ScalarQuery" Modifier="Public" Name="ObtIdDpto_ScalarQuery" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="ObtIdDpto_ScalarQuery">
+              <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ObtIdDpto_ScalarQuery" Modifier="Public" Name="ObtIdDpto_ScalarQuery" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="ObtIdDpto_ScalarQuery">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        ISNULL(MAX(Descripcion), 1) AS Descripcion
@@ -1985,7 +2006,7 @@ SELECT Anexo, Factura, Proveedor, Importe, Prima, Detalle, Factfij, Modelo, Moto
               <Mapping SourceColumn="id_ConceptoActivo" DataSetColumn="id_ConceptoActivo" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="Obtdestino_ScalarQuery" Modifier="Public" Name="Obtdestino_ScalarQuery" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="Obtdestino_ScalarQuery">
+              <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="Obtdestino_ScalarQuery" Modifier="Public" Name="Obtdestino_ScalarQuery" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="Obtdestino_ScalarQuery">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        ISNULL(Detalle, '') AS Detalle
@@ -2169,7 +2190,7 @@ SELECT id_Parametro, Descripcion, Tipo, Activo, descripcionCompleta FROM AUDIT_P
               <Mapping SourceColumn="descripcionCompleta" DataSetColumn="descripcionCompleta" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ObtIdParametro_ScalarQuery" Modifier="Public" Name="ObtIdParametro_ScalarQuery" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="ObtIdParametro_ScalarQuery">
+              <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ObtIdParametro_ScalarQuery" Modifier="Public" Name="ObtIdParametro_ScalarQuery" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="ObtIdParametro_ScalarQuery">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        ISNULL(MAX(id_Parametro), @idTipo) AS id_Parametro
@@ -2185,7 +2206,7 @@ WHERE        (Descripcion = @Descripcion) AND (Tipo = @Tipo) OR
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="obtMail_ScalarQuery" Modifier="Public" Name="obtMail_ScalarQuery" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="obtMail_ScalarQuery">
+              <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="obtMail_ScalarQuery" Modifier="Public" Name="obtMail_ScalarQuery" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="obtMail_ScalarQuery">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        ISNULL(MAX(AUDIT_ResponsableDpto.mail), 'viapolo@finagil.com.mx') AS mail
@@ -2350,6 +2371,136 @@ FROM            Vw_AUDITrpt1</CommandText>
               <Mapping SourceColumn="descripcionCompleta" DataSetColumn="descripcionCompleta" />
               <Mapping SourceColumn="Hallazgo" DataSetColumn="Hallazgo" />
               <Mapping SourceColumn="Validacion" DataSetColumn="Validacion" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="AUDIT_ParametrosRTableAdapter" GeneratorDataComponentClassName="AUDIT_ParametrosRTableAdapter" Name="AUDIT_ParametrosR" UserDataComponentName="AUDIT_ParametrosRTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectName="Production.dbo.AUDIT_Parametros" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [AUDIT_Parametros] WHERE (([id_Parametro] = @Original_id_Parametro) AND ((@IsNull_Descripcion = 1 AND [Descripcion] IS NULL) OR ([Descripcion] = @Original_Descripcion)) AND ((@IsNull_Tipo = 1 AND [Tipo] IS NULL) OR ([Tipo] = @Original_Tipo)) AND ((@IsNull_Activo = 1 AND [Activo] IS NULL) OR ([Activo] = @Original_Activo)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_id_Parametro" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="id_Parametro" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Descripcion" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Descripcion" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_Descripcion" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Descripcion" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Tipo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Tipo" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_Tipo" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Tipo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Activo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Activo" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_Activo" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Activo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [AUDIT_Parametros] ([Descripcion], [Tipo], [Activo]) VALUES (@Descripcion, @Tipo, @Activo);
+SELECT id_Parametro, Descripcion, Tipo, Activo FROM AUDIT_Parametros WHERE (id_Parametro = SCOPE_IDENTITY())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Descripcion" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Descripcion" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Tipo" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Tipo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Activo" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Activo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        id_Parametro, Descripcion, Tipo, Activo
+FROM            AUDIT_Parametros
+WHERE        (Tipo = 'RIESGO')</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [AUDIT_Parametros] SET [Descripcion] = @Descripcion, [Tipo] = @Tipo, [Activo] = @Activo WHERE (([id_Parametro] = @Original_id_Parametro) AND ((@IsNull_Descripcion = 1 AND [Descripcion] IS NULL) OR ([Descripcion] = @Original_Descripcion)) AND ((@IsNull_Tipo = 1 AND [Tipo] IS NULL) OR ([Tipo] = @Original_Tipo)) AND ((@IsNull_Activo = 1 AND [Activo] IS NULL) OR ([Activo] = @Original_Activo)));
+SELECT id_Parametro, Descripcion, Tipo, Activo FROM AUDIT_Parametros WHERE (id_Parametro = @id_Parametro)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Descripcion" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Descripcion" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Tipo" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Tipo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Activo" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Activo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_id_Parametro" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="id_Parametro" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Descripcion" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Descripcion" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_Descripcion" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Descripcion" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Tipo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Tipo" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_Tipo" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Tipo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Activo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Activo" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_Activo" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Activo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="id_Parametro" ColumnName="id_Parametro" DataSourceName="Production.dbo.AUDIT_Parametros" DataTypeServer="numeric" DbType="Decimal" Direction="Input" ParameterName="@id_Parametro" Precision="18" ProviderType="Decimal" Scale="0" Size="9" SourceColumn="id_Parametro" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id_Parametro" DataSetColumn="id_Parametro" />
+              <Mapping SourceColumn="Descripcion" DataSetColumn="Descripcion" />
+              <Mapping SourceColumn="Tipo" DataSetColumn="Tipo" />
+              <Mapping SourceColumn="Activo" DataSetColumn="Activo" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="AUDIT_ParametrosATableAdapter" GeneratorDataComponentClassName="AUDIT_ParametrosATableAdapter" Name="AUDIT_ParametrosA" UserDataComponentName="AUDIT_ParametrosATableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ProductionConnectionString (MySettings)" DbObjectName="Production.dbo.AUDIT_Parametros" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [AUDIT_Parametros] WHERE (([id_Parametro] = @Original_id_Parametro) AND ((@IsNull_Descripcion = 1 AND [Descripcion] IS NULL) OR ([Descripcion] = @Original_Descripcion)) AND ((@IsNull_Tipo = 1 AND [Tipo] IS NULL) OR ([Tipo] = @Original_Tipo)) AND ((@IsNull_Activo = 1 AND [Activo] IS NULL) OR ([Activo] = @Original_Activo)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_id_Parametro" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="id_Parametro" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Descripcion" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Descripcion" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_Descripcion" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Descripcion" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Tipo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Tipo" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_Tipo" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Tipo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Activo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Activo" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_Activo" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Activo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [AUDIT_Parametros] ([Descripcion], [Tipo], [Activo]) VALUES (@Descripcion, @Tipo, @Activo);
+SELECT id_Parametro, Descripcion, Tipo, Activo FROM AUDIT_Parametros WHERE (id_Parametro = SCOPE_IDENTITY())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Descripcion" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Descripcion" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Tipo" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Tipo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Activo" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Activo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        id_Parametro, Descripcion, Tipo, Activo
+FROM            AUDIT_Parametros
+WHERE        (Tipo = 'ACCION')</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [AUDIT_Parametros] SET [Descripcion] = @Descripcion, [Tipo] = @Tipo, [Activo] = @Activo WHERE (([id_Parametro] = @Original_id_Parametro) AND ((@IsNull_Descripcion = 1 AND [Descripcion] IS NULL) OR ([Descripcion] = @Original_Descripcion)) AND ((@IsNull_Tipo = 1 AND [Tipo] IS NULL) OR ([Tipo] = @Original_Tipo)) AND ((@IsNull_Activo = 1 AND [Activo] IS NULL) OR ([Activo] = @Original_Activo)));
+SELECT id_Parametro, Descripcion, Tipo, Activo FROM AUDIT_Parametros WHERE (id_Parametro = @id_Parametro)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Descripcion" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Descripcion" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Tipo" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Tipo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Activo" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Activo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_id_Parametro" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="id_Parametro" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Descripcion" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Descripcion" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_Descripcion" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Descripcion" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Tipo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Tipo" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_Tipo" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Tipo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Activo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Activo" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_Activo" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Activo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="id_Parametro" ColumnName="id_Parametro" DataSourceName="Production.dbo.AUDIT_Parametros" DataTypeServer="numeric" DbType="Decimal" Direction="Input" ParameterName="@id_Parametro" Precision="18" ProviderType="Decimal" Scale="0" Size="9" SourceColumn="id_Parametro" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id_Parametro" DataSetColumn="id_Parametro" />
+              <Mapping SourceColumn="Descripcion" DataSetColumn="Descripcion" />
+              <Mapping SourceColumn="Tipo" DataSetColumn="Tipo" />
+              <Mapping SourceColumn="Activo" DataSetColumn="Activo" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -3572,6 +3723,34 @@ FROM            Vw_AUDITrpt1</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="nivelRiesgo" msprop:Generator_ColumnVarNameInTable="columnnivelRiesgo" msprop:Generator_ColumnPropNameInRow="nivelRiesgo" msprop:Generator_ColumnPropNameInTable="nivelRiesgoColumn" msprop:Generator_UserColumnName="nivelRiesgo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="tipoAccion" msprop:Generator_ColumnVarNameInTable="columntipoAccion" msprop:Generator_ColumnPropNameInRow="tipoAccion" msprop:Generator_ColumnPropNameInTable="tipoAccionColumn" msprop:Generator_UserColumnName="tipoAccion" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="comAreaResp" msprop:Generator_ColumnVarNameInTable="columncomAreaResp" msprop:Generator_ColumnPropNameInRow="comAreaResp" msprop:Generator_ColumnPropNameInTable="comAreaRespColumn" msprop:Generator_UserColumnName="comAreaResp" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="recomendaciones" msprop:Generator_ColumnVarNameInTable="columnrecomendaciones" msprop:Generator_ColumnPropNameInRow="recomendaciones" msprop:Generator_ColumnPropNameInTable="recomendacionesColumn" msprop:Generator_UserColumnName="recomendaciones" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -4121,6 +4300,50 @@ FROM            Vw_AUDITrpt1</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="AUDIT_ParametrosR" msprop:Generator_TableClassName="AUDIT_ParametrosRDataTable" msprop:Generator_TableVarName="tableAUDIT_ParametrosR" msprop:Generator_TablePropName="AUDIT_ParametrosR" msprop:Generator_RowDeletingName="AUDIT_ParametrosRRowDeleting" msprop:Generator_RowChangingName="AUDIT_ParametrosRRowChanging" msprop:Generator_RowEvHandlerName="AUDIT_ParametrosRRowChangeEventHandler" msprop:Generator_RowDeletedName="AUDIT_ParametrosRRowDeleted" msprop:Generator_UserTableName="AUDIT_ParametrosR" msprop:Generator_RowChangedName="AUDIT_ParametrosRRowChanged" msprop:Generator_RowEvArgName="AUDIT_ParametrosRRowChangeEvent" msprop:Generator_RowClassName="AUDIT_ParametrosRRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id_Parametro" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid_Parametro" msprop:Generator_ColumnPropNameInRow="id_Parametro" msprop:Generator_ColumnPropNameInTable="id_ParametroColumn" msprop:Generator_UserColumnName="id_Parametro" type="xs:decimal" />
+              <xs:element name="Descripcion" msprop:Generator_ColumnVarNameInTable="columnDescripcion" msprop:Generator_ColumnPropNameInRow="Descripcion" msprop:Generator_ColumnPropNameInTable="DescripcionColumn" msprop:Generator_UserColumnName="Descripcion" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Tipo" msprop:Generator_ColumnVarNameInTable="columnTipo" msprop:Generator_ColumnPropNameInRow="Tipo" msprop:Generator_ColumnPropNameInTable="TipoColumn" msprop:Generator_UserColumnName="Tipo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Activo" msprop:Generator_ColumnVarNameInTable="columnActivo" msprop:Generator_ColumnPropNameInRow="Activo" msprop:Generator_ColumnPropNameInTable="ActivoColumn" msprop:Generator_UserColumnName="Activo" type="xs:boolean" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="AUDIT_ParametrosA" msprop:Generator_TableClassName="AUDIT_ParametrosADataTable" msprop:Generator_TableVarName="tableAUDIT_ParametrosA" msprop:Generator_TablePropName="AUDIT_ParametrosA" msprop:Generator_RowDeletingName="AUDIT_ParametrosARowDeleting" msprop:Generator_RowChangingName="AUDIT_ParametrosARowChanging" msprop:Generator_RowEvHandlerName="AUDIT_ParametrosARowChangeEventHandler" msprop:Generator_RowDeletedName="AUDIT_ParametrosARowDeleted" msprop:Generator_UserTableName="AUDIT_ParametrosA" msprop:Generator_RowChangedName="AUDIT_ParametrosARowChanged" msprop:Generator_RowEvArgName="AUDIT_ParametrosARowChangeEvent" msprop:Generator_RowClassName="AUDIT_ParametrosARow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id_Parametro" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid_Parametro" msprop:Generator_ColumnPropNameInRow="id_Parametro" msprop:Generator_ColumnPropNameInTable="id_ParametroColumn" msprop:Generator_UserColumnName="id_Parametro" type="xs:decimal" />
+              <xs:element name="Descripcion" msprop:Generator_ColumnVarNameInTable="columnDescripcion" msprop:Generator_ColumnPropNameInRow="Descripcion" msprop:Generator_ColumnPropNameInTable="DescripcionColumn" msprop:Generator_UserColumnName="Descripcion" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Tipo" msprop:Generator_ColumnVarNameInTable="columnTipo" msprop:Generator_ColumnPropNameInRow="Tipo" msprop:Generator_ColumnPropNameInTable="TipoColumn" msprop:Generator_UserColumnName="Tipo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Activo" msprop:Generator_ColumnVarNameInTable="columnActivo" msprop:Generator_ColumnPropNameInRow="Activo" msprop:Generator_ColumnPropNameInTable="ActivoColumn" msprop:Generator_UserColumnName="Activo" type="xs:boolean" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
@@ -4178,6 +4401,14 @@ FROM            Vw_AUDITrpt1</CommandText>
     <xs:unique name="GEN_Correos_SistemaFinagil_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:GEN_Correos_SistemaFinagil" />
       <xs:field xpath="mstns:id_Correo" />
+    </xs:unique>
+    <xs:unique name="AUDIT_ParametrosR_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:AUDIT_ParametrosR" />
+      <xs:field xpath="mstns:id_Parametro" />
+    </xs:unique>
+    <xs:unique name="AUDIT_ParametrosA_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:AUDIT_ParametrosA" />
+      <xs:field xpath="mstns:id_Parametro" />
     </xs:unique>
   </xs:element>
 </xs:schema>

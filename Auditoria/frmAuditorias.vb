@@ -59,6 +59,8 @@ Public Class frmAuditorias
         frmBuscaContratos.Enabled = False
         taAuditorias.ObtAudit_FillBy(ProductionDataSet.AUDIT_Auditorias, var_anexo.Trim, var_ciclo.Trim)
 
+        cmbAnalista.Text = cmbAnalista.Text.ToUpper
+
         If ConsecutivoTextBox.Text = "1" Or txtCliente.Text = "" Then
             FechaRelizacionDateTimePicker.Enabled = True
             ObervacionesTextBox.Enabled = True
@@ -141,7 +143,7 @@ Public Class frmAuditorias
                     ex3 = Nothing
                 End If
 
-                taAuditoriasCond.Insert(taAuditorias.UltimoReg_ScalarQuery(var_anexo.Trim, var_ciclo), DetalleMod.Id_Condicion, DetalleMod.Validacion, DetalleMod.Observaciones, DetalleMod.CategoriaHallazgo, System.Data.SqlTypes.SqlDateTime.Null, DetalleMod.Comentarios, DetalleMod.ConsecRevisiones, Date.Now, DetalleMod.deptoResponsable, DetalleMod.estatus, arch1, arch2, arch3, ex1, ex2, ex3, DetalleMod.nomOtros, DetalleMod.usuarioResponsable, DetalleMod.fechaCompromiso, DetalleMod.estatusCond, 37)
+                taAuditoriasCond.Insert(taAuditorias.UltimoReg_ScalarQuery(var_anexo.Trim, var_ciclo), DetalleMod.Id_Condicion, DetalleMod.Validacion, DetalleMod.Observaciones, DetalleMod.CategoriaHallazgo, System.Data.SqlTypes.SqlDateTime.Null, DetalleMod.Comentarios, DetalleMod.ConsecRevisiones, Date.Now, DetalleMod.deptoResponsable, DetalleMod.estatus, arch1, arch2, arch3, ex1, ex2, ex3, DetalleMod.nomOtros, DetalleMod.usuarioResponsable, DetalleMod.fechaCompromiso, DetalleMod.estatusCond, 37, 41, 46, Nothing, Nothing)
             Next
             taAuditorias.ObtAudit_FillBy(ProductionDataSet.AUDIT_Auditorias, var_anexo.Trim, var_ciclo.Trim)
             MsgBox("Se agregó una nueva auditoría...", MsgBoxStyle.Information)
@@ -174,7 +176,7 @@ Public Class frmAuditorias
             Me.AUDIT_AuditoriasTableAdapter.Insert(AnexoTextBox.Text.Trim, CicloTextBox.Text.Trim, FechaCreacionDateTimePicker.Value, UltimaActualizacionDateTimePicker.Value, FechaRelizacionDateTimePicker.Value, ObervacionesTextBox.Text.Trim, cmbEstatus.Text, UsuarioTextBox.Text, ConsecutivoTextBox.Text, txtAuditoria.Text, 1, 1, 1, 1, txtCliente.Text.Trim, txtSucursal.Text.Trim, txtTipoCredito.Text.Trim, txtRecursos.Text.Trim, dtpFechaDispo.Value, txtEjecutivo.Text.Trim, txtDestino.Text.Trim, txtMontoFinanciado.Text, txtMontoSolicitado.Text, dtpFechaSolicitud.Value, dtpFechaAutorizacion.Value, cmbAnalista.Text, cmbOrganoDeAutorizacion.Text)
 
             For Each DetalleMod In ProductionDataSet.AUDIT_Condiciones.Rows
-                taAuditoriasCond.Insert(taAuditorias.UltimoReg_ScalarQuery(var_anexo.Trim, var_ciclo), DetalleMod.id_Condicion, 1, "", 11, System.Data.SqlTypes.SqlDateTime.Null, "", 1, Date.Now, 32, False, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, System.Data.SqlTypes.SqlDateTime.Null, 36, 37)
+                taAuditoriasCond.Insert(taAuditorias.UltimoReg_ScalarQuery(var_anexo.Trim, var_ciclo), DetalleMod.id_Condicion, 1, "", 11, System.Data.SqlTypes.SqlDateTime.Null, "", 1, Date.Now, 32, False, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, System.Data.SqlTypes.SqlDateTime.Null, 36, 37, 41, 46, Nothing, Nothing)
             Next
 
             MsgBox("Actualización existosa...", MsgBoxStyle.Information)
@@ -293,7 +295,7 @@ Public Class frmAuditorias
                             var_estatusEnv = DetalleMod.estatusEnv
                         End If
 
-                        taAuditoriasCond.Insert(taAuditorias.UltimoReg_ScalarQuery(var_anexo_copiar.Trim, var_ciclo), DetalleMod.Id_Condicion, DetalleMod.Validacion, DetalleMod.Observaciones, DetalleMod.CategoriaHallazgo, System.Data.SqlTypes.SqlDateTime.Null, DetalleMod.Comentarios, DetalleMod.ConsecRevisiones, Date.Now, var_deptoResponsable, DetalleMod.estatus, arch1, arch2, arch3, ex1, ex2, ex3, Nothing, var_usuarioResponsable, DetalleMod.fechaCompromiso, DetalleMod.estatusCond, var_estatusEnv)
+                        taAuditoriasCond.Insert(taAuditorias.UltimoReg_ScalarQuery(var_anexo_copiar.Trim, var_ciclo), DetalleMod.Id_Condicion, DetalleMod.Validacion, DetalleMod.Observaciones, DetalleMod.CategoriaHallazgo, System.Data.SqlTypes.SqlDateTime.Null, DetalleMod.Comentarios, DetalleMod.ConsecRevisiones, Date.Now, var_deptoResponsable, DetalleMod.estatus, arch1, arch2, arch3, ex1, ex2, ex3, Nothing, var_usuarioResponsable, DetalleMod.fechaCompromiso, DetalleMod.estatusCond, var_estatusEnv, DetalleMod.nivelRiesgo, DetalleMod.tipoAccion, DetalleMod.comAreaResp, DetalleMod.recomendaciones)
                     Next
                     MsgBox("Copia existosa...", MsgBoxStyle.Information)
                 Catch ex As Exception
@@ -314,6 +316,7 @@ Public Class frmAuditorias
         If txtMontoSolicitado.Text <> "" Then
             txtMontoSolicitado.Text = Format(CDec(txtMontoSolicitado.Text), "C")
         End If
+        cmbAnalista.Text = cmbAnalista.Text.ToUpper
     End Sub
 
     Private Sub txtMontoFinanciado_LostFocus(sender As Object, e As EventArgs) Handles txtMontoFinanciado.LostFocus
@@ -321,5 +324,9 @@ Public Class frmAuditorias
     End Sub
     Private Sub txtMontoSolicitado_LostFocus(sender As Object, e As EventArgs) Handles txtMontoSolicitado.LostFocus
         formato_moneda()
+    End Sub
+
+    Private Sub Label10_Click(sender As Object, e As EventArgs) Handles Label10.Click
+
     End Sub
 End Class
