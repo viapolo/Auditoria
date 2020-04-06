@@ -14227,12 +14227,11 @@ Partial Public Class ProductionDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Property comAreaResp() As String
             Get
-                Try 
+                If Me.IscomAreaRespNull Then
+                    Return Nothing
+                Else
                     Return CType(Me(Me.tableAUDIT_AuditoriasCondiciones.comAreaRespColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'comAreaResp' de la tabla 'AUDIT_AuditoriasCondiciones' es"& _ 
-                            " DBNull.", e)
-                End Try
+                End If
             End Get
             Set
                 Me(Me.tableAUDIT_AuditoriasCondiciones.comAreaRespColumn) = value
@@ -14243,12 +14242,11 @@ Partial Public Class ProductionDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Property recomendaciones() As String
             Get
-                Try 
+                If Me.IsrecomendacionesNull Then
+                    Return Nothing
+                Else
                     Return CType(Me(Me.tableAUDIT_AuditoriasCondiciones.recomendacionesColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'recomendaciones' de la tabla 'AUDIT_AuditoriasCondiciones"& _ 
-                            "' es DBNull.", e)
-                End Try
+                End If
             End Get
             Set
                 Me(Me.tableAUDIT_AuditoriasCondiciones.recomendacionesColumn) = value
